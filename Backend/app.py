@@ -55,4 +55,4 @@ def get_faq():
 if __name__ == '__main__':
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
-    app.run(debug=True, port=5000)
+        app.run(host="0.0.0.0", port=5000, debug=True)
