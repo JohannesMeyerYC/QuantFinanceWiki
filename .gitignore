@@ -1,0 +1,110 @@
+############################
+# Global
+############################
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables & secrets
+.env
+.env.* 
+*.secret
+*.key
+
+############################
+# Python / Flask backend
+############################
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Flask / runtime files
+instance/
+*.pid
+
+# Tooling
+.mypy_cache/
+.pytest_cache/
+coverage/
+.coverage
+htmlcov/
+.tox/
+.cache/
+
+# Logs
+*.log
+
+# SQLite or other local DBs
+*.sqlite3
+*.db
+
+############################
+# Node / React frontend
+############################
+# Node modules
+frontend/node_modules/
+node_modules/
+
+# Builds
+frontend/build/
+build/
+dist/
+.cache/
+*.cache
+
+# React dev environment files
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Coverage
+frontend/coverage/
+coverage/
+
+# Lock files (optional—uncomment if your team prefers not to commit them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+############################
+# Docker (optional)
+############################
+docker-data/
+docker-compose.override.yml
+
+############################
+# Misc
+############################
+# Temporary files
+tmp/
+temp/
+
+# Local files not to be tracked
+*.local
+*.bak
+*.tmp

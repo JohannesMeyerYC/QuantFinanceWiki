@@ -1,0 +1,904 @@
+[
+  {
+    "id": "renaissance-technologies",
+    "name": "Renaissance Technologies",
+    "category": "Hedge Fund",
+    "location": "East Setauket, NY",
+    "description": "Renaissance Technologies is one of the most successful quantitative hedge funds, known for its Medallion Fund and systematic trading strategies.",
+    "requirements": [
+      "PhD in Mathematics, Physics, Computer Science, or related quantitative field",
+      "Strong mathematical and statistical modeling skills",
+      "Exceptional programming abilities in C++, Python, or similar languages",
+      "Research experience in machine learning, signal processing, or related areas"
+    ],
+    "qualities": [
+      "Intellectual curiosity and creativity in problem-solving",
+      "Ability to work with large datasets and complex systems",
+      "Collaborative mindset for working in research teams",
+      "Track record of academic or research excellence"
+    ],
+    "roles": ["https://www.rentec.com/Careers.action"]
+  },
+  {
+    "id": "jane-street",
+    "name": "Jane Street",
+    "category": "Prop Trading",
+    "location": "New York, NY / London, UK",
+    "description": "Jane Street is a quantitative trading firm and liquidity provider with a focus on technology and collaborative problem-solving.",
+    "requirements": [
+      "Strong quantitative background (Math, CS, Physics, Engineering)",
+      "Excellent programming skills, particularly in OCaml or functional programming",
+      "Problem-solving ability and analytical thinking",
+      "Interest in financial markets and trading"
+    ],
+    "qualities": [
+      "Intellectual curiosity and love of learning",
+      "Collaborative approach to problem-solving",
+      "Clear communication skills",
+      "Humility and openness to feedback"
+    ],
+    "roles": ["https://www.janestreet.com/join-jane-street/open-roles/"]
+  },
+  {
+    "id": "citadel-securities",
+    "name": "Citadel Securities",
+    "category": "Market Making",
+    "location": "Chicago, IL / New York, NY",
+    "description": "Citadel Securities is a leading market maker providing liquidity across multiple asset classes globally.",
+    "requirements": [
+      "Strong academic background in quantitative field (Math, CS, Engineering, Physics)",
+      "Programming proficiency in C++, Python, or Java",
+      "Understanding of financial markets and trading strategies",
+      "Analytical and problem-solving skills"
+    ],
+    "qualities": [
+      "Competitive drive and ambition",
+      "Ability to work in fast-paced environment",
+      "Team collaboration skills",
+      "Innovative thinking and creativity"
+    ],
+    "roles": ["https://www.citadel.com/careers/open-positions/"]
+  },
+  {
+    "id": "imc-trading",
+    "name": "IMC Trading",
+    "category": "Prop Trading",
+    "location": "Amsterdam, Netherlands / Chicago, IL",
+    "description": "IMC is a leading global market maker using algorithmic trading strategies and advanced technology.",
+    "requirements": [
+      "STEM degree (Mathematics, Physics, Computer Science, Engineering)",
+      "Strong programming skills in C++, Python, or similar",
+      "Analytical thinking and problem-solving ability",
+      "Interest in financial markets and technology"
+    ],
+    "qualities": [
+      "Entrepreneurial mindset",
+      "Quick learner and adaptable",
+      "Team player with good communication",
+      "Passion for continuous improvement"
+    ],
+    "roles": ["https://careers.imc.com/eu/en"]
+  },
+  {
+    "id": "optiver",
+    "name": "Optiver",
+    "category": "Prop Trading",
+    "location": "Amsterdam, Netherlands / Chicago, IL / Sydney, Australia",
+    "description": "Optiver is a proprietary trading firm and market maker committed to pricing efficiency and liquidity provision.",
+    "requirements": [
+      "Bachelor's or Master's degree in quantitative discipline",
+      "Strong analytical and mathematical skills",
+      "Programming experience (Python, C++, or similar)",
+      "Understanding of probability and statistics"
+    ],
+    "qualities": [
+      "Intellectual curiosity and competitive spirit",
+      "Ability to thrive under pressure",
+      "Collaborative team player",
+      "Strong work ethic and integrity"
+    ],
+    "roles": [
+      "https://optiver.com/working-at-optiver/career-opportunities/5181876002/"
+    ]
+  },
+  {
+    "id": "akuna-capital",
+    "name": "Akuna Capital",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Akuna Capital is a proprietary trading firm specializing in derivatives market making and arbitrage strategies.",
+    "requirements": [
+      "Strong academic background in quantitative field",
+      "Programming skills in C++, Python, or other languages",
+      "Mathematical and statistical expertise",
+      "Problem-solving and analytical abilities"
+    ],
+    "qualities": [
+      "Competitive and driven personality",
+      "Collaborative mindset",
+      "Fast learner with adaptability",
+      "Passion for technology and markets"
+    ],
+    "roles": ["https://akunacapital.com/careers"]
+  },
+  {
+    "id": "drw-trading",
+    "name": "DRW",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "DRW is a diversified trading firm operating across multiple asset classes with a focus on technology and innovation.",
+    "requirements": [
+      "Quantitative degree (Math, CS, Physics, Engineering)",
+      "Strong programming background",
+      "Analytical thinking and problem-solving skills",
+      "Interest in financial markets"
+    ],
+    "qualities": [
+      "Entrepreneurial spirit",
+      "Innovative thinker",
+      "Team collaboration",
+      "Continuous learning mindset"
+    ],
+    "roles": ["https://drw.com/work-at-drw/"]
+  },
+  {
+    "id": "chicago-trading-company",
+    "name": "Chicago Trading Company",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "CTC is a proprietary trading firm focused on derivatives and options trading with cutting-edge technology.",
+    "requirements": [
+      "Strong quantitative background",
+      "Programming proficiency",
+      "Mathematical modeling skills",
+      "Understanding of options and derivatives"
+    ],
+    "qualities": [
+      "Competitive nature",
+      "Analytical mindset",
+      "Team player",
+      "Risk management awareness"
+    ],
+    "roles": ["https://www.chicagotrading.com/careers"]
+  },
+  {
+    "id": "sig-susquehanna",
+    "name": "SIG (Susquehanna International Group)",
+    "category": "Prop Trading",
+    "location": "Bala Cynwyd, PA",
+    "description": "SIG is a global quantitative trading firm specializing in options and derivatives across multiple exchanges.",
+    "requirements": [
+      "Strong academic record in quantitative discipline",
+      "Programming skills (C++, Python, Java)",
+      "Game theory and probability knowledge",
+      "Analytical and problem-solving abilities"
+    ],
+    "qualities": [
+      "Strategic thinking",
+      "Competitive spirit",
+      "Collaborative approach",
+      "Intellectual curiosity"
+    ],
+    "roles": ["https://careers.sig.com/"]
+  },
+  {
+    "id": "transmarket-group",
+    "name": "TransMarket Group",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "TransMarket Group is a proprietary trading firm specializing in electronic market making and quantitative strategies.",
+    "requirements": [
+      "Quantitative degree or strong mathematical background",
+      "Programming experience",
+      "Analytical skills",
+      "Interest in electronic trading"
+    ],
+    "qualities": [
+      "Team-oriented",
+      "Quick decision-making ability",
+      "Adaptable to market changes",
+      "Strong work ethic"
+    ],
+    "roles": ["https://www.transmarketgroup.com/careers"]
+  },
+  {
+    "id": "old-mission-capital",
+    "name": "Old Mission Capital",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Old Mission is a quantitative trading firm focused on relative value strategies and market making.",
+    "requirements": [
+      "PhD or Master's in quantitative field preferred",
+      "Strong programming skills (C++, Python)",
+      "Statistical modeling expertise",
+      "Research background"
+    ],
+    "qualities": [
+      "Research-oriented mindset",
+      "Attention to detail",
+      "Collaborative team member",
+      "Innovative problem-solver"
+    ],
+    "roles": ["https://www.oldmissioncapital.com/careers/"]
+  },
+  {
+    "id": "five-rings",
+    "name": "Five Rings",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "Five Rings is a proprietary trading firm utilizing quantitative strategies and advanced technology.",
+    "requirements": [
+      "Strong quantitative background",
+      "Programming proficiency",
+      "Mathematical and statistical skills",
+      "Problem-solving abilities"
+    ],
+    "qualities": [
+      "Analytical thinker",
+      "Team collaboration",
+      "Intellectual curiosity",
+      "Adaptability"
+    ],
+    "roles": ["https://fiverings.com/positions/"]
+  },
+  {
+    "id": "radix-trading",
+    "name": "Radix Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Radix Trading is a quantitative trading firm focused on systematic strategies and technology-driven trading.",
+    "requirements": [
+      "Quantitative degree",
+      "Programming experience",
+      "Analytical skills",
+      "Interest in systematic trading"
+    ],
+    "qualities": [
+      "Data-driven decision maker",
+      "Team player",
+      "Fast learner",
+      "Detail-oriented"
+    ],
+    "roles": ["https://www.radixtrading.co/"]
+  },
+  {
+    "id": "3red-partners",
+    "name": "3Red Partners",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "3Red Partners is a quantitative trading firm specializing in systematic strategies and market making.",
+    "requirements": [
+      "Strong quantitative background",
+      "Programming skills",
+      "Mathematical modeling",
+      "Analytical abilities"
+    ],
+    "qualities": [
+      "Innovative thinker",
+      "Collaborative",
+      "Problem-solver",
+      "Technology-focused"
+    ],
+    "roles": ["https://www.3redpartners.com/careers/"]
+  },
+  {
+    "id": "xtx-markets",
+    "name": "XTX Markets",
+    "category": "Prop Trading",
+    "location": "London, UK",
+    "description": "XTX Markets is a quantitative-driven electronic market maker providing liquidity across multiple asset classes.",
+    "requirements": [
+      "PhD or Master's in quantitative field",
+      "Strong programming skills (C++, Python)",
+      "Machine learning and statistical modeling",
+      "Research experience"
+    ],
+    "qualities": [
+      "Research-focused mindset",
+      "Collaborative approach",
+      "Intellectual curiosity",
+      "Innovation-driven"
+    ],
+    "roles": ["https://www.xtxmarkets.com/"]
+  },
+  {
+    "id": "volant-trading",
+    "name": "Volant Trading",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "Volant Trading is a proprietary trading firm utilizing quantitative strategies and advanced technology.",
+    "requirements": [
+      "Quantitative degree",
+      "Programming proficiency",
+      "Analytical skills",
+      "Mathematical background"
+    ],
+    "qualities": [
+      "Team-oriented",
+      "Problem-solver",
+      "Adaptable",
+      "Detail-focused"
+    ],
+    "roles": ["https://volanttrading.com/index.php/work-here/"]
+  },
+  {
+    "id": "belvedere-trading",
+    "name": "Belvedere Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Belvedere Trading is a proprietary trading firm focused on options and derivatives trading.",
+    "requirements": [
+      "Strong quantitative background",
+      "Programming skills",
+      "Options pricing knowledge",
+      "Analytical abilities"
+    ],
+    "qualities": [
+      "Strategic thinker",
+      "Collaborative",
+      "Competitive spirit",
+      "Risk-aware"
+    ],
+    "roles": ["https://www.belvederetrading.com/careers"]
+  },
+  {
+    "id": "wolverine-trading",
+    "name": "Wolverine Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Wolverine Trading is a proprietary trading firm and options market maker with global operations.",
+    "requirements": [
+      "Quantitative degree",
+      "Programming experience",
+      "Mathematical skills",
+      "Options knowledge"
+    ],
+    "qualities": [
+      "Team player",
+      "Analytical mindset",
+      "Fast learner",
+      "Adaptable to market conditions"
+    ],
+    "roles": ["https://www.wolve.com/careers"]
+  },
+  {
+    "id": "jump-trading",
+    "name": "Jump Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL",
+    "description": "Jump Trading is a proprietary trading firm utilizing advanced technology and quantitative research.",
+    "requirements": [
+      "PhD or Master's in quantitative field",
+      "Strong programming skills (C++, Python)",
+      "Research background",
+      "Mathematical and statistical expertise"
+    ],
+    "qualities": [
+      "Innovative problem-solver",
+      "Collaborative researcher",
+      "Technology-driven",
+      "Intellectual curiosity"
+    ],
+    "roles": ["https://www.jumptrading.com/careers/"]
+  },
+  {
+    "id": "virtu-financial",
+    "name": "Virtu Financial",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "Virtu Financial is a leading electronic market maker providing liquidity across global markets.",
+    "requirements": [
+      "Quantitative degree",
+      "Programming proficiency",
+      "Understanding of market microstructure",
+      "Analytical skills"
+    ],
+    "qualities": [
+      "Technology-focused",
+      "Team collaboration",
+      "Fast-paced work style",
+      "Detail-oriented"
+    ],
+    "roles": ["https://www.virtu.com/careers/"]
+  },
+  {
+    "id": "headlands-tech",
+    "name": "Headlands Technologies",
+    "category": "Prop Trading",
+    "location": "Chicago, IL / San Francisco, CA",
+    "description": "Headlands Technologies is a quantitative trading firm focused on systematic strategies and technology.",
+    "requirements": [
+      "Strong quantitative background",
+      "Programming expertise",
+      "Research experience",
+      "Analytical thinking"
+    ],
+    "qualities": [
+      "Research-oriented",
+      "Collaborative",
+      "Innovative",
+      "Technology-driven"
+    ],
+    "roles": ["https://www.headlandstech.com/careers/"]
+  },
+  {
+    "id": "hap-capital",
+    "name": "HAP Capital",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "HAP Capital is a quantitative trading firm specializing in systematic strategies.",
+    "requirements": [
+      "Quantitative degree",
+      "Programming skills",
+      "Statistical modeling",
+      "Research background"
+    ],
+    "qualities": [
+      "Analytical thinker",
+      "Team player",
+      "Problem-solver",
+      "Adaptable"
+    ],
+    "roles": ["https://www.hap-capital.com/careers"]
+  },
+  {
+    "id": "tower-research-capital",
+    "name": "Tower Research Capital",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "Tower Research Capital is a quantitative trading firm utilizing advanced algorithms and technology.",
+    "requirements": [
+      "Strong quantitative background (Math, CS, Physics)",
+      "Programming proficiency in C++, Python",
+      "Algorithmic thinking",
+      "Problem-solving skills"
+    ],
+    "qualities": [
+      "Analytical mindset",
+      "Team collaboration",
+      "Innovative thinking",
+      "Fast learner"
+    ],
+    "roles": ["https://www.tower-research.com/positions"]
+  },
+  {
+    "id": "quantlab",
+    "name": "Quantlab Financial",
+    "category": "Prop Trading",
+    "location": "Houston, TX",
+    "description": "Quantlab is a quantitative trading firm focused on systematic trading strategies and research.",
+    "requirements": [
+      "PhD or Master's in quantitative field",
+      "Strong programming skills",
+      "Research experience",
+      "Mathematical modeling expertise"
+    ],
+    "qualities": [
+      "Research-driven",
+      "Independent thinker",
+      "Collaborative",
+      "Detail-oriented"
+    ],
+    "roles": ["https://www.quantlab.com/careers"]
+  },
+  {
+    "id": "hudson-river-trading",
+    "name": "Hudson River Trading",
+    "category": "Prop Trading",
+    "location": "New York, NY",
+    "description": "Hudson River Trading is a quantitative trading firm using algorithms and technology to trade global markets.",
+    "requirements": [
+      "Strong computer science or quantitative background",
+      "Programming expertise (C++, Python)",
+      "Algorithmic problem-solving",
+      "System design skills"
+    ],
+    "qualities": [
+      "Technology-focused",
+      "Collaborative team player",
+      "Innovative problem-solver",
+      "Fast-paced work style"
+    ],
+    "roles": ["https://www.hudsonrivertrading.com/careers/"]
+  },
+  {
+    "id": "flow-traders",
+    "name": "Flow Traders",
+    "category": "Prop Trading",
+    "location": "Amsterdam, Netherlands",
+    "description": "Flow Traders is a leading liquidity provider in Exchange Traded Products (ETPs).",
+    "requirements": [
+      "Quantitative degree",
+      "Programming skills",
+      "Analytical abilities",
+      "Understanding of ETPs and derivatives"
+    ],
+    "qualities": [
+      "Team collaboration",
+      "Adaptable to change",
+      "Innovative mindset",
+      "Strong communication"
+    ],
+    "roles": ["https://www.flowtraders.com/careers"]
+  },
+  {
+    "id": "viv-court",
+    "name": "Viv Court Trading",
+    "category": "Prop Trading",
+    "location": "Sydney, Australia",
+    "description": "Viv Court is a proprietary trading firm focused on quantitative strategies in Australian and Asian markets.",
+    "requirements": [
+      "Quantitative background",
+      "Programming proficiency",
+      "Analytical skills",
+      "Interest in trading"
+    ],
+    "qualities": [
+      "Team player",
+      "Problem-solver",
+      "Adaptable",
+      "Competitive spirit"
+    ],
+    "roles": ["https://www.vivcourt.com.au/"]
+  },
+  {
+    "id": "citadel",
+    "name": "Citadel",
+    "category": "Hedge Fund - Multistrat",
+    "location": "Chicago, IL / New York, NY",
+    "description": "Citadel is a global hedge fund employing multiple strategies across asset classes.",
+    "requirements": [
+      "PhD or Master's in quantitative field",
+      "Strong programming skills",
+      "Research experience in machine learning or statistics",
+      "Deep understanding of financial markets"
+    ],
+    "qualities": [
+      "Research excellence",
+      "Collaborative team player",
+      "Innovative thinker",
+      "Competitive drive"
+    ],
+    "roles": ["https://www.citadel.com/careers/open-positions/"]
+  },
+  {
+    "id": "millennium-management",
+    "name": "Millennium Management",
+    "category": "Hedge Fund - Multistrat",
+    "location": "New York, NY",
+    "description": "Millennium is a global investment management firm running a diversified multi-strategy platform.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming proficiency",
+      "Strong analytical skills",
+      "Experience with quantitative research"
+    ],
+    "qualities": [
+      "Independent researcher",
+      "Risk-aware decision maker",
+      "Collaborative",
+      "Results-oriented"
+    ],
+    "roles": ["https://www.mlp.com/careers/"]
+  },
+  {
+    "id": "balyasny",
+    "name": "Balyasny Asset Management",
+    "category": "Hedge Fund - Multistrat",
+    "location": "Chicago, IL",
+    "description": "Balyasny is a diversified investment firm employing fundamental and quantitative strategies.",
+    "requirements": [
+      "Advanced degree in quantitative discipline",
+      "Programming skills",
+      "Research background",
+      "Understanding of multiple asset classes"
+    ],
+    "qualities": [
+      "Analytical thinker",
+      "Team collaboration",
+      "Adaptable to markets",
+      "Strong work ethic"
+    ],
+    "roles": ["https://www.bamfunds.com/careers/campus-recruiting"]
+  },
+  {
+    "id": "two-sigma",
+    "name": "Two Sigma",
+    "category": "Hedge Fund - Stat Arb",
+    "location": "New York, NY",
+    "description": "Two Sigma is a technology-driven hedge fund using data science and machine learning for systematic trading.",
+    "requirements": [
+      "PhD or Master's in CS, Math, Physics, Statistics",
+      "Strong programming skills (Python, C++, Java)",
+      "Machine learning and data science expertise",
+      "Research background"
+    ],
+    "qualities": [
+      "Intellectual curiosity",
+      "Collaborative researcher",
+      "Technology-focused",
+      "Data-driven decision maker"
+    ],
+    "roles": ["https://www.twosigma.com/careers/"]
+  },
+  {
+    "id": "de-shaw",
+    "name": "D.E. Shaw & Co.",
+    "category": "Hedge Fund - Stat Arb",
+    "location": "New York, NY",
+    "description": "D.E. Shaw is a global investment and technology development firm employing quantitative strategies.",
+    "requirements": [
+      "PhD in quantitative field strongly preferred",
+      "Exceptional programming skills",
+      "Research background in computational fields",
+      "Strong mathematical foundation"
+    ],
+    "qualities": [
+      "World-class researcher",
+      "Innovative problem-solver",
+      "Collaborative team member",
+      "Intellectual rigor"
+    ],
+    "roles": ["https://www.deshaw.com/careers"]
+  },
+  {
+    "id": "pdt-partners",
+    "name": "PDT Partners",
+    "category": "Hedge Fund - Stat Arb",
+    "location": "New York, NY",
+    "description": "PDT Partners is a quantitative investment manager using systematic and discretionary strategies.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Strong programming background",
+      "Statistical modeling expertise",
+      "Research experience"
+    ],
+    "qualities": [
+      "Analytical excellence",
+      "Team collaboration",
+      "Independent thinker",
+      "Results-driven"
+    ],
+    "roles": ["https://pdtpartners.com/careers"]
+  },
+  {
+    "id": "point72",
+    "name": "Point72 Asset Management",
+    "category": "Hedge Fund",
+    "location": "Stamford, CT",
+    "description": "Point72 is a global investment firm with both fundamental and quantitative strategies, including Cubist Systematic Strategies.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming proficiency",
+      "Research background",
+      "Strong analytical skills"
+    ],
+    "qualities": [
+      "Collaborative researcher",
+      "Innovative thinking",
+      "Adaptable to change",
+      "Results-focused"
+    ],
+    "roles": ["https://point72.com/cubist/"]
+  },
+  {
+    "id": "aqr-capital",
+    "name": "AQR Capital Management",
+    "category": "Hedge Fund",
+    "location": "Greenwich, CT",
+    "description": "AQR is a global investment management firm employing quantitative and systematic strategies based on academic research.",
+    "requirements": [
+      "PhD or Master's in quantitative field",
+      "Strong programming skills",
+      "Research background with publications preferred",
+      "Deep understanding of financial economics"
+    ],
+    "qualities": [
+      "Academic research mindset",
+      "Collaborative team player",
+      "Intellectual curiosity",
+      "Data-driven approach"
+    ],
+    "roles": ["https://www.aqr.com/About-Us/Careers"]
+  },
+  {
+    "id": "bridgewater",
+    "name": "Bridgewater Associates",
+    "category": "Hedge Fund",
+    "location": "Westport, CT",
+    "description": "Bridgewater is the world's largest hedge fund, known for its macroeconomic approach and systematic strategies.",
+    "requirements": [
+      "Advanced degree in quantitative or economic field",
+      "Programming proficiency",
+      "Research experience",
+      "Understanding of macroeconomics and markets"
+    ],
+    "qualities": [
+      "Radical transparency and truth-seeking",
+      "Independent thinker",
+      "Collaborative mindset",
+      "Intellectually rigorous"
+    ],
+    "roles": ["https://www.bridgewater.com/working-at-bridgewater/job-openings"]
+  },
+  {
+    "id": "winton",
+    "name": "Winton Group",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "Winton is a research-driven investment management firm using scientific methods and data analysis.",
+    "requirements": [
+      "PhD in quantitative field preferred",
+      "Strong programming skills",
+      "Research background",
+      "Statistical modeling expertise"
+    ],
+    "qualities": [
+      "Scientific research mindset",
+      "Collaborative approach",
+      "Innovative thinker",
+      "Data-focused"
+    ],
+    "roles": ["https://www.winton.com/working-at-winton"]
+  },
+  {
+    "id": "voleon",
+    "name": "Voleon Group",
+    "category": "Hedge Fund",
+    "location": "Berkeley, CA",
+    "description": "Voleon applies machine learning techniques to develop predictive models for financial markets.",
+    "requirements": [
+      "PhD in CS, Statistics, Physics, or related field",
+      "Machine learning expertise",
+      "Strong programming skills (Python, C++)",
+      "Research background"
+    ],
+    "qualities": [
+      "Machine learning research focus",
+      "Collaborative researcher",
+      "Innovative problem-solver",
+      "Academic excellence"
+    ],
+    "roles": ["https://voleon.com/index.html%3Fp=124.html"]
+  },
+  {
+    "id": "worldquant",
+    "name": "WorldQuant",
+    "category": "Hedge Fund",
+    "location": "Old Greenwich, CT",
+    "description": "WorldQuant is a quantitative investment firm developing systematic trading strategies through alpha research.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming skills",
+      "Statistical and mathematical expertise",
+      "Research abilities"
+    ],
+    "qualities": [
+      "Alpha generation mindset",
+      "Independent researcher",
+      "Analytical thinker",
+      "Data-driven"
+    ],
+    "roles": ["https://www.worldquant.com/careers/"]
+  },
+  {
+    "id": "blackrock",
+    "name": "BlackRock",
+    "category": "Asset Management",
+    "location": "New York, NY",
+    "description": "BlackRock is the world's largest asset manager with both fundamental and quantitative investment strategies.",
+    "requirements": [
+      "Advanced degree in Finance, Economics, or quantitative field",
+      "Programming proficiency",
+      "Financial modeling skills",
+      "Understanding of portfolio management"
+    ],
+    "qualities": [
+      "Client-focused mindset",
+      "Collaborative team player",
+      "Analytical rigor",
+      "Long-term thinking"
+    ],
+    "roles": ["https://careers.blackrock.com/"]
+  },
+  {
+    "id": "pimco",
+    "name": "PIMCO",
+    "category": "Asset Management",
+    "location": "Newport Beach, CA",
+    "description": "PIMCO is a global fixed income investment manager employing quantitative and fundamental strategies.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming skills",
+      "Fixed income knowledge",
+      "Analytical abilities"
+    ],
+    "qualities": [
+      "Research-focused",
+      "Collaborative approach",
+      "Client service orientation",
+      "Risk-aware"
+    ],
+    "roles": ["https://global.pimco.com/en-gbl/our-firm/careers"]
+  },
+  {
+    "id": "goldman-sachs",
+    "name": "Goldman Sachs",
+    "category": "Investment Bank",
+    "location": "New York, NY",
+    "description": "Goldman Sachs is a leading investment bank with extensive quantitative trading, risk management, and structuring divisions.",
+    "requirements": [
+      "Advanced degree in quantitative field (MFE, PhD preferred)",
+      "Strong programming skills (C++, Python)",
+      "Understanding of derivatives pricing and risk management",
+      "Financial markets knowledge"
+    ],
+    "qualities": [
+      "Client service focus",
+      "Team collaboration",
+      "Analytical excellence",
+      "Strong communication skills"
+    ],
+    "roles": ["https://www.goldmansachs.com/careers/"]
+  },
+  {
+    "id": "jp-morgan",
+    "name": "J.P. Morgan",
+    "category": "Investment Bank",
+    "location": "New York, NY",
+    "description": "J.P. Morgan is a leading investment bank with significant quantitative research, trading, and risk management operations.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming proficiency",
+      "Derivatives pricing knowledge",
+      "Risk management understanding"
+    ],
+    "qualities": [
+      "Team player",
+      "Client-focused",
+      "Analytical mindset",
+      "Strong communication"
+    ],
+    "roles": ["https://careers.jpmorgan.com/"]
+  },
+  {
+    "id": "morgan-stanley",
+    "name": "Morgan Stanley",
+    "category": "Investment Bank",
+    "location": "New York, NY",
+    "description": "Morgan Stanley is a global investment bank with extensive quantitative trading and risk management divisions.",
+    "requirements": [
+      "Advanced degree in quantitative discipline",
+      "Programming skills",
+      "Financial engineering knowledge",
+      "Analytical abilities"
+    ],
+    "qualities": [
+      "Client service orientation",
+      "Collaborative",
+      "Analytical rigor",
+      "Strong communication"
+    ],
+    "roles": ["https://www.m-s.com/careers/"]
+  },
+  {
+    "id": "barclays",
+    "name": "Barclays",
+    "category": "Investment Bank",
+    "location": "London, UK / New York, NY",
+    "description": "Barclays is a major investment bank with quantitative trading, structuring, and risk management teams.",
+    "requirements": [
+      "Advanced degree in quantitative field",
+      "Programming proficiency",
+      "Derivatives knowledge",
+      "Risk management understanding"
+    ],
+    "qualities": [
+      "Team collaboration",
+      "Analytical thinking",
+      "Client focus",
+      "Communication skills"
+    ],
+    "roles": ["https://www.barclays.com/careers/"]
+  }
+]
