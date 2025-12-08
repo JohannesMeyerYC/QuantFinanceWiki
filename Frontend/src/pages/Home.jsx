@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import logoImg from '../assets/Logo.png';
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 function Home() {
   const socials = [
@@ -79,8 +83,8 @@ function Home() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Quant.com",
-      "url": "https://quant.com",
+      "name": "QuantFinanceWiki.com",
+      "url": "https://QuantFinanceWiki.com",
       "author": {
         "@type": "Person",
         "name": "Johannes Meyer",
@@ -89,16 +93,16 @@ function Home() {
       "description": "The best place to learn about quantitative finance, roadmaps, and career resources.",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://quant.com/search?q={search_term_string}",
+        "target": "https://QuantFinanceWiki.com/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Quant.com",
-      "url": "https://quant.com",
-      "logo": "https://quant.com/logo.png",
+      "name": "QuantFinanceWiki.com",
+      "url": "https://QuantFinanceWiki.com",
+      "logo": "logoImg",
       "sameAs": [
         "https://www.linkedin.com/in/johannes-meyer-young-and-calculated",
         "https://github.com/JohannesMeyerYC",
@@ -110,27 +114,27 @@ function Home() {
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
       <Helmet>
-        <title>Quant.com | Ultimate Quantitative Finance Career Roadmaps & Resources</title>
+        <title>QuantFinanceWiki.com | Ultimate Quantitative Finance Career Roadmaps & Resources</title>
         <meta name="description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
         <meta name="keywords" content="quant finance, quantitative analyst, quant roadmaps, algo trading, financial engineering, johannes meyer, quant jobs, mathematics" />
         
-        <meta property="og:title" content="Quant.com | Quantitative Finance Career Hub" />
+        <meta property="og:title" content="QuantFinanceWiki.com | Quantitative Finance Career Hub" />
         <meta property="og:description" content="The best place to learn about quantitative finance. Get free roadmaps, firm insights, and resources." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quant.com" />
-        <meta property="og:site_name" content="Quant.com" />
+        <meta property="og:url" content="https://QuantFinanceWiki.com" />
+        <meta property="og:site_name" content="QuantFinanceWiki.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@JohannesMeyer" />
-        <meta name="twitter:title" content="Quant.com | Quantitative Finance Career Hub" />
+        <meta name="twitter:title" content="QuantFinanceWiki.com | Quantitative Finance Career Hub" />
         <meta name="twitter:description" content="The best place to learn about quantitative finance." />
         
-        <link rel="canonical" href="https://quant.com" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Hero Section: Reduced padding and adjusted typography for mobile */}
+      {/* Hero Section */}
       <header className="relative border-b border-slate-800 bg-slate-950 py-16 md:py-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
            <div className="absolute top-10 left-10 w-40 h-40 md:w-72 md:h-72 bg-emerald-500/10 rounded-full blur-[60px] md:blur-[100px]"></div>
@@ -162,7 +166,7 @@ function Home() {
         </div>
       </header>
 
-      {/* Main Grid: Collapsed grid and tighter padding on mobile */}
+      {/* Main Grid */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
         <motion.div 
           variants={containerVariants}
@@ -252,7 +256,7 @@ function Home() {
             </nav>
             
             <div className="mt-12 md:mt-16 text-center text-slate-600 text-sm">
-                <p>© {new Date().getFullYear()} Quant.com. Built by Johannes Meyer.</p>
+                <p>© {new Date().getFullYear()} QuantFinanceWiki.com. Built by Johannes Meyer.</p>
             </div>
         </footer>
       </main>

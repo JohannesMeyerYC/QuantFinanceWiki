@@ -2,6 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+const API_URL = import.meta.env.VITE_API_URL;
+
+// --- Helpers ---
+
+const slugify = (text) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')     
+    .replace(/[^\w-]+/g, '')    
+    .replace(/--+/g, '-');    
+};
+
+const scrollToId = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = 100;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+    window.history.pushState(null, null, `#${id}`);
+  }
+};
 
 // --- Components ---
 
@@ -24,25 +52,26 @@ const CodeBlock = ({ code, language = 'python' }) => (
 );
 
 const TableOfContents = ({ content }) => {
-  // Extract headings from content blocks
   const headings = content.filter(b => b.type === 'heading');
-
   if (headings.length === 0) return null;
 
   return (
     <nav className="hidden lg:block sticky top-32 h-fit w-64 ml-12 border-l border-slate-800 pl-6">
       <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">On this page</h4>
       <ul className="space-y-3">
-        {headings.map((block, i) => (
-          <li key={i}>
-            <a 
-              href={`#heading-${i}`} 
-              className="text-sm text-slate-400 hover:text-teal-400 transition-colors block leading-snug"
-            >
-              {block.text}
-            </a>
-          </li>
-        ))}
+        {headings.map((block, i) => {
+          const id = slugify(block.text);
+          return (
+            <li key={i}>
+              <button 
+                onClick={() => scrollToId(id)}
+                className="text-sm text-left text-slate-400 hover:text-teal-400 transition-colors block leading-snug w-full"
+              >
+                {block.text}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
@@ -58,7 +87,6 @@ function BlogPost() {
   const [hasLiked, setHasLiked] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  // 1. FIX: Real Scroll Progress
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -67,7 +95,7 @@ function BlogPost() {
   });
 
   useEffect(() => {
-    fetch(`/api/blog/${id}`)
+    fetch(`${API_URL}/api/blog/${id}`)
       .then(res => res.json())
       .then(data => {
         setPost(data);
@@ -89,7 +117,7 @@ function BlogPost() {
       setHasLiked(false);
       const updatedLikes = likedPosts.filter(pid => pid !== id);
       localStorage.setItem('quant_liked_posts', JSON.stringify(updatedLikes));
-      try { await fetch(`/api/blog/${id}/unlike`, { method: 'POST' }); } catch (err) {}
+      try { await fetch(`${API_URL}/api/blog/${id}/unlike`, { method: 'POST' }); } catch (err) {}
     } else {
       setLikes(prev => prev + 1);
       setHasLiked(true);
@@ -97,7 +125,7 @@ function BlogPost() {
         likedPosts.push(id);
         localStorage.setItem('quant_liked_posts', JSON.stringify(likedPosts));
       }
-      try { await fetch(`/api/blog/${id}/like`, { method: 'POST' }); } catch (err) {}
+      try { await fetch(`${API_URL}/api/blog/${id}/like`, { method: 'POST' }); } catch (err) {}
     }
   };
 
@@ -107,7 +135,6 @@ function BlogPost() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // 2. NEW: Reading Time Calculation
   const calculateReadingTime = (content) => {
     const text = content.map(b => b.text).join(' ');
     const words = text.split(/\s+/).length;
@@ -138,7 +165,7 @@ function BlogPost() {
     "headline": post.title,
     "image": post.image || "https://QuantFinanceWiki.com/default-og.jpg",
     "author": { "@type": "Person", "name": post.author },
-    "publisher": { "@type": "Organization", "name": "Quant.com" },
+    "publisher": { "@type": "Organization", "name": "QuantFinanceWiki.com" },
     "datePublished": post.date,
     "description": post.description
   };
@@ -146,12 +173,11 @@ function BlogPost() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
       <Helmet>
-        <title>{post.title} | Quant.com Blog</title>
+        <title>{post.title} | QuantFinanceWiki.com Blog</title>
         <meta name="description" content={post.description} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* 1. FIX: Functional Scroll Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-400 origin-left z-[100]"
         style={{ scaleX }}
@@ -167,7 +193,6 @@ function BlogPost() {
 
         <article itemScope itemType="http://schema.org/BlogPosting" className="grid lg:grid-cols-[1fr_300px] gap-12">
           
-          {/* Main Content Column */}
           <div className="min-w-0">
             <header className="mb-12 border-b border-slate-800 pb-12">
                <div className="flex flex-wrap items-center gap-4 text-xs font-mono uppercase text-teal-500 mb-6 tracking-wider">
@@ -198,7 +223,6 @@ function BlogPost() {
                    </div>
                  </div>
 
-                 {/* Desktop Share Button */}
                  <button 
                     onClick={handleShare}
                     className="hidden md:flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-bold"
@@ -217,18 +241,17 @@ function BlogPost() {
 
             <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-teal-400 hover:prose-a:text-teal-300 prose-strong:text-white mb-20" itemProp="articleBody">
                {post.content.map((block, index) => {
-                 // 5. NEW: Enhanced Code Block Support
                  if (block.type === 'code') {
                     return <CodeBlock key={index} code={block.text} language={block.language || 'python'} />;
                  }
                  if (block.type === 'heading') {
-                   // Added ID for TOC linking
-                   return (
-                     <h2 id={`heading-${index}`} key={index} className="scroll-mt-32 text-2xl md:text-3xl font-bold text-white mt-16 mb-6 tracking-tight relative group">
-                       <span className="absolute -left-8 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity">#</span>
-                       {block.text}
-                     </h2>
-                   );
+                    const headingId = slugify(block.text);
+                    return (
+                      <h2 id={headingId} key={index} className="scroll-mt-32 text-2xl md:text-3xl font-bold text-white mt-16 mb-6 tracking-tight relative group">
+                        <span className="absolute -left-8 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" onClick={() => scrollToId(headingId)}>#</span>
+                        {block.text}
+                      </h2>
+                    );
                  }
                  return (
                    <p key={index} className="text-lg text-slate-300 leading-8 mb-8 whitespace-pre-line">
@@ -243,9 +266,9 @@ function BlogPost() {
                  onClick={handleLikeToggle}
                  aria-pressed={hasLiked}
                  className={`flex items-center gap-3 px-8 py-4 rounded-full border transition-all active:scale-95 ${
-                   hasLiked 
-                     ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_20px_-5px_rgba(20,184,166,0.3)]" 
-                     : "bg-slate-900 border-slate-800 hover:border-teal-500/50 hover:text-teal-400"
+                    hasLiked 
+                      ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_20px_-5px_rgba(20,184,166,0.3)]" 
+                      : "bg-slate-900 border-slate-800 hover:border-teal-500/50 hover:text-teal-400"
                  }`}
                >
                  <span className="text-2xl transform transition-transform duration-300" aria-hidden="true">
@@ -265,7 +288,6 @@ function BlogPost() {
             </section>
           </div>
 
-          {/* 4. NEW: Sidebar with Table of Contents */}
           <aside className="hidden lg:block">
             <TableOfContents content={post.content} />
           </aside>

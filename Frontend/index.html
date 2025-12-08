@@ -1,51 +1,69 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <meta name="theme-color" content="#020617" /> <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="apple-touch-icon" href="/logo192.png"> <title>Quant.com - Your Quantitative Finance Resource</title>
-    <meta name="description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
-    <meta name="keywords" content="quant finance, quantitative analyst, algo trading, financial engineering, career roadmaps, johannes meyer" />
-    <meta name="author" content="Johannes Meyer" />
-    <meta name="robots" content="index, follow" />
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://quant.com/" />
-    <meta property="og:title" content="Quant.com - Your Quantitative Finance Resource" />
-    <meta property="og:description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
-    <meta property="og:image" content="https://quant.com/og-image.jpg" /> <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://quant.com/" />
-    <meta property="twitter:title" content="Quant.com - Your Quantitative Finance Resource" />
-    <meta property="twitter:description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
-    <meta property="twitter:image" content="https://quant.com/og-image.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              slate: { 950: '#020617' },
-              teal: { 500: '#14b8a6', 400: '#2dd4bf' },
-              emerald: { 500: '#10b981', 400: '#34d399' }
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            }
+    gtag('config', 'G-QC7626JBDJ');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="src/assets/Logo.png">
+  <title>Quant.com - Your Quantitative Finance Resource</title>
+  <meta name="description"
+    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
+  <meta name="keywords"
+    content="quant finance, quantitative analyst, algo trading, financial engineering, career roadmaps, johannes meyer" />
+  <meta name="author" content="Johannes Meyer" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://QuantFinanceWiki.com/" />
+  <meta property="og:title" content="QuantFinanceWiki.com - Your Quantitative Finance Resource" />
+  <meta property="og:description"
+    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
+  <meta property="og:image" content="src/assets/Logo.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://QuantFinanceWiki.com/" />
+  <meta property="twitter:title" content="QuantFinanceWiki.com - Your Quantitative Finance Resource" />
+  <meta property="twitter:description"
+    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
+  <meta property="twitter:image" content="src/assets/Logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: { 950: '#020617' },
+            teal: { 500: '#14b8a6', 400: '#2dd4bf' },
+            emerald: { 500: '#10b981', 400: '#34d399' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
-    </script>
-  </head>
-  <body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    }
+  </script>
+</head>
+
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import logoImg from './assets/Logo.png';
 
 // Page Imports
 import Home from './pages/Home';
@@ -27,7 +28,6 @@ function ScrollToTop() {
   return null;
 }
 
-// Optimization: Skip Link for Accessibility/SEO
 const SkipLink = () => (
   <a 
     href="#main-content" 
@@ -41,12 +41,10 @@ function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -191,12 +189,8 @@ function App() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "QuantFinanceWiki",
-    "url": "https://quantfinancewiki.com",
-    "logo": "https://quantfinancewiki.com/logo.png",
-    "sameAs": [
-      "https://twitter.com/quantfinancewiki",
-      "https://linkedin.com/company/quantfinancewiki"
-    ],
+    "url": "https://QuantFinanceWiki.com",
+    "logo": "logoImg",
     "description": "The ultimate resource for quantitative finance careers, roadmaps, and educational material."
   };
 
@@ -210,13 +204,11 @@ function App() {
           <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
         </Helmet>
         
-        {/* FIX: Removed 'overflow-x-hidden' from here so sticky nav works relative to window */}
         <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
           <SkipLink />
           <ScrollToTop />
           <Navigation />
           
-          {/* MOVED: 'overflow-x-hidden' is now here to protect content layout without breaking sticky header */}
           <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
             <Routes>
               <Route path="/" element={<Home />} />

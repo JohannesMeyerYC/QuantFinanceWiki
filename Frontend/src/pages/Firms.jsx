@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
 
@@ -13,7 +14,7 @@ function Firms() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('/api/firms')
+    fetch(`${API_URL}/api/firms`)
       .then(res => res.json())
       .then(data => { setFirms(data); setLoading(false); })
       .catch(err => { console.error(err); setLoading(false); });
@@ -69,17 +70,17 @@ function Firms() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
-        <title>Top Quant Firms & Hedge Funds | Quant.com</title>
+        <title>Top Quant Firms & Hedge Funds | QuantFinanceWiki.com</title>
         <meta name="description" content="Explore the top quantitative finance firms, hedge funds, and prop trading shops. View requirements, skills needed, and apply to open roles." />
-        <meta property="og:title" content="Top Quant Firms & Hedge Funds | Quant.com" />
+        <meta property="og:title" content="Top Quant Firms & Hedge Funds | QuantFinanceWiki.com" />
         <meta property="og:description" content="Browse our curated list of top quant firms. See what skills they need and find your next role." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://quant.com/firms" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com/firms" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Header: Compact padding for mobile */}
+      {/* Header */}
       <header className="relative bg-slate-900/50 border-b border-slate-800 pt-24 pb-12 md:pt-20 md:pb-16 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
            <div className="absolute top-[-50px] right-0 w-48 h-48 md:w-64 md:h-64 bg-teal-500/10 rounded-full blur-[60px] md:blur-[80px]"></div>
@@ -108,7 +109,6 @@ function Firms() {
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for companies or jobs..."
               aria-label="Search for companies or jobs"
-              // text-base on mobile prevents iOS zoom
               className="w-full bg-slate-950 border border-slate-700 rounded-lg py-3 px-4 text-base md:text-sm focus:border-teal-500 focus:outline-none transition-colors placeholder-slate-600"
             />
           </div>
@@ -116,7 +116,7 @@ function Firms() {
           <div 
             className={cn(
               "flex items-center gap-2 overflow-x-auto w-full",
-              "pb-2 -mx-1 px-1", // Compensate for scroll clipping
+              "pb-2 -mx-1 px-1",
               "snap-x",
               "[&::-webkit-scrollbar]:h-1.5",
               "[&::-webkit-scrollbar-track]:bg-transparent",

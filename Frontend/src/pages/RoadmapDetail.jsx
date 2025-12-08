@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -178,7 +179,7 @@ function RoadmapDetail() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`/api/roadmaps/${id}`);
+        const res = await fetch(`${API_URL}/api/roadmaps/${id}`);
         const json = await res.json();
         const roadmapData = json.developer_guide || json;
         setData(roadmapData);
@@ -225,7 +226,7 @@ function RoadmapDetail() {
         "description": data.description,
         "provider": {
           "@type": "Organization",
-          "name": "Quant.com",
+          "name": "QuantFinanceWiki.com",
           "sameAs": "https://QuantFinanceWiki.com"
         },
         "hasCourseInstance": {
@@ -236,8 +237,8 @@ function RoadmapDetail() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Roadmaps", "item": "https://quant.com/roadmaps" },
-          { "@type": "ListItem", "position": 2, "name": data.title, "item": `https://quant.com/roadmaps/${id}` }
+          { "@type": "ListItem", "position": 1, "name": "Roadmaps", "item": "https://QuantFinanceWiki.com/roadmaps" },
+          { "@type": "ListItem", "position": 2, "name": data.title, "item": `https://QuantFinanceWiki.com/roadmaps/${id}` }
         ]
       },
       {
@@ -302,14 +303,14 @@ const OverviewDescription = ({ description }) => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
-        <title>{data.title} | Quant.com Career Roadmap</title>
+        <title>{data.title} | QuantFinanceWiki.com Career Roadmap</title>
         <meta name="description" content={`A complete step-by-step roadmap to becoming a ${data.title}.`} />
         <meta property="og:title" content={`${data.title} Roadmap`} />
         <meta property="og:description" content={data.description} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Header: Sticky & Compact for Mobile */}
+      {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 transition-all">
         <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center gap-3 md:gap-4">
           <Link to="/roadmaps" className="text-sm font-bold text-slate-400 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1" aria-label="Back to Roadmaps">
@@ -332,8 +333,6 @@ const OverviewDescription = ({ description }) => {
           <OverviewDescription description={data.description} />
         </section>
 
-
-        {/* Scrollable Tabs for Mobile */}
         <nav
           className={cn(
             "flex gap-2 md:gap-3 mb-8 md:mb-12 pb-2 md:pb-5 border-b border-slate-800 overflow-x-auto relative z-10 snap-x",

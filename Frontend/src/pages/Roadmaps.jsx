@@ -9,13 +9,16 @@ function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+
 function Roadmaps() {
   const [roadmaps, setRoadmaps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('/api/roadmaps')
+    fetch(`${API_URL}/api/roadmaps`)
       .then(res => res.json())
       .then(data => {
         setRoadmaps(data);
@@ -75,13 +78,13 @@ function Roadmaps() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
       <Helmet>
-        <title>Career Roadmaps | Quant.com</title>
+        <title>Career Roadmaps | QuantFinanceWiki.com</title>
         <meta name="description" content="Explore step-by-step career guides for Quantitative Research, Trading, and Development. Find the right path for your skills." />
-        <meta property="og:title" content="Quant.com Career Roadmaps" />
+        <meta property="og:title" content="QuantFinanceWiki.com Career Roadmaps" />
         <meta property="og:description" content="Choose your path in quantitative finance." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quant.com/roadmaps" />
-        <link rel="canonical" href="https://quant.com/roadmaps" />
+        <meta property="og:url" content="https://QuantFinanceWiki.com/roadmaps" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com/roadmaps" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

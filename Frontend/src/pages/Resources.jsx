@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
 
@@ -13,7 +14,7 @@ function Resources() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    fetch('/api/resources')
+    fetch(`${API_URL}/api/resources`)
       .then(res => res.json())
       .then(data => {
         setResources(data);
@@ -69,18 +70,18 @@ function Resources() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
-        <title>Resource Library | Quant.com</title>
+        <title>Resource Library | QuantFinanceWiki.com</title>
         <meta name="description" content="Download free quantitative finance resources, including cheat sheets, career guides, and interview prep slides." />
-        <meta property="og:title" content="Quant.com Resource Library" />
+        <meta property="og:title" content="QuantFinanceWiki.com Resource Library" />
         <meta property="og:description" content="Access free PDF guides and slides for aspiring quants." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quant.com/resources" />
-        <link rel="canonical" href="https://quant.com/resources" />
+        <meta property="og:url" content="https://QuantFinanceWiki.com/resources" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com/resources" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       
-      {/* Header: Adjusted padding for mobile */}
+      {/* Header */}
       <header className="relative bg-slate-900/50 border-b border-slate-800 pt-24 pb-12 md:pt-20 md:pb-16 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
            <div className="absolute top-[-50px] left-[-50px] w-64 h-64 md:w-96 md:h-96 bg-teal-500/5 rounded-full blur-[80px] md:blur-[100px]"></div>
@@ -98,7 +99,7 @@ function Resources() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12">
         
-        {/* Search & Filter: Compact layout for mobile */}
+        {/* Search & Filter */}
         <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-xl p-4 md:p-6 mb-8 md:mb-12 shadow-2xl flex flex-col gap-4 md:gap-6" role="search">
           
           <div className="w-full">
@@ -109,7 +110,6 @@ function Resources() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search guides, slides..."
-              // text-base on mobile prevents iOS zoom, text-sm on desktop looks cleaner
               className="w-full bg-slate-950 border border-slate-700 rounded-lg py-3 px-4 text-base md:text-sm focus:border-teal-500 focus:outline-none transition-colors placeholder-slate-600"
             />
           </div>
@@ -117,9 +117,9 @@ function Resources() {
           <div 
             className={cn(
               "flex items-center gap-2 overflow-x-auto w-full",
-              "pb-2 -mx-1 px-1", // Negative margin hack for scroll clipping
-              "snap-x", // Snap effect for mobile
-              "scrollbar-none" // Tailwind plugin or custom css needed, or use default scroll
+              "pb-2 -mx-1 px-1", 
+              "snap-x", 
+              "scrollbar-none" 
             )}
             role="tablist"
             aria-label="Filter resources by category"
@@ -134,7 +134,7 @@ function Resources() {
                 aria-controls="resource-grid"
                 className={cn(
                   "px-4 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap border snap-center",
-                  "active:scale-95", // Touch feedback
+                  "active:scale-95", 
                   selectedCategory === cat
                     ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_10px_-3px_rgba(20,184,166,0.3)]"
                     : "bg-slate-950 border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200"

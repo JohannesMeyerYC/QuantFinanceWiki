@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY . /app
+
+# Ensure Gunicorn uses the PORT environment variable injected by Cloud Run.
+# We use the shell format (no brackets) so the environment variable expands correctly.
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 2 app:app

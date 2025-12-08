@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
 
@@ -13,7 +14,7 @@ function Blog() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('/api/blog')
+    fetch(`${API_URL}/api/blog`)
       .then(res => res.json())
       .then(data => {
         setPosts(data);
@@ -30,15 +31,15 @@ function Blog() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Quant.com Insights",
+    "name": "QuantFinanceWiki.com Insights",
     "description": "Read guides and thoughts on quantitative finance, algorithms, and career advice.",
-    "url": "https://quant.com/blog",
+    "url": "https://QuantFinanceWiki.com/blog",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": filteredPosts.map((post, index) => ({
         "@type": "ListItem",
         "position": index + 1,
-        "url": `https://quant.com/blog/${post.id}`,
+        "url": `https://QuantFinanceWiki.com/blog/${post.id}`,
         "name": post.title,
         "description": post.excerpt
       }))
@@ -57,21 +58,21 @@ function Blog() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
-        <title>Insights & Blog | Quant.com</title>
+        <title>Insights & Blog | QuantFinanceWiki.com</title>
         <meta name="description" content="Explore the latest articles, guides, and industry insights on quantitative finance, algorithmic trading, and career development." />
         <meta name="keywords" content="quantitative finance blog, quant trading, algo trading, career advice, finance mathematics" />
         
-        <meta property="og:title" content="Insights & Blog | Quant.com" />
+        <meta property="og:title" content="Insights & Blog | QuantFinanceWiki.com" />
         <meta property="og:description" content="Read guides and thoughts on quantitative finance." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quant.com/blog" />
+        <meta property="og:url" content="https://QuantFinanceWiki.com/blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Insights & Blog | Quant.com" />
+        <meta name="twitter:title" content="Insights & Blog | QuantFinanceWiki.com" />
         <meta name="twitter:description" content="Read guides and thoughts on quantitative finance." />
         
-        <link rel="canonical" href="https://quant.com/blog" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com/blog" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

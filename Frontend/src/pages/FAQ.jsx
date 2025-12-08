@@ -3,6 +3,7 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
 
@@ -14,7 +15,7 @@ function FAQ() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    fetch('/api/faq')
+    fetch(`${API_URL}/api/faq`)
       .then(res => res.json())
       .then(data => { setFaqs(data); setLoading(false); })
       .catch(err => { console.error(err); setLoading(false); });
@@ -64,7 +65,7 @@ function FAQ() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
-        <title>Common Questions | Quant.com</title>
+        <title>Common Questions | QuantFinanceWiki.com</title>
         <meta name="description" content="Frequently asked questions about quantitative finance careers, mathematics requirements, and interview preparation." />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
