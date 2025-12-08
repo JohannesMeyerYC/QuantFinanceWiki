@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Options Pricing Models",
+    "description": "A complete guide to Black-Scholes and Binomial models with Python examples.",
+    "filename": "options-pricing-guide.pdf",
+    "category": "Derivatives",
+    "date": "2025-05-20",
+    "type": "PDF"
+  },
+  {
+    "id": "2",
+    "title": "Machine Learning for Trading",
+    "description": "Slides from my LinkedIn carousel covering random forests in finance.",
+    "filename": "ml-trading-carousel.pdf",
+    "category": "Machine Learning",
+    "date": "2025-06-01",
+    "type": "Carousel"
+  },
+  {
+    "id": "3",
+    "title": "C++ Interview Cheat Sheet",
+    "description": "Common questions asked by HFT firms regarding memory management and pointers.",
+    "filename": "cpp-interview-prep.pdf",
+    "category": "Interviews",
+    "date": "2025-06-10",
+    "type": "Cheatsheet"
+  }
+]

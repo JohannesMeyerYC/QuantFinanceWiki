@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Home() {
   const socials = [
@@ -24,7 +26,7 @@ function Home() {
     },
     {
       name: 'Discord',
-      url: '#', // Add your actual Discord link here
+      url: 'https://discord.gg/JenRWVCfzh', 
       color: 'hover:text-[#5865F2]',
       icon: (
         <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
@@ -52,26 +54,46 @@ function Home() {
         </svg>
       )
     }
-  ]
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200">
       
       {/* Hero Section */}
-      <div className="relative border-b border-slate-800 bg-slate-950 py-24 md:py-32 overflow-hidden">
+      <main className="relative border-b border-slate-800 bg-slate-950 py-24 md:py-32 overflow-hidden">
         {/* Background Decor */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-             <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px]"></div>
-             <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
+           <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-[100px]"></div>
+           <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
             <h1 className="text-5xl md:text-7xl font-extrabold mb-8 text-white tracking-tight leading-tight">
               Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">Quant.com</span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 text-slate-400 leading-relaxed font-light">
-              Your comprehensive resource for navigating the complex landscape of quantitative finance.
+              The best place to learn about quantitative finance. Read my roadmaps, check out the blog, and download free resources.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link to="/roadmaps" className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold transition-all shadow-[0_0_25px_-5px_rgba(16,185,129,0.4)] hover:shadow-[0_0_35px_-5px_rgba(16,185,129,0.6)] hover:-translate-y-1">
@@ -81,59 +103,90 @@ function Home() {
                 View Top Firms
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </main>
 
-      {/* Feature Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+      {/* Feature Cards Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
+        >
           
-          {/* Card 1 */}
-          <div className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-emerald-900/20">
+          {/* Card 1: Roadmaps */}
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-emerald-900/20">
             <div className="w-12 h-1.5 bg-gradient-to-r from-emerald-600 to-emerald-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
-            <h3 className="text-2xl font-bold mb-4 text-white">Career Roadmaps</h3>
+            <h2 className="text-2xl font-bold mb-4 text-white">Career Roadmaps</h2>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Detailed pathways for various quant roles including required skills, education, and resources.
+              Read guides for different jobs. See what skills you need.
             </p>
             <Link to="/roadmaps" className="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center group/link">
               Explore Roadmaps <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
             </Link>
-          </div>
+          </motion.div>
 
-          {/* Card 2 */}
-          <div className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-teal-900/20">
+          {/* Card 2: Firms */}
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-teal-900/20">
             <div className="w-12 h-1.5 bg-gradient-to-r from-teal-600 to-teal-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
-            <h3 className="text-2xl font-bold mb-4 text-white">Top Firms</h3>
+            <h2 className="text-2xl font-bold mb-4 text-white">Top Firms</h2>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Learn what leading quantitative finance firms are looking for in candidates and how to apply.
+              Find out what companies want. See where to apply.
             </p>
             <Link to="/firms" className="text-teal-400 hover:text-teal-300 font-medium inline-flex items-center group/link">
               View Firms <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
             </Link>
-          </div>
+          </motion.div>
 
-          {/* Card 3 */}
-          <div className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-slate-600 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-slate-900/50">
-             <div className="w-12 h-1.5 bg-gradient-to-r from-slate-600 to-slate-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
-            <h3 className="text-2xl font-bold mb-4 text-white">FAQ</h3>
+          {/* Card 3: Blog (New) */}
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-blue-900/20">
+            <div className="w-12 h-1.5 bg-gradient-to-r from-blue-600 to-blue-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
+            <h2 className="text-2xl font-bold mb-4 text-white">Insights Blog</h2>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Get answers to common questions from real quantitative finance professionals.
+              Read my latest articles on careers, math, and market trends.
+            </p>
+            <Link to="/blog" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center group/link">
+              Read Blog <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
+            </Link>
+          </motion.div>
+
+          {/* Card 4: Resources (New) */}
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-purple-900/20">
+             <div className="w-12 h-1.5 bg-gradient-to-r from-purple-600 to-purple-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
+            <h2 className="text-2xl font-bold mb-4 text-white">Resource Library</h2>
+            <p className="text-slate-400 mb-8 leading-relaxed">
+              Download PDFs, cheatsheets, and carousel slides.
+            </p>
+            <Link to="/resources" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center group/link">
+              View Resources <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
+            </Link>
+          </motion.div>
+
+          {/* Card 5: FAQ */}
+          <motion.div variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-slate-600 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-slate-900/50">
+             <div className="w-12 h-1.5 bg-gradient-to-r from-slate-600 to-slate-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500"></div>
+            <h2 className="text-2xl font-bold mb-4 text-white">FAQ</h2>
+            <p className="text-slate-400 mb-8 leading-relaxed">
+              Read answers to questions people ask often.
             </p>
             <Link to="/faq" className="text-slate-300 hover:text-white font-medium inline-flex items-center group/link">
               Browse FAQ <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+
+        </motion.div>
 
         {/* Connect Section */}
-        <div className="border-t border-slate-800 pt-20 pb-8">
+        <footer className="border-t border-slate-800 pt-20 pb-8">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-white mb-4">Join the Community</h2>
-                <p className="text-slate-400">Connect with us on social media for daily insights and updates.</p>
+                <p className="text-slate-400">Follow us for updates.</p>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+            <nav className="flex flex-wrap justify-center gap-6 md:gap-8" aria-label="Social media links">
                 {socials.map((social) => (
                     <a
                         key={social.name}
@@ -147,15 +200,15 @@ function Home() {
                         <span className="sr-only">{social.name}</span>
                     </a>
                 ))}
-            </div>
+            </nav>
             
             <div className="mt-16 text-center text-slate-600 text-sm">
                 © {new Date().getFullYear()} Quant.com. Built by Johannes Meyer.
             </div>
-        </div>
-      </div>
+        </footer>
+      </section>
     </div>
   )
 }
 
-export default Home
+export default Home;

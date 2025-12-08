@@ -1,128 +1,143 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
 
 function Roadmaps() {
-  const [roadmaps, setRoadmaps] = useState([])
-  const [loading, setLoading] = useState(true)
-  
-  // New State for functionality
-  const [searchQuery, setSearchQuery] = useState('')
+  const [roadmaps, setRoadmaps] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     fetch('/api/roadmaps')
       .then(res => res.json())
       .then(data => {
-        setRoadmaps(data)
-        setLoading(false)
+        setRoadmaps(data);
+        setLoading(false);
       })
       .catch(err => {
-        console.error('Error fetching roadmaps:', err)
-        setLoading(false)
-      })
-  }, [])
+        console.error('Error fetching roadmaps:', err);
+        setLoading(false);
+      });
+  }, []);
 
-  // Search Logic
   const filteredRoadmaps = roadmaps.filter(roadmap => 
     roadmap.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     roadmap.description?.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  );
 
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4">
-        <div className="w-12 h-12 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
-        <div className="text-emerald-500 font-mono text-sm uppercase tracking-widest animate-pulse">Loading roadmap index...</div>
+        <div className="w-12 h-12 border-4 border-teal-500/30 border-t-teal-500 rounded-full animate-spin"></div>
+        <p className="text-teal-500 font-mono text-sm animate-pulse">Loading...</p>
       </div>
-    )
+    );
   }
 
+  // Animation Variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
+    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
       
-      {/* Hero Header */}
-      <div className="relative bg-slate-900/50 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-500 bg-clip-text text-transparent">
-            Quant Career Paths
+      {/* Hero Section */}
+      <header className="relative border-b border-slate-800 bg-slate-900/50 overflow-hidden">
+        {/* Background Decor */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
+           <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-bold uppercase tracking-wider mb-6">
+            Career Guides
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
+            Choose Your <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">
+              Path
+            </span>
           </h1>
-          <p className="text-slate-400 text-xl max-w-2xl border-l-4 border-emerald-500 pl-6 py-1">
-            Curated strategic guides for navigating the quantitative finance landscape. Choose your trajectory.
+          <p className="text-slate-400 text-xl max-w-2xl leading-relaxed">
+            Guides for quantitative finance jobs. Learn about trading, risk management, and more. Find the right path for you.
           </p>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 pb-20">
+      <main className="max-w-7xl mx-auto px-4 py-12">
         
-        {/* Search Control - Sticky */}
-        <div className="sticky top-4 z-10 backdrop-blur-xl bg-slate-950/80 border border-slate-800 rounded-2xl shadow-2xl shadow-black/50 p-4 mb-10">
-          <div className="relative w-full">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            </div>
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Filter roadmaps by title or keywords..."
-              className="block w-full pl-10 pr-3 py-3 bg-slate-900 border border-slate-700 rounded-xl leading-5 text-slate-300 placeholder-slate-600 focus:outline-none focus:bg-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all duration-200"
-            />
-          </div>
-        </div>
-
-        {/* Results Count */}
-        <div className="mb-6 flex justify-between items-end px-1">
-          <span className="text-slate-500 text-sm font-mono uppercase tracking-wider">
-            Available Paths: <span className="text-white">{filteredRoadmaps.length}</span>
-          </span>
-          {searchQuery && (
-             <button 
-             onClick={() => setSearchQuery('')}
-             className="text-xs text-emerald-500 hover:text-emerald-400 font-medium hover:underline flex items-center gap-1 transition-colors"
-           >
-             Clear Search
-           </button>
-          )}
+        {/* Search Bar */}
+        <div className="relative max-w-lg mb-12">
+          <label htmlFor="search" className="sr-only">Filter guides</label>
+          <input
+            id="search"
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for a career path..."
+            className="block w-full px-6 py-4 bg-slate-900/50 border border-slate-800 rounded-xl text-slate-300 placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition-all"
+          />
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {filteredRoadmaps.length > 0 ? (
             filteredRoadmaps.map(roadmap => (
-              <Link 
-                key={roadmap.id} 
-                to={`/roadmaps/${roadmap.id}`}
-                className="group flex flex-col bg-slate-900/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900 hover:shadow-[0_0_30px_-10px_rgba(16,185,129,0.15)] transition-all duration-300 relative overflow-hidden"
-              >
-                {/* Hover Glow Effect */}
-                <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
+              <motion.div key={roadmap.id} variants={item}>
+                <Link 
+                  to={`/roadmaps/${roadmap.id}`}
+                  className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"
+                >
+                  {/* CSS Background Blob */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl group-hover:bg-teal-500/10 transition-all duration-500"></div>
 
-                <div className="relative z-0 flex flex-col h-full">
-                  <h3 className="text-2xl font-bold mb-4 text-slate-100 group-hover:text-emerald-300 transition-colors">
-                    {roadmap.title}
-                  </h3>
-                  <p className="text-slate-400 mb-8 flex-grow leading-relaxed">
-                    {roadmap.description}
-                  </p>
-                  
-                  <div className="flex items-center justify-between pt-6 border-t border-slate-800/50 mt-auto">
-                    <span className="text-xs font-mono text-slate-500 group-hover:text-slate-400 transition-colors">VIEW DETAILS</span>
-                    <div className="flex items-center text-emerald-400 font-medium group-hover:text-emerald-300">
-                      <span className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">Explore</span>
-                      <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                  <div className="relative z-10 flex flex-col h-full">
+                    <h2 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-teal-400 transition-colors">
+                      {roadmap.title}
+                    </h2>
+                    <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
+                      {roadmap.description}
+                    </p>
+                    
+                    <div className="flex items-center text-sm font-bold text-teal-500 mt-auto uppercase tracking-wide">
+                      <span className="group-hover:mr-2 transition-all duration-300">Read Guide</span>
+                      <span className="text-lg leading-none opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))
           ) : (
-            <div className="col-span-full py-12 text-center border border-dashed border-slate-800 rounded-xl bg-slate-900/30">
-              <p className="text-slate-400">No roadmaps match your search.</p>
-              <button onClick={() => setSearchQuery('')} className="mt-2 text-emerald-500 hover:underline">Reset Search</button>
+            <div className="col-span-full py-20 text-center border border-dashed border-slate-800 rounded-2xl bg-slate-900/20">
+              <p className="text-slate-500">No guides found for "{searchQuery}"</p>
+              <button onClick={() => setSearchQuery('')} className="mt-2 text-teal-400 hover:underline">Clear Search</button>
             </div>
           )}
-        </div>
-      </div>
+        </motion.div>
+      </main>
     </div>
-  )
+  );
 }
 
-export default Roadmaps
+export default Roadmaps;

@@ -585,6 +585,50 @@
         "title": "Network and Tailor Application Materials",
         "description": "Build a social circle of quants and aspiring quants by attending events, cold emailing, and leveraging LinkedIn. Tailor your resume to aggressively highlight mathematical achievements, coding projects, and competitive awards."
       }
+    ],
+    "roadmap": [
+      {
+        "title": "Master Core Mathematics and Statistics",
+        "description": "Build a solid foundation in Calculus, Linear Algebra, Probability Theory, Statistics, Stochastic Processes, and Optimization. These are the essential tools for quantitative modeling and research."
+      },
+      {
+        "title": "Achieve Programming Mastery (Python and C++)",
+        "description": "Learn Python extremely well for data analysis, statistical modeling, and backtesting (NumPy, pandas, SciPy). Master C++ for high-performance computing and numerical simulations. Proficiency in SQL and MATLAB is also highly recommended."
+      },
+      {
+        "title": "Acquire Software Engineering Discipline",
+        "description": "Study software engineering best practices (e.g., 'Clean Code,' 'Design Patterns'). Become proficient with version control (Git) and testing frameworks to handle complex research projects."
+      },
+      {
+        "title": "Gain Financial Domain Knowledge",
+        "description": "Learn about financial products (equities, derivatives, fixed income), market microstructure, risk metrics (VaR, CVaR), and factor models. Focus on understanding market data, its structure, and limitations."
+      },
+      {
+        "title": "Build a Portfolio of Quantitative Research Projects",
+        "description": "Develop statistical models, machine learning algorithms, and backtested strategies. Document findings on GitHub or research blogs, and contribute to open-source projects to showcase analytical expertise."
+      },
+      {
+        "title": "Compete and Network",
+        "description": "Participate in data science competitions (Kaggle, Numerai) and quantitative research challenges. Engage with the quant research community via forums, conferences, or internships to gain experience and exposure."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Quant Research Team",
+        "focus": "Signal Discovery and Modeling",
+        "core_responsibilities": "Develop statistical and machine learning models, generate trading signals, research financial theories, and rigorously backtest strategies.",
+        "primary_objective": "Produce profitable strategies and insights through quantitative research and modeling.",
+        "programming_focus": "Python, R, C++, MATLAB (High emphasis on data analysis and modeling)",
+        "performance_metrics": "Predictive accuracy, research quality, alpha generation, and robustness of models."
+      },
+      {
+        "team": "Technology Team",
+        "focus": "Infrastructure and Data Support",
+        "core_responsibilities": "Maintain research computing infrastructure, databases, and tools that support data access, model development, and backtesting.",
+        "primary_objective": "Provide stable, efficient, and scalable infrastructure for research operations.",
+        "programming_focus": "Java, C++, Python, SQL (High emphasis on distributed systems and data pipelines)",
+        "performance_metrics": "System stability, uptime, data availability, and computational efficiency."
+      }
     ]
   },
   "trader_guide": {
@@ -825,6 +869,50 @@
         "step": 6,
         "title": "Target Internships and Behavioral Traits",
         "description": "Aggressively seek internships in trading divisions. Demonstrate key non-technical traits in interviews: rapid decision-making, mental discipline, intellectual honesty, and the ability to handle stress."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Master Core Mathematics and Statistics",
+        "description": "Build a solid foundation in Probability, Statistics, Linear Algebra, Stochastic Processes, and Time Series Analysis. These are essential for understanding market dynamics and developing trading models."
+      },
+      {
+        "title": "Achieve Programming Mastery (C++ and Python)",
+        "description": "Learn C++ extremely well for low-latency trading and execution systems. Master Python for backtesting, data analysis, and strategy implementation (NumPy, pandas, SciPy). Proficiency in SQL is also essential."
+      },
+      {
+        "title": "Acquire Software Engineering Discipline",
+        "description": "Study software engineering best practices (e.g., 'Clean Code,' 'Design Patterns'). Become proficient with version control (Git), testing, and continuous integration (CI) to ensure robust trading systems."
+      },
+      {
+        "title": "Gain Financial Domain Knowledge",
+        "description": "Learn about financial products (equities, derivatives, FX, fixed income), market microstructure (order types, slippage, liquidity), and risk management techniques (VaR, CVaR, hedging)."
+      },
+      {
+        "title": "Build a Portfolio of Trading Projects",
+        "description": "Develop, backtest, and optimize trading strategies. Implement core numerical algorithms, simulate execution under realistic market conditions, and showcase projects on GitHub or in competitions."
+      },
+      {
+        "title": "Compete and Network",
+        "description": "Participate in quantitative finance competitions and hackathons. Engage with the trading community, seek mentorships or internships, and collaborate to gain experience and industry exposure."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Quant Trading Team",
+        "focus": "Algorithm Implementation and Optimization",
+        "core_responsibilities": "Collaborate with researchers, implement and optimize trading algorithms for low-latency, manage live deployments, and monitor strategy performance in real time.",
+        "primary_objective": "Develop, optimize, and execute trading strategies to maximize profitability while minimizing risk.",
+        "programming_focus": "Python, R, C++ (High emphasis on low-latency C++ and execution systems)",
+        "performance_metrics": "Strategy profitability, execution efficiency, system uptime, and risk-adjusted returns."
+      },
+      {
+        "team": "Technology Team",
+        "focus": "Infrastructure and Platform Maintenance",
+        "core_responsibilities": "Maintain trading platforms, APIs, and data pipelines; integrate market data feeds; ensure low-latency and high reliability for live trading operations.",
+        "primary_objective": "Provide stable, fast, and scalable infrastructure to support trading activities.",
+        "programming_focus": "Java, C++, Python, SQL (High emphasis on distributed systems and performance)",
+        "performance_metrics": "System stability, uptime, scalability, latency, and throughput of trading systems."
       }
     ]
   }
