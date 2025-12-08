@@ -19,7 +19,7 @@ const SectionTab = ({ active, label, onClick, id, controls }) => (
     id={id}
     tabIndex={active ? 0 : -1}
     className={cn(
-      "px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-300 border whitespace-nowrap snap-center",
+      "px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-200 border whitespace-nowrap snap-center",
       active
         ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)]"
         : "bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
@@ -93,7 +93,7 @@ const TimelineStep = ({ step, index, isLast }) => {
           "absolute left-0 top-0 w-10 h-10 rounded-full border-2 flex items-center justify-center z-10 transition-colors bg-slate-950",
           isOpen ? "border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.3)]" : "border-slate-700 text-slate-500 hover:border-slate-500"
         )}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 0.95 }}
       >
         <span className="font-bold text-sm">{index + 1}</span>
         <span className="sr-only">Toggle details for {step.title}</span>
@@ -101,9 +101,10 @@ const TimelineStep = ({ step, index, isLast }) => {
 
       <motion.div
         layout
+        transition={{ duration: 0.2, ease: "easeOut" }}
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "bg-slate-900/50 border rounded-xl p-5 md:p-6 cursor-pointer transition-all duration-300 active:scale-[0.98]",
+          "bg-slate-900/50 border rounded-xl p-5 md:p-6 cursor-pointer transition-all duration-200 active:scale-[0.99]",
           isOpen ? "border-teal-500/50 bg-slate-900/80" : "border-slate-800 hover:border-slate-700"
         )}
       >
@@ -111,7 +112,7 @@ const TimelineStep = ({ step, index, isLast }) => {
           <h3 className={cn("text-base md:text-lg font-bold transition-colors pr-4", isOpen ? "text-teal-100" : "text-slate-300")}>
             {step.title}
           </h3>
-          <span className={cn("text-slate-500 text-xl transition-transform duration-300", isOpen && "rotate-90 text-teal-500")} aria-hidden="true">
+          <span className={cn("text-slate-500 text-xl transition-transform duration-200", isOpen && "rotate-90 text-teal-500")} aria-hidden="true">
             ›
           </span>
         </div>
@@ -124,6 +125,7 @@ const TimelineStep = ({ step, index, isLast }) => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="text-slate-400 leading-relaxed overflow-hidden text-sm md:text-base"
             >
               <div className="pt-4 border-t border-slate-800/50 mt-4">
@@ -159,10 +161,11 @@ const SkillBadge = ({ skill }) => {
       </div>
       <div className="w-full bg-slate-800 h-1.5 mt-5 rounded-full overflow-hidden" role="progressbar" aria-valuenow={skill.level === 'Expert' ? 100 : 75} aria-valuemin="0" aria-valuemax="100">
         <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: skill.level === 'Expert' ? '100%' : '75%' }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className={cn("h-full rounded-full", skill.level === 'Expert' ? 'bg-rose-500' : 'bg-amber-500')}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: skill.level === 'Expert' ? 1 : 0.75 }}
+          style={{ originX: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+          className={cn("h-full w-full rounded-full", skill.level === 'Expert' ? 'bg-rose-500' : 'bg-amber-500')}
         />
       </div>
     </article>
@@ -273,7 +276,7 @@ const OverviewDescription = ({ description }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="overflow-hidden m-0"
           >
             {restText}
@@ -284,7 +287,7 @@ const OverviewDescription = ({ description }) => {
       {isExpandable && (
         <motion.button
           onClick={() => setExpanded(!expanded)}
-          whileTap={{ scale: 0.95 }}
+          whileTap={{ scale: 0.98 }}
           className={cn(
             "mt-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-300 border",
             expanded
@@ -379,10 +382,10 @@ const OverviewDescription = ({ description }) => {
               role="tabpanel"
               id="panel-overview"
               aria-labelledby="tab-overview"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Career Paths</h3>
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-12 md:mb-16">
@@ -412,9 +415,10 @@ const OverviewDescription = ({ description }) => {
               role="tabpanel"
               id="panel-roadmap"
               aria-labelledby="tab-roadmap"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="max-w-3xl"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Step by Step</h3>
@@ -439,9 +443,10 @@ const OverviewDescription = ({ description }) => {
               role="tabpanel"
               id="panel-skills"
               aria-labelledby="tab-skills"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">What You Need to Know</h3>
 
@@ -459,9 +464,10 @@ const OverviewDescription = ({ description }) => {
               role="tabpanel"
               id="panel-knowledge"
               aria-labelledby="tab-knowledge"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-10 gap-6">
                 <div>

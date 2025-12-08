@@ -152,15 +152,16 @@ function Resources() {
               <motion.article
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 role="article"
-                className="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-900/10 active:scale-[0.98]"
+                className="group flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/10 active:scale-[0.98]"
               >
                 <div className="h-32 md:h-40 bg-slate-950 border-b border-slate-800 flex items-center justify-center relative overflow-hidden group-hover:bg-slate-900/80 transition-colors" aria-hidden="true">
                    <div className="absolute inset-0 bg-grid-slate-800/[0.1] bg-[size:20px_20px]"></div>
-                   <div className="w-12 h-16 md:w-16 md:h-20 border-2 border-slate-700 rounded-lg flex flex-col items-center justify-center bg-slate-900 relative shadow-xl group-hover:scale-110 group-hover:border-teal-500/50 transition-all duration-300">
+                   <div className="w-12 h-16 md:w-16 md:h-20 border-2 border-slate-700 rounded-lg flex flex-col items-center justify-center bg-slate-900 relative shadow-xl group-hover:scale-105 group-hover:border-teal-500/50 transition-all duration-200">
                       <div className="w-6 md:w-8 h-1 bg-slate-700 mb-1 rounded-full group-hover:bg-teal-500/50"></div>
                       <div className="w-6 md:w-8 h-1 bg-slate-700 mb-1 rounded-full group-hover:bg-teal-500/50"></div>
                       <div className="w-4 md:w-5 h-1 bg-slate-700 rounded-full group-hover:bg-teal-500/50"></div>

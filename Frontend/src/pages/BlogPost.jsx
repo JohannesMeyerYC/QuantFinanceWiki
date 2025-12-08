@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -88,11 +88,6 @@ function BlogPost() {
   const [copied, setCopied] = useState(false);
 
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   useEffect(() => {
     fetch(`${API_URL}/api/blog/${id}`)
@@ -180,7 +175,7 @@ function BlogPost() {
 
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-400 origin-left z-[100]"
-        style={{ scaleX }}
+        style={{ scaleX: scrollYProgress }}
       />
 
       <div className="max-w-7xl mx-auto px-4 py-20">
@@ -197,7 +192,7 @@ function BlogPost() {
             <header className="mb-12 border-b border-slate-800 pb-12">
                <div className="flex flex-wrap items-center gap-4 text-xs font-mono uppercase text-teal-500 mb-6 tracking-wider">
                  <span className="bg-teal-500/10 px-2 py-1 rounded border border-teal-500/20" itemProp="articleSection">
-                    {post.category}
+                   {post.category}
                  </span>
                  <span className="text-slate-700">|</span>
                  <time dateTime={post.date} itemProp="datePublished" className="text-slate-400">{post.date}</time>
@@ -215,7 +210,7 @@ function BlogPost() {
                <div className="flex items-center justify-between">
                  <div className="flex items-center gap-4" itemProp="author" itemScope itemType="http://schema.org/Person">
                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center text-slate-500 font-bold text-lg shadow-inner">
-                      {post.author.charAt(0)}
+                     {post.author.charAt(0)}
                    </div>
                    <div className="flex flex-col">
                      <span itemProp="name" className="text-white text-sm font-bold">{post.author}</span>
@@ -224,17 +219,17 @@ function BlogPost() {
                  </div>
 
                  <button 
-                    onClick={handleShare}
-                    className="hidden md:flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-bold"
+                   onClick={handleShare}
+                   className="hidden md:flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-bold"
                  >
-                    {copied ? (
-                        <span className="text-teal-400">Copied!</span>
-                    ) : (
-                        <>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
-                            Share
-                        </>
-                    )}
+                   {copied ? (
+                       <span className="text-teal-400">Copied!</span>
+                   ) : (
+                       <>
+                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                           Share
+                       </>
+                   )}
                  </button>
                </div>
             </header>
@@ -242,16 +237,16 @@ function BlogPost() {
             <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-teal-400 hover:prose-a:text-teal-300 prose-strong:text-white mb-20" itemProp="articleBody">
                {post.content.map((block, index) => {
                  if (block.type === 'code') {
-                    return <CodeBlock key={index} code={block.text} language={block.language || 'python'} />;
+                   return <CodeBlock key={index} code={block.text} language={block.language || 'python'} />;
                  }
                  if (block.type === 'heading') {
-                    const headingId = slugify(block.text);
-                    return (
-                      <h2 id={headingId} key={index} className="scroll-mt-32 text-2xl md:text-3xl font-bold text-white mt-16 mb-6 tracking-tight relative group">
-                        <span className="absolute -left-8 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" onClick={() => scrollToId(headingId)}>#</span>
-                        {block.text}
-                      </h2>
-                    );
+                   const headingId = slugify(block.text);
+                   return (
+                     <h2 id={headingId} key={index} className="scroll-mt-32 text-2xl md:text-3xl font-bold text-white mt-16 mb-6 tracking-tight relative group">
+                       <span className="absolute -left-8 text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer" onClick={() => scrollToId(headingId)}>#</span>
+                       {block.text}
+                     </h2>
+                   );
                  }
                  return (
                    <p key={index} className="text-lg text-slate-300 leading-8 mb-8 whitespace-pre-line">
@@ -266,9 +261,9 @@ function BlogPost() {
                  onClick={handleLikeToggle}
                  aria-pressed={hasLiked}
                  className={`flex items-center gap-3 px-8 py-4 rounded-full border transition-all active:scale-95 ${
-                    hasLiked 
-                      ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_20px_-5px_rgba(20,184,166,0.3)]" 
-                      : "bg-slate-900 border-slate-800 hover:border-teal-500/50 hover:text-teal-400"
+                   hasLiked 
+                     ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_20px_-5px_rgba(20,184,166,0.3)]" 
+                     : "bg-slate-900 border-slate-800 hover:border-teal-500/50 hover:text-teal-400"
                  }`}
                >
                  <span className="text-2xl transform transition-transform duration-300" aria-hidden="true">
@@ -280,10 +275,10 @@ function BlogPost() {
                </button>
 
                <button 
-                    onClick={handleShare}
-                    className="flex md:hidden items-center gap-2 px-6 py-4 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold"
+                   onClick={handleShare}
+                   className="flex md:hidden items-center gap-2 px-6 py-4 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold"
                  >
-                    {copied ? 'Link Copied!' : 'Share Article'}
+                   {copied ? 'Link Copied!' : 'Share Article'}
                </button>
             </section>
           </div>

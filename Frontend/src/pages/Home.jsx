@@ -70,13 +70,17 @@ function Home() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.05 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 10 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" }
+    }
   };
 
   const jsonLd = [
@@ -143,9 +147,9 @@ function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8 text-white tracking-tight leading-tight">
@@ -236,8 +240,8 @@ function Home() {
 
         <footer className="border-t border-slate-800 pt-12 md:pt-20 pb-8">
             <div className="text-center mb-8 md:mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join the Community</h2>
-                <p className="text-slate-400">Follow us for updates.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join the Community</h2>
+              <p className="text-slate-400">Follow us for updates.</p>
             </div>
             
             <nav className="flex flex-wrap justify-center gap-4 md:gap-8" aria-label="Social media links">

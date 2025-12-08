@@ -76,7 +76,7 @@ function Blog() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Header: Adjusted padding for mobile */}
+      {/* Header */}
       <header className="relative border-b border-slate-800 bg-slate-900/50 pt-24 pb-12 md:pt-20 md:pb-16 overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-teal-500/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" aria-hidden="true"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -101,32 +101,29 @@ function Blog() {
                   placeholder="Search articles..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  // text-base on mobile prevents iOS auto-zoom
                   className="w-full bg-slate-900 border border-slate-800 rounded-lg py-3 pl-4 pr-10 text-base md:text-sm text-slate-200 focus:border-teal-500 focus:outline-none transition-colors placeholder-slate-500 shadow-sm"
                 />
                 <svg className="absolute right-3 top-3 w-5 h-5 text-slate-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
         </div>
 
-        <motion.div 
-            layout 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" 
-            role="feed"
+        <div 
+           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" 
+           role="feed"
         >
           <AnimatePresence>
             {filteredPosts.map((post) => (
                 <motion.article 
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     key={post.id} 
                     className="h-full"
                 >
                   <Link 
                     to={`/blog/${post.id}`} 
-                    className="group flex flex-col bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 active:scale-[0.98] h-full"
+                    className="group flex flex-col bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 active:scale-[0.99] h-full"
                     aria-label={`Read article: ${post.title}`}
                   >
                     <div className="p-6 md:p-8 flex flex-col h-full">
@@ -163,7 +160,7 @@ function Blog() {
                 </motion.article>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {filteredPosts.length === 0 && (
           <div className="text-center py-20 bg-slate-900/30 rounded-xl border border-dashed border-slate-800" role="alert">

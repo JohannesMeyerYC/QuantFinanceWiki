@@ -66,13 +66,17 @@ function Roadmaps() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.05 }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 10 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.2, ease: "easeOut" }
+    }
   };
 
   return (
@@ -150,8 +154,8 @@ function Roadmaps() {
 
 
                     <div className="flex items-center text-sm font-bold text-teal-500 mt-auto uppercase tracking-wide" aria-hidden="true">
-                      <span className="group-hover:mr-2 transition-all duration-300">Read Guide</span>
-                      <span className="text-lg leading-none opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
+                      <span className="group-hover:-translate-x-1 transition-transform duration-300">Read Guide</span>
+                      <span className="text-lg leading-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ml-2">→</span>
                     </div>
                   </div>
                 </Link>

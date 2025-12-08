@@ -5,6 +5,7 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import logoImg from './assets/Logo.png';
+import './index.css';
 
 // Page Imports
 import Home from './pages/Home';

@@ -163,10 +163,10 @@ function Firms() {
             {filteredFirms.map(firm => (
               <motion.article
                 key={firm.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                layout
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 role="article"
                 className="group bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all hover:shadow-lg hover:shadow-black/20 active:scale-[0.99]"
               >

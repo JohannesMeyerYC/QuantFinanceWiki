@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet';
@@ -95,7 +95,6 @@ function FAQ() {
                 placeholder="Search for answers..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                // Text-base prevents iOS zoom
                 className="w-full bg-slate-950 border border-slate-700 rounded-lg py-3 px-4 text-base md:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-teal-500 transition-colors"
               />
             </div>
@@ -138,7 +137,6 @@ function FAQ() {
         </section>
 
         <div id="faq-list" className="space-y-3 md:space-y-4 relative z-10 pb-12" role="presentation">
-          <LayoutGroup>
             {filteredFaqs.map((faq, index) => {
               const isOpen = openIndices.includes(index);
               const answerId = `faq-answer-${index}`;
@@ -146,7 +144,6 @@ function FAQ() {
 
               return (
                 <motion.article 
-                  layout
                   key={index}
                   className={cn(
                     "bg-slate-900 border rounded-xl md:rounded-2xl overflow-hidden transition-colors duration-300",
@@ -194,6 +191,7 @@ function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
                         className="overflow-hidden"
                         itemScope
                         itemType="https://schema.org/Answer"
@@ -220,7 +218,6 @@ function FAQ() {
                 </motion.article>
               );
             })}
-          </LayoutGroup>
         </div>
 
         {filteredFaqs.length === 0 && (
