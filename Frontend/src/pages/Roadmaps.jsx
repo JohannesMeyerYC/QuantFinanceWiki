@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import { Helmet } from 'react-helmet';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -26,21 +27,38 @@ function Roadmaps() {
       });
   }, []);
 
-  const filteredRoadmaps = roadmaps.filter(roadmap => 
+  const filteredRoadmaps = roadmaps.filter(roadmap =>
     roadmap.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     roadmap.description?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Quantitative Finance Career Roadmaps",
+    "description": "Comprehensive guides for quantitative finance careers, including algorithmic trading, risk management, and financial engineering.",
+    "url": "https://QuantFinanceWiki.com/roadmaps",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": filteredRoadmaps.map((roadmap, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `https://QuantFinanceWiki.com/roadmaps/${roadmap.id}`,
+        "name": roadmap.title,
+        "description": roadmap.description
+      }))
+    }
+  };
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4">
-        <div className="w-12 h-12 border-4 border-teal-500/30 border-t-teal-500 rounded-full animate-spin"></div>
+      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4" role="status" aria-busy="true">
+        <div className="w-12 h-12 border-4 border-teal-500/30 border-t-teal-500 rounded-full animate-spin" aria-hidden="true"></div>
         <p className="text-teal-500 font-mono text-sm animate-pulse">Loading...</p>
       </div>
     );
   }
 
-  // Animation Variants
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -56,12 +74,20 @@ function Roadmaps() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
-      
-      {/* Hero Section */}
+      <Helmet>
+        <title>Career Roadmaps | Quant.com</title>
+        <meta name="description" content="Explore step-by-step career guides for Quantitative Research, Trading, and Development. Find the right path for your skills." />
+        <meta property="og:title" content="Quant.com Career Roadmaps" />
+        <meta property="og:description" content="Choose your path in quantitative finance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://quant.com/roadmaps" />
+        <link rel="canonical" href="https://quant.com/roadmaps" />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
+
       <header className="relative border-b border-slate-800 bg-slate-900/50 overflow-hidden">
-        {/* Background Decor */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-           <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
+          <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
@@ -81,9 +107,8 @@ function Roadmaps() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
-        
-        {/* Search Bar */}
-        <div className="relative max-w-lg mb-12">
+
+        <div className="relative max-w-lg mb-12" role="search">
           <label htmlFor="search" className="sr-only">Filter guides</label>
           <input
             id="search"
@@ -95,41 +120,42 @@ function Roadmaps() {
           />
         </div>
 
-        {/* Grid */}
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           animate="show"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          role="list"
         >
           {filteredRoadmaps.length > 0 ? (
             filteredRoadmaps.map(roadmap => (
-              <motion.div key={roadmap.id} variants={item}>
-                <Link 
+              <motion.article key={roadmap.id} variants={item} role="listitem">
+                <Link
                   to={`/roadmaps/${roadmap.id}`}
                   className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"
+                  aria-label={`View roadmap for ${roadmap.title}`}
                 >
-                  {/* CSS Background Blob */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl group-hover:bg-teal-500/10 transition-all duration-500"></div>
+                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal-500/5 rounded-full blur-2xl group-hover:bg-teal-500/10 transition-all duration-500" aria-hidden="true"></div>
 
                   <div className="relative z-10 flex flex-col h-full">
                     <h2 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-teal-400 transition-colors">
                       {roadmap.title}
                     </h2>
                     <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
-                      {roadmap.description}
+                      {roadmap.description.split('. ')[0] + (roadmap.description.includes('.') ? '.' : '')}
                     </p>
-                    
-                    <div className="flex items-center text-sm font-bold text-teal-500 mt-auto uppercase tracking-wide">
+
+
+                    <div className="flex items-center text-sm font-bold text-teal-500 mt-auto uppercase tracking-wide" aria-hidden="true">
                       <span className="group-hover:mr-2 transition-all duration-300">Read Guide</span>
                       <span className="text-lg leading-none opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </motion.article>
             ))
           ) : (
-            <div className="col-span-full py-20 text-center border border-dashed border-slate-800 rounded-2xl bg-slate-900/20">
+            <div className="col-span-full py-20 text-center border border-dashed border-slate-800 rounded-2xl bg-slate-900/20" role="alert">
               <p className="text-slate-500">No guides found for "{searchQuery}"</p>
               <button onClick={() => setSearchQuery('')} className="mt-2 text-teal-400 hover:underline">Clear Search</button>
             </div>

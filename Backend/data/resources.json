@@ -1,29 +1,209 @@
 [
   {
     "id": "1",
-    "title": "Options Pricing Models",
-    "description": "A complete guide to Black-Scholes and Binomial models with Python examples.",
-    "filename": "options-pricing-guide.pdf",
-    "category": "Derivatives",
-    "date": "2025-05-20",
+    "title": "Probability & Statistics for Quant Finance",
+    "description": "Essential probability and statistical concepts for quantitative finance, from distributions to Monte Carlo simulations and risk measures.",
+    "filename": "probability-statistics-quant-finance.pdf",
+    "category": "Statistics",
+    "date": "2025-05-01",
     "type": "PDF"
   },
   {
     "id": "2",
-    "title": "Machine Learning for Trading",
-    "description": "Slides from my LinkedIn carousel covering random forests in finance.",
-    "filename": "ml-trading-carousel.pdf",
-    "category": "Machine Learning",
-    "date": "2025-06-01",
-    "type": "Carousel"
+    "title": "Calculus for Quantitative Finance",
+    "description": "Core calculus concepts for quantitative finance, covering derivatives, integrals, ODEs, PDEs, and stochastic differential equations.",
+    "filename": "calculus-quant-finance.pdf",
+    "category": "Mathematics",
+    "date": "2025-05-02",
+    "type": "PDF"
   },
   {
     "id": "3",
-    "title": "C++ Interview Cheat Sheet",
-    "description": "Common questions asked by HFT firms regarding memory management and pointers.",
-    "filename": "cpp-interview-prep.pdf",
-    "category": "Interviews",
-    "date": "2025-06-10",
+    "title": "10 Key Quant Finance Concepts & Equations",
+    "description": "A breakdown of 10 crucial quantitative finance concepts, from Feynman-Kac to PCA, for mastering pricing, risk, and trading models.",
+    "filename": "key-quant-concepts-equations.pdf",
+    "category": "Derivatives & Risk",
+    "date": "2025-05-03",
+    "type": "PDF"
+  },
+  {
+    "id": "4",
+    "title": "Quant Interview Preparation Checklist",
+    "description": "Foundational checklist covering mathematics, computer science, and finance skills for quant interviews.",
+    "filename": "quant-interview-checklist.pdf",
+    "category": "Careers",
+    "date": "2025-05-04",
+    "type": "Cheatsheet"
+  },
+  {
+    "id": "5",
+    "title": "Quant Finance Roles & Salaries",
+    "description": "Complete rundown of quant roles, responsibilities, skills, and compensation, from researchers to risk analysts.",
+    "filename": "quant-roles-salaries.pdf",
+    "category": "Careers",
+    "date": "2025-05-05",
+    "type": "PDF"
+  },
+  {
+    "id": "6",
+    "title": "Top 20 Quant Firms & Compensation",
+    "description": "Ranking of 20 leading hedge funds and prop shops with strategies, locations, and pay scales.",
+    "filename": "top-20-quant-firms.pdf",
+    "category": "Careers",
+    "date": "2025-05-06",
+    "type": "PDF"
+  },
+  {
+    "id": "7",
+    "title": "Quant Finance Global Centers",
+    "description": "Overview of major global quantitative finance hubs, their specialties, universities, and financial infrastructure.",
+    "filename": "quant-global-centers.pdf",
+    "category": "Global Finance",
+    "date": "2025-05-07",
+    "type": "PDF"
+  },
+  {
+    "id": "8",
+    "title": "Programming in Quantitative Finance",
+    "description": "Essential programming concepts for quant finance, from Python research to C++ production systems and low-latency trading.",
+    "filename": "programming-quant-finance.pdf",
+    "category": "Programming",
+    "date": "2025-05-08",
+    "type": "PDF"
+  },
+  {
+    "id": "9",
+    "title": "Quant Institutions & Career Paths",
+    "description": "Comprehensive guide to quantitative finance institutions and the roles, responsibilities, and skills they require.",
+    "filename": "quant-institutions-careers.pdf",
+    "category": "Careers",
+    "date": "2025-05-09",
+    "type": "PDF"
+  },
+  {
+    "id": "10",
+    "title": "Mathematics for Quant Finance",
+    "description": "Complete mathematical map for quantitative finance, covering stochastic calculus, measure theory, optimization, and numerics.",
+    "filename": "mathematics-quant-finance.pdf",
+    "category": "Mathematics",
+    "date": "2025-05-10",
+    "type": "PDF"
+  },
+  {
+    "id": "11",
+    "title": "Quant Finance Beginners Guide",
+    "description": "A complete introduction to quantitative finance careers, covering mathematics, programming, and financial markets.",
+    "filename": "qf-beginners-guide.pdf",
+    "category": "Careers",
+    "date": "2025-06-11",
+    "type": "PDF"
+  },
+  {
+    "id": "12",
+    "title": "VaR vs CVaR",
+    "description": "Comprehensive technical analysis comparing Value at Risk (VaR) and Conditional Value at Risk (CVaR) for portfolio risk management.",
+    "filename": "var-vs-cvar.pdf",
+    "category": "Risk Management",
+    "date": "2025-06-12",
+    "type": "PDF"
+  },
+  {
+    "id": "13",
+    "title": "Fintech Beginner’s Guide",
+    "description": "Overview of financial technology, core technologies, applications, and business models for the FinTech ecosystem.",
+    "filename": "fintech-beginners-guide.pdf",
+    "category": "FinTech",
+    "date": "2025-06-13",
+    "type": "PDF"
+  },
+  {
+    "id": "14",
+    "title": "Derivatives Complete Guide",
+    "description": "Comprehensive guide to derivatives in quantitative finance, covering pricing, Greeks, and all types of instruments from vanilla to exotic.",
+    "filename": "derivatives-complete-guide.pdf",
+    "category": "Derivatives",
+    "date": "2025-06-14",
+    "type": "PDF"
+  },
+  {
+    "id": "15",
+    "title": "AI & Machine Learning in Quant Finance",
+    "description": "Overview of algorithms, models, and mathematical foundations for AI and machine learning applications in quantitative finance.",
+    "filename": "ai-ml-quant-finance.pdf",
+    "category": "Machine Learning",
+    "date": "2025-06-15",
+    "type": "PDF"
+  },
+  {
+    "id": "16",
+    "title": "Quant Finance Roadmap",
+    "description": "Step-by-step guide to breaking into quantitative finance, including mathematics, programming, and finance core competencies.",
+    "filename": "quant-finance-roadmap.pdf",
+    "category": "Careers",
+    "date": "2025-06-16",
+    "type": "PDF"
+  },
+  {
+    "id": "17",
+    "title": "Stochastic Processes in Quant Finance",
+    "description": "Introduction to stochastic mechanics, random processes, and modeling uncertainty in financial markets for quantitative finance applications.",
+    "filename": "stochastic-processes-quant-finance.pdf",
+    "category": "Mathematics",
+    "date": "2025-06-17",
+    "type": "PDF"
+  },
+  {
+    "id": "18",
+    "title": "Top 25 Quant Finance Programs",
+    "description": "Ranking and overview of the top 25 Master’s programs for quantitative finance careers, based on placement, curriculum, and employment outcomes.",
+    "filename": "qf-programs.pdf",
+    "category": "Education",
+    "date": "2025-06-18",
+    "type": "PDF"
+  },
+  {
+    "id": "19",
+    "title": "Quantitative Finance Project Directory",
+    "description": "Directory of practical quantitative finance projects covering mathematics, linear algebra, probability, and programming applications.",
+    "filename": "quant-project-directory.pdf",
+    "category": "Projects",
+    "date": "2025-06-19",
+    "type": "PDF"
+  },
+  {
+    "id": "20",
+    "title": "Quant Resources Directory",
+    "description": "Curated list of free high-quality online learning resources for all areas necessary for a quantitative finance career.",
+    "filename": "quant-resources-directory.pdf",
+    "category": "Resources",
+    "date": "2025-06-20",
+    "type": "PDF"
+  },
+  {
+    "id": "21",
+    "title": "The Quant Cheatsheet",
+    "description": "Quick reference guide to key quantitative finance concepts, including alpha, arbitrage, ARIMA, and backtesting.",
+    "filename": "the-quant-cheatsheet.pdf",
+    "category": "Cheatsheet",
+    "date": "2025-06-21",
+    "type": "Cheatsheet"
+  },
+  {
+    "id": "22",
+    "title": "The C++ Cheatsheet",
+    "description": "Quick reference guide to C++ concepts for quantitative finance, including STL algorithms, classes, and memory management.",
+    "filename": "the-cpp-cheatsheet.pdf",
+    "category": "Programming",
+    "date": "2025-06-22",
+    "type": "Cheatsheet"
+  },
+  {
+    "id": "23",
+    "title": "The Python Cheatsheet",
+    "description": "Quick reference guide to Python for quantitative finance, covering Pandas, NumPy, Matplotlib, and data manipulation methods.",
+    "filename": "the-python-cheatsheet.pdf",
+    "category": "Programming",
+    "date": "2025-06-23",
     "type": "Cheatsheet"
   }
 ]
