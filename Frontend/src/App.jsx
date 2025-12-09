@@ -105,14 +105,6 @@ function Navigation() {
                   )}
                 >
                   {link.label}
-                  {active && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-teal-500"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                      aria-hidden="true"
-                    />
-                  )}
                 </Link>
               );
             })}
@@ -139,22 +131,21 @@ function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.1, ease: "linear" }}
             className="md:hidden fixed inset-0 top-16 bg-slate-950 z-40 overflow-y-auto"
           >
             <div className="px-4 py-6 space-y-2 pb-24">
-              {navLinks.map((link, i) => {
+              {navLinks.map((link) => {
                 const active = isActive(link.path);
                 return (
                   <motion.div
                     key={link.path}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.03, duration: 0.2 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.05 }}
                   >
                     <Link
                       to={link.path}
@@ -199,7 +190,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <Router>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
           <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
           <meta name="theme-color" content="#020617" />
@@ -213,12 +204,7 @@ function App() {
           <Navigation />
 
           <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
-            <Suspense fallback={
-              <div className="flex justify-center items-center h-[calc(100vh-80px)] text-xl text-teal-400">
-                Loading Page...
-              </div>
-            }>
-              <Suspense fallback={<PageLoader />}></Suspense>
+            <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/roadmaps" element={<Roadmaps />} />
