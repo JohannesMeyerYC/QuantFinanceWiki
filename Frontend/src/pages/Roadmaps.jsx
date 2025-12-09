@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));

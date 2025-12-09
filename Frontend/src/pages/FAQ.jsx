@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
