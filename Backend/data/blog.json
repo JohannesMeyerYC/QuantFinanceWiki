@@ -7,13 +7,28 @@
     "date": "2025-12-07",
     "author": "Johannes Meyer",
     "category": "Market Trends",
-    "content": [
-      { "type": "paragraph", "text": "Interns in top quant finance firms in India are already earning over 14,000 USD per month, which is roughly ₹1.23 million." },
-      { "type": "paragraph", "text": "Quant finance in India is experiencing its biggest boom yet, with opportunities that are truly unprecedented. The market is expanding, the economy is strong, and post-COVID, a new wave of traders has entered the Indian markets, increasing prospects for alpha generation." },
-      { "type": "heading", "text": "Global HFT Expansion" },
-      { "type": "paragraph", "text": "Global HFT firms such as Jump Trading, Optiver, Tower Research, and Griffin are rapidly expanding their operations in India. They are not just building back offices but creating full trading desks." },
-      { "type": "paragraph", "text": "By 2026, India will be a legitimate hub for systematic trading, where real alpha is generated. India produces exceptional quant talent with the technical skills, work ethic, and risk tolerance that top firms demand. For those looking to trade in Indian markets, career prospects are strong and will continue to grow over the next decade." }
-    ]
+     "content": [
+    {
+      "type": "paragraph",
+      "text": "Interns in top quant finance firms in India are already earning over 14,000 USD per month, which is roughly ₹1.23 million. These compensation levels—once seen only in global trading hubs like New York, London, or Singapore—demonstrate how aggressively the industry is growing within India."
+    },
+    {
+      "type": "paragraph",
+      "text": "Quant finance in India is experiencing its biggest boom yet, with opportunities that are truly unprecedented. The ecosystem is expanding rapidly: markets are deeper, liquidity is stronger, and data availability has reached new highs. Post-COVID, millions of new traders have entered the Indian markets, creating richer microstructure dynamics and opening up fresh avenues for alpha generation. With volatility and participation at all-time highs, systematic strategies and HFT models have more room to thrive than ever before."
+    },
+    {
+      "type": "heading",
+      "text": "Global HFT Expansion"
+    },
+    {
+      "type": "paragraph",
+      "text": "Global HFT firms such as Jump Trading, Optiver, Tower Research, Jane Street, and Griffin are rapidly expanding their operations in India. These firms are no longer treating India as a low-cost engineering destination—they are building complete trading stacks within the country, including research teams, quant strategy groups, and fully operational trading desks. Infrastructure investments in colocation, networking, and data pipelines signal a long-term commitment to the Indian market."
+    },
+    {
+      "type": "paragraph",
+      "text": "By 2026, India is projected to become a legitimate global hub for systematic and high-frequency trading—one where meaningful alpha is discovered and executed locally. The combination of strong technical talent, world-class engineering capabilities, and deepening financial markets gives India a unique competitive advantage. As more global capital flows into Indian exchanges, the demand for skilled quants, traders, and low-latency engineers will continue to grow. For individuals looking to build careers in the Indian markets, the next decade offers extraordinary upward mobility and a rare chance to be part of a once-in-a-generation financial transformation."
+    }
+  ]
   },
   {
     "id": "bjarne-stroustrup-cpp-history",
@@ -450,4 +465,5 @@
       { "type": "paragraph", "text": "Some don't know my age, resulting in 5 job offers from recruiters unaware I'm not a professional yet. I believe in balance: study hard, play cricket hard, and most importantly, rest hard. All credit to peers like Rich Zou for inspiring me to create on LinkedIn." }
     ]
   }
+
 ]
