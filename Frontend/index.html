@@ -35,19 +35,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="/assets/index-rj7DtxMR.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/index-rj7DtxMR.css"></noscript>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
 </head>
 
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-QC7626JBDJ', { 'send_page_view': false });
 
-    gtag('config', 'G-QC7626JBDJ');
-  </script>
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ"></script>
+  window.addEventListener('load', function() {
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ';
+    script.async = true;
+    document.body.appendChild(script);
+  });
+</script>
 </body>
 
 </html>

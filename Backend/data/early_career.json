@@ -1,0 +1,242 @@
+[
+  {
+    "id": "jane-street-fttp",
+    "name": "Jane Street - FTTP (First-Year Trading and Technology Program)",
+    "category": "Insight Program",
+    "location": "New York / London",
+    "description": "A selective program for first-year undergraduates to learn about trading and technology models through case studies and games.",
+    "requirements": [
+      "First-year university student",
+      "Interest in STEM and finance"
+    ],
+    "qualities": [
+      "Quick thinker",
+      "Eager to learn"
+    ],
+    "roles": ["https://www.janestreet.com/join-jane-street/programs-and-events/fttp/"]
+  },
+  {
+    "id": "jane-street-insight",
+    "name": "Jane Street - Insight Program",
+    "category": "Insight Program",
+    "location": "Global",
+    "description": "An interactive multi-day program for self-identifying women and gender-expansive students to explore math, CS, and finance.",
+    "requirements": [
+      "Undergraduate student",
+      "Identify as a woman or gender-expansive"
+    ],
+    "qualities": [
+      "Collaborative",
+      "Analytically minded"
+    ],
+    "roles": ["https://www.janestreet.com/join-jane-street/programs-and-events/insight/"]
+  },
+  {
+    "id": "jane-street-wise",
+    "name": "Jane Street - WiSE (Women in STEM Event)",
+    "category": "Insight Program",
+    "location": "New York",
+    "description": "A program for women in their sophomore year (or equivalent) to spend a few days learning about Jane Street's work.",
+    "requirements": [
+      "Sophomore female student",
+      "STEM major"
+    ],
+    "qualities": [
+      "Leadership",
+      "Technical aptitude"
+    ],
+    "roles": ["https://www.janestreet.com/join-jane-street/programs-and-events/wise/"]
+  },
+  {
+    "id": "citadel-terminal",
+    "name": "Citadel - Terminal",
+    "category": "Competition",
+    "location": "Global / Virtual",
+    "description": "An online games-based AI programming competition where students write algorithms to compete in a round-robin tournament.",
+    "requirements": [
+      "Undergraduate or graduate student",
+      "Programming skills (Python, Java, etc.)"
+    ],
+    "qualities": [
+      "Strategic thinking",
+      "Coding efficiency"
+    ],
+    "roles": ["https://www.citadel.com/careers/programs-and-events/terminal/"]
+  },
+  {
+    "id": "citadel-data-open",
+    "name": "Citadel - The Data Open",
+    "category": "Competition",
+    "location": "Various Campuses",
+    "description": "A series of datathons challenging students to analyze complex datasets and present their findings to judges.",
+    "requirements": [
+      "Data analysis skills",
+      "Knowledge of statistics and machine learning"
+    ],
+    "qualities": [
+      "Analytical rigor",
+      "Presentation skills"
+    ],
+    "roles": ["https://www.citadelsecurities.com/careers/programs-and-events/datathons/"]
+  },
+  {
+    "id": "citadel-discover",
+    "name": "Citadel - Discover Program",
+    "category": "Insight Program",
+    "location": "Europe / Asia / US",
+    "description": "Early insight programs designed to introduce high-potential students to the world of hedge funds and market making.",
+    "requirements": [
+      "Early undergraduate student",
+      "Strong GPA"
+    ],
+    "qualities": [
+      "Ambition",
+      "Curiosity about finance"
+    ],
+    "roles": ["https://www.citadel.com/careers/programs-and-events/discover-citadel/"]
+  },
+  {
+    "id": "de-shaw-latitude",
+    "name": "D. E. Shaw Fellowship",
+    "category": "Fellowship",
+    "location": "New York",
+    "description": "A fellowship aimed at students interested in the firm's strategy and business development functions.",
+    "requirements": [
+      "Strong analytical background",
+      "Interest in business strategy"
+    ],
+    "qualities": [
+      "Strategic vision",
+      "Communication"
+    ],
+    "roles": ["https://campus.deshaw.com/"]
+  },
+  {
+    "id": "two-sigma-phd-fellowship",
+    "name": "Two Sigma - PhD Fellowship",
+    "category": "Fellowship",
+    "location": "New York",
+    "description": "Supports doctoral students in STEM fields with tuition and a stipend, independent of their research topic.",
+    "requirements": [
+      "Currently enrolled in a PhD program",
+      "STEM discipline"
+    ],
+    "qualities": [
+      "Research excellence",
+      "Innovation"
+    ],
+    "roles": ["https://www.twosigma.com/graduate-students/phd-fellowships/"]
+  },
+  {
+    "id": "optiver-futurefocus",
+    "name": "Optiver - FutureFocus",
+    "category": "Insight Program",
+    "location": "Amsterdam / London",
+    "description": "An insight event for diverse talent to discover the world of market making.",
+    "requirements": [
+      "Undergraduate student",
+      "Interest in trading"
+    ],
+    "qualities": [
+      "Curiosity",
+      "Aptitude for numbers"
+    ],
+    "roles": ["https://optiver.com/working-at-optiver/career-opportunities/8286208002/"]
+  },
+  {
+    "id": "imc-trading-challenge",
+    "name": "IMC - Prosperity Trading Challenge",
+    "category": "Competition",
+    "location": "Virtual",
+    "description": "A global algorithmic trading challenge where teams code strategies to trade on a virtual exchange.",
+    "requirements": [
+      "Python programming",
+      "Algorithmic thinking"
+    ],
+    "qualities": [
+      "Strategic planning",
+      "Adaptability"
+    ],
+    "roles": ["https://prosperity.imc.com/"]
+  },
+  {
+    "id": "akuna-university",
+    "name": "Akuna Capital - Akuna Course",
+    "category": "Program",
+    "location": "Virtual",
+    "description": "An options trading course (Options 101) offered by Akuna to help students understand derivatives.",
+    "requirements": [
+      "Interest in options",
+      "Enrollment in university"
+    ],
+    "qualities": [
+      "Self-starter",
+      "Financial interest"
+    ],
+    "roles": ["https://akunacapital.teachable.com/"]
+  },
+  {
+    "id": "five-rings-link",
+    "name": "Five Rings - LINK Program",
+    "category": "Insight Program",
+    "location": "New York",
+    "description": "A software development intensive program for students to learn about high-performance trading systems.",
+    "requirements": [
+      "CS student",
+      "Strong coding fundamentals"
+    ],
+    "qualities": [
+      "Curiosity",
+      "Technical depth"
+    ],
+    "roles": ["https://job-boards.greenhouse.io/fiveringsllc/jobs/4988120008"]
+  },
+  {
+    "id": "sig-discovery",
+    "name": "SIG - Discovery Day",
+    "category": "Insight Program",
+    "location": "Philadelphia",
+    "description": "A one-day program for freshmen and sophomores to explore careers in quantitative finance.",
+    "requirements": [
+      "Freshman or Sophomore status",
+      "3.5+ GPA"
+    ],
+    "qualities": [
+      "Early interest in finance",
+      "Analytical skills"
+    ],
+    "roles": ["https://sig.com/careers/early-talent/"]
+  },
+  {
+    "id": "worldquant-iqc",
+    "name": "WorldQuant - International Quant Championship",
+    "category": "Competition",
+    "location": "Virtual",
+    "description": "A massive global competition where students build alphas to win cash prizes and potential employment.",
+    "requirements": [
+      "Registration on BRAIN platform",
+      "Alpha creation"
+    ],
+    "qualities": [
+      "Quant modeling",
+      "Data analysis"
+    ],
+    "roles": ["https://www.worldquant.com/brain/"]
+  },
+  {
+    "id": "g-research-grant",
+    "name": "G-Research - PhD Grant",
+    "category": "Fellowship",
+    "location": "London",
+    "description": "Grants for early-stage PhD students in quantitative fields.",
+    "requirements": [
+      "PhD student",
+      "Quantitative topic"
+    ],
+    "qualities": [
+      "Academic potential",
+      "Originality"
+    ],
+    "roles": ["https://www.gresearch.com/nextgen/grants/"]
+  }
+]
