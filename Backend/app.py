@@ -8,8 +8,11 @@ import logging
 from functools import wraps
 from datetime import datetime
 
+ENV = os.environ.get('FLASK_ENV', 'production')
+IS_DEV = ENV == 'development'
+
 class Config:
-    BASE_URL = "https://QuantFinanceWiki.com"
+    BASE_URL = "http://localhost:5000" if IS_DEV else "https://QuantFinanceWiki.com"
     DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
     INTERACTIONS_FILE = 'blog_interactions.json'
 
@@ -21,7 +24,6 @@ interaction_lock = threading.Lock()
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 def get_file_path(filename):
     return os.path.join(Config.DATA_DIR, os.path.basename(filename))
@@ -54,7 +56,6 @@ def save_json_safe(filename, data):
         if os.path.exists(tmp_path):
             os.remove(tmp_path)
         raise
-
 
 def handle_errors(f):
     @wraps(f)
@@ -125,13 +126,19 @@ def sitemap_xml():
 @handle_errors
 def health_check():
     data_dir_ok = os.path.exists(Config.DATA_DIR)
-
     return jsonify({
         'status': 'ok' if data_dir_ok else 'error',
+        'environment': ENV,
         'data_dir_exists': data_dir_ok,
         'timestamp': datetime.utcnow().isoformat() + 'Z'
     })
-
+    
+@app.route('/api/early-career', methods=['GET'])
+@handle_errors
+def get_early_career():
+    resp = make_response(jsonify(load_json_safe('early_career.json')))
+    resp.headers['Cache-Control'] = 'public, max-age=3600'
+    return resp
 
 @app.route('/api/roadmaps', methods=['GET'])
 @handle_errors
@@ -146,9 +153,7 @@ def get_roadmaps():
 def get_roadmap(roadmap_id):
     data = load_json_safe('roadmaps.json')
     data_list = list(data.values()) if isinstance(data, dict) else data
-    
     item = next((r for r in data_list if str(r.get('id')) == str(roadmap_id)), None)
-    
     if item:
         return jsonify(item)
     return jsonify({'error': 'Roadmap not found'}), 404
@@ -174,17 +179,14 @@ def get_resources():
     resp.headers['Cache-Control'] = 'public, max-age=3600'
     return resp
 
-
 @app.route('/api/blog', methods=['GET'])
 @handle_errors
 def get_blog_posts():
     posts = load_json_safe('blog.json')
     interactions = load_json_safe(Config.INTERACTIONS_FILE, default={})
-    
     for post in posts:
         pid = str(post.get('id'))
         post['likes'] = interactions.get(pid, {}).get('likes', 0)
-    
     return jsonify(posts)
 
 @app.route('/api/blog/<post_id>', methods=['GET'])
@@ -192,59 +194,54 @@ def get_blog_posts():
 def get_blog_post(post_id):
     posts = load_json_safe('blog.json')
     post = next((p for p in posts if str(p.get('id')) == str(post_id)), None)
-    
     if not post:
         return jsonify({'error': 'Post not found'}), 404
-        
     interactions = load_json_safe(Config.INTERACTIONS_FILE, default={})
     post['likes'] = interactions.get(str(post_id), {}).get('likes', 0)
-    
     return jsonify(post)
 
 @app.route('/api/blog/<post_id>/like', methods=['POST'])
 @handle_errors
 def like_post(post_id):
     post_id = str(post_id)
-    
     with interaction_lock:
         interactions = load_json_safe(Config.INTERACTIONS_FILE, default={})
-        
         if post_id not in interactions:
             interactions[post_id] = {'likes': 0}
-            
         interactions[post_id]['likes'] += 1
         save_json_safe(Config.INTERACTIONS_FILE, interactions)
-        
         new_count = interactions[post_id]['likes']
-
     return jsonify({'likes': new_count})
 
 @app.route('/api/blog/<post_id>/unlike', methods=['POST'])
 @handle_errors
 def unlike_post(post_id):
     post_id = str(post_id)
-    
     with interaction_lock:
         interactions = load_json_safe(Config.INTERACTIONS_FILE, default={})
-        
         current_likes = 0
         if post_id in interactions:
             if interactions[post_id]['likes'] > 0:
                 interactions[post_id]['likes'] -= 1
                 save_json_safe(Config.INTERACTIONS_FILE, interactions)
             current_likes = interactions[post_id]['likes']
-
     return jsonify({'likes': current_likes})
 
 @app.route('/')
 def index():
-    return {"status": "online", "message": "QFW Backend is running"}, 200
+    return {"status": "online", "message": "QFW Backend is running", "env": ENV}, 200
 
+# 3. Main execution block (Handles local runs)
 if __name__ == '__main__':
     if not os.path.exists(Config.DATA_DIR):
         os.makedirs(Config.DATA_DIR)
         print(f"Created data directory at {Config.DATA_DIR}")
 
-    import os
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+        
+    if IS_DEV:
+        print(f"Starting in DEVELOPMENT mode on http://localhost:{port}")
+        app.run(host="0.0.0.0", port=port, debug=True)
+    else:
+        print(f"Starting in PRODUCTION mode (Manual Run) on port {port}")
+        app.run(host="0.0.0.0", port=port, debug=False)

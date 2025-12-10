@@ -1,17 +1,23 @@
-#!/bin/bash
+cd "$(dirname "$0")"
 
 echo "Starting Quant.com Frontend (Local Development)..."
-echo ""
+echo "--------------------------------------------------"
 
-# Frontend dependencies
-if [ ! -d "Frontend/node_modules" ]; then
-    echo "Installing frontend dependencies..."
-    cd Frontend
-    npm install
-    cd ..
+if [ ! -d "Frontend" ]; then
+    echo "Error: 'Frontend' folder not found in $(pwd)"
+    exit 1
 fi
 
-# Start frontend
-echo "Starting frontend server..."
-cd Frontend
-npm run dev -- --host 0.0.0.0
+cd Frontend || exit
+
+if [ ! -d "node_modules" ]; then
+    echo "Installing frontend dependencies..."
+    npm install
+fi
+
+echo "Targeting Backend: http://127.0.0.1:5000"
+echo "--------------------------------------------------"
+
+export VITE_API_URL="http://127.0.0.1:5000"
+
+npm run dev
