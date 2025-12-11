@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 function Roadmaps() {
   const [roadmaps, setRoadmaps] = useState([]);
@@ -15,7 +18,7 @@ function Roadmaps() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch('/api/roadmaps')
+    fetch(`${API_URL}/api/roadmaps`)
       .then(res => res.json())
       .then(data => {
         setRoadmaps(data);
@@ -27,7 +30,7 @@ function Roadmaps() {
       });
   }, []);
 
-  const filteredRoadmaps = roadmaps.filter(roadmap => 
+  const filteredRoadmaps = roadmaps.filter(roadmap =>
     roadmap.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     roadmap.description?.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -63,31 +66,35 @@ function Roadmaps() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.05 }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 10 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.2, ease: "easeOut" }
+    }
   };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
       <Helmet>
-        <title>Career Roadmaps | Quant.com</title>
+        <title>Career Roadmaps | QuantFinanceWiki.com</title>
         <meta name="description" content="Explore step-by-step career guides for Quantitative Research, Trading, and Development. Find the right path for your skills." />
-        <meta property="og:title" content="Quant.com Career Roadmaps" />
+        <meta property="og:title" content="QuantFinanceWiki.com Career Roadmaps" />
         <meta property="og:description" content="Choose your path in quantitative finance." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://quant.com/roadmaps" />
-        <link rel="canonical" href="https://quant.com/roadmaps" />
+        <meta property="og:url" content="https://QuantFinanceWiki.com/roadmaps" />
+        <link rel="canonical" href="https://QuantFinanceWiki.com/roadmaps" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-900/50 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
-           <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
@@ -107,7 +114,7 @@ function Roadmaps() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
-        
+
         <div className="relative max-w-lg mb-12" role="search">
           <label htmlFor="search" className="sr-only">Filter guides</label>
           <input
@@ -120,7 +127,7 @@ function Roadmaps() {
           />
         </div>
 
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           animate="show"
@@ -130,7 +137,7 @@ function Roadmaps() {
           {filteredRoadmaps.length > 0 ? (
             filteredRoadmaps.map(roadmap => (
               <motion.article key={roadmap.id} variants={item} role="listitem">
-                <Link 
+                <Link
                   to={`/roadmaps/${roadmap.id}`}
                   className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"
                   aria-label={`View roadmap for ${roadmap.title}`}
@@ -142,12 +149,13 @@ function Roadmaps() {
                       {roadmap.title}
                     </h2>
                     <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
-                      {roadmap.description}
+                      {roadmap.description.split('. ')[0] + (roadmap.description.includes('.') ? '.' : '')}
                     </p>
-                    
+
+
                     <div className="flex items-center text-sm font-bold text-teal-500 mt-auto uppercase tracking-wide" aria-hidden="true">
-                      <span className="group-hover:mr-2 transition-all duration-300">Read Guide</span>
-                      <span className="text-lg leading-none opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">→</span>
+                      <span className="group-hover:-translate-x-1 transition-transform duration-300">Read Guide</span>
+                      <span className="text-lg leading-none opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ml-2">→</span>
                     </div>
                   </div>
                 </Link>
