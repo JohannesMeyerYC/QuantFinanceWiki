@@ -3,7 +3,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const BASE_URL = 'https://quantfinancewiki.com';
-const API_URL = 'https://quantfinancewiki-backend-806112613063.us-central1.run.app'; // Ensure this matches your production API
+const API_URL = 'https://quantfinancewiki-backend-806112613063.us-central1.run.app'; 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const OUTPUT_PATH = path.join(__dirname, '../public/sitemap.xml');
@@ -17,10 +18,26 @@ const staticPaths = [
   '/faq'
 ];
 
+function escapeXml(unsafe) {
+  if (typeof unsafe !== 'string') return unsafe;
+  return unsafe.replace(/[<>&'"]/g, (c) => {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+    }
+  });
+}
+
 async function fetchData(endpoint) {
   try {
     const response = await fetch(`${API_URL}${endpoint}`);
-    if (!response.ok) return [];
+    if (!response.ok) {
+      console.warn(`Warning: ${endpoint} returned status ${response.status}`);
+      return [];
+    }
     return await response.json();
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error.message);
@@ -45,7 +62,7 @@ async function generateSitemap() {
   staticPaths.forEach(url => {
     xml += `
   <url>
-    <loc>${BASE_URL}${url}</loc>
+    <loc>${BASE_URL}${escapeXml(url)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -54,25 +71,43 @@ async function generateSitemap() {
 
   if (Array.isArray(posts)) {
     posts.forEach(post => {
-      xml += `
+      if (post.id) {
+        xml += `
   <url>
-    <loc>${BASE_URL}/blog/${post.id}</loc>
-    <lastmod>${post.date || today}</lastmod>
+    <loc>${BASE_URL}/blog/${escapeXml(post.id)}</loc>
+    <lastmod>${post.date ? post.date.split('T')[0] : today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`;
+      }
     });
   }
 
   if (Array.isArray(roadmaps)) {
     roadmaps.forEach(map => {
-      xml += `
+      if (map.id) {
+        xml += `
   <url>
-    <loc>${BASE_URL}/roadmaps/${map.id}</loc>
+    <loc>${BASE_URL}/roadmaps/${escapeXml(map.id)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>`;
+      }
+    });
+  }
+
+  if (Array.isArray(firms)) {
+    firms.forEach(firm => {
+      if (firm.id) {
+        xml += `
+  <url>
+    <loc>${BASE_URL}/firms/${escapeXml(firm.id)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+      }
     });
   }
 
@@ -84,7 +119,7 @@ async function generateSitemap() {
       fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  fs.writeFileSync(OUTPUT_PATH, xml);
+  fs.writeFileSync(OUTPUT_PATH, xml.trim());
   console.log(`✅ Sitemap generated successfully at: ${OUTPUT_PATH}`);
 }
 
