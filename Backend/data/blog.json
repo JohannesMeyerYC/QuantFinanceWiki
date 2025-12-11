@@ -1525,13 +1525,13 @@
   "slug": "dhruvi-shah-interview-amazon-google-tech-playbook",
   "title": "Young and Ambitious: The Playbook to Big Tech—An Interview with Dhruvi Shah (Amazon, Google)",
   "excerpt": "Securing internships at Amazon and Google before graduation, Dhruvi Shah shares her strategy: 650+ LeetCode problems, mastery of core CS fundamentals, and leveraging her competitive programming background.",
-"date": "2025-10-28",
+  "date": "2025-10-28",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "The path to Big Tech is famously competitive, a goal many work towards for years. Dhruvi Shah has already done it twice, securing spots at Amazon and now Google before even finishing her degree. This isn't a story about luck. It's a look into the modern playbook for high achievers. A playbook that includes shipping code on projects valued over $120,000 and building a top tier competitive programming record. In this edition of Young and Ambitious I sat down with Dhruvi to understand the thinking, the sheer force of will that gets a person to the top of the tech world so fast, and what she plans to conquer next."
+      "text": "The path to Big Tech is famously competitive, a goal many work towards for years.\nDhruvi Shah has already done it twice, securing spots at Amazon and now Google before even finishing her degree.\nThis isn't a story about luck.\nIt's a look into the modern playbook for high achievers.\nA playbook that includes shipping code on projects valued over $120,000 and building a top tier competitive programming record.\nIn this edition of Young and Ambitious I sat down with Dhruvi to understand the thinking, the sheer force of will that gets a person to the top of the tech world so fast, and what she plans to conquer next."
     },
     {
       "type": "heading",
@@ -1539,7 +1539,7 @@
     },
     {
       "type": "paragraph",
-      "text": "One of the biggest strategies for me was consistency with the right resources. I religiously followed Striver’s DSA Sheet, completed 650+ LeetCode questions, and solved 400+ problems on GeeksforGeeks—but more than just solving, I focused on understanding patterns deeply. I also went beyond DSA to really strengthen my core CS fundamentals—OS, DBMS, CN, and OOPs—often revising them through structured notes and mock tests. Another mindset that helped was not chasing shortcuts. I didn’t just prepare to crack interviews; I prepared to think like an engineer. That helped during Amazon and Google interviews, and more importantly, during the actual internships. And yes, I treated failures as redirections—every rejection was a data point to improve on. That reflective learning really paid off."
+      "text": "One of the biggest strategies for me was consistency with the right resources.\nI religiously followed Striver’s DSA Sheet, completed 650+ LeetCode questions, and solved 400+ problems on GeeksforGeeks—but more than just solving, I focused on understanding patterns deeply.\nI also went beyond DSA to really strengthen my core CS fundamentals—OS, DBMS, CN, and OOPs—often revising them through structured notes and mock tests.\nAnother mindset that helped was not chasing shortcuts.\nI didn’t just prepare to crack interviews; I prepared to think like an engineer.\nThat helped during Amazon and Google interviews, and more importantly, during the actual internships.\nAnd yes, I treated failures as redirections—every rejection was a data point to improve on.\nThat reflective learning really paid off."
     },
     {
       "type": "heading",
@@ -1547,7 +1547,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Honestly, LeetCode has been the foundation of my entire interview prep journey. I’ve participated in 30+ contests, reached a peak rating of 1700+, and solved over 650+ problems across all tags and difficulty levels. I made a conscious decision to focus on one platform consistently and build a strong, credible profile that recruiters could trust—especially since companies like Amazon and Google looked closely at LeetCode profiles during screening. LeetCode contests in particular trained me to think under pressure, manage edge cases smartly, and optimize not just for correctness but for time and space—skills that directly translated to solving real-world problems during my internship at Amazon, where I worked on performance-heavy EMR jobs and pipeline-level debugging. While I’ve dabbled in CodeChef (2-star rated), my deeper focus has always been quality over quantity—and LeetCode helped me build both depth in problem-solving and credibility in consistency, which stood out during recruiter conversations and interview rounds."
+      "text": "Honestly, LeetCode has been the foundation of my entire interview prep journey.\nI’ve participated in 30+ contests, reached a peak rating of 1700+, and solved over 650+ problems across all tags and difficulty levels.\nI made a conscious decision to focus on one platform consistently and build a strong, credible profile that recruiters could trust—especially since companies like Amazon and Google looked closely at LeetCode profiles during screening.\nLeetCode contests in particular trained me to think under pressure, manage edge cases smartly, and optimize not just for correctness but for time and space—skills that directly translated to solving real-world problems during my internship at Amazon, where I worked on performance-heavy EMR jobs and pipeline-level debugging.\nWhile I’ve dabbled in CodeChef (2-star rated), my deeper focus has always been quality over quantity—and LeetCode helped me build both depth in problem-solving and credibility in consistency, which stood out during recruiter conversations and interview rounds."
     },
     {
       "type": "heading",
@@ -1555,7 +1555,7 @@
     },
     {
       "type": "paragraph",
-      "text": "At the core, I’ve always been someone who’s curious and deeply driven to grow—not just academically or professionally, but as a person. I genuinely enjoy learning, interacting with people, and sharing back whatever I learn. That’s why I started my YouTube channel—not just for tech content, but as a passion project. I see it as a space where I can express myself, capture moments of my journey, and connect with others who are walking a similar path. I’ve always felt that if you’re blessed with clarity or a breakthrough, it’s powerful to pass that on. Whether it’s breaking down DSA prep, Amazon/Google interview tips, or just vlogging my day, I want to make others feel seen and understood. It's not just about content—it's about community. That also reflects in my 30K+ LinkedIn family, where I actively engage, share learnings, and try to keep things real and relatable. In terms of balance—I'm intentional about focus. I plan in blocks: LeetCode during prep seasons (over 30 contests, 650+ questions), full attention to projects during internships, and content/vlogging when I have breathing space. I don’t try to “do it all”—I try to do what matters most in that moment, and that’s what keeps it all sustainable and exciting."
+      "text": "At the core, I’ve always been someone who’s curious and deeply driven to grow—not just academically or professionally, but as a person.\nI genuinely enjoy learning, interacting with people, and sharing back whatever I learn.\nThat’s why I started my YouTube channel—not just for tech content, but as a passion project.\nI see it as a space where I can express myself, capture moments of my journey, and connect with others who are walking a similar path.\nI’ve always felt that if you’re blessed with clarity or a breakthrough, it’s powerful to pass that on.\nWhether it’s breaking down DSA prep, Amazon/Google interview tips, or just vlogging my day, I want to make others feel seen and understood.\nIt's not just about content—it's about community.\nThat also reflects in my 30K+ LinkedIn family, where I actively engage, share learnings, and try to keep things real and relatable.\nIn terms of balance—I'm intentional about focus.\nI plan in blocks: LeetCode during prep seasons (over 30 contests, 650+ questions), full attention to projects during internships, and content/vlogging when I have breathing space.\nI don’t try to “do it all”—I try to do what matters most in that moment, and that’s what keeps it all sustainable and exciting."
     },
     {
       "type": "heading",
@@ -1563,7 +1563,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I’m excited about decentralized applications because they enable secure, transparent, and user-empowered systems—qualities that are vital as we move toward more trustworthy digital platforms. In my internships at Amazon, I gained hands-on experience building large-scale, region-agnostic data pipelines (like the CognitumMWAADefinitions DAGs) and microservices architectures, which gave me a strong foundation in scalable distributed systems that are essential to decentralized apps. At the same time, through projects like Consumer Connect—a microservice-based platform integrating ML pipelines for complaint authenticity and defect detection—and AutoTestX, an AI-driven automated testing agent powered by Langchain and NLP, I developed a passion for applying ML and deep learning to build intelligent, adaptive systems. Post Google, I want to use what I’ve learned to focus more on machine learning, deep learning, and generative AI. I plan to build smarter decentralized apps that can work better and be more trustworthy. For example, using AI together with decentralized technology to make better solutions in areas like finance, data privacy, and supply chain. I believe combining these two will help me create useful technology that really helps people and brings new ideas to life."
+      "text": "I’m excited about decentralized applications because they enable secure, transparent, and user-empowered systems—qualities that are vital as we move toward more trustworthy digital platforms.\nIn my internships at Amazon, I gained hands-on experience building large-scale, region-agnostic data pipelines (like the CognitumMWAADefinitions DAGs) and microservices architectures, which gave me a strong foundation in scalable distributed systems that are essential to decentralized apps.\nAt the same time, through projects like Consumer Connect—a microservice-based platform integrating ML pipelines for complaint authenticity and defect detection—and AutoTestX, an AI-driven automated testing agent powered by Langchain and NLP, I developed a passion for applying ML and deep learning to build intelligent, adaptive systems.\nPost Google, I want to use what I’ve learned to focus more on machine learning, deep learning, and generative AI.\nI plan to build smarter decentralized apps that can work better and be more trustworthy.\nFor example, using AI together with decentralized technology to make better solutions in areas like finance, data privacy, and supply chain.\nI believe combining these two will help me create useful technology that really helps people and brings new ideas to life."
     },
     {
       "type": "heading",
@@ -1571,7 +1571,7 @@
     },
     {
       "type": "paragraph",
-      "text": "What an awesome and inspiring conversation! What I find most interesting about Dhruvi Shah's journey is how it shows what happens when relentless work meets genuine passion. She has figured out the path to Big Tech. Not with shortcuts, but with deep, consistent effort and a real drive to build things that matter. Her vision for combining AI with decentralized systems shows that her time at Amazon and Google was not the final goal. It was a training ground. For anyone inspired to build their own journey or learn from hers, you can follow Dhruvi directly. 👉 Connect with her on LinkedIn: linkedin.com/in/dhruvi-shah-118a96282/ 👉 Read her articles and insights on Medium: medium.com/@dhruvishah116122 If you found this conversation insightful feel free to read more interesting conversations here: Young and Ambitious"
+      "text": "What an awesome and inspiring conversation!\nWhat I find most interesting about Dhruvi Shah's journey is how it shows what happens when relentless work meets genuine passion.\nShe has figured out the path to Big Tech.\nNot with shortcuts, but with deep, consistent effort and a real drive to build things that matter.\nHer vision for combining AI with decentralized systems shows that her time at Amazon and Google was not the final goal.\nIt was a training ground.\nFor anyone inspired to build their own journey or learn from hers, you can follow Dhruvi directly.\n👉 Connect with her on LinkedIn: linkedin.com/in/dhruvi-shah-118a96282/\n👉 Read her articles and insights on Medium: medium.com/@dhruvishah116122\nIf you found this conversation insightful feel free to read more interesting conversations here: Young and Ambitious"
     }
   ]
 },
@@ -2232,13 +2232,13 @@
   "slug": "calculated-conversations-vinicius-fraga-big-tech",
   "title": "Calculated Conversations: How to Break Into Big Tech, with Senior Engineer Vinícius Fraga",
   "excerpt": "A deep dive into the resilient mindset, problem-solving skills, and cultural insights needed to transition from academic research to maintaining high-stakes production services at top-tier global tech companies.",
-"date": "2025-10-23",
+  "date": "2025-10-23",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "How do you break into Big Tech? Mr. Vinícius Fraga found out firsthand. Starting in IoT research at university in Brazil, he felt the pull toward creating something with \"faster impact on people's lives.\" That drive led him from research labs to engineering roles at major big tech companies, where he's spent years building systems that serve millions of users. In this edition of Calculated Conversations, I dove into his journey from Brazil to London, exploring what it really takes to break into competitive big tech roles and thrive in high-stakes engineering environments. This conversation reveals the problem-solving mindset, resilience, and practical strategies that drive someone committed to building impactful technology at scale."
+      "text": "How do you break into Big Tech?\nMr. Vinícius Fraga found out firsthand.\nStarting in IoT research at university in Brazil, he felt the pull toward creating something with \"faster impact on people's lives.\"\nThat drive led him from research labs to engineering roles at major big tech companies, where he's spent years building systems that serve millions of users.\nIn this edition of Calculated Conversations, I dove into his journey from Brazil to London, exploring what it really takes to break into competitive big tech roles and thrive in high-stakes engineering environments.\nThis conversation reveals the problem-solving mindset, resilience, and practical strategies that drive someone committed to building impactful technology at scale."
     },
     {
       "type": "heading",
@@ -2246,15 +2246,15 @@
     },
     {
       "type": "paragraph",
-      "text": "You moved from IoT research to big tech seeking \"faster impact.\" What was that transition like for you, and what advice would you give someone thinking about shifting from a research path to an industry role?"
+      "text": "You moved from IoT research to big tech seeking \"faster impact.\"\nWhat was that transition like for you, and what advice would you give someone thinking about shifting from a research path to an industry role?"
     },
     {
       "type": "paragraph",
-      "text": "There is more than one difference between research and the industry, but I would like to focus on the one which stands out to me: maintaining production services with actual customers. Which is what I was looking for, right? But it’s one thing to write a proof of concept or have simulations running on a server in the back of a university room. It’s very different to have thousands of people relying on your software and expecting it to work all of the time. To do that right, you need a series of things: security and privacy reviews, load tests, metrics, logs, dashboards, automated alarms, runbooks for emergencies, and rollback mechanisms. You need someone on-call at all times. The first time I was on-call for big tech, I got paged at 2 am and had to stay up until about 4 mitigating an issue. That was when I realized things got real. Getting used to that can take some time, and can also be scary and stressful at first."
+      "text": "There is more than one difference between research and the industry, but I would like to focus on the one which stands out to me: maintaining production services with actual customers.\nWhich is what I was looking for, right?\nBut it’s one thing to write a proof of concept or have simulations running on a server in the back of a university room.\nIt’s very different to have thousands of people relying on your software and expecting it to work all of the time.\nTo do that right, you need a series of things: security and privacy reviews, load tests, metrics, logs, dashboards, automated alarms, runbooks for emergencies, and rollback mechanisms.\nYou need someone on-call at all times.\nThe first time I was on-call for big tech, I got paged at 2 am and had to stay up until about 4 mitigating an issue.\nThat was when I realized things got real.\nGetting used to that can take some time, and can also be scary and stressful at first."
     },
     {
       "type": "paragraph",
-      "text": "My advice for someone moving from the academy to the industry is to make the most out of your onboarding period. Because you are doing a career transition of sorts, you might feel anxious to deliver as soon as possible and prove that you can get the job done. Resist that urge and take your time to go through all the training, to build as solid a foundation as you can in the internal tech stack. And do ask for help when in need. It’s best to ping someone (or even page them if it is an emergency) when you are stuck than to waste time trying to figure everything out yourself."
+      "text": "My advice for someone moving from the academy to the industry is to make the most out of your onboarding period.\nBecause you are doing a career transition of sorts, you might feel anxious to deliver as soon as possible and prove that you can get the job done.\nResist that urge and take your time to go through all the training, to build as solid a foundation as you can in the internal tech stack.\nAnd do ask for help when in need.\nIt’s best to ping someone (or even page them if it is an emergency) when you are stuck than to waste time trying to figure everything out yourself."
     },
     {
       "type": "heading",
@@ -2262,23 +2262,23 @@
     },
     {
       "type": "paragraph",
-      "text": "Landing a role at a top big tech company is a dream for many. What skills or experiences do you believe were most crucial in helping you secure positions in these highly competitive environments, and what's a general aspect of their engineering culture young engineers should know about?"
+      "text": "Landing a role at a top big tech company is a dream for many.\nWhat skills or experiences do you believe were most crucial in helping you secure positions in these highly competitive environments, and what's a general aspect of their engineering culture young engineers should know about?"
     },
     {
       "type": "paragraph",
-      "text": "The most important skill you need is **problem-solving**. Languages, frameworks, and tools don’t really matter to get a job at big tech (although you will need CS knowledge like algorithms and data structures to solve most of the problems). Focus on the problem you are trying to solve, and make sure you understand it before jumping to a solution. If you don’t, everything will fall apart. Let me expand a little bit here: a “problem” can be a coding question, a system design question, or even a question in a behavioural interview. I’ve seen multiple experienced people fail behavioural interviews because they did a poor job at answering what was asked, digressing into tales full of irrelevant technical details instead. Know what you are solving."
+      "text": "The most important skill you need is **problem-solving**.\nLanguages, frameworks, and tools don’t really matter to get a job at big tech (although you will need CS knowledge like algorithms and data structures to solve most of the problems).\nFocus on the problem you are trying to solve, and make sure you understand it before jumping to a solution.\nIf you don’t, everything will fall apart.\nLet me expand a little bit here: a “problem” can be a coding question, a system design question, or even a question in a behavioural interview.\nI’ve seen multiple experienced people fail behavioural interviews because they did a poor job at answering what was asked, digressing into tales full of irrelevant technical details instead.\nKnow what you are solving."
     },
     {
       "type": "paragraph",
-      "text": "But, to get to that stage, you need an interview first. The two best ways to get an interview at Big Tech are when one of their recruiters reaches out to you, or with a recommendation from an employee. All the interviews I got were through recruiters who reached out to me on Linkedin. But I’ve referred people myself and can confirm they do reach out to referred candidates in a couple of days. So if you are interested in a role and you know someone who works at the company, ask them for a referral instead of applying on the website."
+      "text": "But, to get to that stage, you need an interview first.\nThe two best ways to get an interview at Big Tech are when one of their recruiters reaches out to you, or with a recommendation from an employee.\nAll the interviews I got were through recruiters who reached out to me on LinkedIn.\nBut I’ve referred people myself and can confirm they do reach out to referred candidates in a couple of days.\nSo if you are interested in a role and you know someone who works at the company, ask them for a referral instead of applying on the website."
     },
     {
       "type": "paragraph",
-      "text": "With the interview secured, you need to prepare. There is plenty of material online about how to practice for these interviews; for me what worked best was to do coding questions every day, write down answers for common behavioural interview themes, and solve system design problems. Basically do everything you are likely to do during the interview, as close as possible to the real thing."
+      "text": "With the interview secured, you need to prepare.\nThere is plenty of material online about how to practice for these interviews; for me what worked best was to do coding questions every day, write down answers for common behavioural interview themes, and solve system design problems.\nBasically do everything you are likely to do during the interview, as close as possible to the real thing."
     },
     {
       "type": "paragraph",
-      "text": "About the engineering culture, it depends on the company. Some will have more or less structure around things, move faster or slower, and have more or less meetings. Overall, what these companies have in common is that they are full of smart people and feedback plays an important role. If you get into one, expect people to review and give feedback on your work. Expect them to be direct and point out flaws and mistakes. It’s bound to happen. Just remember it’s not about you, it’s about doing what’s best for the business and the customers."
+      "text": "About the engineering culture, it depends on the company.\nSome will have more or less structure around things, move faster or slower, and have more or less meetings.\nOverall, what these companies have in common is that they are full of smart people and feedback plays an important role.\nIf you get into one, expect people to review and give feedback on your work.\nExpect them to be direct and point out flaws and mistakes.\nIt’s bound to happen.\nJust remember it’s not about you, it’s about doing what’s best for the business and the customers."
     },
     {
       "type": "heading",
@@ -2286,15 +2286,15 @@
     },
     {
       "type": "paragraph",
-      "text": "You’re passionate about areas like distributed systems, DevOps, and security. For students and young engineers figuring out their path, why might one of these fields be a particularly exciting or valuable area to dive into for a future-proof tech career?"
+      "text": "You’re passionate about areas like distributed systems, DevOps, and security.\nFor students and young engineers figuring out their path, why might one of these fields be a particularly exciting or valuable area to dive into for a future-proof tech career?"
     },
     {
       "type": "paragraph",
-      "text": "I would say **security** is the most future-proof area, especially with the rise of AI-generated code. That said, I don’t think distributed systems or dev ops are going anywhere as big tech still has thousands of physical and digital resources to manage and orchestrate. People will still have to know how to design such systems and deploy them in reliable, replicable, and auditable ways."
+      "text": "I would say **security** is the most future-proof area, especially with the rise of AI-generated code.\nThat said, I don’t think distributed systems or DevOps are going anywhere as big tech still has thousands of physical and digital resources to manage and orchestrate.\nPeople will still have to know how to design such systems and deploy them in reliable, replicable, and auditable ways."
     },
     {
       "type": "paragraph",
-      "text": "The interesting thing about security though is that the work never ends. Software, whether written by people or generated, is never perfect. There are always vulnerabilities and bugs. And it keeps changing, which means new bugs and vulnerabilities are introduced. With the current tendency of people using AI to generate code, sometimes even non-technical people, the attack surface is going to increase to unseen levels. I expect the demand for security professionals to increase one way or another: either because companies are building faster and need more security experts to keep shipping as safely as possible, or because they will suffer losses from security breaches and will be forced to hire security teams."
+      "text": "The interesting thing about security though is that the work never ends.\nSoftware, whether written by people or generated, is never perfect.\nThere are always vulnerabilities and bugs.\nAnd it keeps changing, which means new bugs and vulnerabilities are introduced.\nWith the current tendency of people using AI to generate code, sometimes even non-technical people, the attack surface is going to increase to unseen levels.\nI expect the demand for security professionals to increase one way or another: either because companies are building faster and need more security experts to keep shipping as safely as possible, or because they will suffer losses from security breaches and will be forced to hire security teams."
     },
     {
       "type": "heading",
@@ -2302,11 +2302,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Engineers in big tech often tackle incredibly complex, large-scale challenges. Without discussing specific company projects, can you share your general philosophy or a key strategy for breaking down and solving really tough technical problems?"
+      "text": "Engineers in big tech often tackle incredibly complex, large-scale challenges.\nWithout discussing specific company projects, can you share your general philosophy or a key strategy for breaking down and solving really tough technical problems?"
     },
     {
       "type": "paragraph",
-      "text": "Focus on the **business problem** being solved. And notice that I said business problem. Why are you about to build this thing in the first place? The problem statement of any design document is arguably the most important part of it and the first thing to get right. When it comes to building large-scale systems, there are often many moving pieces to deliver the required functionality while addressing non-functional requirements. It gets trickier the larger the system has to be: trade-offs come in like availability vs consistency, performance vs maintainability and cost. If you get the problem wrong, i.e. you are addressing the wrong requirements, chances are you will make bad trade-off decisions and build the wrong thing. Is eventual consistency acceptable? Do we need read-after-write consistency? How long can a search query take for it to still be useful to customers? How long after the write should the data be consistently available? What are the availability expectations? Should failed tasks be re-processed? Do they ever become irrelevant? This kind of question will help shape the system architecture."
+      "text": "Focus on the **business problem** being solved.\nAnd notice that I said business problem.\nWhy are you about to build this thing in the first place?\nThe problem statement of any design document is arguably the most important part of it and the first thing to get right.\nWhen it comes to building large-scale systems, there are often many moving pieces to deliver the required functionality while addressing non-functional requirements.\nIt gets trickier the larger the system has to be: trade-offs come in like availability vs consistency, performance vs maintainability, and cost.\nIf you get the problem wrong, i.e. you are addressing the wrong requirements, chances are you will make bad trade-off decisions and build the wrong thing.\nIs eventual consistency acceptable?\nDo we need read-after-write consistency?\nHow long can a search query take for it to still be useful to customers?\nHow long after the write should the data be consistently available?\nWhat are the availability expectations?\nShould failed tasks be re-processed?\nDo they ever become irrelevant?\nThis kind of question will help shape the system architecture."
     },
     {
       "type": "paragraph",
@@ -2318,11 +2318,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Your international career journey, from Brazil to working in big tech in cities like Cape Town and London, is very inspiring. What’s one crucial piece of advice, perhaps about a key decision you made or a skill you focused on, for young engineers aspiring to build an impactful, global tech career?"
+      "text": "Your international career journey, from Brazil to working in big tech in cities like Cape Town and London, is very inspiring.\nWhat’s one crucial piece of advice, perhaps about a key decision you made or a skill you focused on, for young engineers aspiring to build an impactful, global tech career?"
     },
     {
       "type": "paragraph",
-      "text": "Don’t be afraid of failure. In fact, expect to fail. I failed many interviews and passed others. Big tech is hard, the interviews and the work. **Failure is a part of the process; the best you can do is to learn from it and keep going. Resiliency is crucial** to build a career in tech. Especially if you want to live abroad because guess what, that is also hard. It can be lonely, isolating, and confusing, as you try to assimilate the culture of a different country. But what I mean by resiliency here is not to portray yourself as if nothing can take you down, or try to be immune to feelings or whatever. It is to have patience, to give yourself time, to absorb feedback, and try again."
+      "text": "Don’t be afraid of failure.\nIn fact, expect to fail.\nI failed many interviews and passed others.\nBig tech is hard, the interviews and the work.\n**Failure is a part of the process; the best you can do is to learn from it and keep going. Resiliency is crucial** to build a career in tech.\nEspecially if you want to live abroad because guess what, that is also hard.\nIt can be lonely, isolating, and confusing, as you try to assimilate the culture of a different country.\nBut what I mean by resiliency here is not to portray yourself as if nothing can take you down, or try to be immune to feelings or whatever.\nIt is to have patience, to give yourself time, to absorb feedback, and try again."
     },
     {
       "type": "heading",
@@ -2330,7 +2330,7 @@
     },
     {
       "type": "paragraph",
-      "text": "After this conversation with Mr. Vinícius Fraga, one thing stands out: success in big tech isn't about knowing every framework or having perfect code. It's about **understanding the problem you're solving** and being resilient enough to learn from failure. His path from research to senior engineering roles wasn't built on shortcuts; it was built on embracing the complexity and never being afraid to ask for help when stuck."
+      "text": "After this conversation with Mr. Vinícius Fraga, one thing stands out: success in big tech isn't about knowing every framework or having perfect code.\nIt's about **understanding the problem you're solving** and being resilient enough to learn from failure.\nHis path from research to senior engineering roles wasn't built on shortcuts; it was built on embracing the complexity and never being afraid to ask for help when stuck."
     }
   ]
 },
@@ -2676,13 +2676,13 @@
   "slug": "calculated-conversations-michelle-janse-van-rensburg",
   "title": "Calculated Conversations: Digital Transformation is Problem-Solving, Not Technology—with CEO Michelle Janse van Rensburg",
   "excerpt": "Business Growth Specialist Michelle Janse van Rensburg discusses why cohesion wins over chaos, why grit is essential, and the biggest financial mistake young founders make.",
-"date": "2025-10-19",
+  "date": "2025-10-19",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "Everyone talks about \"digital transformation\" like it’s some of complex formula. But here’s the truth: If you’re not solving real problems, you're just stacking tools on top of chaos. In a time where every second startup is “disrupting” something, clarity and cohesion are what actually win. For Calculated Conversations #39, I sat down with Ms. Michelle Janse van Rensburg, the CEO of Nimacc Business Lounge, a respected Business Growth Specialist, and someone who’s led over 400 digital transformation projects across multiple industries. We spoke about what it really takes to build a business that lasts in the digital age. She shares why problem-solving matters more than knowing every system, how to avoid the biggest financial mistakes most founders make, and why grit might be your best asset in business. Here is what she had to say:"
+      "text": "Everyone talks about \"digital transformation\" like it’s some complex formula.\nBut here’s the truth: If you’re not solving real problems, you're just stacking tools on top of chaos.\nIn a time where every second startup is “disrupting” something, clarity and cohesion are what actually win.\nFor Calculated Conversations #39, I sat down with Ms. Michelle Janse van Rensburg, the CEO of Nimacc Business Lounge, a respected Business Growth Specialist, and someone who’s led over 400 digital transformation projects across multiple industries.\nWe spoke about what it really takes to build a business that lasts in the digital age.\nShe shares why problem-solving matters more than knowing every system, how to avoid the biggest financial mistakes most founders make, and why grit might be your best asset in business.\nHere is what she had to say:"
     },
     {
       "type": "heading",
@@ -2694,7 +2694,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Focus less on the tech, and more on the problem it solves. Digital transformation isn’t about chasing the latest shiny app — it’s about strategic problem-solving. There will always be a newer tool with a flashier feature, but if you're not solving a clear business pain point, you're just adding noise. Build your expertise around integrating tech that truly serves the business, ensuring systems talk to each other and drive real results. Don’t fall for the trap of multiple tools creating multiple versions of the truth. Clarity and cohesion win every time."
+      "text": "Focus less on the tech, and more on the problem it solves.\nDigital transformation isn’t about chasing the latest shiny app—it’s about strategic problem-solving.\nThere will always be a newer tool with a flashier feature, but if you're not solving a clear business pain point, you're just adding noise.\nBuild your expertise around integrating tech that truly serves the business, ensuring systems talk to each other and drive real results.\nDon’t fall for the trap of multiple tools creating multiple versions of the truth.\nClarity and cohesion win every time."
     },
     {
       "type": "heading",
@@ -2702,11 +2702,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You’ve worked with a variety of businesses, from startups to established firms. What skills do you think younger generations need to develop to stay competitive in the ever-evolving tech and finance industries?"
+      "text": "You’ve worked with a variety of businesses, from startups to established firms.\nWhat skills do you think younger generations need to develop to stay competitive in the ever-evolving tech and finance industries?"
     },
     {
       "type": "paragraph",
-      "text": "Problem-solving is the skill that sets people apart — especially in digital transformation, where the tools constantly evolve but the need to solve business pain points never changes. It's not about knowing every system, it’s about having the ability to figure things out, connect the dots, and deliver real solutions. But skills alone aren’t enough. You need grit — that inner resilience and perseverance to keep showing up, learning, and pushing through when it gets tough. Grit isn’t a traditional skill, but it’s the trait that determines how well you apply every skill you’ve got."
+      "text": "Problem-solving is the skill that sets people apart—especially in digital transformation, where the tools constantly evolve but the need to solve business pain points never changes.\nIt's not about knowing every system; it’s about having the ability to figure things out, connect the dots, and deliver real solutions.\nBut skills alone aren’t enough.\nYou need grit—that inner resilience and perseverance to keep showing up, learning, and pushing through when it gets tough.\nGrit isn’t a traditional skill, but it’s the trait that determines how well you apply every skill you’ve got."
     },
     {
       "type": "heading",
@@ -2714,11 +2714,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Digital transformation can seem intimidating. What’s one simple first step young professionals can take to familiarize themselves with the technologies shaping the future of business?"
+      "text": "Digital transformation can seem intimidating.\nWhat’s one simple first step young professionals can take to familiarize themselves with the technologies shaping the future of business?"
     },
     {
       "type": "paragraph",
-      "text": "Start with the basics: accounting tech. Every business, no matter the size or industry, needs solid financial infrastructure. Tools like Xero are foundational. Once you understand the numbers, you can build anything. From there, expand into automation platforms, ERP solutions and CRM systems — but always anchor it in business value."
+      "text": "Start with the basics: accounting tech.\nEvery business, no matter the size or industry, needs solid financial infrastructure.\nTools like Xero are foundational.\nOnce you understand the numbers, you can build anything.\nFrom there, expand into automation platforms, ERP solutions, and CRM systems—but always anchor it in business value."
     },
     {
       "type": "heading",
@@ -2730,7 +2730,7 @@
     },
     {
       "type": "paragraph",
-      "text": "They confuse momentum with profit. Passion is great, but passion without performance is just noise. Too many avoid the financials because they’re “boring” or intimidating. But what you don’t measure, you can’t manage. From day one, get clear on your numbers — revenue, margins, cash flow. Treat it like a business, not a hobby. Often, the growth you’re chasing is sitting in the tasks you keep delaying. It’s not a time issue — it’s a priority issue."
+      "text": "They confuse momentum with profit.\nPassion is great, but passion without performance is just noise.\nToo many avoid the financials because they’re “boring” or intimidating.\nBut what you don’t measure, you can’t manage.\nFrom day one, get clear on your numbers—revenue, margins, cash flow.\nTreat it like a business, not a hobby.\nOften, the growth you’re chasing is sitting in the tasks you keep delaying.\nIt’s not a time issue—it’s a priority issue."
     },
     {
       "type": "heading",
@@ -2742,11 +2742,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Start learning **no-code and low-code automation platforms** like Zapier, Make (formerly Integromat), Airtable, or AppSheet. These tools are transforming how businesses operate — allowing lean teams to automate tasks, connect apps, and build workflows without needing full-time developers. As companies continue to cut inefficiencies and scale smarter, these platforms are becoming the backbone of operational efficiency — not just for startups, but for global enterprises too. The demand for automation isn’t slowing down — it’s accelerating, and those who can design and deploy these systems will be in high demand. [Image of Low-Code/No-Code Platform Workflow Example]"
+      "text": "Start learning **no-code and low-code automation platforms** like Zapier, Make (formerly Integromat), Airtable, or AppSheet.\nThese tools are transforming how businesses operate—allowing lean teams to automate tasks, connect apps, and build workflows without needing full-time developers.\nAs companies continue to cut inefficiencies and scale smarter, these platforms are becoming the backbone of operational efficiency—not just for startups, but for global enterprises too.\nThe demand for automation isn’t slowing down—it’s accelerating, and those who can design and deploy these systems will be in high demand.\n[Image of Low-Code/No-Code Platform Workflow Example]"
     },
     {
       "type": "paragraph",
-      "text": "Also, you can’t go wrong investing in cybersecurity knowledge. As everything moves to the cloud and cyber threats rise, businesses — especially small to medium ones — need support to stay protected. Whether it’s data compliance, secure cloud architecture, or threat detection, cybersecurity will remain a mission-critical field for decades to come. It's not just technical — it's trust. And trust is the most valuable currency in business today."
+      "text": "Also, you can’t go wrong investing in cybersecurity knowledge.\nAs everything moves to the cloud and cyber threats rise, businesses—especially small to medium ones—need support to stay protected.\nWhether it’s data compliance, secure cloud architecture, or threat detection, cybersecurity will remain a mission-critical field for decades to come.\nIt's not just technical—it’s trust.\nAnd trust is the most valuable currency in business today."
     },
     {
       "type": "heading",
@@ -2758,7 +2758,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Adopt the mindset that everything is figure-out-able. Get comfortable solving problems, not avoiding them. Don’t let emotions dictate your consistency — feelings will come and go, but structure builds momentum. As a woman of faith, I believe God is a God of structure and order, and your life and business should reflect that. Show up with discipline, stay focused, and lean into your faith when the pressure comes. That’s how you thrive, not just survive."
+      "text": "Adopt the mindset that everything is figure-out-able.\nGet comfortable solving problems, not avoiding them.\nDon’t let emotions dictate your consistency—feelings will come and go, but structure builds momentum.\nAs a woman of faith, I believe God is a God of structure and order, and your life and business should reflect that.\nShow up with discipline, stay focused, and lean into your faith when the pressure comes.\nThat’s how you thrive, not just survive."
     },
     {
       "type": "heading",
@@ -2766,7 +2766,7 @@
     },
     {
       "type": "paragraph",
-      "text": "This conversation with Ms. Michelle Janse van Rensburg reminded me how easy it is to overcomplicate business. It’s not about chasing every new tool or trying to sound smart. It’s about solving real problems and doing it with clarity. She has seen what works and what doesn’t. She cuts through the fluff and gets to the stuff that actually moves a business forward. I learnt a lot from her, and I think you will too. If something here made you pause, share it with someone who needs to hear it too. These are the conversations that help us build smarter, not just louder. You can check out more of her work here: 📌 LinkedIn Profile 📌 Company Website Thanks again to Ms. Janse van Rensburg for being part of Calculated Conversations. This one was special. Stay Calculated!"
+      "text": "This conversation with Ms. Michelle Janse van Rensburg reminded me how easy it is to overcomplicate business.\nIt’s not about chasing every new tool or trying to sound smart.\nIt’s about solving real problems and doing it with clarity.\nShe has seen what works and what doesn’t.\nShe cuts through the fluff and gets to the stuff that actually moves a business forward.\nI learnt a lot from her, and I think you will too.\nIf something here made you pause, share it with someone who needs to hear it too.\nThese are the conversations that help us build smarter, not just louder.\nYou can check out more of her work here: 📌 LinkedIn Profile 📌 Company Website\nThanks again to Ms. Janse van Rensburg for being part of Calculated Conversations.\nThis one was special.\nStay Calculated!"
     }
   ]
 },
@@ -2775,13 +2775,13 @@
   "slug": "calculated-conversations-jorg-kienitz-quant-mastery",
   "title": "Calculated Conversations: Curiosity is a Quant's Best Asset—with Prof. Jörg Kienitz (Standard Bank, UCT)",
   "excerpt": "Prof. Kienitz discusses balancing roles in academia and industry, why deep technical research informs practical finance, and how combining precision (math) with creativity (photography) leads to sharper thinking.",
-"date": "2025-10-18",
+  "date": "2025-10-18",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "In a field known for complexity, Prof. Jörg Kienitz makes it practical, personal, and even a bit poetic. Prof. Kienitz is a name you’ll find in both the boardroom and the classroom. He’s a Director at m|rig GmbH, a Quant Researcher at Standard Bank, and teaches at both the University of Cape Town and the University of Wuppertal. His work bridges deep technical research, practical finance, and high-level model validation, all while mentoring the next generation of quants. But there’s more to him than equations and code. He’s also a nature photographer, reminding us that creativity and precision are not opposites. I had the priveledge of speaking to him for Calculated Conversations and in this conversation, we explore how he balances industry and academia, why curiosity is a quant’s most valuable skill, and what it really takes to stay sharp in a field that’s constantly evolving. If you’re curious about the real mindset behind modern quantitative finance, this one’s for you!"
+      "text": "In a field known for complexity, Prof. Jörg Kienitz makes it practical, personal, and even a bit poetic.\nProf. Kienitz is a name you’ll find in both the boardroom and the classroom.\nHe’s a Director at m|rig GmbH, a Quant Researcher at Standard Bank, and teaches at both the University of Cape Town and the University of Wuppertal.\nHis work bridges deep technical research, practical finance, and high-level model validation, all while mentoring the next generation of quants.\nBut there’s more to him than equations and code—he’s also a nature photographer, reminding us that creativity and precision are not opposites.\nI had the privilege of speaking to him for Calculated Conversations, exploring how he balances industry and academia, why curiosity is a quant’s most valuable skill, and what it takes to stay sharp in a constantly evolving field.\nIf you’re curious about the real mindset behind modern quantitative finance, this one’s for you!"
     },
     {
       "type": "heading",
@@ -2789,11 +2789,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You are active in both industry and academia. How do your roles at m|rig GmbH, Standard Bank, and the University of Cape Town influence one another?"
+      "text": "You are active in both industry and academia.\nHow do your roles at m|rig GmbH, Standard Bank, and the University of Cape Town influence one another?"
     },
     {
       "type": "paragraph",
-      "text": "The academic roles are more of a hobby. I supervise a PhD student and teach Masterclasses as part of my work at AIFMRM. At the University of Wuppertal, I’m involved in guiding Master’s thesis projects. These academic activities help me explore areas of quantitative finance research. Supervising PhD students, in particular, allows me to dive deep into topics without getting bogged down in detailed derivations or programming. It’s more about guiding, generating ideas, and helping overcome research hurdles. On the industry side, those roles pay the bills. That said, the practical work often inspires the academic side, giving me a deeper understanding of how models and methods are applied in real-world scenarios."
+      "text": "The academic roles are more of a hobby.\nI supervise a PhD student and teach Masterclasses as part of my work at AIFMRM.\nAt the University of Wuppertal, I guide Master’s thesis projects, exploring areas of quantitative finance research.\nSupervising PhD students allows me to dive deep into topics without getting bogged down in derivations or programming.\nIt’s more about guiding, generating ideas, and overcoming research hurdles.\nOn the industry side, those roles pay the bills, but practical work often inspires the academic side, giving a deeper understanding of real-world model applications."
     },
     {
       "type": "heading",
@@ -2805,7 +2805,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Curiosity is essential. It helps you push through tough phases, whether it’s grappling with complex math or debugging code. Programming, especially, can be frustrating, like hunting for hidden bugs, but you have to persist until you solve the problem. The satisfaction of finding a solution is its own reward, though you should also make sure you’re properly compensated for your problem-solving skills."
+      "text": "Curiosity is essential.\nIt helps you push through tough phases, whether grappling with complex math or debugging code.\nProgramming can be frustrating, like hunting for hidden bugs, but persistence pays off.\nThe satisfaction of solving a problem is its own reward, though you should ensure you’re properly compensated for your problem-solving skills."
     },
     {
       "type": "heading",
@@ -2813,11 +2813,11 @@
     },
     {
       "type": "paragraph",
-      "text": "With so much change in the markets and the rise of alternative reference rates, how do you approach staying current and relevant in such a technical field?"
+      "text": "With so much change in the markets and the rise of alternative reference rates, how do you stay current and relevant in such a technical field?"
     },
     {
       "type": "paragraph",
-      "text": "Realistically, you can’t stay on top of everything. I closely follow some developments but only dive into others when a project or market need arises. Keeping up takes significant time outside of work, like reading papers, implementing things yourself, etc. If you want to stay sharp in certain areas, I recommend hands-on programming. It quickly shows you where you need to dig deeper."
+      "text": "You can’t stay on top of everything.\nI closely follow some developments, diving deeper only when a project or market need arises.\nStaying sharp requires significant time outside of work, like reading papers and implementing things yourself.\nHands-on programming is particularly effective, as it quickly shows where deeper exploration is needed."
     },
     {
       "type": "heading",
@@ -2825,11 +2825,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You have a deep background in mathematics, yet you are also a nature photographer. How do creativity and precision meet in your life and work?"
+      "text": "You have a deep background in mathematics, yet are also a nature photographer.\nHow do creativity and precision meet in your life and work?"
     },
     {
       "type": "paragraph",
-      "text": "Getting into nature and focusing on photography helps me disconnect, which is crucial for staying productive. At the same time, working with math keeps my mind sharp, which also benefits my photography. The two disciplines influence each other in both directions. "
+      "text": "Getting into nature and focusing on photography helps me disconnect, which is crucial for productivity.\nAt the same time, working with math keeps my mind sharp, which benefits my photography.\nThe two disciplines influence each other in both directions."
     },
     {
       "type": "heading",
@@ -2837,11 +2837,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Many aspiring quants worry about not coming from top schools or traditional finance hubs. What advice would you give them about finding their edge?"
+      "text": "Many aspiring quants worry about not coming from top schools or traditional finance hubs.\nWhat advice would you give them about finding their edge?"
     },
     {
       "type": "paragraph",
-      "text": "Talented people will find their way, but connections and reputation do matter. A degree from a prestigious institution can help because some of that reputation rubs off on graduates. That said, if you can make it in New York, you can make it anywhere."
+      "text": "Talented people will find their way, but connections and reputation do matter.\nA degree from a prestigious institution can help, as some of that reputation rubs off on graduates.\nThat said, if you can make it in New York, you can make it anywhere."
     },
     {
       "type": "heading",
@@ -2853,7 +2853,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Exploring machine learning and statistical learning in combination with traditional quantitative finance has been exciting. Another idea worth pursuing is developing a lightweight, easy-to-use quant library. Something less over-engineered than QuantLib. Maybe as an open-source project… if anyone wants to fund it."
+      "text": "Exploring machine learning and statistical learning combined with traditional quantitative finance has been exciting.\nAnother idea worth pursuing is developing a lightweight, easy-to-use quant library, less over-engineered than QuantLib.\nMaybe as an open-source project… if anyone wants to fund it."
     },
     {
       "type": "heading",
@@ -2861,7 +2861,7 @@
     },
     {
       "type": "paragraph",
-      "text": "A huge thank you to Prof. Jörg Kienitz for joining me on Calculated Conversations. His ability to connect industry, research, and creativity is rare, and I walked away from this conversation with a deeper appreciation for how versatile and human quant finance really is. If you’re curious to learn more about Prof. Kienitz’s work, take a look at his profiles and research below: 📌 UCT Profile 📌 University of Wuppertal Profile 📌 m|rig GmbH Here are a few insights I’ll be thinking about: ✔️ Curiosity is your edge. It keeps you going when the math gets tough or the code won’t compile. ✔️ Academic resea"
+      "text": "A huge thank you to Prof. Jörg Kienitz for joining me on Calculated Conversations.\nHis ability to connect industry, research, and creativity is rare, and I walked away with a deeper appreciation for how versatile and human quant finance really is.\nIf you’re curious to learn more about Prof. Kienitz’s work, check his profiles and research: 📌 UCT Profile 📌 University of Wuppertal Profile 📌 m|rig GmbH\nHere are a few insights I’ll be thinking about:\n✔️ Curiosity is your edge. It keeps you going when the math gets tough or the code won’t compile.\n✔️ Academic research enriches practical application.\n✔️ Balancing precision and creativity leads to sharper thinking."
     }
   ]
 },
@@ -4684,13 +4684,13 @@
   "slug": "calculated-conversations-kanshukan-rajaratnam-data-science-su",
   "title": "Calculated Conversations: Data Science as a Team Sport—with Prof. Kanshukan Rajaratnam (Director, Stellenbosch University)",
   "excerpt": "Professor Rajaratnam discusses how his industry experience shapes data science education, the unique interdisciplinary approach of Stellenbosch University's BDatSc degree, and why aspiring data scientists must focus on collaboration and soft skills.",
-"date": "2025-11-09",
+  "date": "2025-11-09",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "South Africa is quickly becoming a hub for data science talent, with the University of Stellenbosch leading the way. Data science is not just about algorithms and models. It’s about solving real-world problems. Few understand this better than Professor Kanshukan Rajaratnam, whose career spans both academia and industry. As the Director of the School for Data Science and Computational Thinking at Stellenbosch University, he has seen firsthand how business challenges shape research and how education prepares future data scientists. In this conversation, he shares his insights on leadership, learning, and South Africa’s unique approach to data science."
+      "text": "South Africa is quickly becoming a hub for data science talent, with the University of Stellenbosch leading the way.\nData science is not just about algorithms and models.\nIt’s about solving real-world problems.\nFew understand this better than Professor Kanshukan Rajaratnam, whose career spans both academia and industry.\nAs the Director of the School for Data Science and Computational Thinking at Stellenbosch University, he has seen firsthand how business challenges shape research and how education prepares future data scientists.\nIn this conversation, he shares his insights on leadership, learning, and South Africa’s unique approach to data science."
     },
     {
       "type": "heading",
@@ -4698,11 +4698,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Your career spans both academia and industry. How has working in business influenced the way you approach education and research?"
+      "text": "Your career spans both academia and industry.\nHow has working in business influenced the way you approach education and research?"
     },
     {
       "type": "paragraph",
-      "text": "My doctoral studies and my subsequent research topics in the immediate subsequent years were directly answering questions that I faced while working in industry. My research focus was in decision making in the context of loan portfolio and many of the research questions were from the perspective of a loan portfolio manager trying to maximize profits and other metrics (such as market share). My experience in industry was also instrumental in generating research questions from problems faced by practitioners. Perhaps most importantly, working in industry gave me leadership skills that helps me in my work up to today. In industry, one is faced with diverse stakeholders and one must learn to interact and engage with a diverse group of people."
+      "text": "My doctoral studies and my subsequent research topics in the immediate subsequent years were directly answering questions that I faced while working in industry.\nMy research focus was in decision making in the context of loan portfolio and many of the research questions were from the perspective of a loan portfolio manager trying to maximize profits and other metrics (such as market share).\nMy experience in industry was also instrumental in generating research questions from problems faced by practitioners.\nPerhaps most importantly, working in industry gave me leadership skills that helps me in my work up to today.\nIn industry, one is faced with diverse stakeholders and one must learn to interact and engage with a diverse group of people."
     },
     {
       "type": "heading",
@@ -4714,7 +4714,7 @@
     },
     {
       "type": "paragraph",
-      "text": "It is important to get one’s hands dirty in data science. There are many opportunities to solve problems such as through hackathons and through platforms like Zindi. Potential data scientists must get experience in building models and solving problems through these means. Additionally, one should not be a data scientist in isolation but be able to **work in diverse teams**, particularly with **domain experts**. Each domain area has nuances that one doesn’t readily know of as a data scientist, but experts in the domain area have experience in identifying and dealing with such nuances."
+      "text": "It is important to get one’s hands dirty in data science.\nThere are many opportunities to solve problems such as through hackathons and through platforms like Zindi.\nPotential data scientists must get experience in building models and solving problems through these means.\nAdditionally, one should not be a data scientist in isolation but be able to **work in diverse teams**, particularly with **domain experts**.\nEach domain area has nuances that one doesn’t readily know of as a data scientist, but experts in the domain area have experience in identifying and dealing with such nuances."
     },
     {
       "type": "heading",
@@ -4722,11 +4722,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You’ve led major academic and strategic initiatives. What’s one leadership lesson you’ve learned that shaped the way you work today?"
+      "text": "You’ve led major academic and strategic initiatives.\nWhat’s one leadership lesson you’ve learned that shaped the way you work today?"
     },
     {
       "type": "paragraph",
-      "text": "I am not sure if it has shaped the way I work today but it is one that I am working on. When one is responsible for a strategic initiative, it is important not to just focus on the initiative but also on **stakeholders**. It is easy to create success without taking everyone on the ride. It is important to take all stakeholders on the ride in achieving strategic goals."
+      "text": "I am not sure if it has shaped the way I work today but it is one that I am working on.\nWhen one is responsible for a strategic initiative, it is important not to just focus on the initiative but also on **stakeholders**.\nIt is easy to create success without taking everyone on the ride.\nIt is important to take all stakeholders on the ride in achieving strategic goals."
     },
     {
       "type": "heading",
@@ -4734,11 +4734,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You’ve worked at top universities across the world. What’s something unique about the way South Africa approaches data science and education?"
+      "text": "You’ve worked at top universities across the world.\nWhat’s something unique about the way South Africa approaches data science and education?"
     },
     {
       "type": "paragraph",
-      "text": "I can only really speak about Stellenbosch University. SU is an innovative university and quickly identified that data science is a **diverse team sport**. The university created teaching and research pathways that is truly interdisciplinary and transdisciplinary. Take for example the BDatSc degree. It is the only university with a named degree in data science. This specific degree allows students to specialise in subjects from four different faculties. As students undertake their major, they interact with students from other faculties, and hence learning from and with diverse set of student. It develops the skills mentioned in (2), which is to work in diverse teams. [Image of Stellenbosch University BDatSc Interdisciplinary Structure showing four faculties converging on Data Science] South Africa has incredible talent and the country provides world-class education at a fraction of the cost of many other globally ranked universities. Unfortunately, the cost is still out of bounds for many of those with incredible talent."
+      "text": "I can only really speak about Stellenbosch University.\nSU is an innovative university and quickly identified that data science is a **diverse team sport**.\nThe university created teaching and research pathways that is truly interdisciplinary and transdisciplinary.\nTake for example the BDatSc degree.\nIt is the only university with a named degree in data science.\nThis specific degree allows students to specialise in subjects from four different faculties.\nAs students undertake their major, they interact with students from other faculties, and hence learning from and with diverse set of student.\nIt develops the skills mentioned in (2), which is to work in diverse teams.\n[Image of Stellenbosch University BDatSc Interdisciplinary Structure showing four faculties converging on Data Science]\nSouth Africa has incredible talent and the country provides world-class education at a fraction of the cost of many other globally ranked universities.\nUnfortunately, the cost is still out of bounds for many of those with incredible talent."
     },
     {
       "type": "heading",
@@ -4746,11 +4746,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Many young South Africans are interested in data science but don’t know where to start. If you were beginning your journey today, what would be your first step?"
+      "text": "Many young South Africans are interested in data science but don’t know where to start.\nIf you were beginning your journey today, what would be your first step?"
     },
     {
       "type": "paragraph",
-      "text": "There are a lot of free resources available online. I would learn basic coding and undertake an online basic data science course. I would then use this to play with data and solve problems. Of course, doing such activities should not come at the expense of school grades. Degrees such as BDatSc has high requirements. So, it is important to get those good grades if one wants to study degrees such as BDatSc. While at university, I would test my knowledge through hackathons and through platform such as Zindi as well as engage with industry through internships, job shadowing opportunities, etc. Both at school and at university, it is important to develop **language and soft skills**. Spoken and written language skills are important to convey the results of data science models and projects. Additionally; team work, presentation skills, and such soft skills are central to being a data scientist. It is important to develop these while at school and university."
+      "text": "There are a lot of free resources available online.\nI would learn basic coding and undertake an online basic data science course.\nI would then use this to play with data and solve problems.\nOf course, doing such activities should not come at the expense of school grades.\nDegrees such as BDatSc has high requirements.\nSo, it is important to get those good grades if one wants to study degrees such as BDatSc.\nWhile at university, I would test my knowledge through hackathons and through platform such as Zindi as well as engage with industry through internships, job shadowing opportunities, etc.\nBoth at school and at university, it is important to develop **language and soft skills**.\nSpoken and written language skills are important to convey the results of data science models and projects.\nAdditionally; team work, presentation skills, and such soft skills are central to being a data scientist.\nIt is important to develop these while at school and university."
     },
     {
       "type": "heading",
@@ -4758,7 +4758,7 @@
     },
     {
       "type": "paragraph",
-      "text": "As Professor Rajaratnam emphasizes, data science is not just about mastering technical skills, but it’s about applying them in real-world scenarios, collaborating across disciplines, and continuously learning. Whether through hackathons, internships, or university programs like BDatSc, aspiring data scientists must embrace both knowledge and experience. South Africa’s data science landscape is evolving, and those who take initiative will be well-positioned to thrive in this exciting field. A huge thanks to Professor Rajaratnam for sharing his thoughts! What stood out to you about this interview? Feel free to share your thoughts below!"
+      "text": "As Professor Rajaratnam emphasizes, data science is not just about mastering technical skills, but it’s about applying them in real-world scenarios, collaborating across disciplines, and continuously learning.\nWhether through hackathons, internships, or university programs like BDatSc, aspiring data scientists must embrace both knowledge and experience.\nSouth Africa’s data science landscape is evolving, and those who take initiative will be well-positioned to thrive in this exciting field.\nA huge thanks to Professor Rajaratnam for sharing his thoughts!\nWhat stood out to you about this interview?\nFeel free to share your thoughts below!"
     }
   ]
 },
@@ -4767,13 +4767,13 @@
   "slug": "calculated-conversations-desigan-reddy-risk-trading",
   "title": "Calculated Conversations: Risk, Regulation, and Algorithmic Trading—with Desigan Reddy (FRM, CFA)",
   "excerpt": "Risk expert Desigan Reddy (ex-Luno, Absa, Old Mutual) discusses how the 2008 crisis reshaped regulations (Basel Accords), the transition from JIBAR to ZARONIA, and why simplicity is the key to building successful trading tools.",
-"date": "2025-11-28",
+  "date": "2025-11-28",
   "author": "Johannes Meyer",
   "category": "Career Advice",
   "content": [
     {
       "type": "paragraph",
-      "text": "In this third edition of Calculated Conversations, I had the privilege of speaking with Mr. Desigan Reddy, an expert in risk analysis, algorithmic trading, and portfolio management. Mr. Reddy offers a unique perspective on the evolution of financial risk management, from regulatory changes to the adoption of cutting-edge technologies. With experience at institutions like Old Mutual, Absa, HomeEquity Bank, and Luno, he provides valuable insights into how risk systems and analytics are reshaping the financial landscape."
+      "text": "In this third edition of Calculated Conversations, I had the privilege of speaking with Mr. Desigan Reddy, an expert in risk analysis, algorithmic trading, and portfolio management.\nMr. Reddy offers a unique perspective on the evolution of financial risk management, from regulatory changes to the adoption of cutting-edge technologies.\nWith experience at institutions like Old Mutual, Absa, HomeEquity Bank, and Luno, he provides valuable insights into how risk systems and analytics are reshaping the financial landscape."
     },
     {
       "type": "heading",
@@ -4781,11 +4781,11 @@
     },
     {
       "type": "paragraph",
-      "text": "You have extensive experience in risk management, having worked with institutions like Luno, Old Mutual, and Absa. What are some of the most significant changes you've seen in the industry over the years?"
+      "text": "You have extensive experience in risk management, having worked with institutions like Luno, Old Mutual, and Absa.\nWhat are some of the most significant changes you've seen in the industry over the years?"
     },
     {
       "type": "paragraph",
-      "text": "I think the more significant changes I’ve seen have come from **regulatory enhancements** and the adoption of more advanced risk systems and technologies into businesses. Following the global financial crises of 2008, regulators really beefed up their risk monitoring and reporting requirements, for banks especially. The **Basel Accords**, which outlined the risk and governance framework, was notably overhauled, and a particular emphasis was given to improved liquidity management and monitoring. This saw institutions invest more heavily in risk systems to meet these requirements, but also to keep up with advancements in products and services in the industry. Following this, the LIBOR (London Interbank Offer Rate) scandal of 2012, which involved many highly reputable banks, was another significant event that comes to mind and one that prompted regulators to take swift and meaningful action. The changes made following this have also seen the SARB (South African Reserve Bank) move to replace the current JIBAR rate (Johannesburg Inter Bank Average Rate) with the **ZARONIA rate** as the new benchmark rate for ZAR instruments by 2026. The transition aims to align local regulations with international best practices and is another significant enhancement from a domestic standpoint.  As mentioned earlier, with stricter and more frequent reporting requirements, institutions needed better risk management systems. The adoption of these has seen a massive step forward in risk evaluation. **Key takeaway:** \"Regulatory changes following the 2008 financial crisis and the adoption of more advanced risk systems have reshaped the financial industry.\""
+      "text": "I think the more significant changes I’ve seen have come from **regulatory enhancements** and the adoption of more advanced risk systems and technologies into businesses.\nFollowing the global financial crises of 2008, regulators really beefed up their risk monitoring and reporting requirements, especially for banks.\nThe **Basel Accords**, which outlined the risk and governance framework, were notably overhauled, with particular emphasis on improved liquidity management and monitoring.\nThis led institutions to invest more heavily in risk systems, both to meet requirements and to keep up with advancements in products and services.\nFollowing this, the LIBOR scandal of 2012 prompted swift regulatory action.\nThe SARB is moving to replace the JIBAR rate with the **ZARONIA rate** as the new benchmark for ZAR instruments by 2026, aligning local regulations with international best practices.\nAs mentioned, stricter reporting requirements demanded better risk management systems, leading to a massive step forward in risk evaluation.\n**Key takeaway:** \"Regulatory changes following the 2008 financial crisis and the adoption of advanced risk systems have reshaped the financial industry.\""
     },
     {
       "type": "heading",
@@ -4797,7 +4797,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Obtaining these certifications certainly laid the foundation for me to better interpret, analyze, and understand potential risks. **FRM** in particular, I found to be a very comprehensive and interesting overview on risk management. It provided a solid outline both from a quantitative and qualitative perspective on monitoring risk and outlined useful frameworks for mitigating such risks and processes that could be followed, aligned with the industry. With CFA and CTP, these certifications were not as risk-focused but did provide me with a broader understanding of the markets and workings in the financial industry and were valuable in their own way. Obtaining these certifications gave me the platform, but ultimately the experience I gained working in the risk environment was also indispensable. Unlike the certifications, which provided guidance from a theoretical standpoint, working in a risk environment gave me the opportunity to learn first-hand how risk is monitored, managed, and mitigated. This working knowledge, together with the understanding obtained from the various certifications, has really helped improve my decision-making and the way I view risks. Something I’ve come to learn is that history tends to repeat itself. I don’t think relying just on mathematical models of risk works on its own, you need to also understand what has happened in the past and incorporate that into your current decision-making processes. How have the markets reacted in a certain situation in the past? Is the current situation similar? If so, what can we likely expect to happen and how best can we mitigate unwanted risks? These are not easy questions to answer, but understanding the risks, theoretically and practically, helps me to make more informed decisions. **Key takeaway:** \"Certifications like FRM, CFA, and CTP provide valuable theoretical frameworks, but hands-on experience is indispensable for decision-making and understanding risk.\""
+      "text": "Obtaining these certifications laid the foundation to better interpret, analyze, and understand potential risks.\n**FRM** provided a comprehensive overview of risk management from both quantitative and qualitative perspectives, offering useful frameworks for mitigating risks.\nCFA and CTP gave a broader understanding of the markets and financial industry.\nHands-on experience in the risk environment, combined with certification knowledge, enhanced my decision-making and understanding of historical market patterns.\n**Key takeaway:** \"Certifications provide valuable theoretical frameworks, but hands-on experience is indispensable for decision-making and understanding risk.\""
     },
     {
       "type": "heading",
@@ -4809,7 +4809,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I think with the recent wave of AI models that have emerged, the financial industry is becoming more open to making use of such technologies in businesses. In my view, a lot of work that is being done currently by financial/risk analysts and administrators can be reduced with the adoption of these frameworks. **Python**, in particular, is a popular programming language used by data scientists, but it hasn’t gained much traction with investment professionals. I see that changing going forward. The likes of ChatGPT and Claude are making it far easier for non-programmers to write code and make use of these systems. Although I don’t think you would get away completely from having at least a basic understanding of coding, the barriers to entry have certainly come down, and I think that trend will continue into the future. We will see more and more financial professionals take up coding and implementing these technologies in their workspaces. **Algorithmic Trading** is a little more nuanced. Learning to code is a good start, but with algo trading, you also need to have a solid understanding of the markets and their workings. Errors here could be very costly, so although I do believe we will see an uptake of this, I think the pace will be a lot slower than those just looking to implement AI and coding into their businesses. **Key takeaway:** \"The integration of AI and coding in finance will increase, but understanding the markets remains crucial, especially in algorithmic trading.\""
+      "text": "The financial industry is increasingly adopting AI models and data science frameworks.\nMany tasks currently performed by analysts can be streamlined.\n**Python** is popular with data scientists but less so among investment professionals, a trend that is changing.\nTools like ChatGPT and Claude make coding accessible even to non-programmers, though basic coding knowledge remains important.\n**Algorithmic Trading** requires a solid understanding of markets; mistakes can be costly.\n**Key takeaway:** \"The integration of AI and coding in finance will increase, but understanding the markets remains crucial, especially in algorithmic trading.\""
     },
     {
       "type": "heading",
@@ -4817,11 +4817,11 @@
     },
     {
       "type": "paragraph",
-      "text": "In your experience developing trading tools and dashboards, what have been the biggest challenges you’ve faced, and how have you overcome them?"
+      "text": "In your experience developing trading tools and dashboards, what have been the biggest challenges, and how have you overcome them?"
     },
     {
       "type": "paragraph",
-      "text": "I think one of my biggest learnings when it came to developing these systems was to firstly make it simple and intuitive so as not to overwhelm the end user and secondly to put yourself in your users’ shoes and think of what would add value to them. In a few instances, I’ve built dashboards that I found to be of great value to me but were not being used at all by my colleagues. A big reason for that was because of all the unnecessary features I added that just overwhelmed them. I think as a developer, you want to add as many features as you can because you think it will be valuable, but in many cases, it actually does the opposite. So that was a big challenge for me. I had to understand what was adding value and what wasn’t, and only stick to the essential features that I knew people wanted to see, even though I knew I could do more. In the end, I think when building these dashboards/tools, it's really important to keep the end user in mind and to get feedback as quickly and as frequently as possible. Otherwise, you may build something that never really gets used. Getting constant feedback from my colleagues was key in building impactful tools. So don’t wait till you have a finished product; try getting input as quickly as possible when developing new systems. **Key takeaway:** \"Keep the end user in mind when building trading tools—simplicity and regular feedback are essential.\""
+      "text": "One major lesson is to keep tools simple and intuitive to avoid overwhelming users.\nI’ve built dashboards valuable to me but unused by colleagues due to unnecessary features.\nGetting feedback quickly and regularly from end users is key to building impactful tools.\n**Key takeaway:** \"Keep the end user in mind when building trading tools—simplicity and regular feedback are essential.\""
     },
     {
       "type": "heading",
@@ -4829,11 +4829,11 @@
     },
     {
       "type": "paragraph",
-      "text": "Looking ahead, what skills do you believe are essential for young professionals looking to enter the field of finance, especially with the increasing reliance on technology and data analysis?"
+      "text": "Looking ahead, what skills are essential for young professionals entering finance, especially with technology and data analysis?"
     },
     {
       "type": "paragraph",
-      "text": "Yes, great question! My advice to any young professional would be to **learn a programming language**. I think with the way technology is advancing, anyone who doesn’t know at least the basics of code would be at a serious disadvantage. The good news is that there is no shortage of available coding or data science courses, so learning this is really just a matter of time and a little bit of effort. I also think having an understanding of AI and how one can pair that with coding could be a very valuable skill to have in the future. My other advice to young professionals would be to read and develop a **growth mindset**. Never stop reading or learning. Whether it's coding, or how to use Excel, the financial industry is constantly evolving, and developing a consistent learning mindset is essential to move forward in this industry. For me, reading every day and trying to learn new skills is really what helped me advance in my career. For young professionals starting out, if you can do the same, then I am sure that you will have just as much success as I have! **Key takeaway:** \"Learning programming, adopting a growth mindset, and keeping up with industry trends are critical for success in finance.\""
+      "text": "Learn a programming language; it’s critical as technology advances.\nUnderstand AI and how it can be paired with coding.\nDevelop a **growth mindset**: never stop learning.\nConsistent learning helps young professionals advance and remain competitive.\n**Key takeaway:** \"Learning programming, adopting a growth mindset, and keeping up with industry trends are critical for success in finance.\""
     },
     {
       "type": "heading",
@@ -4841,7 +4841,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Mr. Reddy's insights remind us that in the rapidly evolving world of finance, embracing new technologies is not just an advantage—it’s a necessity. For young professionals looking to carve their own paths in the industry, Mr. Reddy's advice on coding, continuous learning, and staying informed on industry changes provides a valuable roadmap to success. I’d like to thank Mr. Desigan Reddy for his time and expertise, and stay tuned for more thought-provoking discussions with industry leaders in future editions of Calculated Conversations. How do you see AI and coding shaping the future of finance? Are you already integrating these technologies into your work or studies?"
+      "text": "Mr. Reddy's insights remind us that embracing new technologies in finance is essential.\nFor young professionals, his advice on coding, continuous learning, and staying informed provides a valuable roadmap to success.\nThank you to Mr. Desigan Reddy for his time and expertise.\nHow do you see AI and coding shaping the future of finance?\nAre you already integrating these technologies into your work or studies?"
     }
   ]
 },
@@ -4980,7 +4980,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Throughout this conversation, it became clear that becoming a CA(SA) is as much about mindset as it is about skill. By committing to hard work, self-belief, and mastering leadership, networking, and decisiveness—while continuously building technical expertise—you can set yourself up for success in the accounting world. Building the Right Mentorship & Career Strategy: Beyond that, finding the right mentor is crucial. Someone who guides rather than being guided by their mentees. As Dillen highlighted, even as AI advances in auditing, accountants will remain essential to audit AI’s work and leverage critical thinking skills, making adaptability and strategic thinking more important than ever. Accelerate Your CA(SA) Journey with Accounting Warriors: If you're serious about accelerating your CA(SA) journey, I highly recommend Dillen Breitenbach CA(SA)’s Accounting Warriors initiative. He has proven, through action, that he knows exactly what it takes to succeed as a Chartered Accountant. Learn more here: www.accountingwarriors.com. A huge thank you to Dillen Breitenbach CA(SA) for sharing his insight! **Final Question for Aspiring CAs:** In a world where AI and automation are rapidly evolving, how do you think the future CA(SA) should position themselves? Not just to stay relevant, but to redefine and lead the profession forward?"
+"text": "Throughout this conversation, it became clear that becoming a CA(SA) is as much about mindset as it is about skill.\nBy committing to hard work, self-belief, and mastering leadership, networking, and decisiveness—while continuously building technical expertise—you can set yourself up for success in the accounting world.\n\nBuilding the Right Mentorship & Career Strategy: Beyond that, finding the right mentor is crucial—someone who guides rather than being guided by their mentees.\nAs Dillen highlighted, even as AI advances in auditing, accountants will remain essential to audit AI’s work and leverage critical thinking skills, making adaptability and strategic thinking more important than ever.\n\nAccelerate Your CA(SA) Journey with Accounting Warriors: If you're serious about accelerating your CA(SA) journey, I highly recommend Dillen Breitenbach CA(SA)’s Accounting Warriors initiative.\nHe has proven, through action, that he knows exactly what it takes to succeed as a Chartered Accountant.\nLearn more here: www.accountingwarriors.com.\n\nA huge thank you to Dillen Breitenbach CA(SA) for sharing his insight!\n\n**Final Question for Aspiring CAs:** In a world where AI and automation are rapidly evolving, how do you think the future CA(SA) should position themselves?\nNot just to stay relevant, but to redefine and lead the profession forward?"
     }
   ]
 }
