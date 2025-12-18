@@ -1,9 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
+import App from './App.jsx';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+
+const rootElement = (
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>
+);
+
+if (container.hasChildNodes()) {
+  hydrateRoot(container, rootElement);
+} else {
+  createRoot(container).render(rootElement);
+}

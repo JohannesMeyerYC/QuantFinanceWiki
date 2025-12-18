@@ -1027,7 +1027,7 @@
       {
         "step": 3,
         "title": "Build a Track Record Through Projects and Competitions",
-        "description": "Create a detailed portfolio research project—from signal combination and constraint modeling to transaction cost-aware backtesting. Compete in platforms like QuantConnect to demonstrate live strategy management skill."
+        "description": "Create a detailed portfolio research project: from signal combination and constraint modeling to transaction cost-aware backtesting. Compete in platforms like QuantConnect to demonstrate live strategy management skill."
       },
       {
         "step": 4,
@@ -1266,6 +1266,1291 @@
         "primary_objective": "Find statistically robust, economically intuitive signals that can be explained and scaled within a traditional portfolio framework.",
         "programming_focus": "Python/R for statistical analysis and backtesting. Uses libraries like Statsmodels, Scikit-learn. Focus is on rigorous hypothesis testing and validation.",
         "performance_metrics": "Signal Information Ratio, t-statistics, economic intuitiveness, capacity, and performance in a live portfolio context."
+      }
+    ]
+  },
+  "strats_guide": {
+    "id": "strats_guide",
+    "title": "Quant Strategist (Desk Quant) Career Roadmap",
+    "description": "Quant Strategists, or Strats, sit directly on trading desks at investment banks and hedge funds. They bridge the gap between pure research, technology, and trading. Their primary role is to build pricing tools, risk management dashboards, and analytics that traders use in real time. Unlike pure researchers who focus on long term alpha, Strats solve immediate problems regarding pricing complex derivatives and managing book risk.  This role requires a balance of mathematical rigor, software engineering, and strong communication skills to interact with traders.",
+    "schools": [
+      {
+        "name": "Applied Mathematics and Physics Degrees",
+        "program": "PhD or Master's",
+        "notes": "Banks recruit heavily from applied math and physics departments. The ability to solve partial differential equations (PDEs) and understand stochastic calculus is required for pricing derivatives."
+      },
+      {
+        "name": "Master in Financial Engineering (MFE)",
+        "program": "MFE / Math Finance",
+        "notes": "MFE graduates from top schools like Berkeley, NYU, or Carnegie Mellon are frequently hired as Junior Strats. The curriculum aligns perfectly with the pricing and risk modeling needs of a trading desk."
+      },
+      {
+        "name": "Computer Science (with Finance interest)",
+        "program": "Bachelor's or Master's",
+        "notes": "As Strats become more technical, CS graduates who can build robust libraries and APIs are valuable. You must demonstrate an interest in finance through electives or clubs."
+      },
+      {
+        "name": "Imperial College London (Math Finance)",
+        "program": "MSc Mathematics and Finance",
+        "notes": "A key feeder program for London based bank desks (Goldman, JP Morgan). The training in stochastic analysis is highly regarded."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Stochastic Calculus and Derivatives Pricing",
+        "level": "Expert",
+        "importance": "Critical. You must understand Black-Scholes, Monte Carlo simulations, and how to price exotics. Understanding Greeks (Delta, Gamma, Vega) is daily work."
+      },
+      {
+        "name": "C++ and Python Hybrid",
+        "level": "Proficient",
+        "importance": "High. Libraries are often written in C++ for speed, wrapped in Python for traders to use easily. You must be comfortable working in both environments."
+      },
+      {
+        "name": "Object Oriented Programming (OOP)",
+        "level": "Proficient",
+        "importance": "High. Strats maintain large libraries of financial objects. Understanding inheritance and design patterns is necessary to keep code clean."
+      },
+      {
+        "name": "Fixed Income or Equity Market Knowledge",
+        "level": "Proficient",
+        "importance": "High. You need to know the specific conventions of the asset class you support, such as bond yield curves or volatility surfaces."
+      },
+      {
+        "name": "Communication and Sales Support",
+        "level": "High",
+        "importance": "Critical. You sit on the desk. You must explain complex math to traders and sometimes clients in simple terms."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Options, Futures, and Other Derivatives (John Hull)",
+        "description": "The industry bible for derivatives. It covers the mechanics of futures markets, hedging strategies, and the Black-Scholes model. Essential reading.",
+        "type": "Book",
+        "difficulty": "Intermediate Finance",
+        "link": "https://amzn.to/4pUO5Tw"
+      },
+      {
+        "title": "C++ Design Patterns and Derivatives Pricing (Mark Joshi)",
+        "description": "The standard text for implementing financial models in C++. It teaches how to build a Monte Carlo simulator using proper object oriented design.",
+        "type": "Book",
+        "difficulty": "Intermediate C++ and Math",
+        "link": "https://amzn.to/491q0Un"
+      },
+      {
+        "title": "Quant Job Interview Questions and Answers (Mark Joshi)",
+        "description": "Focuses specifically on the math and logic puzzles found in bank interviews.",
+        "type": "Interview Guide",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/3MOQPU8"
+      },
+      {
+        "title": "Paul Wilmott on Quantitative Finance",
+        "description": "A comprehensive resource covering both the math and practical implementation of models.",
+        "type": "Book",
+        "difficulty": "Advanced Finance",
+        "link": "https://amzn.to/4j49t6p"
+      },
+      {
+        "title": "Dynamic Hedging (Nassim Taleb)",
+        "description": "Provides a trader's perspective on managing option risk and the reality of how Greeks behave in the market.",
+        "type": "Book",
+        "difficulty": "Advanced Trading",
+        "link": "https://amzn.to/3KE5b9r"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master Derivatives Theory",
+        "description": "Learn exactly how options, swaps, and futures are priced. Understand the assumptions behind the models and when they fail."
+      },
+      {
+        "step": 2,
+        "title": "Learn C++ for Financial Engineering",
+        "description": "Move beyond basic scripts. Build a pricing engine that uses classes and inheritance. Understand how to wrap C++ code into Python."
+      },
+      {
+        "step": 3,
+        "title": "Understand the Desk Environment",
+        "description": "Read about how sales and trading desks operate. Understand the difference between making a market and taking a proprietary position."
+      },
+      {
+        "step": 4,
+        "title": "Network for Desk Internships",
+        "description": "Apply for summer analyst roles in 'Strats' or 'Quant Analytics' divisions at major banks."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Foundational Math",
+        "description": "Calculus, Linear Algebra, and Probability."
+      },
+      {
+        "title": "Financial Theory",
+        "description": "Arbitrage pricing theory, replication portfolios, and risk neutral valuation."
+      },
+      {
+        "title": "Applied Engineering",
+        "description": "Building tools that are robust enough for daily use on a trading floor."
+      },
+      {
+        "title": "Specialization",
+        "description": "Deep dive into a specific asset class like FX, Rates, or Credit."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Desk Strats",
+        "focus": "Real Time Support and Pricing",
+        "core_responsibilities": "Fix pricing models when they break. Create custom hedges for clients. Calculate intraday risk.",
+        "primary_objective": "Facilitate trading revenue by providing accurate prices and risk numbers.",
+        "programming_focus": "Python for rapid tools, C++ for libraries.",
+        "performance_metrics": "Desk PnL, tool stability, and trader feedback."
+      },
+      {
+        "team": "Model Validation (Quant Risk)",
+        "focus": "Regulation and Safety",
+        "core_responsibilities": "Check the models built by Strats/Researchers. Ensure they comply with regulations.",
+        "primary_objective": "Prevent model failure and regulatory fines.",
+        "programming_focus": "Python, R, MATLAB.",
+        "performance_metrics": "Accuracy of validation and identification of model flaws."
+      }
+    ]
+  },
+  "execution_quant_guide": {
+    "id": "execution_quant_guide",
+    "title": "Execution / Market Microstructure Quant Roadmap",
+    "description": "Execution Quants focus on how to trade rather than what to trade. Once a portfolio manager decides to buy a stock, the execution quant ensures the trade happens at the best possible price with minimal market impact. They analyze the limit order book, study liquidity, and build smart order routing (SOR) algorithms.  This role deals with massive amounts of tick data and requires a deep understanding of market microstructure.",
+    "schools": [
+      {
+        "name": "Physics and Statistics PhD/Masters",
+        "program": "PhD / MS",
+        "notes": "Analyzing order book dynamics often uses concepts from statistical mechanics and fluid dynamics. Physics graduates excel at modeling this noisy, high frequency data."
+      },
+      {
+        "name": "Operations Research (OR)",
+        "program": "PhD / MS",
+        "notes": "Execution is an optimization problem: minimizing cost subject to time and liquidity constraints. OR programs provide the math for this."
+      },
+      {
+        "name": "Data Science with Time Series Focus",
+        "program": "Master's",
+        "notes": "Handling terabytes of tick data (TAQ data) requires strong data engineering and time series analysis skills."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Market Microstructure Theory",
+        "level": "Expert",
+        "importance": "Critical. You must understand the limit order book, bid-ask spread, depth, hidden liquidity, and how exchanges match orders."
+      },
+      {
+        "name": "High Frequency Data Analysis",
+        "level": "Expert",
+        "importance": "Critical. Handling tick-by-tick data requires specialized databases (kdb+/q) and cleaning techniques."
+      },
+      {
+        "name": "Optimal Execution Algorithms",
+        "level": "Proficient",
+        "importance": "High. Understand VWAP, TWAP, POV, and Implementation Shortfall algorithms. Know how to customize them to hide footprints."
+      },
+      {
+        "name": "Stochastic Control and Reinforcement Learning",
+        "level": "Advanced",
+        "importance": "Growing. Modern execution uses RL to adapt to changing liquidity conditions dynamically."
+      },
+      {
+        "name": "Exchange Protocols and Regulation",
+        "level": "Proficient",
+        "importance": "Medium. Knowledge of FIX protocol, exchange fees (maker-taker), and regulations (Reg NMS, MiFID II) helps in routing decisions."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Algorithmic and High-Frequency Trading (Cartea, Jaimungal, Penalva)",
+        "description": "The definitive textbook on the math of execution. Covers optimal liquidation and market making strategies.",
+        "type": "Book",
+        "difficulty": "Advanced Math",
+        "link": "https://amzn.to/4b2Xsw2"
+      },
+      {
+        "title": "Market Microstructure in Practice (Lehalle and Laruelle)",
+        "description": "Bridges the gap between theory and actual exchange mechanisms. Vital for understanding order books.",
+        "type": "Book",
+        "difficulty": "Advanced Finance",
+        "link": "https://amzn.to/4j3a5cL"
+      },
+      {
+        "title": "Trades, Quotes and Prices (Bouchaud et al.)",
+        "description": "Physics-based approach to financial markets. deeply analytical regarding liquidity and impact.",
+        "type": "Book",
+        "difficulty": "Physics/Math PhD Level",
+        "link": "https://amzn.to/4q39gU5"
+      },
+      {
+        "title": "Trading and Exchanges (Larry Harris)",
+        "description": "The best conceptual introduction to market structure, players, and rules. Less math, more concepts.",
+        "type": "Book",
+        "difficulty": "Beginner to Intermediate",
+        "link": "https://amzn.to/4p5QERY"
+      },
+      {
+        "title": "Inside the Black Box (Rishi Narang)",
+        "description": "A great overview of the components of a quant trading system, including execution.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/4rYjUfX"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Understand the Order Book",
+        "description": "Visualize how orders stack up. Understand the difference between a limit order and a market order. Learn what 'crossing the spread' means."
+      },
+      {
+        "step": 2,
+        "title": "Master Tick Data",
+        "description": "Get raw trade and quote data. Learn to clean it. Calculate metrics like spread, volume profiles, and volatility at the second or millisecond level."
+      },
+      {
+        "step": 3,
+        "title": "Study Cost Models",
+        "description": "Learn to model Transaction Cost Analysis (TCA). Understand how your own trading moves the price (market impact)."
+      },
+      {
+        "step": 4,
+        "title": "Implement Basic Algos",
+        "description": "Code a simple VWAP or TWAP strategy in Python. Backtest it against tick data to see how it performs."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Data Engineering",
+        "description": "Efficiently storing and querying massive high frequency datasets."
+      },
+      {
+        "title": "Microstructure Theory",
+        "description": "The physics of the market: flow, impact, and decay."
+      },
+      {
+        "title": "Algorithm Design",
+        "description": "Creating logic that slices large orders into small pieces intelligently."
+      },
+      {
+        "title": "Performance Analytics",
+        "description": "Measuring slippage against benchmarks to prove the algorithm works."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Execution Research",
+        "focus": "Cost Reduction",
+        "core_responsibilities": "Analyze post-trade data. Build models to predict liquidity. Tune algo parameters.",
+        "primary_objective": "Minimize the difference between the decision price and the final execution price (slippage).",
+        "programming_focus": "Python, kdb+/q, R.",
+        "performance_metrics": "Implementation Shortfall, Slippage vs Benchmark."
+      },
+      {
+        "team": "Alpha Research",
+        "focus": "Return Generation",
+        "core_responsibilities": "Predict future price movements. Decide what to buy.",
+        "primary_objective": "Maximize portfolio returns.",
+        "programming_focus": "Python, C++.",
+        "performance_metrics": "Sharpe Ratio, Total Return."
+      }
+    ]
+  },
+  "quant_product_guide": {
+    "id": "quant_product_guide",
+    "title": "Quant Product Manager Career Roadmap",
+    "description": "Quant Product Managers sit at the intersection of business, technology, and math. They do not usually write production models, but they define what should be built. They manage the roadmap for trading platforms, risk systems, or data analytics products. They translate the complex needs of traders and quants into clear requirements for software developers. This role is ideal for those who understand quant finance but prefer strategy and communication over pure coding.",
+    "schools": [
+      {
+        "name": "Engineering or CS with MBA",
+        "program": "Bachelor's / MBA",
+        "notes": "A technical undergraduate degree provides credibility with developers. An MBA helps with the strategic and business prioritization aspects."
+      },
+      {
+        "name": "Finance / Economics",
+        "program": "Bachelor's or Master's",
+        "notes": "Strong domain knowledge is required. You must understand the financial instruments being traded to build products for them."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Product Lifecycle Management",
+        "level": "Expert",
+        "importance": "Critical. You must know how to take an idea from concept to launch. Mastery of Agile/Scrum methodologies is standard."
+      },
+      {
+        "name": "Technical Literacy (Python/SQL)",
+        "level": "Proficient",
+        "importance": "High. You need to query data to validate hypotheses and read code to understand technical debt. You do not need to be a core developer."
+      },
+      {
+        "name": "Stakeholder Management",
+        "level": "Expert",
+        "importance": "Critical. You must balance the conflicting demands of traders (who want features now) and developers (who want to refactor code)."
+      },
+      {
+        "name": "User Experience (UX) for Finance",
+        "level": "Proficient",
+        "importance": "Medium. Designing intuitive dashboards for complex data is a key part of the value proposition."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Inspired: How to Create Tech Products Customers Love (Marty Cagan)",
+        "description": "The standard text for modern product management. Focuses on discovery and delivery.",
+        "type": "Book",
+        "difficulty": "Business / Strategy",
+        "link": "https://amzn.to/3YAdExu"
+      },
+      {
+        "title": "Escaping the Build Trap (Melissa Perri)",
+        "description": "Teaches how to focus on value and outcomes rather than just shipping features.",
+        "type": "Book",
+        "difficulty": "Business / Strategy",
+        "link": "https://amzn.to/4qkUhoe"
+      },
+      {
+        "title": "Cracking the PM Interview (Gayle Laakmann McDowell)",
+        "description": "Essential for passing product management interviews at top tech and finance firms.",
+        "type": "Interview Guide",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/3Y4CPbl"
+      },
+      {
+        "title": "Product Management in Practice (Matt LeMay)",
+        "description": "A practical guide to the day-to-day realities of the role.",
+        "type": "Book",
+        "difficulty": "Beginner",
+        "link": "https://amzn.to/4aWNSLf"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Gain Domain Expertise",
+        "description": "Start in a support, operations, or junior analyst role. Learn the jargon and the workflow of a trading desk."
+      },
+      {
+        "step": 2,
+        "title": "Learn Agile and SDLC",
+        "description": "Understand how software is built. Learn Jira, Confluence, and the software development lifecycle."
+      },
+      {
+        "step": 3,
+        "title": "Develop Data Skills",
+        "description": "Learn SQL to pull your own metrics. Don't rely on others for basic data analysis."
+      },
+      {
+        "step": 4,
+        "title": "Transition to Ownership",
+        "description": "Ask to own a small internal tool or feature. Define its requirements and work with devs to ship it."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Business Logic",
+        "description": "Understanding how the firm makes money and what tools they need to do it better."
+      },
+      {
+        "title": "Technical Translation",
+        "description": "Turning 'I need to trade faster' into specific latency requirements and API specs."
+      },
+      {
+        "title": "Prioritization",
+        "description": "Ruthlessly deciding what not to build."
+      },
+      {
+        "title": "Delivery",
+        "description": "Ensuring the team ships quality software on time."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Quant Product",
+        "focus": "Why and What",
+        "core_responsibilities": "Define the roadmap. Gather requirements. Measure adoption.",
+        "primary_objective": "Build the right thing to solve the user's problem.",
+        "programming_focus": "SQL, Python (Scripting).",
+        "performance_metrics": "User adoption, product impact, delivery speed."
+      },
+      {
+        "team": "Quant Dev",
+        "focus": "How",
+        "core_responsibilities": "Write the code. Architect the system. Fix bugs.",
+        "primary_objective": "Build the thing right (efficiently and robustly).",
+        "programming_focus": "C++, Python, Java.",
+        "performance_metrics": "Code quality, system uptime, bug count."
+      }
+    ]
+  },
+  "portfolio_quant_guide": {
+    "id": "portfolio_quant_guide",
+    "title": "Quant Portfolio Construction Career Roadmap",
+    "description": "Portfolio Construction Quants take the alpha signals generated by researchers and combine them into a final portfolio. They solve an optimization problem: maximize return while staying within risk limits, capital constraints, and transaction cost budgets.  They use convex optimization and risk factor models (like Barra) to decide exactly how much capital to allocate to each trade.",
+    "schools": [
+      {
+        "name": "Operations Research and Industrial Engineering",
+        "program": "PhD / MS",
+        "notes": "This is the primary recruiting ground. The core work is mathematical optimization (Linear and Quadratic Programming)."
+      },
+      {
+        "name": "Applied Mathematics",
+        "program": "PhD / MS",
+        "notes": "Focus on numerical analysis and optimization theory."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Convex Optimization",
+        "level": "Expert",
+        "importance": "Critical. You must understand the math of minimizing functions subject to constraints. Lagrange multipliers, duality, and interior-point methods."
+      },
+      {
+        "name": "Risk Factor Modeling",
+        "level": "Expert",
+        "importance": "Critical. Understanding how to decompose risk into factors (Market, Sector, Momentum, Size) using tools like Barra or Axioma."
+      },
+      {
+        "name": "Linear Algebra",
+        "level": "Expert",
+        "importance": "High. Manipulating large covariance matrices requires deep linear algebra knowledge to ensure numerical stability."
+      },
+      {
+        "name": "Python (CVXPY, SciPy)",
+        "level": "Expert",
+        "importance": "High. You need to implement optimization routines programmatically."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Optimization Methods in Finance (Cornuejols and Tutuncu)",
+        "description": "Covers the specific application of optimization theory to financial problems.",
+        "type": "Book",
+        "difficulty": "Advanced Math",
+        "link": "https://amzn.to/4s50Lcl"
+      },
+      {
+        "title": "Active Portfolio Management (Grinold and Kahn)",
+        "description": "The fundamental text on the Fundamental Law of Active Management. Essential for understanding breadth and skill.",
+        "type": "Book",
+        "difficulty": "Advanced Finance",
+        "link": "https://amzn.to/44DlFW2"
+      },
+      {
+        "title": "Robust Portfolio Optimization and Management (Fabozzi et al.)",
+        "description": "Addresses the issue of estimation error in inputs and how to build portfolios that don't fail when the model is slightly wrong.",
+        "type": "Book",
+        "difficulty": "Advanced",
+        "link": "https://amzn.to/48LnWku"
+      },
+      {
+        "title": "Convex Optimization (Boyd and Vandenberghe)",
+        "description": "The standard reference for the math behind the solvers. Rigorous and comprehensive.",
+        "type": "Book",
+        "difficulty": "Advanced Math",
+        "link": "https://amzn.to/3YiGWjW"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master Optimization Theory",
+        "description": "Learn how solvers work. Understand the difference between convex and non-convex problems."
+      },
+      {
+        "step": 2,
+        "title": "Learn Risk Models",
+        "description": "Study factor analysis. Understand PCA and how to build a risk model from covariance data."
+      },
+      {
+        "step": 3,
+        "title": "Implement Mean-Variance Optimization",
+        "description": "Build a Markowitz optimizer in Python. Add real world constraints like 'no shorting' or 'max sector exposure'."
+      },
+      {
+        "step": 4,
+        "title": "Study Transaction Costs",
+        "description": " incorporate cost models into the optimization. Understand how turnover eats into returns."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Mathematical Core",
+        "description": "Linear Algebra and Convex Analysis."
+      },
+      {
+        "title": "Risk Management",
+        "description": "Factor models and covariance estimation."
+      },
+      {
+        "title": "Solver Technology",
+        "description": "Using commercial solvers like Gurobi or open source ones like ECOS."
+      },
+      {
+        "title": "Portfolio Analytics",
+        "description": "Attribution analysis to explain where returns came from."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Portfolio Construction",
+        "focus": "Combination and Sizing",
+        "core_responsibilities": "Take signals and determine trade sizes. Manage risk limits. Rebalance the portfolio.",
+        "primary_objective": "Maximize the Sharpe ratio of the aggregate portfolio.",
+        "programming_focus": "Python, Optimization Solvers.",
+        "performance_metrics": "Portfolio Sharpe, Risk adjusted returns, Turnover efficiency."
+      },
+      {
+        "team": "Alpha Research",
+        "focus": "Signal Generation",
+        "core_responsibilities": "Find assets that will go up or down.",
+        "primary_objective": "Generate raw predictive power (IC).",
+        "programming_focus": "Python, Statistics.",
+        "performance_metrics": "Information Coefficient (IC), Hit Rate."
+      }
+    ]
+  },
+  "quant_data_scientist_guide": {
+    "id": "quant_data_scientist_guide",
+    "title": "Quant Data Scientist (Alternative Data) Roadmap",
+    "description": "Quant Data Scientists differ from traditional Quant Researchers by focusing on unstructured and alternative data rather than just price and volume. They ingest, clean, and extract signals from satellite imagery, credit card transaction logs, social media sentiment, and web scraped data. [Image of data ingestion pipeline] The role demands heavy data engineering skills alongside statistical knowledge. The goal is to turn messy, real world information into a structured time series that a researcher can use to predict market movements.",
+    "schools": [
+      {
+        "name": "Data Science / Analytics Masters",
+        "program": "MS in Data Science",
+        "notes": "Programs at schools like NYU, Columbia, or Georgia Tech focus on the practical application of machine learning and big data tools (Spark/Hadoop) which are essential for this role."
+      },
+      {
+        "name": "Computer Science (AI Focus)",
+        "program": "Master's or PhD",
+        "notes": "Deep knowledge of Natural Language Processing (NLP) is increasingly required to process text based datasets like earnings call transcripts or news feeds."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Natural Language Processing (NLP)",
+        "level": "Expert",
+        "importance": "Critical. You must know how to use Transformers (BERT, GPT) to extract sentiment and named entities from text data."
+      },
+      {
+        "name": "Big Data Technologies (Spark, Dask)",
+        "level": "Expert",
+        "importance": "Critical. Alternative datasets are often terabytes in size. You need distributed computing skills to process them."
+      },
+      {
+        "name": "Web Scraping and ETL",
+        "level": "Expert",
+        "importance": "High. Building robust pipelines to scrape websites without getting blocked and cleaning the messy HTML is a daily task."
+      },
+      {
+        "name": "SQL and NoSQL Databases",
+        "level": "Proficient",
+        "importance": "High. You will store data in various formats, from standard relational tables to document stores like MongoDB."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Natural Language Processing with Transformers (Tunstall, von Werra, Wolf)",
+        "description": "The practical guide to using Hugging Face and modern NLP architectures.",
+        "type": "Book",
+        "difficulty": "Advanced ML",
+        "link": "https://amzn.to/4p08Vjm"
+      },
+      {
+        "title": "Designing Data-Intensive Applications (Martin Kleppmann)",
+        "description": "The definitive guide to distributed systems and data engineering. Essential for handling massive alternative datasets.",
+        "type": "Book",
+        "difficulty": "Advanced CS",
+        "link": "https://amzn.to/3N6pVqR"
+      },
+      {
+        "title": "Python for Data Analysis (Wes McKinney)",
+        "description": "Fundamental for cleaning and wrangling data using Pandas.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/3L9qDTN"
+      },
+      {
+        "title": "Mining of Massive Datasets (Leskovec, Rajaraman, Ullman)",
+        "description": "Covers algorithms for handling large scale data, including locality sensitive hashing and clustering.",
+        "type": "Book",
+        "difficulty": "Advanced CS",
+        "link": "https://amzn.to/4p0932k"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master Data Wrangling",
+        "description": "Become an expert in Pandas and SQL. You should be able to clean messy CSVs and join complex tables blindfolded."
+      },
+      {
+        "step": 2,
+        "title": "Learn NLP and Unstructured Data",
+        "description": "Build projects that analyze text. Scrape news sites and calculate sentiment scores. Process images to count cars in a parking lot."
+      },
+      {
+        "step": 3,
+        "title": "Understand Cloud Pipelines",
+        "description": "Learn AWS or GCP. Build a pipeline that runs automatically every day to fetch data, clean it, and save it to a database."
+      },
+      {
+        "step": 4,
+        "title": "Apply Statistics",
+        "description": "Learn how to normalize data and check for stationarity. A clean dataset is useless if it has look-ahead bias."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Data Engineering",
+        "description": "Pipelines, scrapers, and storage efficiency."
+      },
+      {
+        "title": "Machine Learning",
+        "description": "NLP and Computer Vision for signal extraction."
+      },
+      {
+        "title": "Statistical Rigor",
+        "description": "Ensuring data quality and point-in-time correctness."
+      },
+      {
+        "title": "Domain Knowledge",
+        "description": "Understanding which datasets actually predict asset prices."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Quant Data Science",
+        "focus": "Signal Extraction",
+        "core_responsibilities": "Find new datasets. Clean them. Prove they have value.",
+        "primary_objective": "Provide high quality, unique data features to the researchers.",
+        "programming_focus": "Python, SQL, Spark.",
+        "performance_metrics": "Data quality, pipeline uptime, feature predictive power."
+      },
+      {
+        "team": "Quant Research",
+        "focus": "Signal Combination",
+        "core_responsibilities": "Take the features from data science and build a trading model.",
+        "primary_objective": "Generate Alpha.",
+        "programming_focus": "Python, R.",
+        "performance_metrics": "Sharpe Ratio."
+      }
+    ]
+  },
+  "quant_infrastructure_guide": {
+    "id": "quant_infrastructure_guide",
+    "title": "Quant Infrastructure Engineer Roadmap",
+    "description": "Quant Infrastructure Engineers build the foundation that the entire firm stands on. They do not write trading strategies. Instead, they build the compute clusters, storage solutions, and networks that allow researchers to process petabytes of data and traders to execute orders in microseconds. This role is pure computer science and systems engineering applied to finance.",
+    "schools": [
+      {
+        "name": "Computer Science / Computer Engineering",
+        "program": "Bachelor's or Master's",
+        "notes": "Degrees with a focus on Distributed Systems, Networks, and Operating Systems are required."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Linux Systems Administration",
+        "level": "Expert",
+        "importance": "Critical. You must know the kernel inside out. Tuning the OS for low latency (isolating cores, disabling interrupts) is standard."
+      },
+      {
+        "name": "Network Engineering",
+        "level": "Expert",
+        "importance": "High. Understanding multicast, TCP/IP stack tuning, and hardware switches (Arista/Cisco) is vital for HFT infrastructure."
+      },
+      {
+        "name": "Cloud and Containerization",
+        "level": "Proficient",
+        "importance": "High. Managing Kubernetes clusters and hybrid cloud setups (AWS + On-prem) for research workloads."
+      },
+      {
+        "name": "Hardware Knowledge",
+        "level": "Proficient",
+        "importance": "Medium. Understanding server specs, overclocking, and cooling solutions for colocation centers."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Site Reliability Engineering (Google)",
+        "description": "The bible for maintaining large, reliable systems. Covers monitoring, alerting, and capacity planning.",
+        "type": "Book",
+        "difficulty": "Intermediate CS",
+        "link": "https://amzn.to/4qi8oKR"
+      },
+      {
+        "title": "Systems Performance (Brendan Gregg)",
+        "description": "Essential for understanding how to analyze and tune Linux systems for maximum speed.",
+        "type": "Book",
+        "difficulty": "Advanced CS",
+        "link": "https://amzn.to/4pIayDs"
+      },
+      {
+        "title": "UNIX and Linux System Administration Handbook",
+        "description": "The comprehensive guide to managing Linux environments.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/3MQPJHr"
+      },
+      {
+        "title": "TCP/IP Illustrated (Stevens)",
+        "description": "Deep dive into how networks actually work. Required for network troubleshooting.",
+        "type": "Book",
+        "difficulty": "Advanced",
+        "link": "https://amzn.to/4s58neK"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master Linux",
+        "description": "Stop using GUIs. Manage everything via CLI. Learn to write Bash scripts to automate tasks."
+      },
+      {
+        "step": 2,
+        "title": "Learn Networking",
+        "description": "Set up a home lab. Configure firewalls and switches. Understand how packets move from A to B."
+      },
+      {
+        "step": 3,
+        "title": "Embrace DevOps",
+        "description": "Learn Terraform and Ansible (Infrastructure as Code). Never configure a server manually twice."
+      },
+      {
+        "step": 4,
+        "title": "Understand High Performance Computing (HPC)",
+        "description": "Learn how schedulers like Slurm work. Understand how to manage a grid of 1,000 cores for research."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Systems Core",
+        "description": "Linux Kernel and Hardware."
+      },
+      {
+        "title": "Network Architecture",
+        "description": "Low latency switching and routing."
+      },
+      {
+        "title": "Automation",
+        "description": "Ansible, Terraform, and Python scripting."
+      },
+      {
+        "title": "Reliability",
+        "description": "Monitoring (Prometheus/Grafana) and Incident Response."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Infrastructure",
+        "focus": "Reliability and Hardware",
+        "core_responsibilities": "Keep the servers running. Minimize network jitter. Manage data centers.",
+        "primary_objective": "Zero downtime and maximum hardware performance.",
+        "programming_focus": "Bash, Python, Go.",
+        "performance_metrics": "Uptime, Latency stats, Ticket resolution time."
+      },
+      {
+        "team": "Quant Dev",
+        "focus": "Software Application",
+        "core_responsibilities": "Write the trading logic that runs on the infrastructure.",
+        "primary_objective": "Correct execution logic.",
+        "programming_focus": "C++.",
+        "performance_metrics": "Execution speed."
+      }
+    ]
+  },
+  "quant_research_ops_guide": {
+    "id": "quant_research_ops_guide",
+    "title": "Quant Research Ops (MLOps) Roadmap",
+    "description": "As quant funds grow, the gap between 'code on a researcher's laptop' and 'code in production' grows. Quant Research Ops (often called MLOps in tech) bridges this gap. They build the platforms that researchers use to backtest. They ensure reproducibility, manage data versioning, and optimize the research workflow. [Image of MLOps lifecycle] This is a high impact role that multiplies the productivity of every researcher at the firm.",
+    "schools": [
+      {
+        "name": "Computer Science",
+        "program": "BS or MS",
+        "notes": "Focus on Software Engineering and Database Systems."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Containerization (Docker/Kubernetes)",
+        "level": "Expert",
+        "importance": "Critical. You must ensure that a model runs exactly the same way in production as it did in research."
+      },
+      {
+        "name": "Workflow Orchestration (Airflow/Prefect)",
+        "level": "Expert",
+        "importance": "High. Managing complex dependencies for backtesting pipelines."
+      },
+      {
+        "name": "Python Packaging and CI/CD",
+        "level": "Expert",
+        "importance": "High. Managing internal libraries and automated testing pipelines."
+      },
+      {
+        "name": "Cloud Architecture",
+        "level": "Proficient",
+        "importance": "Medium. Scaling research compute on AWS or Azure."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Machine Learning Engineering (Andriy Burkov)",
+        "description": "Covers the engineering side of deploying ML models.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/44BoqHk"
+      },
+      {
+        "title": "Introduction to Machine Learning with Python (Müller and Guido)",
+        "description": "Good for understanding what the researchers are trying to do, so you can help them do it better.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/4s2ctob"
+      },
+      {
+        "title": "Clean Architecture (Robert Martin)",
+        "description": "Vital for designing research platforms that don't become unmaintainable spaghetti code.",
+        "type": "Book",
+        "difficulty": "Advanced SE",
+        "link": "https://amzn.to/4j7GQWb"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master Software Engineering Standards",
+        "description": "Learn how to package Python code properly. Understand unit testing, linting, and type checking."
+      },
+      {
+        "step": 2,
+        "title": "Learn Containerization",
+        "description": "Dockerize everything. Understand how to isolate environments so dependencies don't conflict."
+      },
+      {
+        "step": 3,
+        "title": "Build a CI/CD Pipeline",
+        "description": "Set up GitHub Actions or Jenkins to automatically test and deploy code."
+      },
+      {
+        "step": 4,
+        "title": "Optimize Compute",
+        "description": "Learn how to profile code. Help researchers make their backtests run 10x faster."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Environment Management",
+        "description": "Docker, Conda, and dependency resolution."
+      },
+      {
+        "title": "Pipeline Orchestration",
+        "description": "Airflow DAGs and job scheduling."
+      },
+      {
+        "title": "Reproducibility",
+        "description": "Data versioning (DVC) and model registry (MLflow)."
+      },
+      {
+        "title": "Performance Tuning",
+        "description": "Profiling and optimizing Python/C++ code."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Research Ops",
+        "focus": "Productivity and Scale",
+        "core_responsibilities": "Build the research platform. Manage compute resources. Enforce coding standards.",
+        "primary_objective": "Maximize researcher throughput and code quality.",
+        "programming_focus": "Python, Go, YAML.",
+        "performance_metrics": "Backtest speed, platform stability, researcher satisfaction."
+      },
+      {
+        "team": "Quant Research",
+        "focus": "Math and Models",
+        "core_responsibilities": "Write the models.",
+        "primary_objective": "Predict prices.",
+        "programming_focus": "Python (often messy).",
+        "performance_metrics": "P&L."
+      }
+    ]
+  },
+  "model_validation_guide": {
+    "id": "model_validation_guide",
+    "title": "Model Validation (Quant Risk) Roadmap",
+    "description": "Model Validators are the internal regulators of a bank or fund. They review, stress test, and approve the models created by the front office quants. This role is heavy on mathematics and documentation. It is critical for ensuring the firm does not blow up due to a bad model.  Validators must be skeptical and rigorous, often finding flaws that the original authors missed.",
+    "schools": [
+      {
+        "name": "Mathematics / Statistics / Physics",
+        "program": "PhD or Master's",
+        "notes": "Deep theoretical understanding is required to critique complex models."
+      },
+      {
+        "name": "Financial Engineering",
+        "program": "MFE",
+        "notes": "Good fit if the focus includes risk management."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Stochastic Calculus",
+        "level": "Expert",
+        "importance": "Critical. You must understand the math well enough to break it."
+      },
+      {
+        "name": "Regulatory Frameworks (Basel/CCAR/FRTB)",
+        "level": "High",
+        "importance": "High. Much of the work is driven by government regulations like SR 11-7."
+      },
+      {
+        "name": "Technical Writing",
+        "level": "Expert",
+        "importance": "Critical. You will write 50+ page reports detailing why a model is safe or unsafe."
+      },
+      {
+        "name": "Coding (Python/R/MATLAB)",
+        "level": "Proficient",
+        "importance": "High. You need to re-implement models independently to verify results."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Value at Risk (Philippe Jorion)",
+        "description": "The standard text for financial risk management.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/4rYkEBL"
+      },
+      {
+        "title": "Market Risk Analysis Series (Carol Alexander)",
+        "description": "Comprehensive guide to practical risk modeling.",
+        "type": "Book",
+        "difficulty": "Advanced",
+        "link": "https://amzn.to/3KD3B7J"
+      },
+      {
+        "title": "Quantitative Risk Management (McNeil, Frey, Embrechts)",
+        "description": " rigorous mathematical treatment of risk.",
+        "type": "Book",
+        "difficulty": "PhD Level",
+        "link": "https://amzn.to/48XNxW6"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Master the Theory",
+        "description": "Understand pricing models and risk metrics (VaR, Expected Shortfall) deeply."
+      },
+      {
+        "step": 2,
+        "title": "Learn the Regulations",
+        "description": "Read SR 11-7 and Basel III. Understand what regulators require."
+      },
+      {
+        "step": 3,
+        "title": "Develop Testing Skills",
+        "description": "Learn how to stress test a model. What happens if volatility spikes 500%? Does the model break?"
+      },
+      {
+        "step": 4,
+        "title": "Practice Documentation",
+        "description": "Learn to write clear, defensive reports. Your writing is your product."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Mathematical Verification",
+        "description": "Deriving equations from scratch to check correctness."
+      },
+      {
+        "title": "Benchmarking",
+        "description": "Building challenger models to compare performance."
+      },
+      {
+        "title": "Stress Testing",
+        "description": "Simulating extreme market conditions."
+      },
+      {
+        "title": "Governance",
+        "description": "Ensuring models have proper approval and monitoring."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Model Validation",
+        "focus": "Safety and Compliance",
+        "core_responsibilities": "Critique and approve models. Write validation reports.",
+        "primary_objective": "Prevent model risk and regulatory fines.",
+        "programming_focus": "Python, R, MATLAB.",
+        "performance_metrics": "Quality of review, identification of errors."
+      },
+      {
+        "team": "Front Office Quant",
+        "focus": "Profit and Pricing",
+        "core_responsibilities": "Build models to trade or price deals.",
+        "primary_objective": "Revenue.",
+        "programming_focus": "C++, Python.",
+        "performance_metrics": "PnL, Speed."
+      }
+    ]
+  },
+  "crypto_quant_guide": {
+    "id": "crypto_quant_guide",
+    "title": "Crypto / Digital Assets Quant Roadmap",
+    "description": "Crypto Quants apply systematic strategies to digital asset markets. This field is less mature and more volatile than traditional finance.  Opportunities exist in high frequency arbitrage between fragmented exchanges, Market Making for DeFi protocols, and MEV (Maximal Extractable Value) strategies on blockchains like Ethereum and Solana. The infrastructure is 24/7 and completely digital.",
+    "schools": [
+      {
+        "name": "Computer Science / Cryptography",
+        "program": "BS, MS, or PhD",
+        "notes": "Understanding blockchain consensus mechanisms and public key cryptography is more important here than in TradFi."
+      },
+      {
+        "name": "Self-Taught / Open Source",
+        "program": "GitHub Portfolio",
+        "notes": "Crypto hires heavily based on open source contributions and visible on-chain activity."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Blockchain Mechanics",
+        "level": "Expert",
+        "importance": "Critical. Understand blocks, gas fees, mempools, and finality."
+      },
+      {
+        "name": "Smart Contract Languages (Solidity/Rust/Huff)",
+        "level": "Proficient",
+        "importance": "High. Necessary for interacting with DeFi protocols or writing MEV bots."
+      },
+      {
+        "name": "DeFi Protocols",
+        "level": "Expert",
+        "importance": "High. Understand how Uniswap AMMs, lending pools (Aave), and bridges work mathematically."
+      },
+      {
+        "name": "System Architecture",
+        "level": "High",
+        "importance": "High. Crypto exchanges have poor APIs. You need robust connectors and error handling."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Mastering Ethereum (Andreas M. Antonopoulos)",
+        "description": "The technical guide to how Ethereum works under the hood.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/4anXfUa"
+      },
+      {
+        "title": "Flash Boys 2.0 (Lewis, et al. Paper)",
+        "description": "Seminal academic paper explaining MEV and front running in DEXs.",
+        "type": "Research Paper",
+        "difficulty": "Advanced",
+        "link": "https://amzn.to/4p5h9af"
+      },
+      {
+        "title": "DeFi and the Future of Finance (Campbell Harvey)",
+        "description": "Overview of the DeFi landscape and mechanics.",
+        "type": "Book",
+        "difficulty": "Beginner/Intermediate",
+        "link": "https://amzn.to/494Yk0V"
+      },
+      {
+        "title": "Hands-On Smart Contract Development with Solidity",
+        "description": "Practical guide to writing contracts.",
+        "type": "Book",
+        "difficulty": "Intermediate Coding",
+        "link": "https://amzn.to/4p4xlbH"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Understand the Tech",
+        "description": "Read the Bitcoin and Ethereum whitepapers. Understand what a transaction actually is."
+      },
+      {
+        "step": 2,
+        "title": "Learn DeFi Math",
+        "description": "Derive the Constant Product Market Maker formula (x*y=k). Understand impermanent loss."
+      },
+      {
+        "step": 3,
+        "title": "Code a Bot",
+        "description": "Write a simple arbitrage bot that looks for price differences between Uniswap and SushiSwap."
+      },
+      {
+        "step": 4,
+        "title": "Study MEV",
+        "description": "Learn how searchers extract value by ordering transactions in a block."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Protocol Literacy",
+        "description": "EVM, SVM, and Cross-chain messaging."
+      },
+      {
+        "title": "On-Chain Analytics",
+        "description": "Querying raw blockchain nodes for data (Dune Analytics)."
+      },
+      {
+        "title": "Smart Contract Auditing",
+        "description": "Reading code to find exploit risks before trading."
+      },
+      {
+        "title": "Execution",
+        "description": "Managing gas prices and latency to get transactions mined."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Crypto Quant",
+        "focus": "On-Chain / CEX Arbitrage",
+        "core_responsibilities": "Build bots to trade volatility and inefficiencies in crypto markets.",
+        "primary_objective": "Absolute Return.",
+        "programming_focus": "Python, Rust, Solidity.",
+        "performance_metrics": "PnL, Gas efficiency."
+      },
+      {
+        "team": "TradFi Quant",
+        "focus": "Equities / Fixed Income",
+        "core_responsibilities": "Trade regulated assets on central exchanges.",
+        "primary_objective": "Risk Adjusted Return.",
+        "programming_focus": "C++, Python.",
+        "performance_metrics": "Sharpe Ratio."
+      }
+    ]
+  },
+  "systematic_macro_quant_guide": {
+    "id": "systematic_macro_quant_guide",
+    "title": "Systematic Macro Quant Roadmap",
+    "description": "Systematic Macro Quants trade across all asset classes,equities, bonds, currencies, and commodities, based on broad economic trends. Unlike HFT, these strategies often have holding periods of days or weeks. They use data like inflation rates, GDP growth, and central bank policy, often combined with trend following signals.  The goal is to profit from global economic shifts in a diversified way.",
+    "schools": [
+      {
+        "name": "Economics / Econometrics",
+        "program": "PhD",
+        "notes": "Strong understanding of macro theory is required alongside quantitative skills."
+      },
+      {
+        "name": "Finance / Math",
+        "program": "Master's or PhD",
+        "notes": "Focus on time series analysis and asset allocation."
+      }
+    ],
+    "skills": [
+      {
+        "name": "Econometrics",
+        "level": "Expert",
+        "importance": "Critical. Understanding cointegration, vector autoregression (VAR), and regime switching models."
+      },
+      {
+        "name": "Macroeconomics",
+        "level": "Expert",
+        "importance": "High. Intuitive understanding of how interest rates affect currency pairs and bond yields."
+      },
+      {
+        "name": "Futures Markets",
+        "level": "Proficient",
+        "importance": "High. Macro is mostly traded via futures. You must understand roll yield, margin, and contract specs."
+      },
+      {
+        "name": "Portfolio Optimization",
+        "level": "Expert",
+        "importance": "High. allocating capital across 100+ diverse markets requires robust risk parity or mean variance techniques."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Expected Returns (Antti Ilmanen)",
+        "description": "The encyclopedia of returns across asset classes. Essential for macro quants.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/45fxpOu"
+      },
+      {
+        "title": "Trend Following (Michael Covel)",
+        "description": "Overview of the most common systematic macro strategy.",
+        "type": "Book",
+        "difficulty": "Beginner",
+        "link": "https://amzn.to/4aVyoqM"
+      },
+      {
+        "title": "Systematic Trading (Robert Carver)",
+        "description": "Practical guide to building a multi-asset trading system.",
+        "type": "Book",
+        "difficulty": "Intermediate",
+        "link": "https://amzn.to/4pNz8mH"
+      },
+      {
+        "title": "Inside the House of Money (Steven Drobny)",
+        "description": "Interviews with top macro traders. Good for qualitative understanding.",
+        "type": "Book",
+        "difficulty": "Beginner",
+        "link": "https://amzn.to/4qheviC"
+      }
+    ],
+    "roadmap_steps": [
+      {
+        "step": 1,
+        "title": "Learn Macro Theory",
+        "description": "Understand the drivers of growth and inflation. Learn how central banks operate."
+      },
+      {
+        "step": 2,
+        "title": "Master Time Series Stats",
+        "description": "Learn to clean economic data (which is often revised) and apply econometric models."
+      },
+      {
+        "step": 3,
+        "title": "Understand Trend Following",
+        "description": "Study momentum strategies. Why do trends persist? How do you manage the risk when trends reverse?"
+      },
+      {
+        "step": 4,
+        "title": "Build a Multi-Asset Backtest",
+        "description": "Create a system that trades Bonds, Gold, and S&P 500 futures simultaneously. Handle currency adjustments."
+      }
+    ],
+    "roadmap": [
+      {
+        "title": "Economic Data Handling",
+        "description": "Dealing with release lags, revisions, and point-in-time data."
+      },
+      {
+        "title": "Signal Generation",
+        "description": "Carry, Momentum, and Value signals applied globally."
+      },
+      {
+        "title": "Risk Parity",
+        "description": "Allocating risk equally across asset classes."
+      },
+      {
+        "title": "Execution",
+        "description": "Rolling futures contracts efficiently."
+      }
+    ],
+    "roles_comparison": [
+      {
+        "team": "Systematic Macro",
+        "focus": "Global Economics",
+        "core_responsibilities": "Predict broad market moves across asset classes.",
+        "primary_objective": "Uncorrelated returns (Crisis Alpha).",
+        "programming_focus": "Python, R.",
+        "performance_metrics": "Sharpe, Correlation to S&P 500 (lower is better)."
+      },
+      {
+        "team": "Equity Stat Arb",
+        "focus": "Single Stocks",
+        "core_responsibilities": "Predict relative moves between specific companies.",
+        "primary_objective": "Market Neutral Alpha.",
+        "programming_focus": "Python, C++.",
+        "performance_metrics": "Sharpe, Capacity."
       }
     ]
   }

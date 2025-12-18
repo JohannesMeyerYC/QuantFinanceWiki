@@ -5,7 +5,6 @@
     "description": "Essential probability and statistical concepts for quantitative finance, from distributions to Monte Carlo simulations and risk measures.",
     "filename": "probability-statistics-quant-finance.pdf",
     "category": "Statistics",
-    "date": "2025-05-01",
     "type": "PDF"
   },
   {
@@ -14,7 +13,6 @@
     "description": "Core calculus concepts for quantitative finance, covering derivatives, integrals, ODEs, PDEs, and stochastic differential equations.",
     "filename": "calculus-quant-finance.pdf",
     "category": "Mathematics",
-    "date": "2025-05-02",
     "type": "PDF"
   },
   {
@@ -23,7 +21,6 @@
     "description": "A breakdown of 10 crucial quantitative finance concepts, from Feynman-Kac to PCA, for mastering pricing, risk, and trading models.",
     "filename": "key-quant-concepts-equations.pdf",
     "category": "Derivatives & Risk",
-    "date": "2025-05-03",
     "type": "PDF"
   },
   {
@@ -32,7 +29,6 @@
     "description": "Foundational checklist covering mathematics, computer science, and finance skills for quant interviews.",
     "filename": "quant-interview-checklist.pdf",
     "category": "Careers",
-    "date": "2025-05-04",
     "type": "Cheatsheet"
   },
   {
@@ -41,7 +37,6 @@
     "description": "Complete rundown of quant roles, responsibilities, skills, and compensation, from researchers to risk analysts.",
     "filename": "quant-roles-salaries.pdf",
     "category": "Careers",
-    "date": "2025-05-05",
     "type": "PDF"
   },
   {
@@ -50,7 +45,6 @@
     "description": "Ranking of 20 leading hedge funds and prop shops with strategies, locations, and pay scales.",
     "filename": "top-20-quant-firms.pdf",
     "category": "Careers",
-    "date": "2025-05-06",
     "type": "PDF"
   },
   {
@@ -59,7 +53,6 @@
     "description": "Overview of major global quantitative finance hubs, their specialties, universities, and financial infrastructure.",
     "filename": "quant-global-centers.pdf",
     "category": "Global Finance",
-    "date": "2025-05-07",
     "type": "PDF"
   },
   {
@@ -68,7 +61,6 @@
     "description": "Essential programming concepts for quant finance, from Python research to C++ production systems and low-latency trading.",
     "filename": "programming-quant-finance.pdf",
     "category": "Programming",
-    "date": "2025-05-08",
     "type": "PDF"
   },
   {
@@ -77,7 +69,6 @@
     "description": "Comprehensive guide to quantitative finance institutions and the roles, responsibilities, and skills they require.",
     "filename": "quant-institutions-careers.pdf",
     "category": "Careers",
-    "date": "2025-05-09",
     "type": "PDF"
   },
   {
@@ -86,7 +77,6 @@
     "description": "Complete mathematical map for quantitative finance, covering stochastic calculus, measure theory, optimization, and numerics.",
     "filename": "mathematics-quant-finance.pdf",
     "category": "Mathematics",
-    "date": "2025-05-10",
     "type": "PDF"
   },
   {
@@ -95,7 +85,6 @@
     "description": "A complete introduction to quantitative finance careers, covering mathematics, programming, and financial markets.",
     "filename": "qf-beginners-guide.pdf",
     "category": "Careers",
-    "date": "2025-06-11",
     "type": "PDF"
   },
   {
@@ -104,7 +93,6 @@
     "description": "Comprehensive technical analysis comparing Value at Risk (VaR) and Conditional Value at Risk (CVaR) for portfolio risk management.",
     "filename": "var-vs-cvar.pdf",
     "category": "Risk Management",
-    "date": "2025-06-12",
     "type": "PDF"
   },
   {
@@ -113,7 +101,6 @@
     "description": "Overview of financial technology, core technologies, applications, and business models for the FinTech ecosystem.",
     "filename": "fintech-beginners-guide.pdf",
     "category": "FinTech",
-    "date": "2025-06-13",
     "type": "PDF"
   },
   {
@@ -122,7 +109,6 @@
     "description": "Comprehensive guide to derivatives in quantitative finance, covering pricing, Greeks, and all types of instruments from vanilla to exotic.",
     "filename": "derivatives-complete-guide.pdf",
     "category": "Derivatives",
-    "date": "2025-06-14",
     "type": "PDF"
   },
   {
@@ -131,7 +117,6 @@
     "description": "Overview of algorithms, models, and mathematical foundations for AI and machine learning applications in quantitative finance.",
     "filename": "ai-ml-quant-finance.pdf",
     "category": "Machine Learning",
-    "date": "2025-06-15",
     "type": "PDF"
   },
   {
@@ -140,7 +125,6 @@
     "description": "Step-by-step guide to breaking into quantitative finance, including mathematics, programming, and finance core competencies.",
     "filename": "quant-finance-roadmap.pdf",
     "category": "Careers",
-    "date": "2025-06-16",
     "type": "PDF"
   },
   {
@@ -149,7 +133,6 @@
     "description": "Introduction to stochastic mechanics, random processes, and modeling uncertainty in financial markets for quantitative finance applications.",
     "filename": "stochastic-processes-quant-finance.pdf",
     "category": "Mathematics",
-    "date": "2025-06-17",
     "type": "PDF"
   },
   {
@@ -158,7 +141,6 @@
     "description": "Ranking and overview of the top 25 Master’s programs for quantitative finance careers, based on placement, curriculum, and employment outcomes.",
     "filename": "qf-programs.pdf",
     "category": "Education",
-    "date": "2025-06-18",
     "type": "PDF"
   },
   {
@@ -167,7 +149,6 @@
     "description": "Directory of practical quantitative finance projects covering mathematics, linear algebra, probability, and programming applications.",
     "filename": "quant-project-directory.pdf",
     "category": "Projects",
-    "date": "2025-06-19",
     "type": "PDF"
   },
   {
@@ -176,7 +157,6 @@
     "description": "Curated list of free high-quality online learning resources for all areas necessary for a quantitative finance career.",
     "filename": "quant-resources-directory.pdf",
     "category": "Resources",
-    "date": "2025-06-20",
     "type": "PDF"
   },
   {
@@ -185,7 +165,6 @@
     "description": "Quick reference guide to key quantitative finance concepts, including alpha, arbitrage, ARIMA, and backtesting.",
     "filename": "the-quant-cheatsheet.pdf",
     "category": "Cheatsheet",
-    "date": "2025-06-21",
     "type": "Cheatsheet"
   },
   {
@@ -194,7 +173,6 @@
     "description": "Quick reference guide to C++ concepts for quantitative finance, including STL algorithms, classes, and memory management.",
     "filename": "the-cpp-cheatsheet.pdf",
     "category": "Programming",
-    "date": "2025-06-22",
     "type": "Cheatsheet"
   },
   {
@@ -203,7 +181,262 @@
     "description": "Quick reference guide to Python for quantitative finance, covering Pandas, NumPy, Matplotlib, and data manipulation methods.",
     "filename": "the-python-cheatsheet.pdf",
     "category": "Programming",
-    "date": "2025-06-23",
     "type": "Cheatsheet"
+  },
+  {
+    "id": "24",
+    "title": "Option Volatility and Pricing (Natenberg)",
+    "description": "The main book for derivatives trading. Covers risk management coverage clearly.",
+    "link": "https://amzn.to/3MmU6tI",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "25",
+    "title": "Options, Futures, and Other Derivatives (Hull)",
+    "description": "A standard school text that adds deep math to derivatives trading logic.",
+    "link": "https://amzn.to/4pUO5Tw",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "26",
+    "title": "Trading and Exchanges (Harris)",
+    "description": "Best book on how markets work from bids to spreads. Essential for execution.",
+    "link": "https://amzn.to/4aCh2PD",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "27",
+    "title": "Quantitative Trading (Chan)",
+    "description": "Guide on building strategies like momentum. Teaches proper backtesting methods.",
+    "link": "https://amzn.to/4a4vKPm",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "28",
+    "title": "Heard on the Street",
+    "description": "A survival guide to brain teasers used in trading interviews.",
+    "link": "https://amzn.to/4iGJnpX",
+    "category": "Careers",
+    "type": "Book"
+  },
+  {
+    "id": "29",
+    "title": "Thinking, Fast and Slow (Kahneman)",
+    "description": "Vital for learning about cognitive bias and human choices in finance.",
+    "link": "https://amzn.to/48s1bli",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "30",
+    "title": "Zetamac Arithmetic",
+    "description": "A fast web tool to practice math speed needed for interviews.",
+    "link": "https://arithmetic.zetamac.com/",
+    "category": "Tools",
+    "type": "Tool"
+  },
+  {
+    "id": "31",
+    "title": "Interactive Brokers (Paper Trading)",
+    "description": "Watch how bid and ask prices move on a live order book without using real money.",
+    "link": "https://www.interactivebrokers.com/",
+    "category": "Tools",
+    "type": "Platform"
+  },
+  {
+    "id": "32",
+    "title": "The Elements of Statistical Learning",
+    "description": "The bible for the statistical foundations of learning algorithms. Required reading to move beyond black-box model fitting.",
+    "link": "https://amzn.to/4rEnImB",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "33",
+    "title": "Analysis of Financial Time Series (Tsay)",
+    "description": "Essential for understanding and modeling the time-dependent nature of financial data, crucial for forecasting volatility.",
+    "link": "https://amzn.to/44aZtT0",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "34",
+    "title": "Statistical Consequences of Fat Tails (Taleb)",
+    "description": "Fundamental reading for understanding the limitations of standard models and the severe impact of extreme, rare events.",
+    "link": "https://amzn.to/3KMKGao",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "35",
+    "title": "Active Portfolio Management (Grinold & Kahn)",
+    "description": "The bible of quantitative portfolio management. Introduces the fundamental law of active management and alpha frameworks.",
+    "link": "https://amzn.to/4aDlNIF",
+    "category": "Books",
+    "type": "Book"
+  },
+  {
+    "id": "36",
+    "title": "Python for Data Analysis (McKinney)",
+    "description": "The definitive guide to using Pandas for data cleaning, transformation, and analysis tasks.",
+    "link": "https://amzn.to/48Ezm83",
+    "category": "Programming",
+    "type": "Book"
+  },
+  {
+    "id": "37",
+    "title": "Learning SQL (Beaulieu)",
+    "description": "A practical resource for mastering the database querying skills needed to extract and prepare trading data.",
+    "link": "https://amzn.to/4iIkQRr",
+    "category": "Programming",
+    "type": "Book"
+  },
+  {
+    "id": "38",
+    "title": "Convex Optimization (Boyd)",
+    "description": "The authoritative text on optimization theory. Essential for understanding solvers used in complex portfolio construction.",
+    "link": "https://amzn.to/3YiGWjW",
+    "category": "Mathematics",
+    "type": "Book"
+  },
+  {
+    "id": "39",
+    "title": "Advances in Financial Machine Learning (López de Prado)",
+    "description": "Crucial for understanding modern, non-linear approaches to return forecasting and strategy combination.",
+    "link": "https://amzn.to/4pW0RBk",
+    "category": "Machine Learning",
+    "type": "Book"
+  },
+  {
+    "id": "40",
+    "title": "Machine Learning for Asset Managers (López de Prado)",
+    "description": "Focuses on specific applications like portfolio construction and feature analysis using ML.",
+    "link": "https://amzn.to/3MgqNcm",
+    "category": "Machine Learning",
+    "type": "Book"
+  },
+  {
+    "id": "41",
+    "title": "Deep Learning (Goodfellow et al.)",
+    "description": "The canonical reference for deep learning theory and architectures. Essential for expertise in the field.",
+    "link": "https://amzn.to/3XJmQ2L",
+    "category": "Machine Learning",
+    "type": "Book"
+  },
+  {
+    "id": "42",
+    "title": "QuantConnect",
+    "description": "Platform to practice end-to-end portfolio strategy development, backtesting, and execution simulation.",
+    "link": "https://www.quantconnect.com/",
+    "category": "Tools",
+    "type": "Platform"
+  },
+  {
+    "id": "43",
+    "title": "Kaggle",
+    "description": "The premier platform for practical ML competitions. Achieving Master status is a highly respected credential.",
+    "link": "https://www.kaggle.com/",
+    "category": "Machine Learning",
+    "type": "Platform"
+  },
+  {
+    "id": "44",
+    "title": "Algorithmic Trading Certificate (QuantHub)",
+    "description": "Practitioner’s guide and self-paced quant insider certificate.",
+    "link": "https://quantshub.com/",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "45",
+    "title": "Financial Engineering in Interest Rates & FX",
+    "description": "Short course by City St George's, University of London focusing on C++ applications.",
+    "link": "https://www.citystgeorges.ac.uk/",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "46",
+    "title": "Mathematical Methods for Quant Finance (MITx)",
+    "description": "Advanced mathematical methods for quantitative finance provided by MIT via edX.",
+    "link": "https://www.edx.org/learn/finance/massachusetts-institute-of-technology-mathematical-methods-for-quantitative-finance",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "47",
+    "title": "DeepLearning.AI (Coursera)",
+    "description": "Leading courses on Deep Learning foundations and applications.",
+    "link": "https://www.coursera.org/partners/deeplearning-ai",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "48",
+    "title": "Machine Learning for Trading (Coursera)",
+    "description": "Specialization focusing on applying ML algorithms to trading strategies.",
+    "link": "https://www.coursera.org/specializations/machine-learning-trading",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "49",
+    "title": "Financial Engineering & Risk Management",
+    "description": "Comprehensive specialization covering the core of financial engineering.",
+    "link": "https://www.coursera.org/specializations/financialengineering",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "50",
+    "title": "Credit Risk Modeling in Python (Udemy)",
+    "description": "Practical course on building credit risk models using Python.",
+    "link": "https://www.udemy.com/course/credit-risk-modeling-in-python/",
+    "category": "Courses",
+    "type": "Course"
+  },
+  {
+    "id": "51",
+    "title": "Certificate in Quantitative Finance (CQF)",
+    "description": "One of the most recognized professional qualifications in the quant industry.",
+    "link": "https://www.cqf.com/",
+    "category": "Certificates",
+    "type": "Certificate"
+  },
+  {
+    "id": "52",
+    "title": "Quantitative Developer Certificate (QDC)",
+    "description": "Specialized certification for those focusing on the engineering and implementation side of quant finance.",
+    "link": "https://qdc.org.uk/",
+    "category": "Certificates",
+    "type": "Certificate"
+  },
+  {
+    "id": "53",
+    "title": "FRM (GARP)",
+    "description": "The Financial Risk Manager designation, the global standard for risk management professionals.",
+    "link": "https://www.garp.org/",
+    "category": "Certificates",
+    "type": "Certificate"
+  },
+  {
+    "id": "54",
+    "title": "CFA Institute",
+    "description": "The Chartered Financial Analyst designation, covering broad investment management skills.",
+    "link": "https://www.cfainstitute.org/",
+    "category": "Certificates",
+    "type": "Certificate"
+  },
+  {
+    "id": "55",
+    "title": "ARPM",
+    "description": "Advanced Risk and Portfolio Management bootcamp and certification.",
+    "link": "https://www.arpm.co/",
+    "category": "Certificates",
+    "type": "Certificate"
   }
 ]

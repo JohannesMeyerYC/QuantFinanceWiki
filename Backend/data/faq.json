@@ -423,5 +423,80 @@
     "category": "Recruiting Culture",
     "question": "What is the soft skill firms look for most in new hires?",
     "answer": "Diligence and a good personality. \n\nFirms would rather hire a hard worker who is easy to talk to than a genius who is arrogant. Being easy to work with is very important for juniors."
+  },
+  {
+    "category": "Career Strategy",
+    "question": "Is a PhD necessary for a Quantitative Research role, or is an undergraduate degree sufficient?",
+    "answer": "A PhD is not strictly required and can sometimes be a hindrance due to academic arrogance. \n\nUndergraduates who are technically proficient often perform better because they are more adaptable. \n\nHowever, you must demonstrate exceptional coding skills and the ability to manipulate data efficiently. "
+  },
+  {
+    "category": "Career Strategy",
+    "question": "How does the career trajectory differ between large firms (e.g., Two Sigma) and smaller multi-manager pods?",
+    "answer": "Large firms often silo junior employees into specific niches, such as portfolio optimization or data cleaning. \n\nSmaller teams or multi-manager pods usually force you to manage the entire process, from idea generation to execution. \n\nStarting in a pod can provide a broader understanding of how to generate PnL. "
+  },
+  {
+    "category": "Technical Skills",
+    "question": "What specific mathematics subjects should be prioritized for Sell-Side versus Buy-Side roles?",
+    "answer": "Sell-Side roles (Banks) require Stochastic Calculus for derivatives pricing and explainability. \n\nBuy-Side roles (Prop Shops/Hedge Funds) prioritize Linear Algebra, Probability Theory, and Statistics for predictive modeling and Machine Learning. "
+  },
+  {
+    "category": "Networking",
+    "question": "How important is networking in the Quantitative Finance industry?",
+    "answer": "It is critical. The industry is small, and many of the best opportunities at prop shops or pods are never publicly advertised. \n\nCold emailing traders or recruiters with a specific, well-researched inquiry often yields better results than standard applications."
+  },
+  {
+    "category": "Interviews",
+    "question": "What is the 'Green Book' often referred to in interview preparation?",
+    "answer": "It refers to 'A Practical Guide to Quantitative Finance Interviews' by Xinfeng Zhou. \n\nIt is considered the standard text for preparing for the probability, calculus, and logic puzzles found in first-round interviews."
+  },
+  {
+    "category": "Interviews",
+    "question": "How should candidates approach 'betting games' or situational questions in final round interviews?",
+    "answer": "Interviewers are testing for a probabilistic worldview. \n\nYou must demonstrate an ability to calculate Expected Value (EV) and adjust for risk (Kelly Criterion). \n\nThe goal is not just the right number, but verbalizing a logical thought process under stress. "
+  },
+  {
+    "category": "Recruiting Realities",
+    "question": "Why is the recruiting process for Quant roles often described as random or unfair?",
+    "answer": "The supply of qualified juniors vastly exceeds the number of seats. \n\nSmall funds may only hire one or two graduates a year. \n\nSuccess often depends on luck variables, such as whether you have seen a specific brainteaser before or the interviewer's current mood."
+  },
+  {
+    "category": "Recruiting Realities",
+    "question": "Which universities have the highest representation in top quantitative firms?",
+    "answer": "Data indicates strong hiring from MIT, University of Cambridge, Columbia, Oxford, UIUC, Imperial College London, NYU, and UC Berkeley. \n\nThese schools have rigorous math/CS programs and established pipelines with trading firms."
+  },
+  {
+    "category": "Roles & Skills",
+    "question": "Is coding ability required for Quant Trading roles?",
+    "answer": "It varies by firm. \n\nSome firms (like Akuna or DRW) heavily test coding. \n\nOthers (like Jane Street or Optiver) focus on math and logic, willing to teach coding to the right candidate. However, knowing Python or C++ is always a significant advantage."
+  },
+  {
+    "category": "Culture Fit",
+    "question": "What does 'Culture Fit' actually mean in the context of a Quant firm?",
+    "answer": "It refers to shared intellectual values. \n\nFirms look for curiosity, humility, and a passion for strategic games (Poker, Chess, strategy video games). \n\nYou must be able to collaborate and explain complex ideas simply, rather than just solving equations in isolation."
+  },
+  {
+    "category": "Future Trends",
+    "question": "How does the exit opportunity landscape for Quants compare to Investment Banking?",
+    "answer": "Quant Finance does not have the broad exit opportunities of Investment Banking. \n\nThe skills are highly specialized. The primary exit is to another fund or to a tech data science role. \n\nMany see a successful Quant seat as the destination, not a stepping stone."
+  },
+  {
+    "category": "General Advice",
+    "question": "Do I need to be a 'genius' to succeed as a Quant?",
+    "answer": "Raw intelligence is overrated compared to grit and curiosity. \n\nThe interview process selects for math aptitude, but career success comes from staying curious and incrementally improving systems over time. \n\nMany successful traders were not math prodigies but were relentless in learning the market."
+  },
+  {
+    "category": "Interview Specifics",
+    "question": "What does it usually mean if a candidate is sent home early during an onsite interview (e.g., after lunch)?",
+    "answer": "At firms like Jane Street, this typically indicates a rejection. \n\nCandidates are usually only advanced to afternoon rounds if they have performed sufficiently well in the morning sessions."
+  },
+  {
+    "category": "Career Transitions",
+    "question": "Is it viable to leave a Quant career for academia or retirement for work-life balance?",
+    "answer": "Yes, high savings allow for this transition. \n\nHowever, boredom is a common risk for former traders used to high-stimulation environments. \n\nPrioritizing family and mental health is valid, but re-entry into the industry after a long break can be difficult due to how fast the market changes."
+  },
+  {
+    "category": "Recruiting Strategy",
+    "question": "How should a candidate structure their applications during recruiting season?",
+    "answer": "Group target firms into three tiers: Dream, Great, and Good. \n\nApply in waves, mixing the tiers. \n\nThis ensures you get live interview practice with lower-stakes firms before interviewing with your dream companies, preventing you from 'burning' your best opportunities while unprepared."
   }
 ]

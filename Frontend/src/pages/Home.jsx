@@ -6,7 +6,6 @@ import logoImg from '../assets/Logo.png';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-
 function Home() {
   const socials = [
     {
@@ -245,6 +244,24 @@ function Home() {
             <Link to="/faq" className="text-slate-300 hover:text-white font-medium inline-flex items-center group/link text-sm md:text-base" aria-label="Browse Frequently Asked Questions">
               Browse FAQ <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
             </Link>
+          </motion.article>
+
+          {/* NEW 6TH BOX: Quant Bootcamp */}
+          <motion.article variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-amber-900/20 active:scale-[0.98]" role="listitem">
+             <div className="w-12 h-1.5 bg-gradient-to-r from-amber-600 to-amber-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500" aria-hidden="true"></div>
+            <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Quant Bootcamp</h2>
+            <p className="text-slate-400 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
+              Train with mentors from top firms. Fast-track your career.
+            </p>
+            <a 
+              href="http://thewallstreetquants.com/survey?ori=jmey" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center group/link text-sm md:text-base" 
+              aria-label="Quant Interview Prep Bootcamp"
+            >
+              Learn More <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </a>
           </motion.article>
 
         </motion.div>

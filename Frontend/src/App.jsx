@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import './index.css';
+import { Helmet } from 'react-helmet-async';
 
+// Lazy load pages to split code chunks
 const Home = lazy(() => import('./pages/Home'));
 const Roadmaps = lazy(() => import('./pages/Roadmaps'));
 const RoadmapDetail = lazy(() => import('./pages/RoadmapDetail'));
@@ -77,7 +77,6 @@ function Navigation() {
     <nav className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 supports-[backdrop-filter]:bg-slate-950/60" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20 transition-all">
-
           <Link
             to="/"
             className="text-lg md:text-xl font-extrabold text-white tracking-tight flex items-center gap-2 z-50"
@@ -166,10 +165,6 @@ function Navigation() {
                 );
               })}
             </div>
-
-            <div className="absolute bottom-20 left-0 w-full pointer-events-none opacity-20">
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-[80px]"></div>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -188,38 +183,35 @@ function App() {
   };
 
   return (
-    <HelmetProvider>
-      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
-          <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
-          <meta name="theme-color" content="#020617" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-          <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-        </Helmet>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
+        <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
+        <meta name="theme-color" content="#020617" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+      </Helmet>
 
-        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
-          <SkipLink />
-          <ScrollToTop />
-          <Navigation />
+      <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
+        <SkipLink />
+        <ScrollToTop />
+        <Navigation />
 
-          <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/roadmaps" element={<Roadmaps />} />
-                <Route path="/roadmaps/:id" element={<RoadmapDetail />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:id" element={<BlogPost />} />
-                <Route path="/firms" element={<Firms />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/resources" element={<Resources />} />
-              </Routes>
-            </Suspense>
-          </div>
-
+        <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/roadmaps" element={<Roadmaps />} />
+              <Route path="/roadmaps/:id" element={<RoadmapDetail />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/firms" element={<Firms />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/resources" element={<Resources />} />
+            </Routes>
+          </Suspense>
         </div>
-      </Router>
-    </HelmetProvider>
+      </div>
+    </Router>
   );
 }
 

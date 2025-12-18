@@ -6,7 +6,9 @@ import os
 import threading
 import logging
 from functools import wraps
-from datetime import datetime
+from datetime import datetime, date
+import html
+from urllib.parse import urljoin, quote
 
 ENV = os.environ.get('FLASK_ENV', 'production')
 IS_DEV = ENV == 'development'
@@ -79,47 +81,114 @@ def robots_txt():
 
 @app.route('/sitemap.xml')
 def sitemap_xml():
-    urls = [
-        {'loc': f"{Config.BASE_URL}/", 'priority': '1.0'},
-        {'loc': f"{Config.BASE_URL}/roadmaps", 'priority': '0.9'},
-        {'loc': f"{Config.BASE_URL}/firms", 'priority': '0.8'},
-        {'loc': f"{Config.BASE_URL}/blog", 'priority': '0.9'},
-        {'loc': f"{Config.BASE_URL}/resources", 'priority': '0.8'},
-        {'loc': f"{Config.BASE_URL}/faq", 'priority': '0.6'},
+    MAX_URLS = 50000
+    MAX_BYTES = 49 * 1024 * 1024  
+    
+    SERVER_START_TIME = datetime.utcnow().date().isoformat()
+    
+    base_url = Config.BASE_URL.replace("http://", "https://").rstrip('/')
+    
+    xml_header = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
+    
+    current_byte_count = sum(len(x.encode('utf-8')) for x in xml_header)
+    url_count = 0
+    seen_urls = set()
+    
+    xml_body = []
+    def add_entry(path_suffix, lastmod=None, priority='0.5', changefreq='monthly'):
+        nonlocal url_count, current_byte_count
+        
+        if url_count >= MAX_URLS: return
+        if current_byte_count >= MAX_BYTES: return
+
+        clean_path = '/' + path_suffix.lstrip('/')
+        safe_path = quote(clean_path, safe='/')
+        full_url = f"{base_url}{safe_path}"
+
+        if full_url in seen_urls: return
+        seen_urls.add(full_url)
+
+        final_date = SERVER_START_TIME 
+        if lastmod:
+            try:
+                if isinstance(lastmod, str):
+                    parsed_date = datetime.fromisoformat(lastmod.replace('Z', '+00:00')).date()
+                elif isinstance(lastmod, (datetime, date)):
+                    parsed_date = lastmod if isinstance(lastmod, date) else lastmod.date()
+                else:
+                    parsed_date = datetime.utcnow().date()
+                
+                today = datetime.utcnow().date()
+                if parsed_date > today:
+                    parsed_date = today
+                
+                final_date = parsed_date.isoformat()
+            except ValueError:
+                pass 
+        loc_xml = html.escape(full_url)
+        
+        entry = (
+            f"  <url>\n"
+            f"    <loc>{loc_xml}</loc>\n"
+            f"    <lastmod>{final_date}</lastmod>\n"
+            f"    <changefreq>{html.escape(str(changefreq))}</changefreq>\n"
+            f"    <priority>{html.escape(str(priority))}</priority>\n"
+            f"  </url>"
+        )
+        
+        entry_bytes = len(entry.encode('utf-8'))
+        if current_byte_count + entry_bytes > MAX_BYTES:
+            logger.warning("Sitemap size limit approaching. Truncating.")
+            return
+
+        xml_body.append(entry)
+        current_byte_count += entry_bytes
+        url_count += 1
+
+    
+    statics = [
+        ('/', '1.0', 'daily'),
+        ('/roadmaps', '0.9', 'weekly'),   
+        ('/blog', '0.9', 'daily'),
+        ('/firms', '0.8', 'weekly'),
+        ('/resources', '0.7', 'monthly'), 
+        ('/faq', '0.5', 'monthly')        
+    ]
+    for path, prio, freq in statics:
+        add_entry(path, lastmod=SERVER_START_TIME, priority=prio, changefreq=freq)
 
     posts = load_json_safe('blog.json')
-    for post in posts:
-        if 'id' in post:
-            urls.append({
-                'loc': f"{Config.BASE_URL}/blog/{post['id']}",
-                'lastmod': post.get('date', datetime.now().strftime('%Y-%m-%d')),
-                'priority': '0.8'
-            })
+    if isinstance(posts, list):
+        for post in posts:
+            if post.get('id'):
+                p_date = post.get('date')
+                add_entry(f"/blog/{post['id']}", lastmod=p_date, priority='0.8', changefreq='monthly')
 
     roadmaps = load_json_safe('roadmaps.json')
     r_list = list(roadmaps.values()) if isinstance(roadmaps, dict) else roadmaps
-    for r in r_list:
-        if 'id' in r:
-            urls.append({
-                'loc': f"{Config.BASE_URL}/roadmaps/{r['id']}",
-                'priority': '0.9'
-            })
+    if isinstance(r_list, list):
+        for r in r_list:
+            if r.get('id'):
+                add_entry(f"/roadmaps/{r['id']}", lastmod=SERVER_START_TIME, priority='0.9', changefreq='weekly')
 
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    firms = load_json_safe('firms.json')
+    f_list = list(firms.values()) if isinstance(firms, dict) else firms
+    if isinstance(f_list, list):
+        for f in f_list:
+            if f.get('id'):
+                add_entry(f"/firms/{f['id']}", lastmod=SERVER_START_TIME, priority='0.7', changefreq='monthly')
+
+    full_content = "\n".join(xml_header + xml_body + ['</urlset>'])
     
-    for url in urls:
-        xml.append('  <url>')
-        xml.append(f"    <loc>{url['loc']}</loc>")
-        if 'lastmod' in url:
-            xml.append(f"    <lastmod>{url['lastmod']}</lastmod>")
-        xml.append(f"    <priority>{url['priority']}</priority>")
-        xml.append('  </url>')
+    resp = Response(full_content, mimetype="application/xml")
     
-    xml.append('</urlset>')
+    resp.headers['Cache-Control'] = 'public, max-age=3600'
+    resp.headers['X-Robots-Tag'] = 'noarchive'
     
-    return Response("\n".join(xml), mimetype="application/xml")
+    return resp
 
 
 @app.route('/api/health', methods=['GET'])

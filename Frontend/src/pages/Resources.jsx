@@ -58,8 +58,6 @@ function Resources() {
   // Adjust PDF width based on window size
   useEffect(() => {
     function handleResize() {
-      // Calculate responsive width (max 1000px, minus margins)
-      // We subtract 48px to account for the modal padding (p-4 + p-4) + extra safety
       const newWidth = Math.min(window.innerWidth - 48, 1000); 
       setPdfWidth(newWidth);
     }
@@ -99,6 +97,49 @@ function Resources() {
 
   const handleLoadMore = () => setVisibleCount(prev => Math.min(prev + 9, filteredResources.length));
 
+  // --- HELPER: ICON RENDERER ---
+  const renderIcon = (type) => {
+    const typeLower = type?.toLowerCase() || '';
+    
+    // PDF / Document
+    if (typeLower === 'pdf' || typeLower === 'cheatsheet') {
+        return (
+            <div className="w-12 h-16 bg-slate-800 border border-slate-700 rounded flex flex-col items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
+                <span className="text-[8px] font-bold text-slate-500 mb-1">{type === 'PDF' ? 'PDF' : 'DOC'}</span>
+                <div className="w-6 h-0.5 bg-slate-600 mb-1 rounded-full"></div>
+                <div className="w-6 h-0.5 bg-slate-600 mb-1 rounded-full"></div>
+                <div className="w-4 h-0.5 bg-slate-600 rounded-full"></div>
+            </div>
+        );
+    }
+    
+    // Book
+    if (typeLower === 'book') {
+        return (
+             <div className="w-12 h-16 bg-gradient-to-br from-indigo-900 to-slate-900 border border-indigo-500/30 rounded-r-md rounded-l-sm flex flex-col items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform relative">
+                <div className="absolute left-1 top-0 bottom-0 w-0.5 bg-indigo-500/20"></div>
+                <svg className="w-6 h-6 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+             </div>
+        );
+    }
+
+    // Course / Certificate
+    if (typeLower === 'course' || typeLower === 'certificate') {
+        return (
+            <div className="w-16 h-16 rounded-full bg-slate-800 border border-emerald-500/30 flex items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
+                <svg className="w-7 h-7 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>
+            </div>
+        );
+    }
+
+    // Default (Web/Tool)
+    return (
+        <div className="w-14 h-14 rounded-xl bg-slate-800 border border-teal-500/30 flex items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
+             <svg className="w-7 h-7 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+        </div>
+    );
+  }
+
   if (loading) return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center">
       <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
@@ -119,7 +160,7 @@ function Resources() {
             Resource <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500">Library</span>
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Curated PDFs, cheat sheets, and technical guides.
+            Curated PDFs, books, courses, and technical guides.
           </p>
         </div>
       </header>
@@ -141,7 +182,7 @@ function Resources() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-xs font-bold uppercase border transition-all",
+                  "px-4 py-2 rounded-lg text-xs font-bold uppercase border transition-all whitespace-nowrap",
                   selectedCategory === cat
                     ? "bg-teal-500 border-teal-500 text-white"
                     : "bg-slate-900 border-slate-800 text-slate-400"
@@ -167,11 +208,9 @@ function Resources() {
               >
                 {/* Visual Header */}
                 <div className="h-40 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-800 group">
-                    <div className="w-12 h-16 bg-slate-800 border border-slate-700 rounded flex flex-col items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
-                       <span className="text-[8px] font-bold text-slate-500 mb-1">PDF</span>
-                       <div className="w-6 h-0.5 bg-slate-600 mb-1 rounded-full"></div>
-                       <div className="w-6 h-0.5 bg-slate-600 mb-1 rounded-full"></div>
-                       <div className="w-4 h-0.5 bg-slate-600 rounded-full"></div>
+                    {renderIcon(item.type)}
+                    <div className="absolute top-4 right-4 bg-slate-950 border border-slate-800 px-2 py-1 rounded text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                        {item.type}
                     </div>
                 </div>
                 
@@ -179,20 +218,34 @@ function Resources() {
                   <h2 className="text-xl font-bold text-white mb-2">{item.title}</h2>
                   <p className="text-slate-400 text-sm mb-6 line-clamp-3">{item.description}</p>
                   
-                  <div className="flex gap-3 mt-auto">
-                    <button 
-                      onClick={() => setPreviewResource(item)}
-                      className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-bold transition-all"
-                    >
-                      Preview
-                    </button>
-                    <a 
-                      href={`/pdfs/${item.filename}`} 
-                      download={item.filename}
-                      className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all"
-                    >
-                      Download
-                    </a>
+                  <div className="mt-auto">
+                    {item.type === 'PDF' || item.type === 'Cheatsheet' ? (
+                        <div className="flex gap-3">
+                            <button 
+                              onClick={() => setPreviewResource(item)}
+                              className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-bold transition-all"
+                            >
+                              Preview
+                            </button>
+                            <a 
+                              href={`/pdfs/${item.filename}`} 
+                              download={item.filename}
+                              className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all"
+                            >
+                              Download
+                            </a>
+                        </div>
+                    ) : (
+                        <a 
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer" 
+                          className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2"
+                        >
+                          <span>Open {item.type}</span>
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    )}
                   </div>
                 </div>
               </motion.article>
@@ -223,12 +276,11 @@ function Resources() {
               onClick={() => setPreviewResource(null)} 
             />
 
-            {/* Modal Content - CHANGED HERE FOR BETTER MOBILE FIT */}
+            {/* Modal Content */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              // CHANGED: h-[90vh] -> h-auto max-h-[90vh] (Shrink wraps content)
               className="relative w-full max-w-5xl h-auto max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
             >
               
@@ -272,7 +324,7 @@ function Resources() {
                 </div>
               </div>
 
-              {/* PDF Container - CHANGED: Removed flex-grow to prevent unwanted expansion */}
+              {/* PDF Container */}
               <div className="overflow-auto bg-slate-800/50 flex justify-center p-4 min-h-[200px]">
                 <Document
                     file={`/pdfs/${previewResource.filename}`}

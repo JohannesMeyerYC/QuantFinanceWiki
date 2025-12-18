@@ -1,10 +1,1 @@
-User-agent: *
-Disallow: /private/
-Disallow: /admin/
-Disallow: /drafts/
-Disallow: /scripts/
-Disallow: /node_modules/
-Disallow: /build/
-Disallow: /*.map
-
 Sitemap: https://quantfinancewiki.com/sitemap.xml
