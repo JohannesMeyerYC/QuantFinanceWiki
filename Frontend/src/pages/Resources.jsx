@@ -4,12 +4,10 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
 
-// --- IMPORTS FOR PDF RENDERING ---
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
-// Set up the worker
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -26,12 +24,10 @@ function Resources() {
   
   const [previewResource, setPreviewResource] = useState(null);
   
-  // PDF State
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [pdfWidth, setPdfWidth] = useState(600); 
 
-  // Fetch Logic
   useEffect(() => {
     fetch(`${API_URL}/api/resources`)
       .then(res => res.json())
@@ -45,7 +41,6 @@ function Resources() {
       });
   }, []);
 
-  // Lock scroll & Reset PDF state on open
   useEffect(() => {
     if (previewResource) {
       document.body.style.overflow = 'hidden';
@@ -55,7 +50,6 @@ function Resources() {
     }
   }, [previewResource]);
 
-  // Adjust PDF width based on window size
   useEffect(() => {
     function handleResize() {
       const newWidth = Math.min(window.innerWidth - 48, 1000); 
@@ -70,7 +64,6 @@ function Resources() {
     setNumPages(numPages);
   }
 
-  // --- FILTER LOGIC ---
   const categories = useMemo(() => {
     return ['all', ...new Set(resources.map(r => r.category).filter(Boolean))];
   }, [resources]);
@@ -97,11 +90,9 @@ function Resources() {
 
   const handleLoadMore = () => setVisibleCount(prev => Math.min(prev + 9, filteredResources.length));
 
-  // --- HELPER: ICON RENDERER ---
   const renderIcon = (type) => {
     const typeLower = type?.toLowerCase() || '';
     
-    // PDF / Document
     if (typeLower === 'pdf' || typeLower === 'cheatsheet') {
         return (
             <div className="w-12 h-16 bg-slate-800 border border-slate-700 rounded flex flex-col items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
@@ -113,7 +104,6 @@ function Resources() {
         );
     }
     
-    // Book
     if (typeLower === 'book') {
         return (
              <div className="w-12 h-16 bg-gradient-to-br from-indigo-900 to-slate-900 border border-indigo-500/30 rounded-r-md rounded-l-sm flex flex-col items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform relative">
@@ -123,7 +113,6 @@ function Resources() {
         );
     }
 
-    // Course / Certificate
     if (typeLower === 'course' || typeLower === 'certificate') {
         return (
             <div className="w-16 h-16 rounded-full bg-slate-800 border border-emerald-500/30 flex items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
@@ -132,7 +121,6 @@ function Resources() {
         );
     }
 
-    // Default (Web/Tool)
     return (
         <div className="w-14 h-14 rounded-xl bg-slate-800 border border-teal-500/30 flex items-center justify-center shadow-lg group-hover:-translate-y-1 transition-transform">
              <svg className="w-7 h-7 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
@@ -152,7 +140,6 @@ function Resources() {
         <title>Resource Library | QuantFinanceWiki</title>
       </Helmet>
       
-      {/* HEADER */}
       <header className="relative bg-slate-900/50 border-b border-slate-800 pt-32 pb-16 overflow-hidden">
         <div className="absolute top-[-50px] left-[-50px] w-96 h-96 bg-teal-500/5 rounded-full blur-[100px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -167,7 +154,6 @@ function Resources() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         
-        {/* FILTERS */}
         <div className="bg-[#0B1221] border border-slate-800/60 rounded-2xl p-6 mb-12 shadow-2xl flex flex-col gap-6">
           <input
             type="text"
@@ -194,7 +180,6 @@ function Resources() {
           </div>
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode='popLayout'>
             {visibleResources.map((item) => (
@@ -206,7 +191,6 @@ function Resources() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="flex flex-col bg-[#0f1623] border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all"
               >
-                {/* Visual Header */}
                 <div className="h-40 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-800 group">
                     {renderIcon(item.type)}
                     <div className="absolute top-4 right-4 bg-slate-950 border border-slate-800 px-2 py-1 rounded text-[10px] font-bold text-slate-300 uppercase tracking-wider">
@@ -253,7 +237,6 @@ function Resources() {
           </AnimatePresence>
         </div>
 
-        {/* Load More Button */}
         {visibleCount < filteredResources.length && (
             <div className="mt-16 flex justify-center">
               <button onClick={handleLoadMore} className="px-6 py-3 bg-slate-800 text-teal-400 font-bold rounded-lg border border-slate-700">Load More</button>
@@ -261,7 +244,6 @@ function Resources() {
         )}
       </main>
 
-      {/* --- REACT-PDF PREVIEW MODAL --- */}
       <AnimatePresence>
         {previewResource && (
           <m.div 
@@ -270,13 +252,11 @@ function Resources() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
           >
-            {/* Backdrop */}
             <div 
               className="absolute inset-0 bg-black/90 backdrop-blur-md"
               onClick={() => setPreviewResource(null)} 
             />
 
-            {/* Modal Content */}
             <m.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -284,14 +264,12 @@ function Resources() {
               className="relative w-full max-w-5xl h-auto max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
             >
               
-              {/* Toolbar */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950 shrink-0">
                 <h3 className="text-slate-200 font-semibold truncate max-w-[50%] text-sm sm:text-base">
                     {previewResource.title}
                 </h3>
                 
                 <div className="flex items-center gap-2 sm:gap-4">
-                    {/* Pagination Controls */}
                     {numPages && (
                         <div className="flex items-center gap-1 sm:gap-2 bg-slate-900 rounded-lg p-1 border border-slate-800">
                             <button 
@@ -314,7 +292,6 @@ function Resources() {
                         </div>
                     )}
 
-                    {/* Close */}
                     <button 
                         onClick={() => setPreviewResource(null)}
                         className="p-2 text-slate-300 hover:text-red-400 hover:bg-slate-900 rounded-lg"
@@ -324,7 +301,6 @@ function Resources() {
                 </div>
               </div>
 
-              {/* PDF Container */}
               <div className="overflow-auto bg-slate-800/50 flex justify-center p-4 min-h-[200px]">
                 <Document
                     file={`/pdfs/${previewResource.filename}`}
