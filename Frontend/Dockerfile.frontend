@@ -2,14 +2,13 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# REMOVED: All the Chromium/Puppeteer install lines
+ENV NODE_ENV=production
 
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
 
-# Ensure this matches your actual backend URL
 ARG VITE_API_URL=https://qfw-backend-442397816710.us-central1.run.app
 ENV VITE_API_URL=$VITE_API_URL
 

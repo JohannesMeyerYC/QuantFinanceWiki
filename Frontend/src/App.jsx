@@ -1,12 +1,11 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
+import Home from './pages/Home';
 
-// Lazy load pages to split code chunks
-const Home = lazy(() => import('./pages/Home'));
 const Roadmaps = lazy(() => import('./pages/Roadmaps'));
 const RoadmapDetail = lazy(() => import('./pages/RoadmapDetail'));
 const Firms = lazy(() => import('./pages/Firms'));
@@ -19,13 +18,23 @@ function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
+const navLinks = [
+  { path: '/', label: 'Home' },
+  { path: '/roadmaps', label: 'Career Guides' },
+  { path: '/blog', label: 'Blog' },
+  { path: '/resources', label: 'Library' },
+  { path: '/firms', label: 'Companies' },
+  { path: '/faq', label: 'Questions' }
+];
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "QuantFinanceWiki",
+  "url": "https://QuantFinanceWiki.com",
+  "logo": "https://quantfinancewiki.com/Logo.png",
+  "description": "The ultimate resource for quantitative finance careers, roadmaps, and educational material."
+};
 
 const PageLoader = () => (
   <div className="min-h-[50vh] flex items-center justify-center">
@@ -41,6 +50,14 @@ const SkipLink = () => (
     Skip to main content
   </a>
 );
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function Navigation() {
   const location = useLocation();
@@ -58,15 +75,6 @@ function Navigation() {
     }
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
-
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/roadmaps', label: 'Career Guides' },
-    { path: '/blog', label: 'Blog' },
-    { path: '/resources', label: 'Library' },
-    { path: '/firms', label: 'Companies' },
-    { path: '/faq', label: 'Questions' }
-  ];
 
   const isActive = (path) => {
     if (path === '/' && location.pathname !== '/') return false;
@@ -128,7 +136,7 @@ function Navigation() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: '100vh' }}
             exit={{ opacity: 0, height: 0 }}
@@ -139,7 +147,7 @@ function Navigation() {
               {navLinks.map((link) => {
                 const active = isActive(link.path);
                 return (
-                  <motion.div
+                  <m.div
                     key={link.path}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -161,11 +169,11 @@ function Navigation() {
                         {active && <span className="text-teal-500 text-sm">●</span>}
                       </div>
                     </Link>
-                  </motion.div>
+                  </m.div>
                 );
               })}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>
@@ -173,45 +181,36 @@ function Navigation() {
 }
 
 function App() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "QuantFinanceWiki",
-    "url": "https://QuantFinanceWiki.com",
-    "logo": "logoImg",
-    "description": "The ultimate resource for quantitative finance careers, roadmaps, and educational material."
-  };
-
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
-        <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
-        <meta name="theme-color" content="#020617" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-      </Helmet>
+    <LazyMotion features={domAnimation}>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
+          <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
+          <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        </Helmet>
 
-      <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
-        <SkipLink />
-        <ScrollToTop />
-        <Navigation />
+        <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
+          <SkipLink />
+          <ScrollToTop />
+          <Navigation />
 
-        <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/roadmaps" element={<Roadmaps />} />
-              <Route path="/roadmaps/:id" element={<RoadmapDetail />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/firms" element={<Firms />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/resources" element={<Resources />} />
-            </Routes>
-          </Suspense>
+          <div id="main-content" className="flex-grow w-full max-w-[100vw] overflow-x-hidden">
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/roadmaps" element={<Roadmaps />} />
+                <Route path="/roadmaps/:id" element={<RoadmapDetail />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/firms" element={<Firms />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/resources" element={<Resources />} />
+              </Routes>
+            </Suspense>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </LazyMotion>
   );
 }
 

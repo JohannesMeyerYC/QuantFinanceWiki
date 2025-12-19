@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -159,7 +159,7 @@ function Resources() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
             Resource <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500">Library</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
+          <p className="text-slate-300 text-lg max-w-2xl leading-relaxed">
             Curated PDFs, books, courses, and technical guides.
           </p>
         </div>
@@ -185,7 +185,7 @@ function Resources() {
                   "px-4 py-2 rounded-lg text-xs font-bold uppercase border transition-all whitespace-nowrap",
                   selectedCategory === cat
                     ? "bg-teal-500 border-teal-500 text-white"
-                    : "bg-slate-900 border-slate-800 text-slate-400"
+                    : "bg-slate-900 border-slate-800 text-slate-300"
                 )}
               >
                 {cat}
@@ -198,7 +198,7 @@ function Resources() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode='popLayout'>
             {visibleResources.map((item) => (
-              <motion.article
+              <m.article
                 key={item.id}
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -209,14 +209,14 @@ function Resources() {
                 {/* Visual Header */}
                 <div className="h-40 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-800 group">
                     {renderIcon(item.type)}
-                    <div className="absolute top-4 right-4 bg-slate-950 border border-slate-800 px-2 py-1 rounded text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <div className="absolute top-4 right-4 bg-slate-950 border border-slate-800 px-2 py-1 rounded text-[10px] font-bold text-slate-300 uppercase tracking-wider">
                         {item.type}
                     </div>
                 </div>
                 
                 <div className="p-6 flex flex-col flex-grow">
                   <h2 className="text-xl font-bold text-white mb-2">{item.title}</h2>
-                  <p className="text-slate-400 text-sm mb-6 line-clamp-3">{item.description}</p>
+                  <p className="text-slate-300 text-sm mb-6 line-clamp-3">{item.description}</p>
                   
                   <div className="mt-auto">
                     {item.type === 'PDF' || item.type === 'Cheatsheet' ? (
@@ -248,7 +248,7 @@ function Resources() {
                     )}
                   </div>
                 </div>
-              </motion.article>
+              </m.article>
             ))}
           </AnimatePresence>
         </div>
@@ -264,7 +264,7 @@ function Resources() {
       {/* --- REACT-PDF PREVIEW MODAL --- */}
       <AnimatePresence>
         {previewResource && (
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -277,7 +277,7 @@ function Resources() {
             />
 
             {/* Modal Content */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -301,7 +301,7 @@ function Resources() {
                             >
                                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                             </button>
-                            <span className="text-[10px] sm:text-xs font-mono text-slate-400 min-w-[40px] sm:min-w-[60px] text-center">
+                            <span className="text-[10px] sm:text-xs font-mono text-slate-300 min-w-[40px] sm:min-w-[60px] text-center">
                                 {pageNumber} / {numPages}
                             </span>
                             <button 
@@ -317,7 +317,7 @@ function Resources() {
                     {/* Close */}
                     <button 
                         onClick={() => setPreviewResource(null)}
-                        className="p-2 text-slate-400 hover:text-red-400 hover:bg-slate-900 rounded-lg"
+                        className="p-2 text-slate-300 hover:text-red-400 hover:bg-slate-900 rounded-lg"
                     >
                         <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
@@ -352,8 +352,8 @@ function Resources() {
                 </Document>
               </div>
 
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
 

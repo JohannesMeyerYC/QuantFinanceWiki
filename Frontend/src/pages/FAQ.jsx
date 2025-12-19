@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useMemo } from 'react';
+import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
@@ -23,16 +24,20 @@ function FAQ() {
 
   useEffect(() => { setOpenIndices([]); }, [searchTerm, selectedCategory]);
 
-  const categories = ['all', ...new Set(faqs.map(faq => faq.category).filter(Boolean))];
+  const categories = useMemo(() => {
+    return ['all', ...new Set(faqs.map(faq => faq.category).filter(Boolean))];
+  }, [faqs]);
 
-  const filteredFaqs = faqs.filter(faq => {
-    const searchLower = searchTerm.toLowerCase();
-    const matchesSearch =
-      faq.question?.toLowerCase().includes(searchLower) ||
-      faq.answer?.toLowerCase().includes(searchLower);
-    const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredFaqs = useMemo(() => {
+    return faqs.filter(faq => {
+      const searchLower = searchTerm.toLowerCase();
+      const matchesSearch =
+        faq.question?.toLowerCase().includes(searchLower) ||
+        faq.answer?.toLowerCase().includes(searchLower);
+      const matchesCategory = selectedCategory === 'all' || faq.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [faqs, searchTerm, selectedCategory]);
 
   const toggleFAQ = (index) => {
     setOpenIndices(prev =>
@@ -80,7 +85,7 @@ function FAQ() {
           <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
             Common Questions
           </h1>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
             Read answers to questions about math, interviews, and jobs.
           </p>
         </header>
@@ -88,7 +93,6 @@ function FAQ() {
         <section className="sticky top-2 md:top-4 z-30 mb-6 md:mb-8" aria-label="Search and Filters">
           <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-2xl flex flex-col gap-3 md:gap-4">
 
-            {/* Search Input */}
             <div className="w-full">
               <label htmlFor="faq-search" className="sr-only">Search for answers</label>
               <input
@@ -101,7 +105,6 @@ function FAQ() {
               />
             </div>
 
-            {/* Filter Slider */}
             <div
               className="flex items-center gap-2 overflow-x-auto w-full pb-2 -mx-1 px-1 snap-x scrollbar-thin scrollbar-thumb-slate-800"
               role="tablist"
@@ -119,7 +122,7 @@ function FAQ() {
                     "px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider whitespace-nowrap border snap-center transition-colors",
                     selectedCategory === cat
                       ? "bg-teal-500 border-teal-500 text-teal-50"
-                      : "bg-slate-950 border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+                      : "bg-slate-950 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-200"
                   )}
                 >
                   {cat}
@@ -136,7 +139,7 @@ function FAQ() {
             const headerId = `faq-header-${index}`;
 
             return (
-              <motion.article
+              <m.article
                 key={index}
                 className={cn(
                   "bg-slate-900 border rounded-xl md:rounded-2xl overflow-hidden transition-colors duration-300",
@@ -177,7 +180,7 @@ function FAQ() {
 
                 <AnimatePresence>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       id={answerId}
                       role="region"
                       aria-labelledby={headerId}
@@ -205,10 +208,10 @@ function FAQ() {
                           </div>
                         )}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.article>
+              </m.article>
             );
           })}
         </div>

@@ -37,7 +37,6 @@ const CodeBlock = ({ inline, className, children, ...props }) => {
 };
 
 export const RenderBlock = ({ block }) => {
-  // 1. Handle "Latex:" Prefix Block
   if (block.text && block.text.startsWith('Latex:')) {
     const mathContent = block.text.replace('Latex:', '').trim();
     return (
@@ -47,7 +46,6 @@ export const RenderBlock = ({ block }) => {
     );
   }
 
-  // 2. Handle Headings
   if (block.type === 'heading') {
     const id = block.text.toLowerCase().replace(/[^\w]+/g, '-');
     return (
@@ -58,7 +56,6 @@ export const RenderBlock = ({ block }) => {
     );
   }
 
-  // 3. Handle Code Blocks (defined by type="code")
   if (block.type === 'code') {
      return (
        <CodeBlock className={`language-${block.language || 'python'}`}>
@@ -67,12 +64,11 @@ export const RenderBlock = ({ block }) => {
      );
   }
 
-  // 4. Handle Standard Paragraphs (Markdown + Math + Newlines)
   if (block.type === 'paragraph') {
     return (
       <div className="mb-6 text-lg text-slate-300 leading-8 prose prose-invert max-w-none prose-p:leading-8 prose-strong:text-white prose-strong:font-bold prose-headings:text-white prose-a:text-teal-400 hover:prose-a:text-teal-300">
         <ReactMarkdown
-          remarkPlugins={[remarkMath, remarkBreaks]} // remarkBreaks fixes the \n issue
+          remarkPlugins={[remarkMath, remarkBreaks]} 
           rehypePlugins={[rehypeKatex]}
           components={{
             code: CodeBlock,

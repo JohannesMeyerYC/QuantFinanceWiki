@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useMemo } from 'react';
+import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
 
 const OpportunityCard = ({ item }) => (
-  <motion.article
+  <m.article
     layout
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
@@ -22,7 +23,7 @@ const OpportunityCard = ({ item }) => (
           <div className="flex flex-wrap items-center gap-3 mb-2">
             <h2 className="text-xl md:text-2xl font-bold text-white tracking-tight">{item.name}</h2>
             {item.category && (
-              <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+              <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
                 {item.category}
               </span>
             )}
@@ -36,7 +37,7 @@ const OpportunityCard = ({ item }) => (
         </div>
       </header>
 
-      <p className="text-slate-400 mb-6 md:mb-8 max-w-4xl leading-relaxed text-sm md:text-base">
+      <p className="text-slate-300 mb-6 md:mb-8 max-w-4xl leading-relaxed text-sm md:text-base">
         {item.description}
       </p>
 
@@ -66,7 +67,7 @@ const OpportunityCard = ({ item }) => (
 
       {item.roles && item.roles.length > 0 && (
         <div className="bg-slate-950/30 -mx-5 -mb-5 p-5 md:-mx-8 md:-mb-8 md:p-8 border-t border-slate-800 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 mt-2">
-          <div className="text-slate-400 text-xs md:text-sm font-bold uppercase tracking-wider">
+          <div className="text-slate-300 text-xs md:text-sm font-bold uppercase tracking-wider">
             Links:
           </div>
           <div className="flex flex-wrap gap-3 w-full">
@@ -92,7 +93,7 @@ const OpportunityCard = ({ item }) => (
         </div>
       )}
     </div>
-  </motion.article>
+  </m.article>
 );
 
 function Firms() {
@@ -122,26 +123,38 @@ function Firms() {
     });
   }, []);
 
-  const allCategories = ['all', ...new Set([
-    ...firms.map(f => f.category),
-    ...earlyCareer.map(c => c.category)
-  ].filter(Boolean))];
+  const allCategories = useMemo(() => {
+    return ['all', ...new Set([
+      ...firms.map(f => f.category),
+      ...earlyCareer.map(c => c.category)
+    ].filter(Boolean))];
+  }, [firms, earlyCareer]);
 
-  const filterList = (list) => {
-    return list.filter(item => {
-      const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory;
-      const query = searchQuery.toLowerCase();
-      const searchMatch = query === '' || 
-        item.name?.toLowerCase().includes(query) ||
-        item.description?.toLowerCase().includes(query) ||
-        item.location?.toLowerCase().includes(query) ||
-        item.roles?.some(role => role.toLowerCase().includes(query));
-      return categoryMatch && searchMatch;
+  const filteredFirms = useMemo(() => {
+     return firms.filter(item => {
+        const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory;
+        const query = searchQuery.toLowerCase();
+        const searchMatch = query === '' || 
+          item.name?.toLowerCase().includes(query) ||
+          item.description?.toLowerCase().includes(query) ||
+          item.location?.toLowerCase().includes(query) ||
+          item.roles?.some(role => role.toLowerCase().includes(query));
+        return categoryMatch && searchMatch;
+     });
+  }, [firms, selectedCategory, searchQuery]);
+
+  const filteredEarlyCareer = useMemo(() => {
+    return earlyCareer.filter(item => {
+       const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory;
+       const query = searchQuery.toLowerCase();
+       const searchMatch = query === '' || 
+         item.name?.toLowerCase().includes(query) ||
+         item.description?.toLowerCase().includes(query) ||
+         item.location?.toLowerCase().includes(query) ||
+         item.roles?.some(role => role.toLowerCase().includes(query));
+       return categoryMatch && searchMatch;
     });
-  };
-
-  const filteredFirms = filterList(firms);
-  const filteredEarlyCareer = filterList(earlyCareer);
+  }, [earlyCareer, selectedCategory, searchQuery]);
 
   const clearFilters = () => { 
     setSelectedCategory('all'); 
@@ -193,7 +206,7 @@ function Firms() {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
             Career Directory
           </h1>
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
+          <p className="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed">
             Browse top industry firms and exclusive opportunities for students.
           </p>
         </div>
@@ -220,7 +233,7 @@ function Firms() {
           "px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider whitespace-nowrap border snap-center transition-colors",
           selectedCategory === cat
             ? "bg-teal-500 border-teal-500 text-teal-50"
-            : "bg-slate-950 border-slate-700 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+            : "bg-slate-950 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-200"
         )}
       >
         {cat}

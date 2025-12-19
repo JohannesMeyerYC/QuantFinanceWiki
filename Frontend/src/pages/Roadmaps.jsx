@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -107,7 +107,7 @@ function Roadmaps() {
               Path
             </span>
           </h1>
-          <p className="text-slate-400 text-xl max-w-2xl leading-relaxed">
+          <p className="text-slate-300 text-xl max-w-2xl leading-relaxed">
             Guides for quantitative finance jobs. Learn about trading, risk management, and more. Find the right path for you.
           </p>
         </div>
@@ -127,7 +127,7 @@ function Roadmaps() {
           />
         </div>
 
-        <motion.div
+        <m.div
           variants={container}
           initial="hidden"
           animate="show"
@@ -136,7 +136,7 @@ function Roadmaps() {
         >
           {filteredRoadmaps.length > 0 ? (
             filteredRoadmaps.map(roadmap => (
-              <motion.article key={roadmap.id} variants={item} role="listitem">
+              <m.article key={roadmap.id} variants={item} role="listitem">
                 <Link
                   to={`/roadmaps/${roadmap.id}`}
                   className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"
@@ -148,7 +148,7 @@ function Roadmaps() {
                     <h2 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-teal-400 transition-colors">
                       {roadmap.title}
                     </h2>
-                    <p className="text-slate-400 leading-relaxed mb-8 flex-grow">
+                    <p className="text-slate-300 leading-relaxed mb-8 flex-grow">
                       {roadmap.description.split('. ')[0] + (roadmap.description.includes('.') ? '.' : '')}
                     </p>
 
@@ -159,7 +159,7 @@ function Roadmaps() {
                     </div>
                   </div>
                 </Link>
-              </motion.article>
+              </m.article>
             ))
           ) : (
             <div className="col-span-full py-20 text-center border border-dashed border-slate-800 rounded-2xl bg-slate-900/20" role="alert">
@@ -167,7 +167,7 @@ function Roadmaps() {
               <button onClick={() => setSearchQuery('')} className="mt-2 text-teal-400 hover:underline">Clear Search</button>
             </div>
           )}
-        </motion.div>
+        </m.div>
       </main>
     </div>
   );

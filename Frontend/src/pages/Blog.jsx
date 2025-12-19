@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 
 const API_URL = import.meta.env.VITE_API_URL;
 const POSTS_PER_PAGE = 6;
@@ -16,7 +16,7 @@ function Blog() {
     fetch(`${API_URL}/api/blog`)
       .then(res => res.json())
       .then(data => {
-        const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const sortedData = [...data].sort((a, b) => new Date(b.date) - new Date(a.date));
         setPosts(sortedData);
         setLoading(false);
       })
@@ -96,7 +96,7 @@ function Blog() {
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center md:text-left">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, y: 10 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }}
@@ -104,10 +104,10 @@ function Blog() {
             <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
               Market <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-500">Insights</span>
             </h1>
-            <p className="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed mx-auto md:mx-0">
+            <p className="text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed mx-auto md:mx-0">
               Deep dives into algorithmic trading strategies, financial mathematics, and the career landscape for modern quants.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </header>
 
@@ -149,7 +149,7 @@ function Blog() {
         >
           <AnimatePresence mode='popLayout'>
             {visiblePosts.map((post, index) => (
-              <motion.article 
+              <m.article 
                 layout
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -173,21 +173,20 @@ function Blog() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight group-hover:text-teal-400 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow line-clamp-3">
+                    <p className="text-slate-300 text-sm leading-relaxed mb-8 flex-grow line-clamp-3">
                       {post.excerpt}
                     </p>
 
                     <div className="pt-6 border-t border-slate-800/60 flex items-center justify-between mt-auto">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-400">
+                        <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-300">
                            {post.author ? post.author[0] : 'A'}
                         </div>
-                        <span className="text-xs text-slate-400 font-medium group-hover:text-slate-300 transition-colors">
+                        <span className="text-xs text-slate-300 font-medium group-hover:text-slate-300 transition-colors">
                           {post.author || 'Contributor'}
                         </span>
                       </div>
                       
-                      {/* Stats Icons */}
                       <div className="flex gap-4 text-slate-600 text-xs font-mono">
                         <span className="flex items-center gap-1.5">
                            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
@@ -197,13 +196,13 @@ function Blog() {
                     </div>
                   </div>
                 </Link>
-              </motion.article>
+              </m.article>
             ))}
           </AnimatePresence>
         </div>
 
         {filteredPosts.length === 0 && (
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }}
             className="text-center py-32 bg-slate-900/20 rounded-2xl border border-dashed border-slate-800"
           >
@@ -211,7 +210,7 @@ function Blog() {
             <button onClick={() => setSearchQuery('')} className="text-teal-400 font-bold hover:underline">
                Clear Search Filters
             </button>
-          </motion.div>
+          </m.div>
         )}
 
         {filteredPosts.length > 0 && (
@@ -231,7 +230,7 @@ function Blog() {
       {visibleCount > POSTS_PER_PAGE && (
         <button 
           onClick={handleShowLess}
-          className="px-6 py-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 font-medium text-sm transition-colors border border-slate-700"
+          className="px-6 py-3 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-sm transition-colors border border-slate-700"
         >
           Show Less
         </button>

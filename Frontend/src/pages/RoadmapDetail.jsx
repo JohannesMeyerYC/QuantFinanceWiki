@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -22,7 +22,7 @@ const SectionTab = ({ active, label, onClick, id, controls }) => (
       "px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-200 border whitespace-nowrap snap-center",
       active
         ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)]"
-        : "bg-slate-900/50 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+        : "bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-slate-200"
     )}
   >
     {label}
@@ -60,7 +60,7 @@ const RoleCard = ({ role }) => {
         </div>
         <div>
           <span className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 font-bold">Main Goal</span>
-          <p className="text-slate-400 mt-1 text-sm md:text-base">{role.primary_objective}</p>
+          <p className="text-slate-300 mt-1 text-sm md:text-base">{role.primary_objective}</p>
         </div>
         <div>
           <span className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 font-bold">Tech Stack</span>
@@ -84,7 +84,7 @@ const TimelineStep = ({ step, index, isLast }) => {
         <div className="absolute left-[19px] top-10 bottom-0 w-0.5 bg-gradient-to-b from-teal-500/50 to-slate-800" aria-hidden="true" />
       )}
 
-      <motion.button
+      <m.button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={contentId}
@@ -97,9 +97,9 @@ const TimelineStep = ({ step, index, isLast }) => {
       >
         <span className="font-bold text-sm">{index + 1}</span>
         <span className="sr-only">Toggle details for {step.title}</span>
-      </motion.button>
+      </m.button>
 
-      <motion.div
+      <m.div
         layout
         transition={{ duration: 0.2, ease: "easeOut" }}
         onClick={() => setIsOpen(!isOpen)}
@@ -118,7 +118,7 @@ const TimelineStep = ({ step, index, isLast }) => {
         </div>
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <m.div
               id={contentId}
               role="region"
               aria-labelledby={headerId}
@@ -126,15 +126,15 @@ const TimelineStep = ({ step, index, isLast }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="text-slate-400 leading-relaxed overflow-hidden text-sm md:text-base"
+              className="text-slate-300 leading-relaxed overflow-hidden text-sm md:text-base"
             >
               <div className="pt-4 border-t border-slate-800/50 mt-4">
                 {step.description}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </m.div>
     </li>
   );
 };
@@ -157,10 +157,10 @@ const SkillBadge = ({ skill }) => {
             {skill.level}
           </span>
         </div>
-        <p className="text-sm text-slate-500 group-hover:text-slate-400 transition-colors leading-snug">{skill.importance}</p>
+        <p className="text-sm text-slate-500 group-hover:text-slate-300 transition-colors leading-snug">{skill.importance}</p>
       </div>
       <div className="w-full bg-slate-800 h-1.5 mt-5 rounded-full overflow-hidden" role="progressbar" aria-valuenow={skill.level === 'Expert' ? 100 : 75} aria-valuemin="0" aria-valuemax="100">
-        <motion.div
+        <m.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: skill.level === 'Expert' ? 1 : 0.75 }}
           style={{ originX: 0 }}
@@ -266,12 +266,12 @@ const OverviewDescription = ({ description }) => {
   const isExpandable = restText.length > 0;
 
   return (
-    <div className="text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
+    <div className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
       <p className="m-0">{firstSentence}.</p>
 
       <AnimatePresence initial={false}>
         {expanded && (
-          <motion.p
+          <m.p
             key="expanded-text"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
@@ -280,23 +280,23 @@ const OverviewDescription = ({ description }) => {
             className="overflow-hidden m-0"
           >
             {restText}
-          </motion.p>
+          </m.p>
         )}
       </AnimatePresence>
 
       {isExpandable && (
-        <motion.button
+        <m.button
           onClick={() => setExpanded(!expanded)}
           whileTap={{ scale: 0.98 }}
           className={cn(
             "mt-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-300 border",
             expanded
               ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)] hover:bg-teal-500/20 hover:shadow-[0_0_25px_rgba(20,184,166,0.25)]"
-              : "bg-slate-800 border-slate-700 text-slate-400 hover:border-slate-600 hover:text-slate-200"
+              : "bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600 hover:text-slate-200"
           )}
         >
           {expanded ? 'Show Less' : 'Read More'}
-        </motion.button>
+        </m.button>
       )}
     </div>
   );
@@ -316,7 +316,7 @@ const OverviewDescription = ({ description }) => {
       {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 transition-all">
         <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center gap-3 md:gap-4">
-          <Link to="/roadmaps" className="text-sm font-bold text-slate-400 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1" aria-label="Back to Roadmaps">
+          <Link to="/roadmaps" className="text-sm font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1" aria-label="Back to Roadmaps">
             <span className="text-lg leading-none" aria-hidden="true">←</span>
             <span className="hidden xs:inline">Back</span>
           </Link>
@@ -377,7 +377,7 @@ const OverviewDescription = ({ description }) => {
         <AnimatePresence mode='wait'>
 
           {activeTab === 'overview' && (
-            <motion.section
+            <m.section
               key="overview"
               role="tabpanel"
               id="panel-overview"
@@ -402,15 +402,15 @@ const OverviewDescription = ({ description }) => {
                       <span className="font-bold text-lg" aria-hidden="true">✓</span>
                       <h4 className="font-bold text-slate-200 text-sm md:text-base">{item.title}</h4>
                     </div>
-                    <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>
+                    <p className="text-sm text-slate-300 leading-relaxed">{item.description}</p>
                   </article>
                 ))}
               </div>
-            </motion.section>
+            </m.section>
           )}
 
           {activeTab === 'roadmap' && (
-            <motion.section
+            <m.section
               key="roadmap"
               role="tabpanel"
               id="panel-roadmap"
@@ -434,11 +434,11 @@ const OverviewDescription = ({ description }) => {
                   />
                 ))}
               </ul>
-            </motion.section>
+            </m.section>
           )}
 
           {activeTab === 'skills' && (
-            <motion.section
+            <m.section
               key="skills"
               role="tabpanel"
               id="panel-skills"
@@ -455,11 +455,11 @@ const OverviewDescription = ({ description }) => {
                   <SkillBadge key={idx} skill={skill} />
                 ))}
               </div>
-            </motion.section>
+            </m.section>
           )}
 
           {activeTab === 'knowledge' && (
-            <motion.section
+            <m.section
               key="knowledge"
               role="tabpanel"
               id="panel-knowledge"
@@ -496,9 +496,9 @@ const OverviewDescription = ({ description }) => {
                     <article key={idx} className="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-slate-800 flex flex-col hover:border-slate-700 transition-all active:scale-[0.99]">
                       <div className="flex justify-between items-start mb-3">
                         <h5 className="font-bold text-slate-200 text-base md:text-lg">{res.title}</h5>
-                        <span className="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded border border-slate-700 uppercase font-bold tracking-wider whitespace-nowrap ml-2">{res.type}</span>
+                        <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 uppercase font-bold tracking-wider whitespace-nowrap ml-2">{res.type}</span>
                       </div>
-                      <p className="text-sm text-slate-400 flex-grow mb-4 leading-relaxed">{res.description}</p>
+                      <p className="text-sm text-slate-300 flex-grow mb-4 leading-relaxed">{res.description}</p>
 
                       <div className="mt-auto pt-4 border-t border-slate-800/50 flex flex-wrap items-center justify-between gap-3">
                         {res.difficulty && (
@@ -546,7 +546,7 @@ const OverviewDescription = ({ description }) => {
                 </div>
               </div>
 
-            </motion.section>
+            </m.section>
           )}
 
         </AnimatePresence>

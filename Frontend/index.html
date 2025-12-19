@@ -1,60 +1,64 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" href="/Logo.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#020617" />
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="src/assets/Logo.png">
-  <title>Quant.com - Your Quantitative Finance Resource</title>
-  <meta name="description"
-    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
-  <meta name="keywords"
-    content="quant finance, quantitative analyst, algo trading, financial engineering, career roadmaps, johannes meyer" />
-  <meta name="author" content="Johannes Meyer" />
-  <meta name="robots" content="index, follow" />
+    <title>QuantFinanceWiki.com | Quantitative Finance Careers & Roadmaps</title>
+    <meta name="description" content="The ultimate resource for quantitative finance. Career roadmaps, top firm insights, and interview prep resources built by Johannes Meyer." />
+    <meta name="keywords" content="quant finance, quantitative analyst, algo trading, financial engineering, career roadmaps, johannes meyer" />
+    <meta name="author" content="Johannes Meyer" />
+    <meta name="robots" content="index, follow" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://QuantFinanceWiki.com/" />
-  <meta property="og:title" content="QuantFinanceWiki.com - Your Quantitative Finance Resource" />
-  <meta property="og:description"
-    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
-  <meta property="og:image" content="src/assets/Logo.png" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://QuantFinanceWiki.com/" />
-  <meta property="twitter:title" content="QuantFinanceWiki.com - Your Quantitative Finance Resource" />
-  <meta property="twitter:description"
-    content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources." />
-  <meta property="twitter:image" content="src/assets/Logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quantfinancewiki.com/" />
+    <meta property="og:title" content="QuantFinanceWiki.com - Master Quantitative Finance" />
+    <meta property="og:description" content="Expert roadmaps, firm insights, and interview prep resources." />
+    <meta property="og:image" content="https://quantfinancewiki.com/Logo.png" />
+    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://quantfinancewiki.com/" />
+    <meta property="twitter:title" content="QuantFinanceWiki.com" />
+    <meta property="twitter:description" content="Expert roadmaps, firm insights, and interview prep resources." />
+    <meta property="twitter:image" content="https://quantfinancewiki.com/Logo.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="/assets/index-rj7DtxMR.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/index-rj7DtxMR.css"></noscript>
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  </head>
 
-<body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-QC7626JBDJ', { 'send_page_view': false });
+  <body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
+    <div id="root"></div>
+    
+    <script type="module" src="/src/main.jsx"></script>
 
-  window.addEventListener('load', function() {
-    var script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ';
-    script.async = true;
-    document.body.appendChild(script);
-  });
-</script>
-</body>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-QC7626JBDJ', { 
+        'send_page_view': false, 
+        'anonymize_ip': true     
+      });
 
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ';
+          script.async = true;
+          document.head.appendChild(script);
+        }, 3500); 
+      });
+    </script>
+  </body>
 </html>
