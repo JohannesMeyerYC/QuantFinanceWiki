@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { m } from 'framer-motion';
 import { clsx } from 'clsx';
@@ -11,6 +11,22 @@ function cn(...inputs) {
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.05 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.2, ease: "easeOut" }
+  }
+};
 
 function Roadmaps() {
   const [roadmaps, setRoadmaps] = useState([]);
@@ -30,10 +46,12 @@ function Roadmaps() {
       });
   }, []);
 
-  const filteredRoadmaps = roadmaps.filter(roadmap =>
-    roadmap.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    roadmap.description?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredRoadmaps = useMemo(() => {
+    return roadmaps.filter(roadmap =>
+      roadmap.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      roadmap.description?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [roadmaps, searchQuery]);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -61,23 +79,6 @@ function Roadmaps() {
       </div>
     );
   }
-
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.05 }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 10 },
-    show: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.2, ease: "easeOut" }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30">
@@ -128,7 +129,7 @@ function Roadmaps() {
         </div>
 
         <m.div
-          variants={container}
+          variants={containerVariants}
           initial="hidden"
           animate="show"
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -136,7 +137,7 @@ function Roadmaps() {
         >
           {filteredRoadmaps.length > 0 ? (
             filteredRoadmaps.map(roadmap => (
-              <m.article key={roadmap.id} variants={item} role="listitem">
+              <m.article key={roadmap.id} variants={itemVariants} role="listitem">
                 <Link
                   to={`/roadmaps/${roadmap.id}`}
                   className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"

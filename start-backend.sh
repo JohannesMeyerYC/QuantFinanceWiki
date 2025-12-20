@@ -23,16 +23,15 @@ if [ ! -d "Backend/venv" ]; then
     python3 -m venv Backend/venv
 fi
 
-echo "Activating virtual environment..."
 source Backend/venv/bin/activate
 
 if [ -f "Backend/requirements.txt" ]; then
-    echo "Checking dependencies..."
     pip install -r Backend/requirements.txt > /dev/null 2>&1
     if [ $? -ne 0 ]; then
-        echo "Warning: Dependency install had issues. Running verbose..."
         pip install -r Backend/requirements.txt
     fi
+    
+    pip install Flask-Limiter > /dev/null 2>&1
 fi
 
 echo ""

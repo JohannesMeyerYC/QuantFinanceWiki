@@ -13,6 +13,7 @@ const FAQ = lazy(() => import('./pages/FAQ'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Resources = lazy(() => import('./pages/Resources'));
+const About = lazy(() => import('./pages/About'));
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -24,7 +25,8 @@ const navLinks = [
   { path: '/blog', label: 'Blog' },
   { path: '/resources', label: 'Library' },
   { path: '/firms', label: 'Companies' },
-  { path: '/faq', label: 'Questions' }
+  { path: '/faq', label: 'Questions' },
+  { path: '/about', label: 'About' }
 ];
 
 const organizationSchema = {
@@ -187,6 +189,9 @@ function App() {
         <Helmet titleTemplate="%s | QuantFinanceWiki" defaultTitle="QuantFinanceWiki - Quantitative Finance Careers & Roadmaps">
           <meta name="description" content="Your comprehensive guide to quantitative finance. Career roadmaps, firm lists, interview questions, and educational resources for aspiring quants." />
           <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+          <style type="text/css">{`
+            body { background-color: #020617; color: #e2e8f0; margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+          `}</style>
         </Helmet>
 
         <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 selection:text-emerald-200 flex flex-col">
@@ -205,6 +210,7 @@ function App() {
                 <Route path="/firms" element={<Firms />} />
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/resources" element={<Resources />} />
+                <Route path="/about" element={<About />} />
               </Routes>
             </Suspense>
           </div>

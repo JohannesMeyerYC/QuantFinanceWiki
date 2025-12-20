@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
@@ -32,7 +32,6 @@ const SectionTab = ({ active, label, onClick, id, controls }) => (
 const RoleCard = ({ role }) => {
   const [expanded, setExpanded] = useState(false);
 
-  // Extract first sentence
   const firstSentence = role.focus.split('. ')[0] + (role.focus.includes('.') ? '.' : '');
   const isExpandable = role.focus.split('. ').length > 1;
 
@@ -172,91 +171,6 @@ const SkillBadge = ({ skill }) => {
   );
 };
 
-function RoadmapDetail() {
-  const { id } = useParams();
-  const [activeTab, setActiveTab] = useState('overview');
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`${API_URL}/api/roadmaps/${id}`);
-        const json = await res.json();
-        const roadmapData = json.developer_guide || json;
-        setData(roadmapData);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [id]);
-
-  if (loading) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center" role="status" aria-busy="true">
-      <div className="flex flex-col items-center gap-4">
-        <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" aria-hidden="true" />
-        <p className="text-teal-500 font-mono text-xs">Loading...</p>
-      </div>
-    </div>
-  );
-
-  if (!data) return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
-      <Helmet><meta name="robots" content="noindex" /></Helmet>
-      Roadmap not found.
-    </div>
-  );
-
-  const filteredResources = data.resources?.filter(r =>
-    r.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    r.type.toLowerCase().includes(searchQuery.toLowerCase())
-  ) || [];
-
-  const filteredSchools = data.schools?.filter(s =>
-    s.name.toLowerCase().includes(searchQuery.toLowerCase())
-  ) || [];
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Course",
-        "name": data.title,
-        "description": data.description,
-        "provider": {
-          "@type": "Organization",
-          "name": "QuantFinanceWiki.com",
-          "sameAs": "https://QuantFinanceWiki.com"
-        },
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": "Online"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Roadmaps", "item": "https://QuantFinanceWiki.com/roadmaps" },
-          { "@type": "ListItem", "position": 2, "name": data.title, "item": `https://QuantFinanceWiki.com/roadmaps/${id}` }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "name": `How to become a ${data.title}`,
-        "step": data.roadmap_steps?.map((step, index) => ({
-          "@type": "HowToStep",
-          "position": index + 1,
-          "name": step.title,
-          "text": step.description
-        }))
-      }
-    ]
-  };
-
 const OverviewDescription = ({ description }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -302,6 +216,97 @@ const OverviewDescription = ({ description }) => {
   );
 };
 
+function RoadmapDetail() {
+  const { id } = useParams();
+  const [activeTab, setActiveTab] = useState('overview');
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/roadmaps/${id}`);
+        const json = await res.json();
+        const roadmapData = json.developer_guide || json;
+        setData(roadmapData);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  const filteredResources = useMemo(() => {
+    return data?.resources?.filter(r =>
+      r.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      r.type.toLowerCase().includes(searchQuery.toLowerCase())
+    ) || [];
+  }, [data, searchQuery]);
+
+  const filteredSchools = useMemo(() => {
+    return data?.schools?.filter(s =>
+      s.name.toLowerCase().includes(searchQuery.toLowerCase())
+    ) || [];
+  }, [data, searchQuery]);
+
+  const jsonLd = useMemo(() => {
+    if (!data) return null;
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Course",
+            "name": data.title,
+            "description": data.description,
+            "provider": {
+              "@type": "Organization",
+              "name": "QuantFinanceWiki.com",
+              "sameAs": "https://QuantFinanceWiki.com"
+            },
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "Online"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Roadmaps", "item": "https://QuantFinanceWiki.com/roadmaps" },
+              { "@type": "ListItem", "position": 2, "name": data.title, "item": `https://QuantFinanceWiki.com/roadmaps/${id}` }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": `How to become a ${data.title}`,
+            "step": data.roadmap_steps?.map((step, index) => ({
+              "@type": "HowToStep",
+              "position": index + 1,
+              "name": step.title,
+              "text": step.description
+            }))
+          }
+        ]
+    };
+  }, [data, id]);
+
+  if (loading) return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center" role="status" aria-busy="true">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+        <p className="text-teal-500 font-mono text-xs">Loading...</p>
+      </div>
+    </div>
+  );
+
+  if (!data) return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">
+      <Helmet><meta name="robots" content="noindex" /></Helmet>
+      Roadmap not found.
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
@@ -313,7 +318,6 @@ const OverviewDescription = ({ description }) => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Header */}
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 transition-all">
         <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center gap-3 md:gap-4">
           <Link to="/roadmaps" className="text-sm font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1" aria-label="Back to Roadmaps">

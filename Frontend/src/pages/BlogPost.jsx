@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { m, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { RenderBlock } from '../components/RenderBlock';
+import { RenderBlock } from './RenderBlock';
 
 const API_URL = import.meta.env.VITE_API_URL;
 const SITE_URL = "https://QuantFinanceWiki.com";

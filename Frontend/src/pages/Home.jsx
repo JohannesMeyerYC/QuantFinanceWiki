@@ -4,8 +4,6 @@ import { m } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import logoImg from '../assets/Logo.png';
 
-const API_URL = import.meta.env.VITE_API_URL;
-
 const socials = [
   {
     name: 'LinkedIn',
@@ -58,7 +56,7 @@ const socials = [
     icon: (
       <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-labelledby="instagram-icon">
         <title id="instagram-icon">Instagram</title>
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
       </svg>
     )
   },
@@ -146,9 +144,15 @@ function Home() {
         
         <link rel="canonical" href="https://QuantFinanceWiki.com" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <style type="text/css">{`
+          .hero-container { padding-top: 4rem; padding-bottom: 4rem; text-align: center; }
+          .hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; font-weight: 800; color: #fff; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
+          .hero-desc { font-size: clamp(1.125rem, 3vw, 1.5rem); line-height: 1.6; color: #cbd5e1; margin-bottom: 2rem; font-weight: 300; max-width: 56rem; margin-left: auto; margin-right: auto; }
+          @media (min-width: 768px) { .hero-container { padding-top: 8rem; padding-bottom: 8rem; } }
+        `}</style>
       </Helmet>
 
-      <header className="relative border-b border-slate-800 bg-slate-950 py-16 md:py-32 overflow-hidden">
+      <header className="relative border-b border-slate-800 bg-slate-950 py-16 md:py-32 overflow-hidden hero-container">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
            <div className="absolute top-10 left-10 w-40 h-40 md:w-72 md:h-72 bg-emerald-500/10 rounded-full blur-[60px] md:blur-[100px] will-change-transform"></div>
            <div className="absolute bottom-10 right-10 w-60 h-60 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[60px] md:blur-[100px] will-change-transform"></div>
@@ -156,10 +160,10 @@ function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8 text-white tracking-tight leading-tight">
+            <h1 className="hero-title">
               Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">QFW.com</span>
             </h1>
-            <p className="text-lg md:text-2xl mb-8 md:mb-12 text-slate-300 leading-relaxed font-light px-2">
+            <p className="hero-desc px-2">
               The best place to learn about quantitative finance. Read my roadmaps, check out the blog, and download free resources.
             </p>
             <nav className="flex flex-col sm:flex-row justify-center gap-4 sm:space-y-0 sm:space-x-6 px-4">
@@ -237,23 +241,6 @@ function Home() {
             <Link to="/blog" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center group/link text-sm md:text-base" aria-label="Read Insights Blog">
               Read Blog <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
             </Link>
-          </m.article>
-
-          <m.article variants={itemVariants} className="bg-slate-900/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group hover:bg-slate-900 hover:shadow-2xl hover:shadow-amber-900/20 active:scale-[0.98]" role="listitem">
-             <div className="w-12 h-1.5 bg-gradient-to-r from-amber-600 to-amber-400 mb-6 rounded-full group-hover:w-24 transition-all duration-500" aria-hidden="true"></div>
-            <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">Quant Bootcamp</h2>
-            <p className="text-slate-300 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-              Train with mentors from top firms. Fast-track your career.
-            </p>
-            <a 
-              href="http://thewallstreetquants.com/survey?ori=jmey" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center group/link text-sm md:text-base" 
-              aria-label="Quant Interview Prep Bootcamp"
-            >
-              Learn More <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
-            </a>
           </m.article>
 
         </m.div>

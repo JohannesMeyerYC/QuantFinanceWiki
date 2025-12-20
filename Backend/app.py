@@ -23,6 +23,7 @@ Compress(app)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 interaction_lock = threading.Lock()
+_file_cache = {}
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -40,8 +41,18 @@ def load_json_safe(filename, default=None):
         return default
         
     try:
+        stat = os.stat(filepath)
+        mtime = stat.st_mtime
+        
+        if filename in _file_cache:
+            cache_mtime, cache_data = _file_cache[filename]
+            if cache_mtime == mtime:
+                return cache_data
+
         with open(filepath, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            data = json.load(f)
+            _file_cache[filename] = (mtime, data)
+            return data
     except Exception as e:
         logger.error(f"Error reading {filename}: {e}")
         return default
@@ -53,6 +64,9 @@ def save_json_safe(filename, data):
         with open(tmp_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2)
         os.replace(tmp_path, filepath)
+        
+        stat = os.stat(filepath)
+        _file_cache[filename] = (stat.st_mtime, data)
     except Exception as e:
         logger.error(f"Error saving {filename}: {e}")
         if os.path.exists(tmp_path):
@@ -69,7 +83,6 @@ def handle_errors(f):
             return jsonify({"error": "Internal Server Error", "message": str(e)}), 500
     return decorated_function
 
-
 @app.route('/robots.txt')
 def robots_txt():
     lines = [
@@ -82,10 +95,9 @@ def robots_txt():
 @app.route('/sitemap.xml')
 def sitemap_xml():
     MAX_URLS = 50000
-    MAX_BYTES = 49 * 1024 * 1024  
+    MAX_BYTES = 49 * 1024 * 1024
     
     SERVER_START_TIME = datetime.utcnow().date().isoformat()
-    
     base_url = Config.BASE_URL.replace("http://", "https://").rstrip('/')
     
     xml_header = [
@@ -96,8 +108,8 @@ def sitemap_xml():
     current_byte_count = sum(len(x.encode('utf-8')) for x in xml_header)
     url_count = 0
     seen_urls = set()
-    
     xml_body = []
+    
     def add_entry(path_suffix, lastmod=None, priority='0.5', changefreq='monthly'):
         nonlocal url_count, current_byte_count
         
@@ -127,9 +139,9 @@ def sitemap_xml():
                 
                 final_date = parsed_date.isoformat()
             except ValueError:
-                pass 
+                pass
+
         loc_xml = html.escape(full_url)
-        
         entry = (
             f"  <url>\n"
             f"    <loc>{loc_xml}</loc>\n"
@@ -148,14 +160,13 @@ def sitemap_xml():
         current_byte_count += entry_bytes
         url_count += 1
 
-    
     statics = [
         ('/', '1.0', 'daily'),
-        ('/roadmaps', '0.9', 'weekly'),   
+        ('/roadmaps', '0.9', 'weekly'),
         ('/blog', '0.9', 'daily'),
         ('/firms', '0.8', 'weekly'),
-        ('/resources', '0.7', 'monthly'), 
-        ('/faq', '0.5', 'monthly')        
+        ('/resources', '0.7', 'monthly'),
+        ('/faq', '0.5', 'monthly')
     ]
     for path, prio, freq in statics:
         add_entry(path, lastmod=SERVER_START_TIME, priority=prio, changefreq=freq)
@@ -164,8 +175,7 @@ def sitemap_xml():
     if isinstance(posts, list):
         for post in posts:
             if post.get('id'):
-                p_date = post.get('date')
-                add_entry(f"/blog/{post['id']}", lastmod=p_date, priority='0.8', changefreq='monthly')
+                add_entry(f"/blog/{post['id']}", lastmod=post.get('date'), priority='0.8', changefreq='monthly')
 
     roadmaps = load_json_safe('roadmaps.json')
     r_list = list(roadmaps.values()) if isinstance(roadmaps, dict) else roadmaps
@@ -182,14 +192,10 @@ def sitemap_xml():
                 add_entry(f"/firms/{f['id']}", lastmod=SERVER_START_TIME, priority='0.7', changefreq='monthly')
 
     full_content = "\n".join(xml_header + xml_body + ['</urlset>'])
-    
     resp = Response(full_content, mimetype="application/xml")
-    
     resp.headers['Cache-Control'] = 'public, max-age=3600'
     resp.headers['X-Robots-Tag'] = 'noarchive'
-    
     return resp
-
 
 @app.route('/api/health', methods=['GET'])
 @handle_errors
@@ -215,7 +221,9 @@ def get_roadmaps():
     data = load_json_safe('roadmaps.json')
     if isinstance(data, dict):
         data = list(data.values())
-    return jsonify(data)
+    resp = make_response(jsonify(data))
+    resp.headers['Cache-Control'] = 'public, max-age=3600'
+    return resp
 
 @app.route('/api/roadmaps/<roadmap_id>', methods=['GET'])
 @handle_errors
@@ -224,7 +232,9 @@ def get_roadmap(roadmap_id):
     data_list = list(data.values()) if isinstance(data, dict) else data
     item = next((r for r in data_list if str(r.get('id')) == str(roadmap_id)), None)
     if item:
-        return jsonify(item)
+        resp = make_response(jsonify(item))
+        resp.headers['Cache-Control'] = 'public, max-age=3600'
+        return resp
     return jsonify({'error': 'Roadmap not found'}), 404
 
 @app.route('/api/firms', methods=['GET'])
@@ -300,7 +310,6 @@ def unlike_post(post_id):
 def index():
     return {"status": "online", "message": "QFW Backend is running", "env": ENV}, 200
 
-# 3. Main execution block (Handles local runs)
 if __name__ == '__main__':
     if not os.path.exists(Config.DATA_DIR):
         os.makedirs(Config.DATA_DIR)
