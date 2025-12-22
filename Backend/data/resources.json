@@ -97,7 +97,7 @@
   },
   {
     "id": "13",
-    "title": "Fintech Beginner’s Guide",
+    "title": "Fintech Beginner's Guide",
     "description": "Overview of financial technology, core technologies, applications, and business models for the FinTech ecosystem.",
     "filename": "fintech-beginners-guide.pdf",
     "category": "FinTech",
@@ -138,7 +138,7 @@
   {
     "id": "18",
     "title": "Top 25 Quant Finance Programs",
-    "description": "Ranking and overview of the top 25 Master’s programs for quantitative finance careers, based on placement, curriculum, and employment outcomes.",
+    "description": "Ranking and overview of the top 25 Master's programs for quantitative finance careers, based on placement, curriculum, and employment outcomes.",
     "filename": "qf-programs.pdf",
     "category": "Education",
     "type": "PDF"
@@ -346,7 +346,7 @@
   {
     "id": "44",
     "title": "Algorithmic Trading Certificate (QuantHub)",
-    "description": "Practitioner’s guide and self-paced quant insider certificate.",
+    "description": "Practitioner's guide and self-paced quant insider certificate.",
     "link": "https://quantshub.com/",
     "category": "Courses",
     "type": "Course"
@@ -438,5 +438,461 @@
     "link": "https://www.arpm.co/",
     "category": "Certificates",
     "type": "Certificate"
+  },
+  {
+    "id": "56",
+    "title": "QuantLib",
+    "description": "Comprehensive open-source software framework for quantitative finance, written in C++ with Python bindings.",
+    "link": "https://www.quantlib.org/",
+    "category": "Programming",
+    "type": "Library"
+  },
+  {
+    "id": "57",
+    "title": "TA-Lib",
+    "description": "Technical Analysis Library with 150+ indicators including RSI, MACD, Bollinger Bands, etc.",
+    "link": "https://ta-lib.org/",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "58",
+    "title": "Zipline",
+    "description": "Pythonic algorithmic trading library used by Quantopian for backtesting strategies.",
+    "link": "https://github.com/quantopian/zipline",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "59",
+    "title": "Backtrader",
+    "description": "Python backtesting library for trading strategies with live trading support.",
+    "link": "https://www.backtrader.com/",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "60",
+    "title": "PyPortfolioOpt",
+    "description": "Financial portfolio optimization in Python, including classical efficient frontier and advanced methods.",
+    "link": "https://github.com/robertmartin8/PyPortfolioOpt",
+    "category": "Portfolio Management",
+    "type": "Library"
+  },
+  {
+    "id": "61",
+    "title": "MLFinLab",
+    "description": "Implementation of methods from 'Advances in Financial Machine Learning' by Marcos López de Prado.",
+    "link": "https://github.com/hudson-and-thames/mlfinlab",
+    "category": "Machine Learning",
+    "type": "Library"
+  },
+  {
+    "id": "62",
+    "title": "CCXT",
+    "description": "JavaScript/Python/PHP library for cryptocurrency trading with support for 100+ exchanges.",
+    "link": "https://github.com/ccxt/ccxt",
+    "category": "Crypto",
+    "type": "Library"
+  },
+  {
+    "id": "63",
+    "title": "Qlib",
+    "description": "AI-oriented quantitative investment platform by Microsoft with full ML pipeline for investment.",
+    "link": "https://github.com/microsoft/qlib",
+    "category": "Machine Learning",
+    "type": "Platform"
+  },
+  {
+    "id": "64",
+    "title": "FinRL",
+    "description": "Deep Reinforcement Learning library for automated trading in quantitative finance.",
+    "link": "https://github.com/AI4Finance-Foundation/FinRL",
+    "category": "Machine Learning",
+    "type": "Library"
+  },
+  {
+    "id": "65",
+    "title": "VectorBT",
+    "description": "Python library for backtesting, algorithmic trading, and research with vectorized operations.",
+    "link": "https://github.com/polakowo/vectorbt",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "66",
+    "title": "YFinance",
+    "description": "Yahoo Finance market data downloader, faster alternative to pandas-datareader.",
+    "link": "https://github.com/ranaroussi/yfinance",
+    "category": "Data Sources",
+    "type": "Library"
+  },
+  {
+    "id": "67",
+    "title": "Alpha Vantage",
+    "description": "Free APIs for real-time and historical data on stocks, forex, and cryptocurrencies.",
+    "link": "https://www.alphavantage.co/",
+    "category": "Data Sources",
+    "type": "API"
+  },
+  {
+    "id": "68",
+    "title": "Polygon.io",
+    "description": "Financial data APIs for stocks, options, forex, and crypto with real-time and historical data.",
+    "link": "https://polygon.io/",
+    "category": "Data Sources",
+    "type": "API"
+  },
+  {
+    "id": "69",
+    "title": "Akshare",
+    "description": "Elegant financial data interface library for Python with comprehensive Chinese market data.",
+    "link": "https://github.com/akfamily/akshare",
+    "category": "Data Sources",
+    "type": "Library"
+  },
+  {
+    "id": "70",
+    "title": "PyAlgoTrade",
+    "description": "Python algorithmic trading library with support for backtesting and live trading.",
+    "link": "https://github.com/gbeced/pyalgotrade",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "71",
+    "title": "Catalyst",
+    "description": "Algorithmic trading library for crypto-assets built on Zipline.",
+    "link": "https://github.com/enigmampc/catalyst",
+    "category": "Crypto",
+    "type": "Library"
+  },
+  {
+    "id": "72",
+    "title": "Riskfolio-Lib",
+    "description": "Portfolio optimization and quantitative strategic asset allocation in Python.",
+    "link": "https://github.com/dcajasn/Riskfolio-Lib",
+    "category": "Portfolio Management",
+    "type": "Library"
+  },
+  {
+    "id": "73",
+    "title": "FinTA",
+    "description": "Common financial technical analysis indicators implemented in Pandas.",
+    "link": "https://github.com/peerchemist/finta",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "74",
+    "title": "Pandas TA",
+    "description": "Easy-to-use Pandas extension with 115+ technical analysis indicators.",
+    "link": "https://github.com/twopirllc/pandas-ta",
+    "category": "Tools",
+    "type": "Library"
+  },
+  {
+    "id": "75",
+    "title": "Arch",
+    "description": "ARCH models in Python for volatility modeling and financial time series analysis.",
+    "link": "https://github.com/bashtage/arch",
+    "category": "Time Series",
+    "type": "Library"
+  },
+  {
+    "id": "76",
+    "title": "Statsmodels",
+    "description": "Python module for statistical modeling, testing, and exploration of data.",
+    "link": "https://www.statsmodels.org/",
+    "category": "Statistics",
+    "type": "Library"
+  },
+  {
+    "id": "77",
+    "title": "Prophet",
+    "description": "Facebook's tool for forecasting time series data with multiple seasonality.",
+    "link": "https://facebook.github.io/prophet/",
+    "category": "Time Series",
+    "type": "Library"
+  },
+  {
+    "id": "78",
+    "title": "GluonTS",
+    "description": "Probabilistic time series modeling in Python with deep learning models.",
+    "link": "https://github.com/awslabs/gluon-ts",
+    "category": "Time Series",
+    "type": "Library"
+  },
+  {
+    "id": "79",
+    "title": "TradingView Pine Script",
+    "description": "TradingView's scripting language for creating custom indicators and strategies.",
+    "link": "https://www.tradingview.com/pine-script-docs/en/v5/",
+    "category": "Programming",
+    "type": "Language"
+  },
+  {
+    "id": "80",
+    "title": "MetaTrader 5 Python API",
+    "description": "Python connector to MetaTrader 5 terminal for algorithmic trading.",
+    "link": "https://www.mql5.com/en/docs/integration/python_metatrader5",
+    "category": "Tools",
+    "type": "API"
+  },
+  {
+    "id": "81",
+    "title": "PyFolio",
+    "description": "Portfolio and risk analytics in Python, integrates with Zipline.",
+    "link": "https://github.com/quantopian/pyfolio",
+    "category": "Risk Management",
+    "type": "Library"
+  },
+  {
+    "id": "82",
+    "title": "Empyrical",
+    "description": "Common financial risk and performance metrics library.",
+    "link": "https://github.com/quantopian/empyrical",
+    "category": "Risk Management",
+    "type": "Library"
+  },
+  {
+    "id": "83",
+    "title": "Alphalens",
+    "description": "Performance analysis of predictive alpha factors in Python.",
+    "link": "https://github.com/quantopian/alphalens",
+    "category": "Factor Analysis",
+    "type": "Library"
+  },
+  {
+    "id": "84",
+    "title": "Interactive Brokers API",
+    "description": "Official API for Interactive Brokers trading platform.",
+    "link": "https://interactivebrokers.github.io/",
+    "category": "Tools",
+    "type": "API"
+  },
+  {
+    "id": "85",
+    "title": "OANDA API",
+    "description": "REST API for OANDA forex and CFD trading platform.",
+    "link": "https://developer.oanda.com/",
+    "category": "Tools",
+    "type": "API"
+  },
+  {
+    "id": "86",
+    "title": "Alpaca API",
+    "description": "Commission-free trading API for stocks and crypto.",
+    "link": "https://alpaca.markets/",
+    "category": "Tools",
+    "type": "API"
+  },
+  {
+    "id": "87",
+    "title": "TensorFlow Finance",
+    "description": "High-performance TensorFlow library for quantitative finance.",
+    "link": "https://github.com/google/tf-quant-finance",
+    "category": "Machine Learning",
+    "type": "Library"
+  },
+  {
+    "id": "88",
+    "title": "OctoBot",
+    "description": "Open source cryptocurrency trading bot with advanced web interface.",
+    "link": "https://github.com/Drakkar-Software/OctoBot",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "89",
+    "title": "Freqtrade",
+    "description": "Free, open source crypto trading bot written in Python.",
+    "link": "https://github.com/freqtrade/freqtrade",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "90",
+    "title": "Jesse",
+    "description": "Advanced crypto trading bot with backtesting and optimization features.",
+    "link": "https://github.com/jesse-ai/jesse",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "91",
+    "title": "Gekko",
+    "description": "Bitcoin TA trading and backtesting platform with exchange support.",
+    "link": "https://github.com/askmike/gekko",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "92",
+    "title": "Hummingbot",
+    "description": "Open source framework for building high-frequency trading bots.",
+    "link": "https://github.com/hummingbot/hummingbot",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "93",
+    "title": "Nautilus Trader",
+    "description": "High-performance algorithmic trading platform and event-driven backtester.",
+    "link": "https://github.com/nautechsystems/nautilus_trader",
+    "category": "Tools",
+    "type": "Platform"
+  },
+  {
+    "id": "94",
+    "title": "Lean CLI",
+    "description": "Local development environment for QuantConnect's Lean engine.",
+    "link": "https://github.com/QuantConnect/lean-cli",
+    "category": "Tools",
+    "type": "CLI"
+  },
+  {
+    "id": "95",
+    "title": "QuantStats",
+    "description": "Portfolio analytics for quants, written in Python.",
+    "link": "https://github.com/ranaroussi/quantstats",
+    "category": "Portfolio Management",
+    "type": "Library"
+  },
+  {
+    "id": "96",
+    "title": "Quantdom",
+    "description": "Python-based framework for backtesting trading strategies with GUI.",
+    "link": "https://github.com/constverum/Quantdom",
+    "category": "Tools",
+    "type": "Platform"
+  },
+  {
+    "id": "97",
+    "title": "Trality",
+    "description": "Python-based platform for creating, backtesting, and deploying crypto trading bots.",
+    "link": "https://www.trality.com/",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "98",
+    "title": "3Commas",
+    "description": "Trading bot platform with DCA, Grid, and Options bots for crypto.",
+    "link": "https://3commas.io/",
+    "category": "Crypto",
+    "type": "Platform"
+  },
+  {
+    "id": "99",
+    "title": "Trading Strategy",
+    "description": "Framework for backtesting and live trading in decentralized finance.",
+    "link": "https://github.com/tradingstrategy-ai/trading-strategy",
+    "category": "DeFi",
+    "type": "Platform"
+  },
+  {
+    "id": "100",
+    "title": "DefiLlama",
+    "description": "Largest TVL aggregator for DeFi with comprehensive API.",
+    "link": "https://defillama.com/",
+    "category": "DeFi",
+    "type": "Data Source"
+  },
+   {
+    "id": "101",
+    "title": "QuantConnect",
+    "description": "A comprehensive, cloud-based algorithmic trading platform supporting backtesting and live trading. Its core engine, Lean, is open-source and written in C#.",
+    "link": "https://www.quantconnect.com/",
+    "category": "Quantitative Trading Platform",
+    "type": "Platform"
+  },
+  {
+    "id": "102",
+    "title": "Numerai",
+    "description": "A unique crowdsourced hedge fund that hosts weekly machine learning tournaments. Participants build predictive models on encrypted financial data to compete for cryptocurrency rewards.",
+    "link": "https://numer.ai/",
+    "category": "Quantitative Trading Platform",
+    "type": "Platform"
+  },
+  {
+    "id": "103",
+    "title": "Quantpedia",
+    "description": "An encyclopedia of quantitative trading strategies derived from academic research papers. Offers a curated database with strategy rules, performance metrics, and links to source papers.",
+    "link": "https://quantpedia.com/",
+    "category": "Websites Forums Blogs",
+    "type": "Website"
+  },
+  {
+    "id": "104",
+    "title": "Algoseek",
+    "description": "A provider of high-quality, institutional-grade intraday and historical market data for equities, options, futures, and cryptocurrencies, known for data accuracy and customization.",
+    "link": "https://www.algoseek.com/",
+    "category": "Data Source",
+    "type": "Data Provider"
+  },
+  {
+    "id": "105",
+    "title": "EODHD (EOD Historical Data)",
+    "description": "A financial data provider offering extensive historical end-of-day, fundamental, and macroeconomic data via API. Known for being a cost-effective solution with broad global coverage.",
+    "link": "https://eodhd.com/",
+    "category": "Data Source",
+    "type": "API"
+  },
+  {
+    "id": "106",
+    "title": "ORATS",
+    "description": "A specialized platform providing options data, analytics, and tools like scanners and backtesters, designed for both retail and professional options traders.",
+    "link": "https://orats.com/",
+    "category": "Data Source",
+    "type": "Platform"
+  },
+  {
+    "id": "107",
+    "title": "DefiLlama",
+    "description": "The leading data analytics platform for Decentralized Finance (DeFi), tracking Total Value Locked (TVL), revenue, fees, and other key metrics across hundreds of protocols and blockchains.",
+    "link": "https://defillama.com/",
+    "category": "Cryptocurrency",
+    "type": "Data Source"
+  },
+  {
+    "id": "108",
+    "title": "Backtrader",
+    "description": "A popular Python framework for backtesting trading strategies. It supports live trading, extensive analytics, and is designed to be flexible and easy to use.",
+    "link": "https://www.backtrader.com/",
+    "category": "Trading System",
+    "type": "Library"
+  },
+  {
+    "id": "109",
+    "title": "vnpy",
+    "description": "An open-source quantitative trading system framework developed in Python, offering a wide array of components for data feeding, strategy development, risk management, and trading gateway integration.",
+    "link": "https://www.vnpy.com/",
+    "category": "Trading System",
+    "type": "Framework"
+  },
+  {
+    "id": "110",
+    "title": "Interactive Brokers API",
+    "description": "The official API for the Interactive Brokers trading platform, enabling automated trading, market data access, and account management for professional and algorithmic traders.",
+    "link": "https://www.interactivebrokers.com/api/",
+    "category": "Trading API",
+    "type": "API"
+  },
+  {
+    "id": "111",
+    "title": "TradeStation",
+    "description": "A brokerage and trading platform renowned for its advanced charting, analytics, and proprietary EasyLanguage scripting for developing, backtesting, and automating trading strategies.",
+    "link": "https://www.tradestation.com/",
+    "category": "Trading System",
+    "type": "Platform"
+  },
+  {
+    "id": "112",
+    "title": "Seeking Alpha",
+    "description": "A crowd-sourced investment research platform featuring news, analysis, and opinions on stocks, ETFs, and investment strategies from a large community of contributors.",
+    "link": "https://seekingalpha.com/",
+    "category": "Websites Forums Blogs",
+    "type": "Website"
   }
 ]

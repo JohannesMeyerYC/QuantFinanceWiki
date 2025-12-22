@@ -498,5 +498,460 @@
     "category": "Recruiting Strategy",
     "question": "How should a candidate structure their applications during recruiting season?",
     "answer": "Group target firms into three tiers: Dream, Great, and Good. \n\nApply in waves, mixing the tiers. \n\nThis ensures you get live interview practice with lower-stakes firms before interviewing with your dream companies, preventing you from 'burning' your best opportunities while unprepared."
+  },
+  {
+    "category": "Mathematics Fundamentals",
+    "question": "What is the difference between Probability and Statistics?",
+    "answer": "Probability uses models to predict outcomes. Statistics uses data to infer or test models. In finance, you use probability to build pricing models and statistics to test trading signals."
+  },
+  {
+    "category": "Mathematics Fundamentals",
+    "question": "Why is Linear Algebra so important?",
+    "answer": "It is the language of data. Portfolio optimization, risk models, and machine learning all rely on matrix operations. Understanding eigenvectors and eigenvalues is key for dimensionality reduction."
+  },
+  {
+    "category": "Mathematics Fundamentals",
+    "question": "What is a measure in Measure Theory?",
+    "answer": "A measure assigns a size to sets. Probability is a type of measure. This formal framework is the foundation for rigorous probability and stochastic calculus."
+  },
+  {
+    "category": "Mathematics Fundamentals",
+    "question": "What is the Central Limit Theorem (CLT)?",
+    "answer": "It states that the sum of many independent random variables tends toward a normal distribution. This justifies using the normal distribution in many models, but financial returns often violate its assumptions."
+  },
+  {
+    "category": "Mathematics Fundamentals",
+    "question": "What is Jensen's Inequality?",
+    "answer": "For a convex function, the function of the average is less than or equal to the average of the function. It's used in finance to show things like the inequality in option pricing."
+  },
+  {
+    "category": "Quantitative Finance Core",
+    "question": "What is Beta?",
+    "answer": "Beta measures an asset's sensitivity to market movements. A beta of 1.2 means the asset tends to move 20% more than the market."
+  },
+  {
+    "category": "Quantitative Finance Core",
+    "question": "What is the Efficient Market Hypothesis (EMH)?",
+    "answer": "The theory that asset prices reflect all available information. Quants often look for market inefficiencies where this hypothesis breaks down."
+  },
+  {
+    "category": "Quantitative Finance Core",
+    "question": "What is the Capital Asset Pricing Model (CAPM)?",
+    "answer": "A model linking risk (beta) to expected return. It's foundational but often too simplistic for real trading strategies."
+  },
+  {
+    "category": "Quantitative Finance Core",
+    "question": "What is Arbitrage Pricing Theory (APT)?",
+    "answer": "A multi-factor model for asset returns. It's more flexible than CAPM, allowing for multiple sources of systematic risk."
+  },
+  {
+    "category": "Quantitative Finance Core",
+    "question": "What is the Black-Scholes-Merton model?",
+    "answer": "A model for pricing European options. Its assumptions (like constant volatility) are often wrong, but it provides a crucial conceptual framework."
+  },
+  {
+    "category": "Trading & Strategy",
+    "question": "What is Market Making?",
+    "answer": "Continuously quoting buy and sell prices to provide liquidity. Market makers profit from the bid-ask spread, not from predicting market direction."
+  },
+  {
+    "category": "Trading & Strategy",
+    "question": "What is Statistical Arbitrage?",
+    "answer": "Trading based on statistical mispricings between assets. It's not risk-free arbitrage; it's a bet that a historical relationship will reassert itself."
+  },
+  {
+    "category": "Trading & Strategy",
+    "question": "What is Pairs Trading?",
+    "answer": "A type of stat arb. You go long one asset and short a correlated asset when their price ratio deviates from its historical mean, betting on convergence."
+  },
+  {
+    "category": "Trading & Strategy",
+    "question": "What is Mean Reversion?",
+    "answer": "The theory that prices tend to revert to a historical average. Many stat arb strategies are based on this idea."
+  },
+  {
+    "category": "Trading & Strategy",
+    "question": "What is Momentum?",
+    "answer": "The theory that assets that have performed well recently will continue to do so, and vice versa. It is the opposite of mean reversion."
+  },
+  {
+    "category": "Risk Management",
+    "question": "What is Value at Risk (VaR)?",
+    "answer": "A measure of potential loss over a specific time frame at a given confidence level. Example: A 1-day 95% VaR of $1M means there's a 5% chance of losing more than $1M tomorrow."
+  },
+  {
+    "category": "Risk Management",
+    "question": "What are the Greeks?",
+    "answer": "Measures of sensitivity of an option's price: Delta (price), Gamma (delta), Theta (time), Vega (volatility), Rho (interest rates)."
+  },
+  {
+    "category": "Risk Management",
+    "question": "What is Stress Testing?",
+    "answer": "Simulating portfolio performance under extreme, historically unlikely scenarios to understand tail risk."
+  },
+  {
+    "category": "Risk Management",
+    "question": "What is Leverage?",
+    "answer": "Using borrowed capital to increase potential return. It also magnifies losses and is a major source of risk."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is the bias-variance tradeoff?",
+    "answer": "High bias (underfitting): model is too simple. High variance (overfitting): model is too complex and fits noise. The goal is to find the right balance."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Supervised Learning?",
+    "answer": "Learning from labeled data. Example: Predicting stock returns (label) from past prices (features)."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Unsupervised Learning?",
+    "answer": "Finding patterns in unlabeled data. Example: Clustering stocks into groups based on return behavior."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is a Neural Network?",
+    "answer": "A computational model loosely inspired by the brain. It consists of layers of interconnected nodes that transform input data to an output."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Reinforcement Learning (RL)?",
+    "answer": "An agent learns by interacting with an environment, receiving rewards or penalties. It's used in some trading systems for execution or strategy selection."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is a Feature?",
+    "answer": "An input variable used by a model. In finance, features could be moving averages, volatility, or economic indicators."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Feature Engineering?",
+    "answer": "The process of creating new input features from raw data. This is often more important than the choice of model itself in finance."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Cross-Validation?",
+    "answer": "A technique to assess how a model generalizes. Data is split into folds; the model is trained on some folds and tested on the held-out fold, repeated many times."
+  },
+  {
+    "category": "Machine Learning & AI",
+    "question": "What is Overfitting?",
+    "answer": "When a model learns the noise in the training data instead of the underlying pattern. It performs well on training data but poorly on new data."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is Object-Oriented Programming (OOP)?",
+    "answer": "A programming paradigm based on objects containing data and methods. Useful for building large, modular systems like trading platforms."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is a Pointer?",
+    "answer": "A variable that stores the memory address of another variable. Crucial for low-latency C++ to avoid data copying."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is Multithreading?",
+    "answer": "The ability of a CPU to execute multiple threads concurrently. Essential for handling multiple data feeds or simultaneous calculations."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is a GPU?",
+    "answer": "A Graphics Processing Unit. Excels at parallel computations, used for training large ML models and some market simulations."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is a Database Index?",
+    "answer": "A data structure that speeds up data retrieval. Like an index in a book. Important for querying large volumes of market data quickly."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is an API?",
+    "answer": "Application Programming Interface. A set of rules for different software components to communicate. Used to connect to exchanges or data providers."
+  },
+  {
+    "category": "Programming & Systems",
+    "question": "What is SQL?",
+    "answer": "Structured Query Language. Used to manage and query relational databases where historical market or trade data is stored."
+  },
+  {
+    "category": "Data",
+    "question": "What is Tick Data?",
+    "answer": "A record of every transaction (trade) or quote change. It is high-frequency, granular data used for microstructure analysis."
+  },
+  {
+    "category": "Data",
+    "question": "What is Survivorship Bias?",
+    "answer": "The error of analyzing only existing entities (e.g., stocks that survived) and ignoring those that failed (delisted). It inflates historical performance."
+  },
+  {
+    "category": "Data",
+    "question": "What is Look-Ahead Bias?",
+    "answer": "Using information in a backtest that would not have been available at the time of the trade. A common mistake that invalidates results."
+  },
+  {
+    "category": "Data",
+    "question": "What is Slippage?",
+    "answer": "The difference between the expected price of a trade and the price at which it is actually executed. A key cost in live trading."
+  },
+  {
+    "category": "Derivatives",
+    "question": "What is an Option?",
+    "answer": "A contract giving the buyer the right, but not the obligation, to buy (call) or sell (put) an asset at a set price on or before a certain date."
+  },
+  {
+    "category": "Derivatives",
+    "question": "What is Implied Volatility?",
+    "answer": "The market's forecast of future volatility, derived from an option's price. It is often more important than historical volatility."
+  },
+  {
+    "category": "Derivatives",
+    "question": "What is the Volatility Smile/Skew?",
+    "answer": "A pattern where implied volatility differs for options with different strikes. It shows the market's view of tail risk and contradicts the constant volatility assumption of Black-Scholes."
+  },
+  {
+    "category": "Derivatives",
+    "question": "What is a Future?",
+    "answer": "A standardized exchange-traded contract to buy or sell an asset at a predetermined price at a specified future time."
+  },
+  {
+    "category": "Derivatives",
+    "question": "What is a Swap?",
+    "answer": "A derivative contract to exchange cash flows. Common types: interest rate swaps, credit default swaps (CDS)."
+  },
+  {
+    "category": "Fixed Income",
+    "question": "What is a Bond Yield?",
+    "answer": "The rate of return on a bond, considering its coupon payments and price. Key types: Current yield, Yield to Maturity (YTM)."
+  },
+  {
+    "category": "Fixed Income",
+    "question": "What is Duration?",
+    "answer": "A measure of a bond's sensitivity to interest rate changes. It's the weighted average time to receive cash flows."
+  },
+  {
+    "category": "Fixed Income",
+    "question": "What is Convexity?",
+    "answer": "A measure of the curvature in the relationship between bond prices and yields. It adjusts the duration estimate for large yield changes."
+  },
+  {
+    "category": "Fixed Income",
+    "question": "What is the Yield Curve?",
+    "answer": "A graph plotting bond yields against their maturities. Its shape (normal, inverted, flat) is a key economic indicator."
+  },
+  {
+    "category": "Career & Interview",
+    "question": "What is a brainteaser question?",
+    "answer": "A logic or probability puzzle designed to test problem-solving and reasoning under pressure, not specific financial knowledge."
+  },
+  {
+    "category": "Career & Interview",
+    "question": "What is a 'superday' interview?",
+    "answer": "A final-round interview consisting of multiple back-to-back interviews, often lasting an entire day."
+  },
+  {
+    "category": "Career & Interview",
+    "question": "Should I negotiate my first offer?",
+    "answer": "It depends. At top firms, entry-level offers are often standardized. For experienced hires or at smaller funds, there may be room. Do your research."
+  },
+  {
+    "category": "Career & Interview",
+    "question": "What is a 'quant dev' vs. a 'core dev'?",
+    "answer": "A quant dev works closely with researchers/traders on strategy code. A core dev works on the firm's underlying infrastructure, exchange connectivity, and tools."
+  },
+  {
+    "category": "Industry Jargon",
+    "question": "What is PnL?",
+    "answer": "Profit and Loss. The daily tally of how much money a desk or strategy made or lost."
+  },
+  {
+    "category": "Industry Jargon",
+    "question": "What is a 'signal'?",
+    "answer": "A quantifiable indicator used to make a trading decision. Could be a price pattern, an economic data release, or a ML model output."
+  },
+  {
+    "category": "Industry Jargon",
+    "question": "What is 'alpha decay'?",
+    "answer": "The phenomenon where a profitable trading signal becomes less effective over time as more participants discover and trade on it."
+  },
+  {
+    "category": "Industry Jargon",
+    "question": "What is a 'flat' book?",
+    "answer": "A trading position with no net exposure to the market (long positions equal short positions)."
+  },
+  {
+    "category": "Industry Jargon",
+    "question": "What does 'going systematic' mean?",
+    "answer": "Moving from discretionary trading (human judgment) to rule-based, algorithmic trading."
+  },
+  {
+    "category": "Alternative Data",
+    "question": "What is Alternative Data?",
+    "answer": "Non-traditional data used for investment insights. Examples: satellite imagery, credit card transactions, social media sentiment, web traffic."
+  },
+  {
+    "category": "Alternative Data",
+    "question": "What is the main challenge with alt data?",
+    "answer": "Noise and signal extraction. The data is often messy, unstructured, and the link to asset prices is not always clear or persistent."
+  },
+  {
+    "category": "Crypto & DeFi",
+    "question": "What is an AMM (Automated Market Maker)?",
+    "answer": "A decentralized exchange protocol that uses a mathematical formula (e.g., x*y=k) to price assets, instead of an order book."
+  },
+  {
+    "category": "Crypto & DeFi",
+    "question": "What is MEV (Maximal Extractable Value)?",
+    "answer": "Profit that can be extracted by reordering, including, or censoring transactions within a block. A key concept in blockchain trading."
+  },
+  {
+    "category": "Portfolio Theory",
+    "question": "What is Modern Portfolio Theory (MPT)?",
+    "answer": "A framework for constructing a portfolio to maximize expected return for a given level of risk, using diversification."
+  },
+  {
+    "category": "Portfolio Theory",
+    "question": "What is the Efficient Frontier?",
+    "answer": "A graph showing the set of optimal portfolios offering the highest expected return for a defined level of risk."
+  },
+  {
+    "category": "Portfolio Theory",
+    "question": "What is the Sharpe Ratio?",
+    "answer": "(Return - Risk-Free Rate) / Standard Deviation. Measures risk-adjusted return. A higher Sharpe is better."
+  },
+  {
+    "category": "Portfolio Theory",
+    "question": "What is the Sortino Ratio?",
+    "answer": "Similar to Sharpe, but uses downside deviation (bad volatility) instead of total standard deviation in the denominator."
+  },
+  {
+    "category": "Portfolio Theory",
+    "question": "What is Maximum Drawdown (MDD)?",
+    "answer": "The largest peak-to-trough decline in portfolio value over a period. A key measure of tail risk and pain."
+  },
+  {
+    "category": "Time Series",
+    "question": "What is Stationarity?",
+    "answer": "A time series where statistical properties (mean, variance) are constant over time. Many models require data to be stationary."
+  },
+  {
+    "category": "Time Series",
+    "question": "What is Autocorrelation?",
+    "answer": "The correlation of a time series with its own past values. Positive autocorrelation suggests trends; negative suggests mean reversion."
+  },
+  {
+    "category": "Time Series",
+    "question": "What is an ARIMA model?",
+    "answer": "AutoRegressive Integrated Moving Average. A class of models for forecasting time series data."
+  },
+  {
+    "category": "Time Series",
+    "question": "What is GARCH?",
+    "answer": "Generalized AutoRegressive Conditional Heteroskedasticity. A model for volatility clustering common in financial returns."
+  },
+  {
+    "category": "Econometrics",
+    "question": "What is a Regression?",
+    "answer": "A statistical method to model the relationship between a dependent variable and one or more independent variables."
+  },
+  {
+    "category": "Econometrics",
+    "question": "What is Heteroskedasticity?",
+    "answer": "When the variance of errors in a regression model is not constant. It violates standard OLS assumptions and requires robust standard errors or GARCH."
+  },
+  {
+    "category": "Econometrics",
+    "question": "What is Multicollinearity?",
+    "answer": "When independent variables in a regression are highly correlated. It makes it hard to isolate the effect of individual variables."
+  },
+  {
+    "category": "Econometrics",
+    "question": "What is Endogeneity?",
+    "answer": "A situation where an explanatory variable is correlated with the error term. It leads to biased estimates. A major issue in financial models."
+  },
+  {
+    "category": "Numerical Methods",
+    "question": "What is a Monte Carlo Simulation?",
+    "answer": "A technique that uses random sampling to solve problems. Used for pricing complex derivatives, risk assessment, and scenario analysis."
+  },
+  {
+    "category": "Numerical Methods",
+    "question": "What is the Finite Difference Method?",
+    "answer": "A numerical method for solving differential equations (like the Black-Scholes PDE) by discretizing them."
+  },
+  {
+    "category": "Numerical Methods",
+    "question": "What is a Random Walk?",
+    "answer": "A process where future steps are independent of the past. A core assumption in many financial models (e.g., Brownian motion)."
+  },
+  {
+    "category": "Behavioral Finance",
+    "question": "What is Loss Aversion?",
+    "answer": "The tendency for people to prefer avoiding losses more than acquiring equivalent gains. A source of market inefficiency."
+  },
+  {
+    "category": "Behavioral Finance",
+    "question": "What is Herding?",
+    "answer": "The tendency for investors to follow the crowd. Can create asset bubbles and crashes."
+  },
+  {
+    "category": "Market Microstructure",
+    "question": "What is the Order Book?",
+    "answer": "The list of all buy (bids) and sell (asks) orders for a security, showing quantity and price."
+  },
+  {
+    "category": "Market Microstructure",
+    "question": "What is Market Impact?",
+    "answer": "The effect a large trade has on the price of the asset being traded. A key cost for institutional investors."
+  },
+  {
+    "category": "Market Microstructure",
+    "question": "What is Adverse Selection?",
+    "answer": "The risk that a counterparty to a trade has better information. A key concern for market makers."
+  },
+  {
+    "category": "Stochastic Calculus",
+    "question": "What is Brownian Motion (Wiener Process)?",
+    "answer": "A continuous-time stochastic process with stationary, independent increments. The fundamental building block for modeling asset prices."
+  },
+  {
+    "category": "Stochastic Calculus",
+    "question": "What is Ito's Lemma?",
+    "answer": "The chain rule for stochastic calculus. It's used to find the differential of a function of a stochastic process. Essential for deriving the Black-Scholes equation."
+  },
+  {
+    "category": "Stochastic Calculus",
+    "question": "What is Martingale?",
+    "answer": "A stochastic process where the best forecast of the future value is the present value. In risk-neutral pricing, discounted asset prices are martingales."
+  },
+  {
+    "category": "Financial Regulation",
+    "question": "What is MiFID II?",
+    "answer": "A regulatory framework in the EU that increases transparency in financial markets and regulates high-frequency trading."
+  },
+  {
+    "category": "Financial Regulation",
+    "question": "What is Dodd-Frank?",
+    "answer": "A major US financial reform law enacted after the 2008 crisis. It increased regulation on derivatives (e.g., pushing swaps to centralized clearing)."
+  },
+  {
+    "category": "General Finance",
+    "question": "What is an ETF?",
+    "answer": "Exchange-Traded Fund. A basket of securities that trades like a stock. Often used for passive indexing or targeted sector exposure."
+  },
+  {
+    "category": "General Finance",
+    "question": "What is Liquidity?",
+    "answer": "The ease with which an asset can be bought or sold without affecting its price. Cash is the most liquid asset."
+  },
+  {
+    "category": "General Finance",
+    "question": "What is a Hedge Fund?",
+    "answer": "An investment fund that employs a wide range of strategies (including leverage, derivatives, and short-selling) to generate alpha. Less regulated than mutual funds."
+  },
+  {
+    "category": "General Finance",
+    "question": "What is Private Equity?",
+    "answer": "Investing in private companies, often with the goal of restructuring and selling them later. Illiquid and long-term."
   }
 ]

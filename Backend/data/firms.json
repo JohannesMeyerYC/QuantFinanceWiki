@@ -900,5 +900,831 @@
       "Communication skills"
     ],
     "roles": ["https://www.barclays.com/careers/"]
+  },
+  {
+    "id": "arrowstreet-capital",
+    "name": "Arrowstreet Capital",
+    "category": "Hedge Fund",
+    "location": "Boston, MA, USA",
+    "description": "A global systematic investment firm employing quantitative research and technology-driven strategies.",
+    "requirements": [
+      "Advanced degree in a quantitative field",
+      "Strong programming and data analysis skills",
+      "Experience in financial modeling"
+    ],
+    "qualities": [
+      "Research-oriented",
+      "Collaborative"
+    ],
+    "roles": ["https://www.arrowstreetcapital.com/professional-careers/"]
+  },
+  {
+    "id": "aspect-capital",
+    "name": "Aspect Capital",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A systematic investment manager specializing in managed futures and diversified trend-following strategies.",
+    "requirements": [
+      "Strong quantitative and analytical background",
+      "Programming proficiency"
+    ],
+    "qualities": [
+      "Innovative",
+      "Systematic thinker"
+    ],
+    "roles": ["https://www.aspectcapital.com/careers"]
+  },
+  {
+    "id": "capital-fund-management",
+    "name": "Capital Fund Management (CFM)",
+    "category": "Hedge Fund",
+    "location": "Paris, France",
+    "description": "A global quantitative investment manager applying scientific methods and data analysis to systematic trading.",
+    "requirements": [
+      "PhD in a quantitative discipline",
+      "Strong research and programming skills"
+    ],
+    "qualities": [
+      "Scientific approach",
+      "Research-driven"
+    ],
+    "roles": ["https://www.cfm.com/join-us-cfm-careers/"]
+  },
+  {
+    "id": "cubist-point72",
+    "name": "Cubist Systematic Strategies (Point72)",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA",
+    "description": "The systematic investing arm of Point72 Asset Management, focused on quantitative strategies and data science.",
+    "requirements": [
+      "Exceptional quantitative and programming skills",
+      "Experience in machine learning or statistics"
+    ],
+    "qualities": [
+      "Entrepreneurial",
+      "Results-driven"
+    ],
+    "roles": ["https://point72.com/careers/"]
+  },
+  {
+    "id": "dolat-capital",
+    "name": "Dolat Capital",
+    "category": "Prop Trading",
+    "location": "Mumbai, India",
+    "description": "An India-based quantitative trading and asset management firm employing algorithmic strategies.",
+    "requirements": [
+      "Strong background in mathematics or engineering",
+      "Programming skills"
+    ],
+    "qualities": [
+      "Adaptable to emerging markets",
+      "Analytical"
+    ]
+  },
+  {
+    "id": "dv-trading",
+    "name": "DV Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A proprietary trading firm engaged in market-making and arbitrage across multiple asset classes.",
+    "requirements": [
+      "Quantitative degree",
+      "Strong analytical and problem-solving skills"
+    ],
+    "qualities": [
+      "Competitive",
+      "Team player"
+    ],
+    "roles": ["https://dvtrading.com/careers/"]
+  },
+  {
+    "id": "eisler-capital",
+    "name": "Eisler Capital",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A multi-strategy investment firm combining quantitative and fundamental approaches, formerly known as ESLO Capital.",
+    "requirements": [
+      "Advanced quantitative degree",
+      "Strong track record in research or trading"
+    ],
+    "qualities": [
+      "Diverse thinking",
+      "Resilient"
+    ]
+  },
+  {
+    "id": "engineers-gate",
+    "name": "Engineers Gate",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A quantitative investment firm founded by computer scientists, leveraging technology and data science.",
+    "requirements": [
+      "Strong computer science and engineering background",
+      "Expert programming skills"
+    ],
+    "qualities": [
+      "Technology-first mindset",
+      "Innovative problem-solver"
+    ]
+  },
+  {
+    "id": "exoduspoint",
+    "name": "ExodusPoint Capital",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA",
+    "description": "A global multi-manager hedge fund platform employing both fundamental and quantitative investment teams.",
+    "requirements": [
+      "Proven quantitative research or trading experience",
+      "Advanced degree in a technical field"
+    ],
+    "qualities": [
+      "Entrepreneurial within a platform",
+      "Performance-focused"
+    ],
+    "roles": ["https://exoduspoint.com/careers/"]
+  },
+  {
+    "id": "g-research",
+    "name": "G-Research",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A quantitative research and systematic trading firm focusing on machine learning and data science.",
+    "requirements": [
+      "PhD-level expertise in a quantitative field",
+      "Strong machine learning and statistical skills"
+    ],
+    "qualities": [
+      "Deep curiosity",
+      "Research excellence"
+    ],
+    "roles": ["https://www.gresearch.com/vacancies/"]
+  },
+  {
+    "id": "garda-capital",
+    "name": "Garda Capital Partners",
+    "category": "Hedge Fund",
+    "location": "Minneapolis, MN, USA",
+    "description": "A fixed income relative value hedge fund employing quantitative and discretionary strategies.",
+    "requirements": [
+      "Strong understanding of fixed income markets",
+      "Quantitative modeling skills"
+    ],
+    "qualities": [
+      "Detail-oriented",
+      "Risk-aware"
+    ]
+  },
+  {
+    "id": "gelber-group",
+    "name": "Gelber Group",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A proprietary trading firm and market maker specializing in options and futures.",
+    "requirements": [
+      "Quantitative or analytical background",
+      "Interest in derivatives"
+    ],
+    "qualities": [
+      "Quick decision-maker",
+      "Thrives in fast-paced environment"
+    ],
+    "roles": ["https://gelbergroup.com/careers/"]
+  },
+  {
+    "id": "geneva-trading",
+    "name": "Geneva Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A global proprietary trading firm engaged in market-making and quantitative strategies.",
+    "requirements": [
+      "Strong problem-solving skills",
+      "Quantitative aptitude"
+    ],
+    "qualities": [
+      "Competitive",
+      "Team-oriented"
+    ]
+  },
+  {
+    "id": "graham-capital",
+    "name": "Graham Capital Management",
+    "category": "Hedge Fund",
+    "location": "Norwalk, CT, USA",
+    "description": "An investment firm that combines systematic trend-following strategies with discretionary macro insights.",
+    "requirements": [
+      "Strong quantitative or macroeconomic background",
+      "Programming and modeling skills"
+    ],
+    "qualities": [
+      "Dual systematic/discretionary thinking",
+      "Adaptable"
+    ]
+  },
+  {
+    "id": "graviton-research",
+    "name": "Graviton Research",
+    "category": "Prop Trading",
+    "location": "Mumbai, India / Singapore",
+    "description": "A quantitative proprietary trading firm founded in India, focusing on algorithmic trading and high-frequency strategies.",
+    "requirements": [
+      "Exceptional mathematical and programming skills (e.g., C++)",
+      "Competitive academic background"
+    ],
+    "qualities": [
+      "Intellectually rigorous",
+      "Technology-driven"
+    ]
+  },
+  {
+    "id": "group-one-trading",
+    "name": "Group One Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A leading options market-making firm providing liquidity on major U.S. exchanges.",
+    "requirements": [
+      "Understanding of options pricing",
+      "Strong quantitative skills"
+    ],
+    "qualities": [
+      "Market-focused",
+      "Analytical"
+    ],
+    "roles": ["https://group1trading.com/careers"]
+  },
+  {
+    "id": "gsa-capital",
+    "name": "GSA Capital",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "London, UK",
+    "description": "A systematic investment firm managing capital across equities, futures, and FX using quantitative models.",
+    "requirements": [
+      "Advanced degree in a quantitative field",
+      "Strong statistical and programming expertise"
+    ],
+    "qualities": [
+      "Systematic researcher",
+      "Collaborative"
+    ]
+  },
+  {
+    "id": "gts",
+    "name": "GTS",
+    "category": "Prop Trading",
+    "location": "New York, NY, USA",
+    "description": "A electronic market maker and liquidity provider, specializing in equities, options, and ETFs.",
+    "requirements": [
+      "Quantitative background",
+      "Interest in market microstructure"
+    ],
+    "qualities": [
+      "Entrepreneurial",
+      "Technology-savvy"
+    ],
+    "roles": ["https://gts.careers/"]
+  },
+  {
+    "id": "hudson-bay-capital",
+    "name": "Hudson Bay Capital",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A global multi-strategy investment firm with a significant quantitative focus.",
+    "requirements": [
+      "Strong quantitative modeling skills",
+      "Experience across asset classes"
+    ],
+    "qualities": [
+      "Adaptable to different strategies",
+      "Results-oriented"
+    ]
+  },
+  {
+    "id": "jain-global",
+    "name": "Jain Global",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A multi-strategy investment firm launched by former Goldman Sachs partners, employing quantitative and fundamental strategies.",
+    "requirements": [
+      "Proven track record in investment research or trading",
+      "Advanced quantitative skills"
+    ],
+    "qualities": [
+      "Entrepreneurial drive",
+      "Strategic thinker"
+    ]
+  },
+  {
+    "id": "kepos-capital",
+    "name": "Kepos Capital",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A systematic macro investment firm that builds portfolios based on economic theory and quantitative models.",
+    "requirements": [
+      "Strong background in economics and econometrics",
+      "Programming and data analysis skills"
+    ],
+    "qualities": [
+      "Theoretically grounded",
+      "Research-focused"
+    ]
+  },
+  {
+    "id": "lynx-asset-management",
+    "name": "Lynx Asset Management",
+    "category": "Hedge Fund",
+    "location": "Stockholm, Sweden",
+    "description": "A Swedish systematic hedge fund known for its trend-following strategies, part of the Brummer & Partners platform.",
+    "requirements": [
+      "Strong quantitative and statistical background",
+      "Programming proficiency"
+    ],
+    "qualities": [
+      "Systematic and disciplined",
+      "Long-term perspective"
+    ]
+  },
+  {
+    "id": "man-group",
+    "name": "Man Group",
+    "category": "Hedge Fund / Asset Manager",
+    "location": "London, UK",
+    "description": "A global active investment management firm, with systematic arms including AHL and Numeric.",
+    "requirements": [
+      "Quantitative research or data science experience",
+      "Strong programming skills"
+    ],
+    "qualities": [
+      "Blends technology and finance",
+      "Innovative"
+    ],
+    "roles": ["https://www.man.com/careers"]
+  },
+  {
+    "id": "marshall-wace",
+    "name": "Marshall Wace",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A global hedge fund combining fundamental insights with quantitative tools and systematic processing.",
+    "requirements": [
+      "Strong analytical skills",
+      "Interest in blending quant and fundamental approaches"
+    ],
+    "qualities": [
+      "Innovative in data use",
+      "Collaborative"
+    ]
+  },
+  {
+    "id": "maven-securities",
+    "name": "Maven Securities",
+    "category": "Prop Trading",
+    "location": "London, UK",
+    "description": "A global proprietary trading firm specializing in volatility and statistical arbitrage strategies.",
+    "requirements": [
+      "Exceptional quantitative skills",
+      "Strong programming ability"
+    ],
+    "qualities": [
+      "Analytical and precise",
+      "Thrives under pressure"
+    ]
+  },
+  {
+    "id": "millburn",
+    "name": "Millburn",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A systematic commodity trading advisor (CTA) and hedge fund focused on diversified trend-following.",
+    "requirements": [
+      "Background in time-series analysis and statistics",
+      "Programming skills"
+    ],
+    "qualities": [
+      "Disciplined and systematic",
+      "Risk-focused"
+    ]
+  },
+  {
+    "id": "paloma-partners",
+    "name": "Paloma Partners",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA",
+    "description": "One of the earliest multi-manager hedge funds, seeding and allocating to quantitative and discretionary trading teams.",
+    "requirements": [
+      "Strong analytical and due diligence skills",
+      "Understanding of diverse trading strategies"
+    ],
+    "qualities": [
+      "Strategic allocator",
+      "Seeks diverse talent"
+    ]
+  },
+  {
+    "id": "panagora",
+    "name": "PanAgora Asset Management",
+    "category": "Asset Manager",
+    "location": "Boston, MA, USA",
+    "description": "A quantitative asset management firm specializing in factor investing and systematic equity strategies.",
+    "requirements": [
+      "PhD in Finance, Economics, or a quantitative field",
+      "Strong research background"
+    ],
+    "qualities": [
+      "Academic and research-driven",
+      "Collaborative"
+    ]
+  },
+  {
+    "id": "peak6",
+    "name": "Peak6",
+    "category": "Prop Trading / Financial Services",
+    "location": "Chicago, IL, USA",
+    "description": "A diversified financial services firm with roots in options market-making, also involved in venture capital and asset management.",
+    "requirements": [
+      "Entrepreneurial mindset",
+      "Strong problem-solving skills"
+    ],
+    "qualities": [
+      "Entrepreneurial and innovative",
+      "Diverse interests"
+    ]
+  },
+  {
+    "id": "pgim-quant-solutions",
+    "name": "PGIM Quant Solutions",
+    "category": "Asset Manager",
+    "location": "Newark, NJ, USA",
+    "description": "The quantitative equity division of PGIM (Prudential Financial's investment arm), focusing on systematic strategies.",
+    "requirements": [
+      "Advanced degree in a quantitative field",
+      "Experience in factor investing or quant research"
+    ],
+    "qualities": [
+      "Client-focused",
+      "Research-oriented"
+    ]
+  },
+  {
+    "id": "quantitative-management-associates",
+    "name": "Quantitative Management Associates (QMA)",
+    "category": "Asset Manager",
+    "location": "Newark, NJ, USA",
+    "description": "A quantitative equity manager and a subsidiary of PGIM, applying systematic research to equity portfolios.",
+    "requirements": [
+      "Strong background in quantitative finance or economics",
+      "Programming and modeling skills"
+    ],
+    "qualities": [
+      "Process-driven",
+      "Disciplined"
+    ]
+  },
+  {
+    "id": "quantitative-investment-management",
+    "name": "Quantitative Investment Management (QIM)",
+    "category": "Hedge Fund",
+    "location": "Charlottesville, VA, USA",
+    "description": "A systematic global macro hedge fund founded by former academics.",
+    "requirements": [
+      "PhD in a quantitative field",
+      "Strong econometric and programming skills"
+    ],
+    "qualities": [
+      "Academic rigor",
+      "Independent thinker"
+    ]
+  },
+  {
+    "id": "quantbot",
+    "name": "Quantbot Technologies",
+    "category": "Hedge Fund",
+    "location": "New York, NY, USA",
+    "description": "A quantitative investment firm leveraging technology, machine learning, and big data for systematic trading.",
+    "requirements": [
+      "Expertise in machine learning and data science",
+      "Strong programming skills"
+    ],
+    "qualities": [
+      "Technology and data-driven",
+      "Innovative"
+    ]
+  },
+  {
+    "id": "quantbox-research",
+    "name": "Quantbox Research",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A quantitative proprietary trading firm focused on research and technology to identify market inefficiencies.",
+    "requirements": [
+      "Strong research capabilities",
+      "Expert programming skills"
+    ],
+    "qualities": [
+      "Research-focused",
+      "Technology-savvy"
+    ]
+  },
+  {
+    "id": "quantumrock-capital",
+    "name": "Quantumrock Capital",
+    "category": "Hedge Fund",
+    "location": "Munich, Germany",
+    "description": "A German quantitative asset manager applying machine learning and artificial intelligence to systematic investing.",
+    "requirements": [
+      "Background in AI/ML",
+      "Strong quantitative and programming skills"
+    ],
+    "qualities": [
+      "Forward-thinking in AI application",
+      "Research-oriented"
+    ]
+  },
+  {
+    "id": "qube-research",
+    "name": "Qube Research & Technologies (QRT)",
+    "category": "Hedge Fund",
+    "location": "London, UK / Hong Kong",
+    "description": "A global quantitative and systematic investment manager focused on technology-driven research.",
+    "requirements": [
+      "Exceptional quantitative and scientific background",
+      "Strong programming skills"
+    ],
+    "qualities": [
+      "Scientific and rigorous",
+      "Collaborative"
+    ],
+    "roles": ["https://www.qube-rt.com/careers/"]
+  },
+  {
+    "id": "quadrature",
+    "name": "Quadrature Capital",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A systematic investment firm that uses mathematical and computational techniques to trade globally.",
+    "requirements": [
+      "Deep mathematical understanding",
+      "Strong programming proficiency"
+    ],
+    "qualities": [
+      "Mathematically precise",
+      "Technology-driven"
+    ]
+  },
+  {
+    "id": "quadeye",
+    "name": "Quadeye Securities",
+    "category": "Prop Trading",
+    "location": "Singapore / India",
+    "description": "A quantitative trading firm with a focus on algorithmic and high-frequency trading across Asian markets.",
+    "requirements": [
+      "Strong algorithms and data structures knowledge",
+      "Proficiency in low-latency programming (C++)"
+    ],
+    "qualities": [
+      "Speed and efficiency-focused",
+      "Analytical"
+    ]
+  },
+  {
+    "id": "rokos-capital",
+    "name": "Rokos Capital Management",
+    "category": "Hedge Fund",
+    "location": "London, UK",
+    "description": "A global macro investment firm employing systematic and discretionary strategies in fixed income and currencies.",
+    "requirements": [
+      "Strong macroeconomics understanding",
+      "Quantitative modeling skills"
+    ],
+    "qualities": [
+      "Macro-focused",
+      "Resilient"
+    ]
+  },
+  {
+    "id": "schonfeld-strategic-advisors",
+    "name": "Schonfeld Strategic Advisors",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA",
+    "description": "A multi-manager hedge fund platform with a significant quantitative and systematic equities business.",
+    "requirements": [
+      "Strong quantitative research skills",
+      "Programming proficiency"
+    ],
+    "qualities": [
+      "Entrepreneurial within a platform",
+      "Results-driven"
+    ],
+    "roles": ["https://www.schonfeld.com/careers/"]
+  },
+  {
+    "id": "seven-eight-capital",
+    "name": "Seven Eight Capital",
+    "category": "Prop Trading",
+    "location": "New York, NY, USA",
+    "description": "A quantitative proprietary trading firm focused on equity and ETF market-making.",
+    "requirements": [
+      "Quantitative and analytical skills",
+      "Interest in market structure"
+    ],
+    "qualities": [
+      "Fast-paced trader mentality",
+      "Team-oriented"
+    ]
+  },
+  {
+    "id": "squarepoint-capital",
+    "name": "Squarepoint Capital",
+    "category": "Hedge Fund",
+    "location": "London, UK / New York, NY, USA",
+    "description": "A global investment management firm employing systematic, data-driven strategies across multiple asset classes.",
+    "requirements": [
+      "Strong quantitative modeling and programming skills",
+      "Experience with large datasets"
+    ],
+    "qualities": [
+      "Data-driven",
+      "Collaborative"
+    ],
+    "roles": ["https://www.squarepoint-capital.com/careers"]
+  },
+  {
+    "id": "systematica-investments",
+    "name": "Systematica Investments",
+    "category": "Hedge Fund",
+    "location": "Singapore / London, UK",
+    "description": "A systematic hedge fund manager specializing in trend-following and alternative risk premia strategies.",
+    "requirements": [
+      "PhD in a quantitative field",
+      "Strong research and development skills"
+    ],
+    "qualities": [
+      "Systematic and process-oriented",
+      "Innovative"
+    ]
+  },
+  {
+    "id": "teza-technologies",
+    "name": "Teza Technologies",
+    "category": "Hedge Fund",
+    "location": "Chicago, IL, USA",
+    "description": "A quantitative trading firm that evolved from high-frequency trading to include medium-frequency systematic strategies.",
+    "requirements": [
+      "Exceptional mathematical and technological skills",
+      "Strong track record of innovation"
+    ],
+    "qualities": [
+      "Technology pioneer",
+      "Adaptable"
+    ]
+  },
+  {
+    "id": "tradebot",
+    "name": "Tradebot Systems",
+    "category": "Prop Trading / HFT",
+    "location": "Kansas City, MO, USA",
+    "description": "A pioneer in high-frequency trading, operating one of the first fully automated electronic market-making businesses.",
+    "requirements": [
+      "Deep understanding of algorithms and low-latency systems",
+      "Exceptional programming skills (C++)"
+    ],
+    "qualities": [
+      "Pioneering spirit",
+      "Engineering excellence"
+    ]
+  },
+  {
+    "id": "trexquant",
+    "name": "Trexquant Investment",
+    "category": "Hedge Fund",
+    "location": "Stamford, CT, USA",
+    "description": "A quantitative hedge fund that uses statistical techniques and alternative data to develop predictive models.",
+    "requirements": [
+      "Strong background in statistics and machine learning",
+      "Programming skills for data analysis"
+    ],
+    "qualities": [
+      "Data-centric",
+      "Research-focused"
+    ]
+  },
+  {
+    "id": "tudor-investment",
+    "name": "Tudor Investment Corporation",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "Stamford, CT, USA",
+    "description": "A prominent multi-strategy hedge fund with dedicated quantitative and systematic teams.",
+    "requirements": [
+      "Proven quantitative research ability",
+      "Strong academic credentials"
+    ],
+    "qualities": [
+      "Performance-oriented",
+      "Adaptable across strategies"
+    ]
+  },
+  {
+    "id": "valkyrie-trading",
+    "name": "Valkyrie Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A proprietary trading firm focused on derivatives and volatility trading.",
+    "requirements": [
+      "Understanding of derivatives markets",
+      "Quantitative and analytical skills"
+    ],
+    "qualities": [
+      "Risk-aware",
+      "Strategic"
+    ]
+  },
+  {
+    "id": "vatic-investments",
+    "name": "Vatic Investments",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A quantitative proprietary trading firm.",
+    "requirements": [
+      "Strong quantitative foundation",
+      "Programming skills"
+    ],
+    "qualities": [
+      "Analytical",
+      "Focused"
+    ]
+  },
+  {
+    "id": "verition-fund-management",
+    "name": "Verition Fund Management",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA",
+    "description": "A multi-manager hedge fund platform with a mix of quantitative and discretionary teams.",
+    "requirements": [
+      "Quantitative or fundamental research skills",
+      "Strong track record"
+    ],
+    "qualities": [
+      "Entrepreneurial",
+      "Diverse in strategy"
+    ]
+  },
+  {
+    "id": "voloridge-investment",
+    "name": "Voloridge Investment Management",
+    "category": "Hedge Fund",
+    "location": "Jupiter, FL, USA",
+    "description": "A quantitative investment firm using machine learning and statistical models for systematic trading.",
+    "requirements": [
+      "Expertise in machine learning and statistics",
+      "Strong programming ability"
+    ],
+    "qualities": [
+      "Innovative in ML applications",
+      "Research-driven"
+    ]
+  },
+  {
+    "id": "walleye-capital",
+    "name": "Walleye Capital",
+    "category": "Hedge Fund - Multi-Manager",
+    "location": "New York, NY, USA / Tel Aviv, Israel",
+    "description": "A technology-driven multi-strategy investment firm with a significant quantitative focus.",
+    "requirements": [
+      "Strong quantitative or technological background",
+      "Programming skills"
+    ],
+    "qualities": [
+      "Technology-integrated",
+      "Fast-moving"
+    ]
+  },
+  {
+    "id": "wintermute",
+    "name": "Wintermute",
+    "category": "Prop Trading",
+    "location": "London, UK / Amsterdam, Netherlands",
+    "description": "A leading algorithmic trading firm and liquidity provider in digital assets and traditional finance.",
+    "requirements": [
+      "Strong algorithmic thinking",
+      "Interest in crypto and traditional markets"
+    ],
+    "qualities": [
+      "Adaptable to new asset classes",
+      "Technology-focused"
+    ],
+    "roles": ["https://www.wintermute.com/company/careers"]
+  },
+  {
+    "id": "xr-trading",
+    "name": "XR Trading",
+    "category": "Prop Trading",
+    "location": "Chicago, IL, USA",
+    "description": "A proprietary trading firm specializing in volatility and derivatives trading.",
+    "requirements": [
+      "Understanding of options and volatility",
+      "Quantitative skills"
+    ],
+    "qualities": [
+      "Specialized in derivatives",
+      "Analytical"
+    ]
   }
 ]
