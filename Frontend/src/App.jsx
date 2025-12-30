@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { m, AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -14,6 +14,8 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const Resources = lazy(() => import('./pages/Resources'));
 const About = lazy(() => import('./pages/About'));
+const InterviewQuestions = lazy(() => import('./pages/InterviewQuestions'));
+const InterviewQuestionDetail = lazy(() => import('./pages/InterviewQuestionDetail'));
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -26,7 +28,8 @@ const navLinks = [
   { path: '/resources', label: 'Library' },
   { path: '/firms', label: 'Companies' },
   { path: '/faq', label: 'Questions' },
-  { path: '/about', label: 'About' }
+  { path: '/about', label: 'About' },
+  { path: '/interview-questions', label: 'Interview Questions' }
 ];
 
 const organizationSchema = {
@@ -211,6 +214,9 @@ function App() {
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/resources" element={<Resources />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/interview-questions" element={<InterviewQuestions />} />
+                <Route path="/interview-questions/:slug" element={<InterviewQuestionDetail />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>
           </div>

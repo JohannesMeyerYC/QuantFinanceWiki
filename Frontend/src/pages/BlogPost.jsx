@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { m, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
@@ -24,6 +24,21 @@ const Icons = {
       <circle cx="18" cy="19" r="3"></circle>
       <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
       <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+  ),
+  Clock: () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-4 h-4"
+    >
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
     </svg>
   )
 };
@@ -91,7 +106,7 @@ const socials = [
     icon: (
       <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6" role="img" aria-labelledby="paypal-icon">
         <title id="paypal-icon">PayPal</title>
-        <path d="M20.067 8.478c.97-1.894.146-4.01-1.64-4.845-1.137-.53-2.62-.633-4.39-.633h-5.91c-.636 0-1.192.427-1.332 1.045L3.25 18.903c-.1.46.253.908.723.908h3.337l.634 3.09c.06.305.33.523.64.523h3.55c.422 0 .73-.396.643-.807l-.607-2.956.126-.486c.125-.486.562-.82 1.062-.82h1.34c4.084 0 6.64-2.204 7.505-6.43.344-1.675.143-3.17-.184-4.32z" />
+        <path d="M20.067 8.478c.97-1.894.146-4.01-1.64-4.845-1.137-.53-2.62-.633-4.39-.633h-5.91c-.636 0-1.192.427-1.332 1.045L3.25 18.903c-.1.46.253.908.723.908h3.337l.634 3.09c.06.305.33.523.64.523h3.55c.422 0 .73-.396.643-.807l-.607-2.956.126-.486c.125-.486.562-.820 1.062-.820h1.34c4.084 0 6.64-2.204 7.505-6.43.344-1.675.143-3.17-.184-4.32z" />
       </svg>
     )
   }
@@ -99,24 +114,26 @@ const socials = [
 
 const RelatedPost = ({ currentCategory }) => {
   return (
-    <Link 
-      to="/blog" 
-      className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#020617] border border-slate-800 hover:border-teal-500/30 transition-all group block cursor-pointer"
-    >
-      <h3 className="text-slate-400 text-sm font-mono uppercase tracking-widest mb-4">
-        Deepen Your Knowledge
-      </h3>
-      <div className="flex flex-col gap-2">
-        <p className="text-slate-300 italic text-base md:text-lg">
-          "Found this insightful? Explore more notes on {currentCategory || 'Quantitative Finance'}."
-        </p>
-        <div className="flex items-center gap-2">
-          <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-teal-400 transition-colors leading-tight">
-            Browse the full Quant Library
-          </span>
+    <section className="mt-16">
+      <Link 
+        to="/blog" 
+        className="p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#020617] border border-slate-800 hover:border-teal-500/30 transition-all group block cursor-pointer"
+      >
+        <h3 className="text-slate-400 text-sm font-mono uppercase tracking-widest mb-4">
+          Deepen Your Knowledge
+        </h3>
+        <div className="flex flex-col gap-2">
+          <p className="text-slate-300 italic text-base md:text-lg">
+            "Found this insightful? Explore more notes on {currentCategory || 'Quantitative Finance'}."
+          </p>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl md:text-3xl font-bold text-white group-hover:text-teal-400 transition-colors leading-tight">
+              Browse the full Quant Library
+            </span>
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </section>
   );
 };
 
@@ -146,37 +163,39 @@ const ShareSection = ({ title, url }) => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 py-8 border-t border-slate-800/60 mt-12">
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          <button
-            onClick={handleShare}
-            aria-label="Share post"
-            className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-teal-500/30 hover:bg-slate-800 transition-all active:scale-95"
-          >
-            <Icons.Share />
-            <span className="text-sm font-medium text-slate-300 group-hover:text-slate-200">Share Article</span>
-          </button>
+    <section className="py-8 border-t border-slate-800/60 mt-12">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <button
+              onClick={handleShare}
+              aria-label="Share post"
+              className="group flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-teal-500/30 hover:bg-slate-800 transition-all active:scale-95"
+            >
+              <Icons.Share />
+              <span className="text-sm font-medium text-slate-300 group-hover:text-slate-200">Share Article</span>
+            </button>
 
-          <AnimatePresence>
-            {shareFeedback && (
-              <m.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="absolute left-0 -top-12 w-32 bg-teal-500 text-slate-900 text-xs font-bold px-2 py-1.5 rounded text-center shadow-lg pointer-events-none"
-              >
-                {shareFeedback}
-                <div className="absolute bottom-[-4px] left-6 w-2 h-2 bg-teal-500 rotate-45"></div>
-              </m.div>
-            )}
-          </AnimatePresence>
+            <AnimatePresence>
+              {shareFeedback && (
+                <m.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute left-0 -top-12 w-32 bg-teal-500 text-slate-900 text-xs font-bold px-2 py-1.5 rounded text-center shadow-lg pointer-events-none"
+                >
+                  {shareFeedback}
+                  <div className="absolute bottom-[-4px] left-6 w-2 h-2 bg-teal-500 rotate-45"></div>
+                </m.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
+        <p className="text-slate-500 text-sm hidden sm:block ml-auto italic">
+          Found this useful? Share it with a friend.
+        </p>
       </div>
-      <p className="text-slate-500 text-sm hidden sm:block ml-auto italic">
-        Found this useful? Share it with a friend.
-      </p>
-    </div>
+    </section>
   );
 };
 
@@ -205,43 +224,107 @@ const TableOfContents = ({ content }) => {
   );
 };
 
+const GiscusComments = () => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!ref.current || ref.current.hasChildNodes()) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'JohannesMeyerYC/comments');
+    script.setAttribute('data-repo-id', 'R_kgDOQtFBRg');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOQtFBRs4C0Hee');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', 'preferred_color_scheme');
+    script.setAttribute('data-lang', 'en');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    ref.current.appendChild(script);
+  }, []);
+
+  return (
+    <section className="mt-16 pt-12 border-t border-slate-800">
+      <h2 className="text-2xl font-bold text-white mb-8">Comments & Discussion</h2>
+      <div className="giscus" ref={ref} />
+    </section>
+  );
+};
+
+const calculateReadingTime = (content) => {
+  if (!content || !Array.isArray(content)) return 3;
+  
+  const wordCount = content.reduce((count, block) => {
+    if (block.text) {
+      return count + block.text.split(/\s+/).length;
+    }
+    if (block.children) {
+      return count + block.children.reduce((childCount, child) => {
+        return childCount + (child.text?.split(/\s+/).length || 0);
+      }, 0);
+    }
+    return count;
+  }, 0);
+  
+  const wordsPerMinute = 200;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return readingTime || 3;
+};
+
 function BlogPost() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [relatedPost, setRelatedPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+  const [readingTime, setReadingTime] = useState(0);
 
   useEffect(() => {
-  const fetchContent = async () => {
-    setLoading(true); // Ensure loading starts on ID change
-    try {
-      // 1. Fetch current post
-      const postRes = await fetch(`${API_URL}/api/blog/${id}`);
-      const currentPost = await postRes.json();
-      setPost(currentPost);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-      // 2. Fetch list for related logic
-      const allRes = await fetch(`${API_URL}/api/blog`);
-      const allPosts = await allRes.json();
+  useEffect(() => {
+    const fetchContent = async () => {
+      setLoading(true);
+      try {
+        const postRes = await fetch(`${API_URL}/api/blog/${id}`);
+        const currentPost = await postRes.json();
+        setPost(currentPost);
+        setReadingTime(calculateReadingTime(currentPost.content));
 
-      // 3. Robust filtering
-      const related = allPosts.find(p => 
-        p.category === currentPost.category && 
-        p.id !== currentPost.id && 
-        p.slug !== currentPost.slug
-      ) || allPosts.find(p => p.id !== currentPost.id); // Fallback to any other post
+        const allRes = await fetch(`${API_URL}/api/blog`);
+        const allPosts = await allRes.json();
 
-      setRelatedPost(related);
-    } catch (err) {
-      console.error("Error fetching post data:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+        const related = allPosts.find(p => 
+          p.category === currentPost.category && 
+          p.id !== currentPost.id && 
+          p.slug !== currentPost.slug
+        ) || allPosts.find(p => p.id !== currentPost.id);
 
-  fetchContent();
-  window.scrollTo(0, 0);
-}, [id]);
+        setRelatedPost(related);
+      } catch (err) {
+        console.error("Error fetching post data:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContent();
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 400, damping: 90, restDelta: 0.001 });
@@ -255,11 +338,11 @@ function BlogPost() {
   if (!post) return null;
 
   const currentSlug = post.slug || post.id;
-  const canonicalUrl = `${SITE_URL}/blog/${currentSlug}`;
+const canonicalUrl = `${SITE_URL}/blog/${post.id}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     "headline": post.title,
     "description": post.excerpt,
     "author": {
@@ -267,10 +350,23 @@ function BlogPost() {
       "name": post.author || "Johannes Meyer"
     },
     "datePublished": post.date,
+    "dateModified": post.date,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": canonicalUrl
-    }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "QuantFinanceWiki",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/logo.png`
+      }
+    },
+    "articleSection": post.category || "Quantitative Finance",
+    "keywords": post.tags || [post.category, "quantitative finance"],
+    "timeRequired": `PT${readingTime}M`,
+    "wordCount": calculateReadingTime(post.content) * 200
   };
 
   return (
@@ -279,6 +375,7 @@ function BlogPost() {
         <title>{post.title} | QuantFinanceWiki</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={post.title} />
@@ -295,72 +392,93 @@ function BlogPost() {
         style={{ scaleX }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
-        <Link to="/blog" className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-teal-400 mb-12 transition-colors group">
-          <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Quant Notes
+      <div className="max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-16 lg:py-24">
+        <Link 
+          to="/blog" 
+          className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-teal-400 mb-8 md:mb-12 transition-colors group"
+        >
+          <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> 
+          <span className="hidden sm:inline">Back to Quant Notes</span>
+          <span className="sm:hidden">Back</span>
         </Link>
 
-        <div className="grid grid-cols-1 xl:grid-cols-[1fr_300px] gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_auto] gap-8 lg:gap-16">
           <article className="min-w-0">
-            <header className="mb-12 border-b border-slate-800/60 pb-12">
-              <div className="flex flex-wrap gap-3 text-xs font-mono uppercase text-teal-500 mb-6">
-                <span className="px-2 py-1 rounded bg-teal-500/10 border border-teal-500/20">{post.category || 'Algorithm'}</span>
-                <span className="px-2 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300">{post.date}</span>
+            <header className="mb-8 md:mb-12 border-b border-slate-800/60 pb-8 md:pb-12">
+              <div className="flex flex-wrap gap-2 items-center text-xs font-mono uppercase text-teal-500 mb-4 md:mb-6">
+                <span className="px-2 py-1 rounded bg-teal-500/10 border border-teal-500/20">
+                  {post.category || 'Algorithm'}
+                </span>
+                <span className="px-2 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300">
+                  {post.date}
+                </span>
+                <span className="flex items-center gap-1 px-2 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300">
+                  <Icons.Clock />
+                  {readingTime} min read
+                </span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
                 {post.title}
               </h1>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center font-bold text-slate-300 border border-slate-600">
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center font-bold text-slate-300 border border-slate-600">
                   {post.author ? post.author[0] : 'J'}
                 </div>
-                <div className="text-sm">
+                <div className="text-sm md:text-base">
                   <p className="text-white font-medium">{post.author || 'Johannes Meyer'}</p>
-                  <p className="text-slate-500">Quantitative Developer</p>
+                  <p className="text-slate-500 text-xs md:text-sm">Quantitative Developer</p>
                 </div>
               </div>
             </header>
 
-            <div className="blog-content">
+            <section className="blog-content" itemProp="articleBody">
               {post.content.map((block, index) => (
                 <RenderBlock key={index} block={block} />
               ))}
-            </div>
+            </section>
 
-            {/* New Section */}
-<RelatedPost currentCategory={post.category} />
+            <RelatedPost currentCategory={post.category} />
 
             <ShareSection
               title={post.title}
               url={canonicalUrl}
             />
+
+            <GiscusComments />
           </article>
 
-          <TableOfContents content={post.content} />
+          {/* Mobile-optimized Table of Contents - only show on larger screens */}
+          {!isMobile && <TableOfContents content={post.content} />}
         </div>
 
-        <footer className="border-t border-slate-800 pt-12 md:pt-20 pb-8 mt-24">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join the Community</h2>
-            <p className="text-slate-300">Follow us for updates.</p>
-          </div>
+        <footer className="border-t border-slate-800 pt-8 md:pt-12 pb-6 md:pb-8 mt-12 md:mt-24">
+          <section className="text-center mb-6 md:mb-8 lg:mb-12">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 md:mb-4">
+              Join the Community
+            </h2>
+            <p className="text-slate-300 text-sm md:text-base">
+              Follow us for updates.
+            </p>
+          </section>
 
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-8" aria-label="Social media links">
+          <nav className="flex flex-wrap justify-center gap-3 md:gap-6 lg:gap-8" aria-label="Social media links">
             {socials.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group p-4 bg-slate-900 rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 ${social.color} hover:bg-slate-800`}
+                className={`group p-3 md:p-4 bg-slate-900 rounded-lg md:rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 ${social.color} hover:bg-slate-800`}
                 aria-label={`Follow us on ${social.name}`}
               >
-                {social.icon}
+                <div className="w-5 h-5 md:w-6 md:h-6">
+                  {social.icon}
+                </div>
               </a>
             ))}
           </nav>
 
-          <div className="mt-12 md:mt-16 text-center text-slate-600 text-sm">
+          <div className="mt-8 md:mt-12 text-center text-slate-600 text-xs md:text-sm">
             <p>© {new Date().getFullYear()} QuantFinanceWiki.com. Built by Johannes Meyer.</p>
           </div>
         </footer>

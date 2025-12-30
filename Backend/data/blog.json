@@ -36,7 +36,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Building a systematic desk in India requires more than just capital; it requires a codebase capable of handling massive message rates. Most firms are moving away from legacy wrappers toward low-latency C++ implementations for their matching engines. [Compare this to our previous notes on C++ Order Book Optimization](/blog/black-scholes-cpp-implementation)."
+      "text": "Building a systematic desk in India requires more than just capital; it requires a codebase capable of handling massive message rates. Most firms are moving away from legacy wrappers toward low-latency C++ implementations for their matching engines. [Compare this to our previous notes on C++ Order Book Optimization](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021)."
     },
     {
       "type": "code",
@@ -101,7 +101,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The core philosophy was the **Zero-Overhead Principle**: 'What you don't use, you don't pay for.' This is why we still use C++ for HFT matching engines today. [Compare this to our discussion on India's Quant Boom and HFT infrastructure](/blog/quant-finance-india-boom-2025)."
+      "text": "The core philosophy was the **Zero-Overhead Principle**: 'What you don't use, you don't pay for.' This is why we still use C++ for HFT matching engines today. [Compare this to our discussion on India's Quant Boom and HFT infrastructure](https://quantfinancewiki.com/blog/quant-finance-india-boom-2025)."
     },
     {
       "type": "code",
@@ -176,7 +176,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Modern quants still use the principles Thorp pioneered. To replicate a Thorp-style market-neutral position, one must balance long and short exposures based on high-frequency signals. This requires a robust execution engine. [See our post on Bjarne Stroustrup and C++ for high-performance systems](/blog/bjarne-stroustrup-cpp-history-high-performance-systems)."
+      "text": "Modern quants still use the principles Thorp pioneered. To replicate a Thorp-style market-neutral position, one must balance long and short exposures based on high-frequency signals. This requires a robust execution engine. [See our post on Bjarne Stroustrup and C++ for high-performance systems](https://quantfinancewiki.com/blog/bjarne-stroustrup-cpp-history)."
     },
     {
       "type": "code",
@@ -235,7 +235,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Simons understood that alpha is perishable. To maintain their edge, RenTech built one of the world's most comprehensive databases of historical price information, dating back decades. This allowed for backtesting with high statistical significance. [Check our previous notes on Ed Thorp's systematic discipline](/blog/ed-thorp-quantitative-trading-pioneer)."
+      "text": "Simons understood that alpha is perishable. To maintain their edge, RenTech built one of the world's most comprehensive databases of historical price information, dating back decades. This allowed for backtesting with high statistical significance. [Check our previous notes on Ed Thorp's systematic discipline](https://quantfinancewiki.com/blog/ed-thorp-quant-pioneer)."
     },
     {
       "type": "code",
@@ -285,7 +285,7 @@
     },
     {
       "type": "paragraph",
-      "text": "For the last two decades, elite **Quant Finance** roles were geographically locked into a New York-London-Chicago triopoly. The Y-Intercept raise proves that infrastructure and talent have decentralized. By running sophisticated operations out of Hong Kong, firms are capturing localized alpha in Asian markets that remains inaccessible to Western-only desks. This follows the trend we are seeing with [HFT expansion in India and the NSE maturation](/blog/india-quant-finance-hft-expansion-2025)."
+      "text": "For the last two decades, elite **Quant Finance** roles were geographically locked into a New York-London-Chicago triopoly. The Y-Intercept raise proves that infrastructure and talent have decentralized. By running sophisticated operations out of Hong Kong, firms are capturing localized alpha in Asian markets that remains inaccessible to Western-only desks. This follows the trend we are seeing with [HFT expansion in India and the NSE maturation](https://quantfinancewiki.com/blog/quant-finance-india-boom-2025)."
     },
     {
       "type": "paragraph",
@@ -312,7 +312,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The bar for entry has risen. Investors like Blackstone demand rigorous backtesting, SOC2 compliance, and a clear explanation of how the fund manages **Tail Risk**. In a world where [Jim Simons and RenTech set the standard for mathematical rigor](/blog/jim-simons-renaissance-technologies-medallion-fund), new funds must prove they aren't just curve-fitting historical noise. Success in 2026 will be defined by the ability to generate alpha while maintaining a _Market Beta_ ($\\beta$) of effectively zero."
+      "text": "The bar for entry has risen. Investors like Blackstone demand rigorous backtesting, SOC2 compliance, and a clear explanation of how the fund manages **Tail Risk**. In a world where [Jim Simons and RenTech set the standard for mathematical rigor](https://quantfinancewiki.com/blog/renaissance-technologies-story), new funds must prove they aren't just curve-fitting historical noise. Success in 2026 will be defined by the ability to generate alpha while maintaining a _Market Beta_ ($\\beta$) of effectively zero."
     },
     {
       "type": "paragraph",
@@ -357,7 +357,7 @@
     },
     {
       "type": "paragraph",
-      "text": "To escape the trap, you must switch from external benchmarking to internal vector analysis. Look at who you were **one year ago**. Measure your progress not just in currency, but in the complexity of the problems you are now capable of solving. If your error-handling capability has increased from simple operational tasks to complex [systematic risk management](/blog/y-intercept-quant-finance-asia-expansion), you have grown significantly."
+      "text": "To escape the trap, you must switch from external benchmarking to internal vector analysis. Look at who you were **one year ago**. Measure your progress not just in currency, but in the complexity of the problems you are now capable of solving. If your error-handling capability has increased from simple operational tasks to complex [systematic risk management](https://quantfinancewiki.com/blog/y-intercept-global-quant-opportunity), you have grown significantly."
     },
     {
       "type": "paragraph",
@@ -379,7 +379,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The 20-year-old founder forgot that his path is his own. Comparison is a losing game because the goalposts move faster than the revenue. As we discussed in our profile of [Jim Simons](/blog/jim-simons-renaissance-technologies-medallion-fund), even the world's most successful quants focused on the signals in their own data, not the noise of the crowd."
+      "text": "The 20-year-old founder forgot that his path is his own. Comparison is a losing game because the goalposts move faster than the revenue. As we discussed in our profile of [Jim Simons](https://quantfinancewiki.com/blog/renaissance-technologies-story), even the world's most successful quants focused on the signals in their own data, not the noise of the crowd."
     },
     {
       "type": "paragraph",
@@ -433,7 +433,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Their growth is not just a result of capital, but of an interview culture that prioritizes first-principles thinking over financial jargon. Candidates are evaluated on their ability to solve probability puzzles and reason through expected value ($E[X]$) calculations under pressure. This ensures that every trader and dev understands the underlying [Stochastic Calculus](/blog/itos-lemma) that governs modern markets."
+      "text": "Their growth is not just a result of capital, but of an interview culture that prioritizes first-principles thinking over financial jargon. Candidates are evaluated on their ability to solve probability puzzles and reason through expected value ($E[X]$) calculations under pressure. This ensures that every trader and dev understands the underlying [Stochastic Calculus](https://quantfinancewiki.com/blog/what-is-itos-lemma-2025) that governs modern markets."
     },
     {
       "type": "heading",
@@ -446,7 +446,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Jane Street set the standard for what a modern quant firm should be: a blend of top-tier mathematics, robust functional programming, and a commitment to market efficiency. [Compare this to the growth of HFT in India](/blog/india-quant-finance-hft-expansion-2025) to see how these global models are being localized."
+      "text": "Jane Street set the standard for what a modern quant firm should be: a blend of top-tier mathematics, robust functional programming, and a commitment to market efficiency. [Compare this to the growth of HFT in India](https://quantfinancewiki.com/blog/quant-finance-india-boom-2025) to see how these global models are being localized."
     },
     {
       "type": "paragraph",
@@ -495,7 +495,7 @@
     },
     {
       "type": "paragraph",
-      "text": "In quant terms, the market is currently exhibiting high _Kurtosis_, meaning extreme price movements are becoming more likely as liquidity thins out at these valuation levels. [Compare this to the 2024 volatility spikes discussed in our previous note](/blog/y-intercept-quant-finance-asia-expansion)."
+      "text": "In quant terms, the market is currently exhibiting high _Kurtosis_, meaning extreme price movements are becoming more likely as liquidity thins out at these valuation levels. [Compare this to the 2024 volatility spikes discussed in our previous note](https://quantfinancewiki.com/blog/y-intercept-global-quant-opportunity)."
     },
     {
       "type": "code",
@@ -5619,7 +5619,7 @@
       },
       {
         "type": "paragraph",
-        "text": "1. **Stochastic Calculus**: This is the language of continuous-time finance. You cannot price an option without understanding [Ito's Lemma](/blog/itos-lemma-stochastic-calculus-derivation) and the concept of a martingale.\n2. **Programming (C++/Python)**: A model is useless if it cannot execute. C++ is used for high-performance backtesting engines, while Python is the industry standard for data analysis and research.\n3. **Financial Microstructure**: You must understand how orders are actually filled. This includes the Limit Order Book (LOB), bid-ask spreads, and the mechanics of market impact."
+        "text": "1. **Stochastic Calculus**: This is the language of continuous-time finance. You cannot price an option without understanding [Ito's Lemma](https://quantfinancewiki.com/blog/what-is-itos-lemma-2025) and the concept of a martingale.\n2. **Programming (C++/Python)**: A model is useless if it cannot execute. C++ is used for high-performance backtesting engines, while Python is the industry standard for data analysis and research.\n3. **Financial Microstructure**: You must understand how orders are actually filled. This includes the Limit Order Book (LOB), bid-ask spreads, and the mechanics of market impact."
       },
       {
         "type": "heading",
@@ -5704,7 +5704,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Vectorization is essential for speed. Instead of looping through rows, we use NumPy to process entire arrays of data simultaneously. This is the foundation of the workflow described in [quant development setup](/blog/quant-development-workflow-neovim-cpp-math)."
+        "text": "Vectorization is essential for speed. Instead of looping through rows, we use NumPy to process entire arrays of data simultaneously. This is the foundation of the workflow described in [quant development setup](https://quantfinancewiki.com/blog/quant-dev-workflow-eighteen)."
       },
       {
         "type": "code",
@@ -5836,11 +5836,11 @@
       },
       {
         "type": "paragraph",
-        "text": "Mathematical models are only as good as their assumptions. **Risk Management** requires rigorous stress testing, where we simulate 'impossible' events like a 10-sigma move in interest rates or a total liquidity freeze. Check our previous note on [AI bubble warnings](/blog/ai-bubble-valuation-correction-analysis) to see how macro-shocks can impact systematic portfolios."
+        "text": "Mathematical models are only as good as their assumptions. **Risk Management** requires rigorous stress testing, where we simulate 'impossible' events like a 10-sigma move in interest rates or a total liquidity freeze. Check our previous note on [AI bubble warnings](https://quantfinancewiki.com/blog/ai-bubble-cracks-investor-nervousness) to see how macro-shocks can impact systematic portfolios."
       },
       {
         "type": "paragraph",
-        "text": "The primary cause of hedge fund failure is not a bad strategy, but a lack of respect for leverage and the Kelly Criterion. As we saw with [Ed Thorp](/blog/ed-thorp-quantitative-trading-pioneer), surviving the market is the prerequisite for beating the market."
+        "text": "The primary cause of hedge fund failure is not a bad strategy, but a lack of respect for leverage and the Kelly Criterion. As we saw with [Ed Thorp](https://quantfinancewiki.com/blog/ed-thorp-quant-pioneer), surviving the market is the prerequisite for beating the market."
       },
       {
         "type": "paragraph",
@@ -5931,7 +5931,7 @@
       },
       {
         "type": "paragraph",
-        "text": "This priority queue is why latency is non-negotiable. If you are 10 nanoseconds slower than a competitor, you will be behind them in the queue, reducing your fill probability for passive orders. Check our previous note on [HFT physics and microsecond competition](/blog/high-frequency-trading-market-microstructure)."
+        "text": "This priority queue is why latency is non-negotiable. If you are 10 nanoseconds slower than a competitor, you will be behind them in the queue, reducing your fill probability for passive orders. Check our previous note on [HFT physics and microsecond competition](https://quantfinancewiki.com/blog/what-is-market-microstructure-2023)."
       },
       {
         "type": "heading",
@@ -6376,7 +6376,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The Kelly Criterion is the bridge between a 'trading signal' and a 'trading business'. Most blow-ups in the history of finance were not caused by bad signals, but by betting sizes that exceeded the Kelly limit. As we saw with [Ed Thorp](/blog/ed-thorp-quantitative-trading-pioneer), maintaining the discipline to bet according to the math is what separates quants from gamblers."
+        "text": "The Kelly Criterion is the bridge between a 'trading signal' and a 'trading business'. Most blow-ups in the history of finance were not caused by bad signals, but by betting sizes that exceeded the Kelly limit. As we saw with [Ed Thorp](https://quantfinancewiki.com/blog/ed-thorp-quant-pioneer), maintaining the discipline to bet according to the math is what separates quants from gamblers."
       },
       {
         "type": "paragraph",
@@ -6624,7 +6624,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Simulate a market buy of 10,000 shares on a thinly traded book and calculate the difference between the mid-price and your average execution price to see how [slippage](/blog/slippage-execution-costs-market-impact) works in practice."
+      "text": "Simulate a market buy of 10,000 shares on a thinly traded book and calculate the difference between the mid-price and your average execution price to see how [slippage](https://quantfinancewiki.com/blog/what-is-slippage-2025) works in practice."
     }
   ]
 },
@@ -6656,7 +6656,7 @@
     },
     {
       "type": "paragraph",
-      "text": "1. **Market Impact**: Your own order consumes all liquidity at the best price level, forcing the remaining volume to be filled at worse prices. This is directly related to the [limit order book](/blog/limit-order-book-lob-trading-mechanics) structure.\n2. **Latency**: The time delay between signal generation and order arrival. If the market moves during this 1-10ms window, your limit price may no longer be marketable.\n3. **Volatility Spikes**: During high volatility, the bid-ask spread widens, and the 'thinness' of the book leads to larger price gaps between trades. Models like [local volatility](/blog/local-volatility-dupire-equation-surface) help predict these scenarios."
+      "text": "1. **Market Impact**: Your own order consumes all liquidity at the best price level, forcing the remaining volume to be filled at worse prices. This is directly related to the [limit order book](https://quantfinancewiki.com/blog/what-is-limit-order-book-2025) structure.\n2. **Latency**: The time delay between signal generation and order arrival. If the market moves during this 1-10ms window, your limit price may no longer be marketable.\n3. **Volatility Spikes**: During high volatility, the bid-ask spread widens, and the 'thinness' of the book leads to larger price gaps between trades. Models like [local volatility](https://quantfinancewiki.com/blog/what-is-local-volatility-2025) help predict these scenarios."
     },
     {
       "type": "heading",
@@ -6683,7 +6683,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Run a sensitivity analysis on your strategy: at what slippage level (in bps) does your Sharpe ratio drop below 1.0? Understanding these costs is as important as knowing the mathematics of [mean reversion](/blog/mean-reversion-trading-stochastic-processes) or [momentum trading](/blog/momentum-trading-quantitative-trend-following)."
+      "text": "Run a sensitivity analysis on your strategy: at what slippage level (in bps) does your Sharpe ratio drop below 1.0? Understanding these costs is as important as knowing the mathematics of [mean reversion](https://quantfinancewiki.com/blog/what-is-mean-reversion-2025) or [momentum trading](https://quantfinancewiki.com/blog/what-is-momentum-trading-2025)."
     }
   ]
 },
@@ -6715,7 +6715,7 @@
     },
     {
       "type": "paragraph",
-      "text": "1. **Overextended Moves**: When an asset is $2$ or $3$ standard deviations away from its moving average.\n2. **Cointegration**: Two stocks that move together, where the difference (spread) between them is stationary.\n3. **Volatility**: Market volatility is almost always mean-reverting, even if the underlying prices are not. This connects to concepts like the [volatility smile](/blog/volatility-smile-skew-implied-volatility) and [SABR model](/blog/sabr-model-volatility-smile-interest-rates)."
+      "text": "1. **Overextended Moves**: When an asset is $2$ or $3$ standard deviations away from its moving average.\n2. **Cointegration**: Two stocks that move together, where the difference (spread) between them is stationary.\n3. **Volatility**: Market volatility is almost always mean-reverting, even if the underlying prices are not. This connects to concepts like the [volatility smile](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025) and [SABR model](https://quantfinancewiki.com/blog/what-is-sabr-model-2025)."
     },
     {
       "type": "heading",
@@ -6738,7 +6738,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The danger of mean reversion trading is 'catching a falling knife.' If a company's fundamentals change, the 'mean' itself may shift downward. A mean-reversion strategy without a hard stop-loss assumes that the past equilibrium is a permanent law of nature; in finance, equilibrium is often a temporary state. This contrasts with [arbitrage](/blog/arbitrage-types-risk-free-profit-mechanics) strategies that aim for risk-free profit."
+      "text": "The danger of mean reversion trading is 'catching a falling knife.' If a company's fundamentals change, the 'mean' itself may shift downward. A mean-reversion strategy without a hard stop-loss assumes that the past equilibrium is a permanent law of nature; in finance, equilibrium is often a temporary state. This contrasts with [arbitrage](https://quantfinancewiki.com/blog/what-is-arbitrage-2023) strategies that aim for risk-free profit."
     },
     {
       "type": "paragraph",
@@ -6774,7 +6774,7 @@
     },
     {
       "type": "paragraph",
-      "text": "1. **Triangular Arbitrage**: Exploiting discrepancies between three different currencies (e.g., USD/EUR, EUR/GBP, and GBP/USD). If the cross-rate is misaligned, a circular trade yields profit.\n2. **Spatial Arbitrage**: Buying an asset in one geographic location and selling it in another. This is common in commodities and energy markets.\n3. **Convertible Arbitrage**: Buying a convertible bond and shorting the underlying stock to capture the mispricing of the embedded option. This involves understanding [option greeks like gamma](/blog/gamma-option-greeks-convexity-risk) and [theta](/blog/theta-option-greeks-time-decay)."
+      "text": "1. **Triangular Arbitrage**: Exploiting discrepancies between three different currencies (e.g., USD/EUR, EUR/GBP, and GBP/USD). If the cross-rate is misaligned, a circular trade yields profit.\n2. **Spatial Arbitrage**: Buying an asset in one geographic location and selling it in another. This is common in commodities and energy markets.\n3. **Convertible Arbitrage**: Buying a convertible bond and shorting the underlying stock to capture the mispricing of the embedded option. This involves understanding [option greeks like gamma](https://quantfinancewiki.com/blog/what-is-gamma-2025) and [theta](https://quantfinancewiki.com/blog/what-is-theta-2025)."
     },
     {
       "type": "heading",
@@ -6797,7 +6797,7 @@
     },
     {
       "type": "paragraph",
-      "text": "While arbitrage is theoretically risk-free, it is operationally dangerous. **Leg-in risk** occurs when you execute the first half of the trade, but the price moves or liquidity vanishes before you can execute the second half. This connects directly to understanding [slippage](/blog/slippage-execution-costs-market-impact) and market impact. In 2025, if your system is not running on kernel-bypass networking, your 'risk-free' arbitrage is actually a high-risk gamble on execution speed."
+      "text": "While arbitrage is theoretically risk-free, it is operationally dangerous. **Leg-in risk** occurs when you execute the first half of the trade, but the price moves or liquidity vanishes before you can execute the second half. This connects directly to understanding [slippage](https://quantfinancewiki.com/blog/what-is-slippage-2025) and market impact. In 2025, if your system is not running on kernel-bypass networking, your 'risk-free' arbitrage is actually a high-risk gamble on execution speed."
     },
     {
       "type": "paragraph",
@@ -6833,7 +6833,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The Grossman-Stiglitz Paradox states that if markets were perfectly efficient, no one would have an incentive to gather information, which would lead to the market becoming inefficient. Therefore, markets must be 'efficiently inefficient.' Quants exist in the gap where information is being processed but not yet fully reflected in the price. The time it takes for a market to reach equilibrium after new data arrives is the window for alpha, exploited by both [mean reversion](/blog/mean-reversion-trading-stochastic-processes) and [momentum trading](/blog/momentum-trading-quantitative-trend-following) strategies."
+      "text": "The Grossman-Stiglitz Paradox states that if markets were perfectly efficient, no one would have an incentive to gather information, which would lead to the market becoming inefficient. Therefore, markets must be 'efficiently inefficient.' Quants exist in the gap where information is being processed but not yet fully reflected in the price. The time it takes for a market to reach equilibrium after new data arrives is the window for alpha, exploited by both [mean reversion](https://quantfinancewiki.com/blog/what-is-mean-reversion-2025) and [momentum trading](https://quantfinancewiki.com/blog/what-is-momentum-trading-2025) strategies."
     },
     {
       "type": "heading",
@@ -6856,7 +6856,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Behavioral finance and quantitative research have identified numerous 'anomalies'—such as momentum, value, and low-volatility factors—that EMH cannot explain. The existence of firms like Renaissance Technologies, which have beaten the market for decades, is the strongest empirical evidence that EMH is not an absolute law. Their success relies on sophisticated models like [copulas](/blog/copulas-risk-management-correlation-modeling) and [jump-diffusion processes](/blog/merton-jump-diffusion-stochastic-process)."
+      "text": "Behavioral finance and quantitative research have identified numerous 'anomalies'—such as momentum, value, and low-volatility factors—that EMH cannot explain. The existence of firms like Renaissance Technologies, which have beaten the market for decades, is the strongest empirical evidence that EMH is not an absolute law. Their success relies on sophisticated models like [copulas](https://quantfinancewiki.com/blog/what-is-copula-risk-2025) and [jump-diffusion processes](https://quantfinancewiki.com/blog/what-is-merton-jump-diffusion-2025)."
     },
     {
       "type": "paragraph",
@@ -6888,7 +6888,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Why does momentum work? It is primarily driven by three factors: underreaction to news, herding behavior, and the 'disposition effect' (investors selling winners too early and holding losers too long). As more participants notice the trend, they pile in, creating a self-fulfilling prophecy until the trend reaches an exhaustion point. This contradicts the [Efficient Market Hypothesis](/blog/efficient-market-hypothesis-emh-weak-strong-forms), which predicts immediate price adjustment."
+      "text": "Why does momentum work? It is primarily driven by three factors: underreaction to news, herding behavior, and the 'disposition effect' (investors selling winners too early and holding losers too long). As more participants notice the trend, they pile in, creating a self-fulfilling prophecy until the trend reaches an exhaustion point. This contradicts the [Efficient Market Hypothesis](https://quantfinancewiki.com/blog/efficient-market-hypothesis-emh-weak-strong-forms), which predicts immediate price adjustment."
     },
     {
       "type": "paragraph",
@@ -6915,7 +6915,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The primary danger of momentum is the 'Momentum Crash'. This typically occurs when a long-standing trend suddenly reverses, often during a market bottom when the 'losers' (which quants are short) rally faster than the 'winners' (which quants are long). A momentum strategy without a volatility-scaling mechanism is a ticking time bomb; you must reduce exposure as the dispersion of returns increases. Managing this requires understanding higher-order risks like [vanna and volga](/blog/vanna-volga-second-order-greeks-convexity)."
+      "text": "The primary danger of momentum is the 'Momentum Crash'. This typically occurs when a long-standing trend suddenly reverses, often during a market bottom when the 'losers' (which quants are short) rally faster than the 'winners' (which quants are long). A momentum strategy without a volatility-scaling mechanism is a ticking time bomb; you must reduce exposure as the dispersion of returns increases. Managing this requires understanding higher-order risks like [vanna and volga](https://quantfinancewiki.com/blog/what-is-vanna-volga-2025)."
     },
     {
       "type": "paragraph",
@@ -6938,7 +6938,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Unlike public exchanges (like the NYSE), dark pools do not have a public [limit order book](/blog/limit-order-book-lob-trading-mechanics). This allows institutional investors to place massive buy or sell orders without alerting the market or causing immediate price slippage. The trades are usually pegged to the National Best Bid and Offer (NBBO) mid-price: $$P_{dark} = \\frac{Bid_{NBBO} + Ask_{NBBO}}{2}$$."
+      "text": "Unlike public exchanges (like the NYSE), dark pools do not have a public [limit order book](https://quantfinancewiki.com/blog/what-is-limit-order-book-2025). This allows institutional investors to place massive buy or sell orders without alerting the market or causing immediate price slippage. The trades are usually pegged to the National Best Bid and Offer (NBBO) mid-price: $$P_{dark} = \\frac{Bid_{NBBO} + Ask_{NBBO}}{2}$$."
     },
     {
       "type": "heading",
@@ -6974,7 +6974,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The risk of dark pools is 'Adverse Selection'. Because you cannot see the other side, you might get filled by an informed trader who knows the public mid-price is about to move. Trading in a dark pool without monitoring the 'lit' market's order flow imbalance is a guaranteed way to be filled only when the price is moving against you. This relates directly to the problem of [slippage](/blog/slippage-execution-costs-market-impact) in public markets."
+      "text": "The risk of dark pools is 'Adverse Selection'. Because you cannot see the other side, you might get filled by an informed trader who knows the public mid-price is about to move. Trading in a dark pool without monitoring the 'lit' market's order flow imbalance is a guaranteed way to be filled only when the price is moving against you. This relates directly to the problem of [slippage](https://quantfinancewiki.com/blog/what-is-slippage-2025) in public markets."
     },
     {
       "type": "paragraph",
@@ -7030,11 +7030,11 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I analyzed the 'Gamma Squeeze' of 2021 for a week to understand how massive retail call buying forces dealers to buy the underlying at an accelerating rate. **What is Gamma ($\\Gamma$)?** It is the second derivative of the option price with respect to the underlying price, or the first derivative of [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management)."
+        "text": "I analyzed the 'Gamma Squeeze' of 2021 for a week to understand how massive retail call buying forces dealers to buy the underlying at an accelerating rate. **What is Gamma ($\\Gamma$)?** It is the second derivative of the option price with respect to the underlying price, or the first derivative of [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022)."
       },
       {
         "type": "paragraph",
-        "text": "The formula is: $$\\Gamma = \\frac{\\partial^2 V}{\\partial S^2} = \\frac{\\partial \\Delta}{\\partial S}$$. Gamma measures the 'convexity' of a position. A high Gamma means that Delta is highly sensitive to price changes, making a [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management)-neutral hedge unstable. "
+        "text": "The formula is: $$\\Gamma = \\frac{\\partial^2 V}{\\partial S^2} = \\frac{\\partial \\Delta}{\\partial S}$$. Gamma measures the 'convexity' of a position. A high Gamma means that Delta is highly sensitive to price changes, making a [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022)-neutral hedge unstable. "
       },
       {
         "type": "heading",
@@ -7080,7 +7080,7 @@
       },
       {
         "type": "paragraph",
-        "text": "In a market-neutral portfolio, Theta and [**Gamma**](https://quantfinancewiki.com/blog/gamma-option-greeks-convexity-risk) are usually opposite. If you are 'Long [**Gamma**](https://quantfinancewiki.com/blog/gamma-option-greeks-convexity-risk),' you are 'Short Theta.' This means you are paying for the right to profit from large price swings. Failure to realize enough volatility to offset your Theta bleed results in a slow death by a thousand cuts for your portfolio."
+        "text": "In a market-neutral portfolio, Theta and [**Gamma**](https://quantfinancewiki.com/blog/what-is-gamma-2025) are usually opposite. If you are 'Long [**Gamma**](https://quantfinancewiki.com/blog/what-is-gamma-2025),' you are 'Short Theta.' This means you are paying for the right to profit from large price swings. Failure to realize enough volatility to offset your Theta bleed results in a slow death by a thousand cuts for your portfolio."
       },
       {
         "type": "code",
@@ -7169,11 +7169,11 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I spent 16 hours debugging a risk-decomposition engine to understand why my [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management)-neutral portfolio was bleeding cash despite the underlying remaining stagnant. The culprit was **Vanna**, a second-order Greek that captures the sensitivity of [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management) to changes in implied volatility ($\\sigma$)."
+        "text": "I spent 16 hours debugging a risk-decomposition engine to understand why my [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022)-neutral portfolio was bleeding cash despite the underlying remaining stagnant. The culprit was **Vanna**, a second-order Greek that captures the sensitivity of [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022) to changes in implied volatility ($\\sigma$)."
       },
       {
         "type": "paragraph",
-        "text": "Mathematically, Vanna is the cross-partial derivative of the option price $V$ with respect to the underlying price $S$ and volatility $\\sigma$: $$Vanna = \\frac{\\partial^2 V}{\\partial S \\partial \\sigma} = \\frac{\\partial \\Delta}{\\partial \\sigma}$$. In practical terms, Vanna tells you how much your hedge ratio ([**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management)) will shift as the market becomes more or less volatile. If you are long Vanna, a spike in IV will increase your [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management), potentially over-hedging your position if you do not adjust."
+        "text": "Mathematically, Vanna is the cross-partial derivative of the option price $V$ with respect to the underlying price $S$ and volatility $\\sigma$: $$Vanna = \\frac{\\partial^2 V}{\\partial S \\partial \\sigma} = \\frac{\\partial \\Delta}{\\partial \\sigma}$$. In practical terms, Vanna tells you how much your hedge ratio ([**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022)) will shift as the market becomes more or less volatile. If you are long Vanna, a spike in IV will increase your [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022), potentially over-hedging your position if you do not adjust."
       },
       {
         "type": "heading",
@@ -7182,11 +7182,11 @@
       },
       {
         "type": "paragraph",
-        "text": "**Volga** (or Vomma) measures the second-order sensitivity of the option price to implied volatility. It is the derivative of [**Vega**](https://quantfinancewiki.com/blog/vega-option-greeks-volatility-sensitivity) with respect to $\\sigma$: $$Volga = \\frac{\\partial^2 V}{\\partial \\sigma^2} = \\frac{\\partial \\nu}{\\partial \\sigma}$$. Just as [**Gamma**](https://quantfinancewiki.com/blog/gamma-option-greeks-convexity-risk) measures the 'convexity' of the price relative to the stock, Volga measures the 'convexity' of the price relative to volatility. If you are long Volga, your [**Vega**](https://quantfinancewiki.com/blog/vega-option-greeks-volatility-sensitivity) increases as volatility rises, meaning your profit from a vol-spike is non-linear."
+        "text": "**Volga** (or Vomma) measures the second-order sensitivity of the option price to implied volatility. It is the derivative of [**Vega**](https://quantfinancewiki.com/blog/what-is-vega-2025) with respect to $\\sigma$: $$Volga = \\frac{\\partial^2 V}{\\partial \\sigma^2} = \\frac{\\partial \\nu}{\\partial \\sigma}$$. Just as [**Gamma**](https://quantfinancewiki.com/blog/gamma-option-greeks-convexity-risk) measures the 'convexity' of the price relative to the stock, Volga measures the 'convexity' of the price relative to volatility. If you are long Volga, your [**Vega**](https://quantfinancewiki.com/blog/what-is-vega-2025) increases as volatility rises, meaning your profit from a vol-spike is non-linear."
       },
       {
         "type": "paragraph",
-        "text": "1. **Vanna (Cross-Sensitivity)**: Vital for skew-trading. It describes how the [**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management) changes as the volatility smile tilts.\n2. **Volga (Vol-Convexity)**: Critical for pricing 'tail' options. Deep out-of-the-money (OTM) options have high Volga; they are essentially a bet on a massive change in the market's perception of risk."
+        "text": "1. **Vanna (Cross-Sensitivity)**: Vital for skew-trading. It describes how the [**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022) changes as the volatility smile tilts.\n2. **Volga (Vol-Convexity)**: Critical for pricing 'tail' options. Deep out-of-the-money (OTM) options have high Volga; they are essentially a bet on a massive change in the market's perception of risk."
       },
       {
         "type": "heading",
@@ -7195,7 +7195,7 @@
       },
       {
         "type": "paragraph",
-        "text": "To calculate these, we must use the standard $d_1$ and $d_2$ terms from the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model). These metrics are the foundation of the 'Vanna-Volga pricing method' used in FX markets to interpolate the volatility smile."
+        "text": "To calculate these, we must use the standard $d_1$ and $d_2$ terms from the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021). These metrics are the foundation of the 'Vanna-Volga pricing method' used in FX markets to interpolate the volatility smile."
       },
       {
         "type": "code",
@@ -7209,7 +7209,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Most retail platforms only show first-order Greeks ([**Delta**](https://quantfinancewiki.com/blog/delta-hedging-options-risk-management), [**Gamma**](https://quantfinancewiki.com/blog/gamma-option-greeks-convexity-risk), [**Theta**](https://quantfinancewiki.com/blog/theta-option-greeks-time-decay), [**Vega**](https://quantfinancewiki.com/blog/vega-option-greeks-volatility-sensitivity)). This creates 'shadow risk.' A market maker who ignores Vanna will find themselves directionally exposed after a volatility crush, even if the underlying price hasn't moved a cent. This exposure is one of the primary drivers of 'pinning' near large option expiries."
+        "text": "Most retail platforms only show first-order Greeks ([**Delta**](https://quantfinancewiki.com/blog/what-is-delta-hedging-2022), [**Gamma**](https://quantfinancewiki.com/blog/what-is-gamma-2025), [**Theta**](https://quantfinancewiki.com/blog/what-is-theta-2025), [**Vega**](https://quantfinancewiki.com/blog/what-is-vega-2025)). This creates 'shadow risk.' A market maker who ignores Vanna will find themselves directionally exposed after a volatility crush, even if the underlying price hasn't moved a cent. This exposure is one of the primary drivers of 'pinning' near large option expiries."
       },
       {
         "type": "paragraph",
@@ -7228,11 +7228,11 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I analyzed the SPX option chain during the Q3 earnings season to map the **Volatility Smile**, and the results confirm that the market completely rejects the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) assumption of constant volatility. The 'smile' is a pattern where implied volatility (IV) is higher for options that are deep out-of-the-money (OTM) or deep in-the-money (ITM) compared to at-the-money (ATM) options."
+        "text": "I analyzed the SPX option chain during the Q3 earnings season to map the **Volatility Smile**, and the results confirm that the market completely rejects the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) assumption of constant volatility. The 'smile' is a pattern where implied volatility (IV) is higher for options that are deep out-of-the-money (OTM) or deep in-the-money (ITM) compared to at-the-money (ATM) options."
       },
       {
         "type": "paragraph",
-        "text": "If the world followed the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) perfectly, the 'smile' would be a flat horizontal line. The existence of the curve proves that investors price in 'fat tails'—the mathematical reality that extreme market moves happen more often than a normal distribution predicts. In equity markets, this is often a 'Skew' (or Smirk), where downside puts have much higher IV than upside calls, reflecting the market's 'fear' of a crash."
+        "text": "If the world followed the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) perfectly, the 'smile' would be a flat horizontal line. The existence of the curve proves that investors price in 'fat tails'—the mathematical reality that extreme market moves happen more often than a normal distribution predicts. In equity markets, this is often a 'Skew' (or Smirk), where downside puts have much higher IV than upside calls, reflecting the market's 'fear' of a crash."
       },
       {
         "type": "heading",
@@ -7241,7 +7241,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The smile is a direct result of two market realities that quants must model using [**Merton Jump-Diffusion Model**](https://quantfinancewiki.com/blog/merton-jump-diffusion-stochastic-process) or stochastic volatility (Heston) models:"
+        "text": "The smile is a direct result of two market realities that quants must model using [**Merton Jump-Diffusion Model**](https://quantfinancewiki.com/blog/what-is-merton-jump-diffusion-2025) or stochastic volatility (Heston) models:"
       },
       {
         "type": "paragraph",
@@ -7287,11 +7287,11 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I analyzed the shift in the EURIBOR cap surface using the **SABR Model** to understand why my hedging ratios were failing during a parallel yield curve shift. SABR (Stochastic Alpha, Beta, Rho) is a stochastic volatility model primarily used by practitioners in fixed income to capture the [**Volatility Smile**](https://quantfinancewiki.com/blog/volatility-smile-skew-implied-volatility)."
+        "text": "I analyzed the shift in the EURIBOR cap surface using the **SABR Model** to understand why my hedging ratios were failing during a parallel yield curve shift. SABR (Stochastic Alpha, Beta, Rho) is a stochastic volatility model primarily used by practitioners in fixed income to capture the [**Volatility Smile**](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025)."
       },
       {
         "type": "paragraph",
-        "text": "The SABR model assumes that the forward rate $F_t$ follows a stochastic process with volatility driven by another stochastic process: $$dF_t = \\sigma_t F_t^{\\beta} dW_t$$ $$d\\sigma_t = \\nu \\sigma_t dZ_t$$ where $W_t$ and $Z_t$ are correlated Brownian motions with correlation coefficient $\\rho$. The parameter $\\beta$ controls the elasticity of volatility with respect to the underlying price, allowing the model to fit different shapes of the [**Volatility Smile**](https://quantfinancewiki.com/blog/volatility-smile-skew-implied-volatility)."
+        "text": "The SABR model assumes that the forward rate $F_t$ follows a stochastic process with volatility driven by another stochastic process: $$dF_t = \\sigma_t F_t^{\\beta} dW_t$$ $$d\\sigma_t = \\nu \\sigma_t dZ_t$$ where $W_t$ and $Z_t$ are correlated Brownian motions with correlation coefficient $\\rho$. The parameter $\\beta$ controls the elasticity of volatility with respect to the underlying price, allowing the model to fit different shapes of the [**Volatility Smile**](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025)."
       },
       {
         "type": "heading",
@@ -7328,7 +7328,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I spent 10 hours implementing a **Local Volatility** surface to understand how quants achieve perfect calibration to market prices. **What is Local Volatility?** It is a deterministic function of both the underlying asset price and time, denoted as $\\sigma_{loc}(S, t)$, that allows the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) framework to fit any observed [**Volatility Smile**](https://quantfinancewiki.com/blog/volatility-smile-skew-implied-volatility)."
+        "text": "I spent 10 hours implementing a **Local Volatility** surface to understand how quants achieve perfect calibration to market prices. **What is Local Volatility?** It is a deterministic function of both the underlying asset price and time, denoted as $\\sigma_{loc}(S, t)$, that allows the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) framework to fit any observed [**Volatility Smile**](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025)."
       },
       {
         "type": "paragraph",
@@ -7360,7 +7360,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I analyzed the price action of pharmaceutical stocks during clinical trial announcements to prove why the standard Brownian motion assumption fails in the presence of 'gaps.' The **Merton Jump-Diffusion Model** extends the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) framework by adding a jump component to the continuous price path, allowing for the discrete, non-marginal changes we see during earnings or geopolitical shocks."
+        "text": "I analyzed the price action of pharmaceutical stocks during clinical trial announcements to prove why the standard Brownian motion assumption fails in the presence of 'gaps.' The **Merton Jump-Diffusion Model** extends the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) framework by adding a jump component to the continuous price path, allowing for the discrete, non-marginal changes we see during earnings or geopolitical shocks."
       },
       {
         "type": "paragraph",
@@ -7455,7 +7455,7 @@
       },
       {
         "type": "paragraph",
-        "text": "Rough volatility is the only framework that accurately reconciles the behavior of high-frequency price data with the shape of the option [**Volatility Smile**](https://quantfinancewiki.com/blog/volatility-smile-skew-implied-volatility). Ignoring the 'roughness' of volatility leads to a systematic mispricing of forward-start options and VIX derivatives."
+        "text": "Rough volatility is the only framework that accurately reconciles the behavior of high-frequency price data with the shape of the option [**Volatility Smile**](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025). Ignoring the 'roughness' of volatility leads to a systematic mispricing of forward-start options and VIX derivatives."
       },
       {
         "type": "paragraph",
@@ -7474,7 +7474,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I spent 16 hours implementing a Fast Fourier Transform (FFT) pricer to understand why the **Variance Gamma (VG)** model captures the 'kurtosis risk' of short-term options better than standard diffusion. Unlike the [**Merton Jump-Diffusion Model**](https://quantfinancewiki.com/blog/merton-jump-diffusion-stochastic-process), which adds infrequent jumps to a continuous path, the Variance Gamma model assumes that the price process is a 'pure jump' process with an infinite number of tiny jumps in any time interval."
+        "text": "I spent 16 hours implementing a Fast Fourier Transform (FFT) pricer to understand why the **Variance Gamma (VG)** model captures the 'kurtosis risk' of short-term options better than standard diffusion. Unlike the [**Merton Jump-Diffusion Model**](https://quantfinancewiki.com/blog/what-is-merton-jump-diffusion-2025), which adds infrequent jumps to a continuous path, the Variance Gamma model assumes that the price process is a 'pure jump' process with an infinite number of tiny jumps in any time interval."
       },
       {
         "type": "paragraph",
@@ -7487,7 +7487,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The 'Infinite Activity' nature of the VG model means it does not have a continuous component ($dW_t = 0$). Instead, it models the market as a series of shocks. This is mathematically superior for fitting the [**Volatility Smile**](https://quantfinancewiki.com/blog/volatility-smile-skew-implied-volatility) because it naturally produces high peaks and heavy tails (Laplace-like distributions) without needing to artificially stitch together different processes."
+        "text": "The 'Infinite Activity' nature of the VG model means it does not have a continuous component ($dW_t = 0$). Instead, it models the market as a series of shocks. This is mathematically superior for fitting the [**Volatility Smile**](https://quantfinancewiki.com/blog/what-is-volatility-smile-2025) because it naturally produces high peaks and heavy tails (Laplace-like distributions) without needing to artificially stitch together different processes."
       },
       {
         "type": "paragraph",
@@ -7514,7 +7514,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The Variance Gamma model is a favorite for quants trading exotic options that are sensitive to the frequency of small market shocks. Relying on [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) for 'Digital' options or 'Barriers' is a catastrophic error; the Variance Gamma model reveals that the probability of 'touching' a barrier is significantly higher when you account for infinite activity jumps."
+        "text": "The Variance Gamma model is a favorite for quants trading exotic options that are sensitive to the frequency of small market shocks. Relying on [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) for 'Digital' options or 'Barriers' is a catastrophic error; the Variance Gamma model reveals that the probability of 'touching' a barrier is significantly higher when you account for infinite activity jumps."
       },
       {
         "type": "paragraph",
@@ -7533,7 +7533,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "I analyzed the 2008 'quant quake' for weeks to understand why portfolios that were 'diversified' by linear correlation $(\rho)$ all collapsed simultaneously. The answer lies in the [**Copula**](https://quantfinancewiki.com/blog/copulas-risk-management-correlation-modeling), a mathematical function used to describe the dependency between random variables. The core insight is that you can separate the marginal distributions of individual assets from their joint dependency structure."
+        "text": "I analyzed the 2008 'quant quake' for weeks to understand why portfolios that were 'diversified' by linear correlation $(\rho)$ all collapsed simultaneously. The answer lies in the [**Copula**](https://quantfinancewiki.com/blog/what-is-copula-risk-2025), a mathematical function used to describe the dependency between random variables. The core insight is that you can separate the marginal distributions of individual assets from their joint dependency structure."
       },
       {
         "type": "paragraph",
@@ -7634,7 +7634,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The mathematical definition is $\\Delta = \\frac{\\partial V}{\\partial S}$. For a European call option in the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/black-scholes-merton-option-pricing-model) framework, $\\Delta = N(d_1)$. Because $\\Delta$ changes as the stock price moves and time passes, a hedge must be rebalanced frequently. This is known as dynamic hedging. If a market maker does not rebalance, they are exposed to **Gamma Risk**, which is the sensitivity of delta to the underlying price."
+        "text": "The mathematical definition is $\\Delta = \\frac{\\partial V}{\\partial S}$. For a European call option in the [**Black-Scholes-Merton model**](https://quantfinancewiki.com/blog/what-is-black-scholes-merton-2021) framework, $\\Delta = N(d_1)$. Because $\\Delta$ changes as the stock price moves and time passes, a hedge must be rebalanced frequently. This is known as dynamic hedging. If a market maker does not rebalance, they are exposed to **Gamma Risk**, which is the sensitivity of delta to the underlying price."
       },
       {
         "type": "heading",
@@ -7714,7 +7714,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "The **Arbitrage Pricing Theory** (APT) is a multi-factor asset pricing model that suggests an asset's returns can be predicted using the linear relationship between the asset's expected return and a number of macroeconomic variables. Developed by Stephen Ross in 1976, it was designed as an alternative to the [**Capital Asset Pricing Model (CAPM)**](https://quantfinancewiki.com/blog/capm-capital-asset-pricing-model-systematic-risk). Unlike CAPM, which only considers a single market factor, APT allows for multiple sources of risk."
+        "text": "The **Arbitrage Pricing Theory** (APT) is a multi-factor asset pricing model that suggests an asset's returns can be predicted using the linear relationship between the asset's expected return and a number of macroeconomic variables. Developed by Stephen Ross in 1976, it was designed as an alternative to the [**Capital Asset Pricing Model (CAPM)**](https://quantfinancewiki.com/blog/what-is-capital-asset-pricing-model-2021). Unlike CAPM, which only considers a single market factor, APT allows for multiple sources of risk."
       },
       {
         "type": "paragraph",
@@ -7755,7 +7755,7 @@
       },
       {
         "type": "paragraph",
-        "text": "To determine the cost of equity ($Re$), firms typically use the [**Capital Asset Pricing Model (CAPM)**](https://quantfinancewiki.com/blog/capm-capital-asset-pricing-model-systematic-risk). This requires calculating the company's _Beta_ ($\\beta$), which measures the stock's sensitivity to market movements. If a company has a $\\beta$ of 1.2, it is 20% more volatile than the broad market. A higher $\\beta$ increases the $Re$, which in turn raises the WACC and lowers the current valuation of the firm's future cash flows."
+        "text": "To determine the cost of equity ($Re$), firms typically use the [**Capital Asset Pricing Model (CAPM)**](https://quantfinancewiki.com/blog/what-is-capital-asset-pricing-model-2021). This requires calculating the company's _Beta_ ($\\beta$), which measures the stock's sensitivity to market movements. If a company has a $\\beta$ of 1.2, it is 20% more volatile than the broad market. A higher $\\beta$ increases the $Re$, which in turn raises the WACC and lowers the current valuation of the firm's future cash flows."
       }
     ]
   },
@@ -7783,7 +7783,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The **EV/EBITDA** multiple is a primary tool in private equity and M&A for determining acquisition prices. Unlike the [**P/E Ratio**](https://quantfinancewiki.com/blog/price-to-earnings-ratio-equity-valuation), which only looks at equity, EV/EBITDA looks at the entire capital structure. A 'normal' multiple varies by industry; for instance, utility companies may trade at 8x EBITDA, while high-growth technology firms may trade at 25x. In 2024, many tech acquisitions were scrutinized when EBITDA margins failed to justify high EV multiples during interest rate hikes."
+        "text": "The **EV/EBITDA** multiple is a primary tool in private equity and M&A for determining acquisition prices. Unlike the [**P/E Ratio**](https://quantfinancewiki.com/blog/what-is-pe-ratio-2024), which only looks at equity, EV/EBITDA looks at the entire capital structure. A 'normal' multiple varies by industry; for instance, utility companies may trade at 8x EBITDA, while high-growth technology firms may trade at 25x. In 2024, many tech acquisitions were scrutinized when EBITDA margins failed to justify high EV multiples during interest rate hikes."
       }
     ]
   },
@@ -7895,7 +7895,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The SML is the visual representation of CAPM, plotting expected return against beta. Assets that plot above the SML are considered undervalued because they offer a higher return for their level of risk. Conversely, assets below the line are overvalued. While CAPM is a staple of 2021 finance textbooks, its reliance on a single factor (beta) has been challenged by multi-factor models like the [**Arbitrage Pricing Theory (APT)**](https://quantfinancewiki.com/blog/arbitrage-pricing-theory-multi-factor-models), which adds size and value as risk dimensions."
+        "text": "The SML is the visual representation of CAPM, plotting expected return against beta. Assets that plot above the SML are considered undervalued because they offer a higher return for their level of risk. Conversely, assets below the line are overvalued. While CAPM is a staple of 2021 finance textbooks, its reliance on a single factor (beta) has been challenged by multi-factor models like the [**Arbitrage Pricing Theory (APT)**](https://quantfinancewiki.com/blog/what-is-arbitrage-pricing-theory-2025), which adds size and value as risk dimensions."
       }
     ]
   },
@@ -8026,7 +8026,7 @@
       },
       {
         "type": "paragraph",
-        "text": "The formula for a multi-period DCF is: $$PV = \\sum_{t=1}^{n} \\frac{CF_t}{(1 + r)^t}$$. Here, $CF_t$ is the cash flow in year $t$, and $r$ is the discount rate (usually the [**WACC**](https://quantfinancewiki.com/blog/wacc-weighted-average-cost-of-capital-valuation)). To account for the value of the company beyond the projection period (typically 5 to 10 years), analysts add a **Terminal Value** (TV). The Terminal Value often accounts for more than 70% of the total DCF valuation, making the choice of the perpetual growth rate a critical lever."
+        "text": "The formula for a multi-period DCF is: $$PV = \\sum_{t=1}^{n} \\frac{CF_t}{(1 + r)^t}$$. Here, $CF_t$ is the cash flow in year $t$, and $r$ is the discount rate (usually the [**WACC**](https://quantfinancewiki.com/blog/what-is-weighted-average-cost-of-capital-2021)). To account for the value of the company beyond the projection period (typically 5 to 10 years), analysts add a **Terminal Value** (TV). The Terminal Value often accounts for more than 70% of the total DCF valuation, making the choice of the perpetual growth rate a critical lever."
       },
       {
         "type": "heading",

@@ -9,6 +9,8 @@ from functools import wraps
 from datetime import datetime, date
 import html
 from urllib.parse import urljoin, quote
+import re
+import unidecode
 
 ENV = os.environ.get('FLASK_ENV', 'production')
 IS_DEV = ENV == 'development'
@@ -30,6 +32,50 @@ logger = logging.getLogger(__name__)
 
 def get_file_path(filename):
     return os.path.join(Config.DATA_DIR, os.path.basename(filename))
+
+def make_slug(text, max_words=10):
+    """Generate URL-friendly slug from text."""
+    if not text:
+        return ""
+    text = unidecode.unidecode(text)
+    text = text.lower()
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_]+", "-", text)
+    words = text.split('-')
+    words = words[:max_words]
+    slug = "-".join(words)
+    slug = re.sub(r"-+", "-", slug)
+    slug = slug.strip('-')
+    return slug
+
+def update_questions_with_slugs():
+    data_dir = 'data'
+    questions_file = os.path.join(data_dir, 'interview_questions.json')
+    
+    with open(questions_file, 'r', encoding='utf-8') as f:
+        questions = json.load(f)
+    
+    updated = False
+    for i, question in enumerate(questions):
+        if 'slug' not in question or not question['slug']:
+            question_text = question.get('question', '')
+            if question_text:
+                base_slug = make_slug(question_text[:80])
+                if base_slug:
+                    question['slug'] = f"{base_slug}-q{question.get('id', i+1)}"
+                    updated = True
+                    print(f"Added slug to question {question.get('id')}: {question['slug']}")
+    
+    if updated:
+        backup_file = os.path.join(data_dir, 'interview_questions_backup.json')
+        with open(backup_file, 'w', encoding='utf-8') as f:
+            json.dump(questions, f, indent=2)
+        
+        with open(questions_file, 'w', encoding='utf-8') as f:
+            json.dump(questions, f, indent=2)
+        print(f"Updated {len(questions)} questions. Backup saved to {backup_file}")
+    else:
+        print("No updates needed - all questions already have slugs.")
 
 def load_json_safe(filename, default=None):
     if default is None:
@@ -190,7 +236,10 @@ def sitemap_xml():
         for f in f_list:
             if f.get('id'):
                 add_entry(f"/firms/{f['id']}", lastmod=SERVER_START_TIME, priority='0.7', changefreq='monthly')
-
+    questions = load_json_safe('interview_questions.json')
+    if isinstance(questions, list):
+        add_entry("/interview-questions", lastmod=SERVER_START_TIME, priority='0.9', changefreq='weekly')
+                
     full_content = "\n".join(xml_header + xml_body + ['</urlset>'])
     resp = Response(full_content, mimetype="application/xml")
     resp.headers['Cache-Control'] = 'public, max-age=3600'
@@ -268,16 +317,24 @@ def get_blog_posts():
         post['likes'] = interactions.get(pid, {}).get('likes', 0)
     return jsonify(posts)
 
-@app.route('/api/blog/<post_id>', methods=['GET'])
+@app.route('/api/blog/<identifier>', methods=['GET'])
 @handle_errors
-def get_blog_post(post_id):
+def get_blog_post(identifier):
     posts = load_json_safe('blog.json')
-    post = next((p for p in posts if str(p.get('id')) == str(post_id)), None)
+    
+    post = next(
+        (p for p in posts if str(p.get('id')) == str(identifier) or p.get('slug') == identifier),
+        None
+    )
+    
     if not post:
         return jsonify({'error': 'Post not found'}), 404
+
     interactions = load_json_safe(Config.INTERACTIONS_FILE, default={})
-    post['likes'] = interactions.get(str(post_id), {}).get('likes', 0)
+    post['likes'] = interactions.get(str(post['id']), {}).get('likes', 0)
+
     return jsonify(post)
+
 
 @app.route('/api/blog/<post_id>/like', methods=['POST'])
 @handle_errors
@@ -306,11 +363,31 @@ def unlike_post(post_id):
             current_likes = interactions[post_id]['likes']
     return jsonify({'likes': current_likes})
 
+@app.route('/api/interview-questions', methods=['GET'])
+@handle_errors
+def get_interview_questions():
+    data = load_json_safe('interview_questions.json')
+    resp = make_response(jsonify(data))
+    resp.headers['Cache-Control'] = 'public, max-age=3600'
+    return resp
+
+@app.route('/api/interview-questions/<slug>', methods=['GET'])
+@handle_errors
+def get_interview_question(slug):
+    data = load_json_safe('interview_questions.json')
+    question = next((q for q in data if q.get('slug') == slug), None)
+    if question:
+        resp = make_response(jsonify(question))
+        resp.headers['Cache-Control'] = 'public, max-age=3600'
+        return resp
+    return jsonify({'error': 'Question not found'}), 404
+
 @app.route('/')
 def index():
     return {"status": "online", "message": "QFW Backend is running", "env": ENV}, 200
 
 if __name__ == '__main__':
+    update_questions_with_slugs()
     if not os.path.exists(Config.DATA_DIR):
         os.makedirs(Config.DATA_DIR)
         print(f"Created data directory at {Config.DATA_DIR}")

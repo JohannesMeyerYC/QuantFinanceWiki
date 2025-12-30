@@ -5,7 +5,7 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw'; 
-import { BlockMath } from 'react-katex';
+import { BlockMath, InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -42,25 +42,63 @@ const CodeBlock = ({ inline, className, children, ...props }) => {
   );
 };
 
+const normalizeBlogLink = (href) => {
+  if (href.startsWith('http://') || href.startsWith('https://')) {
+    return href;
+  }
+  
+  if (href.startsWith('/blog/')) {
+    return `https://quantfinancewiki.com${href}`;
+  }
+  
+  const slug = href.replace(/^\//, '');
+  
+  if (!href.includes('://') && !href.includes('.') && (href.includes('-') || href.includes('/'))) {
+    if (slug.startsWith('blog/')) {
+      return `https://quantfinancewiki.com/${slug}`;
+    }
+    return `https://quantfinancewiki.com/blog/${slug}`;
+  }
+  
+  return href;
+};
+
+const LatexBlock = ({ content }) => (
+  <div className="my-6 py-4 px-2 bg-slate-900/20 rounded-lg border border-slate-800/50 flex justify-center items-center shadow-inner overflow-x-auto">
+    <div className="text-center">
+      <BlockMath math={content} />
+    </div>
+  </div>
+);
+
 export const RenderBlock = ({ block }) => {
   if (block.type === 'latex' || (block.text && block.text.startsWith('Latex:'))) {
     const mathContent = block.text.replace('Latex:', '').trim();
-    return (
-      <div className="my-10 overflow-x-auto py-6 px-4 bg-slate-900/20 rounded-xl border border-slate-800/50 flex justify-center items-center shadow-inner">
-        <BlockMath math={mathContent} />
-      </div>
-    );
+    return <LatexBlock content={mathContent} />;
   }
 
   if (block.type === 'heading') {
     const level = block.level || 2;
     const Tag = `h${level}`;
     const id = block.text.toLowerCase().replace(/[^\w]+/g, '-');
-    const sizes = { 2: 'text-3xl mt-16', 3: 'text-2xl mt-12', 4: 'text-xl mt-8' };
+    const sizes = { 
+      1: 'text-4xl mt-20 mb-8', 
+      2: 'text-3xl mt-16 mb-6', 
+      3: 'text-2xl mt-12 mb-4', 
+      4: 'text-xl mt-8 mb-3' 
+    };
 
     return (
-      <Tag id={id} className={`scroll-mt-32 font-bold text-white mb-6 tracking-tight relative group ${sizes[level]}`}>
-        <a href={`#${id}`} className="absolute -left-6 text-teal-500/0 group-hover:text-teal-500/50 transition-all no-underline">#</a>
+      <Tag 
+        id={id} 
+        className={`scroll-mt-32 font-bold text-white tracking-tight relative group ${sizes[level] || sizes[2]}`}
+      >
+        <a 
+          href={`#${id}`} 
+          className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-all duration-200 text-teal-500 no-underline md:-left-8"
+        >
+          #
+        </a>
         {block.text}
       </Tag>
     );
@@ -71,21 +109,107 @@ export const RenderBlock = ({ block }) => {
   }
 
   if (block.type === 'paragraph') {
-    return (
-      <div className="mb-8 text-lg text-slate-300 leading-relaxed prose prose-invert max-w-none 
+    const latexRegex = /\$\$([^$]+)\$\$/g;
+    const text = block.text;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = latexRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push({
+          type: 'text',
+          content: text.substring(lastIndex, match.index)
+        });
+      }
+      
+      parts.push({
+        type: 'latex',
+        content: match[1].trim()
+      });
+      
+      lastIndex = match.index + match[0].length;
+    }
+    
+    if (lastIndex < text.length) {
+      parts.push({
+        type: 'text',
+        content: text.substring(lastIndex)
+      });
+    }
+    
+    if (parts.length === 0 || (parts.length === 1 && parts[0].type === 'text')) {
+      return (
+        <div className="mb-8 text-lg text-slate-300 leading-relaxed 
+                      prose prose-invert max-w-none 
                       prose-strong:text-white prose-strong:font-bold 
                       prose-a:text-teal-400 prose-a:no-underline hover:prose-a:underline
-                      prose-ul:list-disc prose-ol:list-decimal">
-        <ReactMarkdown
-          remarkPlugins={[remarkMath, remarkBreaks, remarkGfm]} 
-          rehypePlugins={[rehypeKatex, rehypeRaw]}
-          components={{
-            code: CodeBlock,
-            a: ({node, ...props}) => <a target="_blank" rel="noopener noreferrer" {...props} />,
-          }}
-        >
-          {block.text}
-        </ReactMarkdown>
+                      prose-ul:list-disc prose-ol:list-decimal
+                      prose-p:my-4">
+          <ReactMarkdown
+            remarkPlugins={[remarkMath, remarkBreaks, remarkGfm]} 
+            rehypePlugins={[rehypeKatex, rehypeRaw]}
+            components={{
+              code: CodeBlock,
+              a: ({ node, href, ...props }) => {
+                const normalizedHref = normalizeBlogLink(href);
+                return (
+                  <a 
+                    href={normalizedHref} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-teal-400 hover:text-teal-300 hover:underline transition-colors"
+                    {...props}
+                  />
+                );
+              },
+              math: ({ node, inline, ...props }) => 
+                inline ? <InlineMath {...props} /> : <BlockMath {...props} />,
+              'math-inline': ({ node, ...props }) => <InlineMath {...props} />,
+            }}
+          >
+            {text}
+          </ReactMarkdown>
+        </div>
+      );
+    }
+    
+    return (
+      <div className="mb-8 text-lg text-slate-300 leading-relaxed">
+        {parts.map((part, index) => {
+          if (part.type === 'text') {
+            return (
+              <div key={index} className="my-4">
+                <ReactMarkdown
+                  remarkPlugins={[remarkMath, remarkBreaks, remarkGfm]} 
+                  rehypePlugins={[rehypeKatex, rehypeRaw]}
+                  components={{
+                    code: CodeBlock,
+                    a: ({ node, href, ...props }) => {
+                      const normalizedHref = normalizeBlogLink(href);
+                      return (
+                        <a 
+                          href={normalizedHref} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-teal-400 hover:text-teal-300 hover:underline transition-colors"
+                          {...props}
+                        />
+                      );
+                    },
+                    math: ({ node, inline, ...props }) => 
+                      inline ? <InlineMath {...props} /> : <BlockMath {...props} />,
+                    'math-inline': ({ node, ...props }) => <InlineMath {...props} />,
+                  }}
+                >
+                  {part.content}
+                </ReactMarkdown>
+              </div>
+            );
+          } else {
+            return <LatexBlock key={index} content={part.content} />;
+          }
+        })}
       </div>
     );
   }
