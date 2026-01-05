@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -66,17 +65,25 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
   }, [showAnswer]);
 
   return (
-    <m.article
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.2, delay: index * 0.03 }}
-      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all duration-300"
+    <article
+      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all duration-300 animate-in"
+      style={{ animationDelay: `${index * 50}ms` }}
       id={`question-${question.id}`}
     >
       <div className="w-full text-left p-6 md:p-8">
         <div 
           onClick={toggleExpanded}
-          className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4"
+          className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 rounded-lg"
+          role="button"
+          aria-expanded={expanded}
+          aria-controls={`answer-${question.id}`}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleExpanded();
+            }
+          }}
         >
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
@@ -106,76 +113,38 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
                 {question.firm}
               </span>
             )}
-            <span className={`transition-transform duration-200 text-slate-500 ${expanded ? 'rotate-90' : ''}`}>
+            <span className={`transition-transform duration-200 text-slate-500 ${expanded ? 'rotate-90' : ''}`} aria-hidden="true">
               ›
             </span>
           </div>
         </div>
       
-        <m.div
+        {/* CSS Grid Accordion Animation */}
+        <div
           id={`answer-${question.id}`}
-          initial={false}
-          animate={{ height: expanded ? 'auto' : 0, opacity: expanded ? 1 : 0 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="overflow-hidden"
+          className={`grid transition-[grid-template-rows] duration-200 ease-out ${expanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+          role="region"
+          aria-labelledby={`question-${question.id}`}
         >
-          <div className="pt-6 border-t border-slate-800 mt-6">
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <button
-                onClick={handleShowAnswer}
-                className="px-4 py-2 text-sm font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500/20 transition-colors"
-              >
-                {showAnswer ? 'Hide Solution' : 'Show Solution'}
-              </button>
-              
-              {/* --- NEW BUTTON: LINKS TO THE INDIVIDUAL PAGE --- */}
-              {question.slug && (
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-  <button
-    onClick={handleShowAnswer}
-    className="px-4 py-2 text-sm font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500/20 transition-colors"
-  >
-    {showAnswer ? 'Hide Solution' : 'Show Solution'}
-  </button>
-  
-  {/* Enhanced View Full Page button */}
-  {question.slug ? (
-    <Link
-      to={`/interview-questions/${question.slug}`}
-      state={{ fromList: true }}
-      className="px-4 py-2 text-sm font-bold bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:bg-slate-700 hover:text-white transition-colors flex items-center gap-2 group"
-    >
-      View Full Page
-      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </Link>
-  ) : (
-    // Fallback if no slug, use ID
-    <Link
-      to={`/interview-questions/q${question.id}`}
-      state={{ fromList: true }}
-      className="px-4 py-2 text-sm font-bold bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:bg-slate-700 hover:text-white transition-colors flex items-center gap-2 group"
-    >
-      View Full Page
-      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </Link>
-  )}
-</div>
-              )}
-            </div>
-            
-            <AnimatePresence>
-              {showAnswer && (
-                <m.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="prose prose-invert max-w-none"
+          <div className="overflow-hidden">
+            <div className="pt-6 border-t border-slate-800 mt-6">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <button
+                  onClick={handleShowAnswer}
+                  className="px-4 py-2 text-sm font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500/20 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
                 >
-                   <div className="text-slate-300 leading-relaxed space-y-4">
+                  {showAnswer ? 'Hide Solution' : 'Show Solution'}
+                </button>
+                
+                
+              </div>
+              
+              {/* Answer Content Accordion */}
+              <div 
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${showAnswer ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+              >
+                <div className="overflow-hidden">
+                   <div className="text-slate-300 leading-relaxed space-y-4 prose prose-invert max-w-none">
                     {question.approach && (
                       <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700/50">
                         <strong className="text-teal-400 block mb-1">Approach</strong> 
@@ -196,13 +165,13 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
                       )}
                     </div>
                   </div>
-                </m.div>
-              )}
-            </AnimatePresence>
+                </div>
+              </div>
+            </div>
           </div>
-        </m.div>
+        </div>
       </div>
-    </m.article>
+    </article>
   );
 });
 
@@ -378,6 +347,16 @@ function InterviewQuestions() {
         <meta property="og:url" content="https://QuantFinanceWiki.com/interview-questions" />
         <link rel="canonical" href="https://QuantFinanceWiki.com/interview-questions" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <style type="text/css">{`
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-in {
+            animation: fadeInUp 0.4s ease-out forwards;
+            opacity: 0;
+          }
+        `}</style>
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-900/50 overflow-hidden">
@@ -385,7 +364,7 @@ function InterviewQuestions() {
           <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-20 relative z-10 animate-in">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-bold uppercase tracking-wider mb-6">
             Interview Preparation
           </div>
@@ -403,7 +382,7 @@ function InterviewQuestions() {
           <div className="flex flex-wrap gap-4">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-              <span className="text-sm text-slate-300">{questions.length}+ Questions</span>
+              <span className="text-sm text-slate-300">{questions.length > 0 ? questions.length : '1000'}+ Questions</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-amber-500"></div>

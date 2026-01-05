@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { m } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -31,7 +30,6 @@ export default function InterviewQuestionDetail() {
     const fetchQuestion = async () => {
       try {
         setLoading(true);
-        // This hits your Python endpoint: /api/interview-questions/<slug>
         const response = await fetch(`${API_URL}/api/interview-questions/${slug}`);
         
         if (!response.ok) {
@@ -74,7 +72,6 @@ export default function InterviewQuestionDetail() {
     );
   }
 
-  // Schema Markup for SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "QAPage",
@@ -98,6 +95,15 @@ export default function InterviewQuestionDetail() {
         <meta name="description" content={`Quant interview question from ${question.firm || 'Top Firms'}: ${question.question.substring(0, 150)}...`} />
         <link rel="canonical" href={`https://QuantFinanceWiki.com/interview-questions/${slug}`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <style type="text/css">{`
+          @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-slide-up {
+            animation: slideUpFade 0.4s ease-out forwards;
+          }
+        `}</style>
       </Helmet>
 
       {/* Header / Breadcrumb */}
@@ -114,11 +120,7 @@ export default function InterviewQuestionDetail() {
       </div>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <m.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <div className="animate-slide-up">
           {/* Question Header */}
           <div className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -225,42 +227,35 @@ export default function InterviewQuestionDetail() {
             </div>
 
             <div className="pt-12 mt-12 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-  <div>
-    <Link 
-      to="/interview-questions"
-      className="group inline-flex items-center gap-2 text-slate-400 hover:text-teal-400 transition-colors px-4 py-2 bg-slate-800/50 hover:bg-slate-800 rounded-lg"
-    >
-      <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-      </svg>
-      Back to All Questions
-    </Link>
-  </div>
-  
-  {/* Next/Previous Navigation */}
-  <div className="flex items-center gap-3">
-    <button
-      onClick={() => navigate(-1)}
-      className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 transition-colors"
-    >
-      ← Previous
-    </button>
-    <button
-      onClick={() => {
-        // You could implement logic to go to next question by ID
-        const nextId = parseInt(question.id) + 1;
-        // This would require fetching the next question's slug
-        // For now, go back to list
-        navigate('/interview-questions');
-      }}
-      className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 transition-colors"
-    >
-      Random Question →
-    </button>
-  </div>
-</div>
+              <div>
+                <Link 
+                  to="/interview-questions"
+                  className="group inline-flex items-center gap-2 text-slate-400 hover:text-teal-400 transition-colors px-4 py-2 bg-slate-800/50 hover:bg-slate-800 rounded-lg"
+                >
+                  <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  Back to All Questions
+                </Link>
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => navigate(-1)}
+                  className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 transition-colors"
+                >
+                  ← Previous
+                </button>
+                <button
+                  onClick={() => navigate('/interview-questions')}
+                  className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white bg-slate-900 hover:bg-slate-800 rounded-lg border border-slate-800 transition-colors"
+                >
+                  Random Question →
+                </button>
+              </div>
+            </div>
           </div>
-        </m.div>
+        </div>
       </main>
     </div>
   );

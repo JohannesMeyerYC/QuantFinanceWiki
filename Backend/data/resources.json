@@ -894,5 +894,21 @@
     "link": "https://seekingalpha.com/",
     "category": "Websites Forums Blogs",
     "type": "Website"
+  },
+  {
+    "id": "113",
+    "title": "Tradermath",
+    "description": "An educational platform designed to help aspiring traders prepare for quantitative and mental math assessments used by top-tier proprietary trading firms and hedge funds.",
+    "link": "https://www.tradermath.org/?ref=johannes",
+    "category": "Education & Training",
+    "type": "Platform"
+  },
+  {
+    "id": "114",
+    "title": "The Wall Street Quants",
+    "description": "An intensive 12-week Quant Research & Trading bootcamp taught by industry professionals from firms like Point72 and AQR. Focuses on practical skills, portfolio building, and placement at top-tier hedge funds and HFTs.",
+    "link": "https://thewallstreetquants.com/survey?ori=jmey",
+    "category": "Education & Training",
+    "type": "Bootcamp"
   }
 ]

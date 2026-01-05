@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { m } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -72,7 +71,7 @@ const DifficultyBadge = ({ level }) => {
 };
 
 // Roadmap card component with memoization
-const RoadmapCard = React.memo(({ roadmap, onTrackClick }) => {
+const RoadmapCard = React.memo(({ roadmap, onTrackClick, index }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   
   const handleClick = useCallback(() => {
@@ -88,14 +87,14 @@ const RoadmapCard = React.memo(({ roadmap, onTrackClick }) => {
   }, [roadmap.id, roadmap.title, onTrackClick]);
 
   return (
-    <m.article
-      variants={itemVariants}
+    <article
       role="listitem"
-      className="relative"
+      className="relative animate-in opacity-0"
+      style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'forwards' }}
     >
       <Link
         to={`/roadmaps/${roadmap.id}`}
-        className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden"
+        className="group flex flex-col h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-15px_rgba(20,184,166,0.3)] relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-teal-500/50"
         aria-label={`View roadmap for ${roadmap.title} - ${roadmap.difficulty || 'Beginner'} level, estimated ${roadmap.estimatedTime || 'Varies'}`}
         onClick={handleClick}
         onMouseEnter={() => setShowTooltip(true)}
@@ -155,28 +154,11 @@ const RoadmapCard = React.memo(({ roadmap, onTrackClick }) => {
           </div>
         </div>
       </Link>
-    </m.article>
+    </article>
   );
 });
 
 RoadmapCard.displayName = 'RoadmapCard';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05 }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
-  show: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.2, ease: "easeOut" }
-  }
-};
 
 // Custom hook for debounced search
 function useDebouncedValue(value, delay) {
@@ -373,6 +355,15 @@ function Roadmaps() {
         <meta property="og:url" content="https://QuantFinanceWiki.com/roadmaps" />
         <link rel="canonical" href="https://QuantFinanceWiki.com/roadmaps" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <style type="text/css">{`
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-in {
+            animation: fadeInUp 0.4s ease-out forwards;
+          }
+        `}</style>
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-900/50 overflow-hidden">
@@ -380,7 +371,7 @@ function Roadmaps() {
           <div className="absolute bottom-0 right-20 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px]"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 py-20 relative z-10 animate-in">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-bold uppercase tracking-wider mb-6">
             Career Guides
           </div>
@@ -468,19 +459,17 @@ function Roadmaps() {
         </div>
 
         {/* Roadmaps Grid */}
-        <m.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
+        <div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           role="list"
           id="roadmap-list"
         >
           {visibleRoadmaps.length > 0 ? (
-            visibleRoadmaps.map(roadmap => (
+            visibleRoadmaps.map((roadmap, index) => (
               <RoadmapCard
                 key={roadmap.id}
                 roadmap={roadmap}
+                index={index}
                 onTrackClick={handleTrackClick}
               />
             ))
@@ -501,7 +490,7 @@ function Roadmaps() {
               </button>
             </div>
           )}
-        </m.div>
+        </div>
 
         {/* Load More Button */}
         {visibleCount < filteredRoadmaps.length && (

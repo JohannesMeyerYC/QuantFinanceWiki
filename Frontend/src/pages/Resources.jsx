@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef, memo } from 'react';
-import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
-
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -68,13 +66,7 @@ const ResourceItem = memo(({ item, onPreview }) => {
   const isPdf = typeLower === 'pdf' || typeLower === 'cheatsheet';
   
   return (
-    <m.article
-      layout
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      className="flex flex-col bg-[#0f1623] border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all"
-    >
+    <article className="flex flex-col bg-[#0f1623] border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all animate-fade-in opacity-0 fill-mode-forwards">
       <div className="h-40 bg-slate-900/50 flex items-center justify-center relative border-b border-slate-800 group">
         <IconComponent />
         <div className="absolute top-4 right-4 bg-slate-950 border border-slate-800 px-2 py-1 rounded text-[10px] font-bold text-slate-300 uppercase tracking-wider">
@@ -91,7 +83,7 @@ const ResourceItem = memo(({ item, onPreview }) => {
             <div className="flex gap-3">
               <button 
                 onClick={() => onPreview(item)}
-                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-bold transition-all"
+                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-bold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
                 aria-label={`Preview ${item.title}`}
               >
                 Preview
@@ -99,7 +91,7 @@ const ResourceItem = memo(({ item, onPreview }) => {
               <a 
                 href={`/pdfs/${item.filename}`} 
                 download={item.filename}
-                className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all"
+                className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
                 aria-label={`Download ${item.title}`}
               >
                 Download
@@ -110,7 +102,7 @@ const ResourceItem = memo(({ item, onPreview }) => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer" 
-              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2"
+              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
               aria-label={`Open ${item.type}: ${item.title}`}
             >
               <span>Open {item.type}</span>
@@ -121,7 +113,7 @@ const ResourceItem = memo(({ item, onPreview }) => {
           )}
         </div>
       </div>
-    </m.article>
+    </article>
   );
 });
 
@@ -129,14 +121,6 @@ ResourceItem.displayName = 'ResourceItem';
 
 function normalizeString(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-}
-
-function debounce(func, delay) {
-  let timeoutId;
-  return function(...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func.apply(this, args), delay);
-  };
 }
 
 function throttle(func, limit) {
@@ -166,7 +150,7 @@ function Resources() {
   const abortControllerRef = useRef(null);
   const modalRef = useRef(null);
 
-  // Fetch resources with abort controller
+  // Fetch resources
   useEffect(() => {
     abortControllerRef.current = new AbortController();
     
@@ -185,12 +169,10 @@ function Resources() {
         
         const data = await response.json();
         
-        // Validate response structure
         if (!Array.isArray(data)) {
           throw new Error('Invalid API response format');
         }
         
-        // Normalize resource types
         const normalizedData = data.map(resource => ({
           ...resource,
           type: resource.type?.charAt(0).toUpperCase() + resource.type?.slice(1).toLowerCase() || 'Other'
@@ -225,13 +207,12 @@ function Resources() {
     };
   }, [searchQuery]);
 
-  // Modal effects
+  // Modal focus trap & effects
   useEffect(() => {
     if (previewResource) {
       document.body.style.overflow = 'hidden';
       setPageNumber(1);
       
-      // Focus trap for modal
       const handleKeyDown = (e) => {
         if (e.key === 'Escape') {
           setPreviewResource(null);
@@ -260,7 +241,7 @@ function Resources() {
     }
   }, [previewResource]);
 
-  // Throttled resize handler
+  // Resize handler
   useEffect(() => {
     const handleResize = throttle(() => {
       const newWidth = Math.min(window.innerWidth - 48, 1000);
@@ -349,7 +330,7 @@ function Resources() {
           <p className="text-slate-300 mb-4">{error}</p>
           <button 
             onClick={() => window.location.reload()} 
-            className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-lg transition-colors"
+            className="px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
           >
             Retry
           </button>
@@ -362,6 +343,25 @@ function Resources() {
     <div className="min-h-screen bg-[#020617] text-slate-200 font-sans selection:bg-teal-500/30 overflow-x-hidden">
       <Helmet>
         <title>Resource Library | QuantFinanceWiki</title>
+        <style type="text/css">{`
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+          }
+          .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+          }
+          .animate-scale-in {
+            animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          .fill-mode-forwards {
+            animation-fill-mode: forwards;
+          }
+        `}</style>
       </Helmet>
       
       <header className="relative bg-slate-900/50 border-b border-slate-800 pt-32 pb-16 overflow-hidden">
@@ -383,7 +383,7 @@ function Resources() {
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder="Search guides, algorithms, cheat sheets..."
-            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl py-4 px-4 text-slate-200 focus:border-teal-500 focus:outline-none"
+            className="w-full bg-slate-950/50 border border-slate-800 rounded-xl py-4 px-4 text-slate-200 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             aria-label="Search resources"
           />
           <div className="flex items-center gap-2 overflow-x-auto pb-2">
@@ -392,10 +392,10 @@ function Resources() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={cn(
-                  "px-4 py-2 rounded-lg text-xs font-bold uppercase border transition-all whitespace-nowrap",
+                  "px-4 py-2 rounded-lg text-xs font-bold uppercase border transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50",
                   selectedCategory === cat
                     ? "bg-teal-500 border-teal-500 text-white"
-                    : "bg-slate-900 border-slate-800 text-slate-300"
+                    : "bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-600"
                 )}
                 aria-label={`Filter by ${cat}`}
                 aria-pressed={selectedCategory === cat}
@@ -419,22 +419,20 @@ function Resources() {
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <AnimatePresence mode="popLayout">
-                {visibleResources.map((item) => (
-                  <ResourceItem
-                    key={item.id}
-                    item={item}
-                    onPreview={setPreviewResource}
-                  />
-                ))}
-              </AnimatePresence>
+              {visibleResources.map((item) => (
+                <ResourceItem
+                  key={item.id}
+                  item={item}
+                  onPreview={setPreviewResource}
+                />
+              ))}
             </div>
 
             {visibleCount < filteredResources.length && (
               <div className="mt-16 flex justify-center">
                 <button 
                   onClick={handleLoadMore} 
-                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-teal-400 font-bold rounded-lg border border-slate-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-teal-400 font-bold rounded-lg border border-slate-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
                   aria-label="Load more resources"
                 >
                   Load More ({filteredResources.length - visibleCount} remaining)
@@ -445,116 +443,109 @@ function Resources() {
         )}
       </main>
 
-      <AnimatePresence>
-        {previewResource && (
-          <m.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="modal-title"
-            ref={modalRef}
+      {/* Modal - Rendered conditionally without AnimatePresence */}
+      {previewResource && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in fill-mode-forwards"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+          ref={modalRef}
+        >
+          <div 
+            className="absolute inset-0 bg-black/90 backdrop-blur-md"
+            onClick={handleCloseModal}
+            aria-label="Close modal"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && handleCloseModal()}
+          />
+
+          <div 
+            className="relative w-full max-w-5xl h-auto max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in fill-mode-forwards opacity-0"
           >
-            <div 
-              className="absolute inset-0 bg-black/90 backdrop-blur-md"
-              onClick={handleCloseModal}
-              aria-label="Close modal"
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && handleCloseModal()}
-            />
-
-            <m.div 
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-5xl h-auto max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
-            >
-              <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950 shrink-0">
-                <h3 
-                  id="modal-title"
-                  className="text-slate-200 font-semibold truncate max-w-[50%] text-sm sm:text-base"
-                >
-                  {previewResource.title}
-                </h3>
-                
-                <div className="flex items-center gap-2 sm:gap-4">
-                  {numPages && (
-                    <div className="flex items-center gap-1 sm:gap-2 bg-slate-900 rounded-lg p-1 border border-slate-800">
-                      <button 
-                        disabled={pageNumber <= 1}
-                        onClick={() => handlePageNavigation('prev')}
-                        className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white"
-                        aria-label="Previous page"
-                      >
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                      <span className="text-[10px] sm:text-xs font-mono text-slate-300 min-w-[40px] sm:min-w-[60px] text-center">
-                        {pageNumber} / {numPages}
-                      </span>
-                      <button 
-                        disabled={pageNumber >= numPages}
-                        onClick={() => handlePageNavigation('next')}
-                        className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white"
-                        aria-label="Next page"
-                      >
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    </div>
-                  )}
-
-                  <button 
-                    onClick={handleCloseModal}
-                    className="p-2 text-slate-300 hover:text-red-400 hover:bg-slate-900 rounded-lg"
-                    aria-label="Close preview"
-                  >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div className="overflow-auto bg-slate-800/50 flex justify-center p-4 min-h-[200px]">
-                <Document
-                  file={`/pdfs/${previewResource.filename}`}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  loading={
-                    <div className="flex flex-col items-center mt-10 gap-4">
-                      <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
-                      <p className="text-teal-500 text-xs animate-pulse">Rendering...</p>
-                    </div>
-                  }
-                  error={
-                    <div className="flex flex-col items-center mt-10 text-red-400">
-                      <svg className="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950 shrink-0">
+              <h3 
+                id="modal-title"
+                className="text-slate-200 font-semibold truncate max-w-[50%] text-sm sm:text-base"
+              >
+                {previewResource.title}
+              </h3>
+              
+              <div className="flex items-center gap-2 sm:gap-4">
+                {numPages && (
+                  <div className="flex items-center gap-1 sm:gap-2 bg-slate-900 rounded-lg p-1 border border-slate-800">
+                    <button 
+                      disabled={pageNumber <= 1}
+                      onClick={() => handlePageNavigation('prev')}
+                      className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+                      aria-label="Previous page"
+                    >
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
-                      <p className="font-semibold">Failed to load PDF</p>
-                      <p className="text-sm">The file may be corrupted or unavailable</p>
-                    </div>
-                  }
-                  className="shadow-2xl"
+                    </button>
+                    <span className="text-[10px] sm:text-xs font-mono text-slate-300 min-w-[40px] sm:min-w-[60px] text-center">
+                      {pageNumber} / {numPages}
+                    </span>
+                    <button 
+                      disabled={pageNumber >= numPages}
+                      onClick={() => handlePageNavigation('next')}
+                      className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+                      aria-label="Next page"
+                    >
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
+
+                <button 
+                  onClick={handleCloseModal}
+                  className="p-2 text-slate-300 hover:text-red-400 hover:bg-slate-900 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
+                  aria-label="Close preview"
                 >
-                  <Page 
-                    pageNumber={pageNumber} 
-                    width={pdfWidth}
-                    renderTextLayer={true}
-                    renderAnnotationLayer={true}
-                    className="bg-white" 
-                  />
-                </Document>
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
-            </m.div>
-          </m.div>
-        )}
-      </AnimatePresence>
+            </div>
+
+            <div className="overflow-auto bg-slate-800/50 flex justify-center p-4 min-h-[200px]">
+              <Document
+                file={`/pdfs/${previewResource.filename}`}
+                onLoadSuccess={onDocumentLoadSuccess}
+                loading={
+                  <div className="flex flex-col items-center mt-10 gap-4">
+                    <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
+                    <p className="text-teal-500 text-xs animate-pulse">Rendering...</p>
+                  </div>
+                }
+                error={
+                  <div className="flex flex-col items-center mt-10 text-red-400">
+                    <svg className="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="font-semibold">Failed to load PDF</p>
+                    <p className="text-sm">The file may be corrupted or unavailable</p>
+                  </div>
+                }
+                className="shadow-2xl"
+              >
+                <Page 
+                  pageNumber={pageNumber} 
+                  width={pdfWidth}
+                  renderTextLayer={true}
+                  renderAnnotationLayer={true}
+                  className="bg-white" 
+                />
+              </Document>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -20,7 +20,7 @@ const CodeBlock = ({ inline, className, children, ...props }) => {
         <span className="text-xs font-mono text-slate-400 uppercase tracking-widest">{match[1]}</span>
         <button 
           onClick={() => navigator.clipboard.writeText(codeContent)}
-          className="text-xs text-slate-500 hover:text-teal-400 transition-colors"
+          className="text-xs text-slate-500 hover:text-teal-400 transition-colors focus:outline-none focus:text-teal-400"
         >
           Copy Code
         </button>
@@ -95,7 +95,7 @@ export const RenderBlock = ({ block }) => {
       >
         <a 
           href={`#${id}`} 
-          className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-all duration-200 text-teal-500 no-underline md:-left-8"
+          className="absolute -left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-teal-500 no-underline md:-left-8"
         >
           #
         </a>

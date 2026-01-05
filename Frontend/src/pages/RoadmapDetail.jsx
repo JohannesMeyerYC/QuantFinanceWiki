@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { m, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function cn(...inputs) {
@@ -19,7 +19,7 @@ const SectionTab = ({ active, label, onClick, id, controls }) => (
     id={id}
     tabIndex={active ? 0 : -1}
     className={cn(
-      "px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-200 border whitespace-nowrap snap-center",
+      "px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-200 border whitespace-nowrap snap-center focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500",
       active
         ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)]"
         : "bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-slate-200"
@@ -36,7 +36,7 @@ const RoleCard = ({ role }) => {
   const isExpandable = role.focus.split('. ').length > 1;
 
   return (
-    <article className="flex-1 bg-slate-900/40 border border-slate-800 rounded-xl p-6 md:p-8 hover:border-teal-500/30 transition-all group active:scale-[0.99] duration-200">
+    <article className="flex-1 bg-slate-900/40 border border-slate-800 rounded-xl p-6 md:p-8 hover:border-teal-500/30 transition-all group duration-200">
       <header className="flex items-center gap-3 mb-4 md:mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-teal-400 transition-colors">
           {role.team}
@@ -50,7 +50,7 @@ const RoleCard = ({ role }) => {
             {isExpandable && (
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="ml-2 text-teal-400 font-bold underline text-sm"
+                className="ml-2 text-teal-400 font-bold underline text-sm hover:text-teal-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
               >
                 {expanded ? 'Show Less' : 'Read More'}
               </button>
@@ -83,27 +83,24 @@ const TimelineStep = ({ step, index, isLast }) => {
         <div className="absolute left-[19px] top-10 bottom-0 w-0.5 bg-gradient-to-b from-teal-500/50 to-slate-800" aria-hidden="true" />
       )}
 
-      <m.button
+      <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls={contentId}
         id={headerId}
         className={cn(
-          "absolute left-0 top-0 w-10 h-10 rounded-full border-2 flex items-center justify-center z-10 transition-colors bg-slate-950",
+          "absolute left-0 top-0 w-10 h-10 rounded-full border-2 flex items-center justify-center z-10 transition-colors bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500",
           isOpen ? "border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.3)]" : "border-slate-700 text-slate-500 hover:border-slate-500"
         )}
-        whileTap={{ scale: 0.95 }}
       >
         <span className="font-bold text-sm">{index + 1}</span>
         <span className="sr-only">Toggle details for {step.title}</span>
-      </m.button>
+      </button>
 
-      <m.div
-        layout
-        transition={{ duration: 0.2, ease: "easeOut" }}
+      <div
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "bg-slate-900/50 border rounded-xl p-5 md:p-6 cursor-pointer transition-all duration-200 active:scale-[0.99]",
+          "bg-slate-900/50 border rounded-xl p-5 md:p-6 cursor-pointer transition-all duration-200",
           isOpen ? "border-teal-500/50 bg-slate-900/80" : "border-slate-800 hover:border-slate-700"
         )}
       >
@@ -115,25 +112,21 @@ const TimelineStep = ({ step, index, isLast }) => {
             ›
           </span>
         </div>
-        <AnimatePresence>
-          {isOpen && (
-            <m.div
-              id={contentId}
-              role="region"
-              aria-labelledby={headerId}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="text-slate-300 leading-relaxed overflow-hidden text-sm md:text-base"
-            >
-              <div className="pt-4 border-t border-slate-800/50 mt-4">
-                {step.description}
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
-      </m.div>
+        
+        {/* CSS Grid Accordion for smooth height animation without JS */}
+        <div 
+          id={contentId}
+          role="region"
+          aria-labelledby={headerId}
+          className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+        >
+          <div className="overflow-hidden">
+             <div className="pt-4 border-t border-slate-800/50 mt-4 text-slate-300 leading-relaxed text-sm md:text-base">
+              {step.description}
+            </div>
+          </div>
+        </div>
+      </div>
     </li>
   );
 };
@@ -147,8 +140,11 @@ const SkillBadge = ({ skill }) => {
     }
   };
 
+  const widthClass = skill.level === 'Expert' ? 'w-full' : 'w-3/4';
+  const barColor = skill.level === 'Expert' ? 'bg-rose-500' : 'bg-amber-500';
+
   return (
-    <article className="bg-slate-900 border border-slate-800 rounded-lg p-5 flex flex-col justify-between hover:border-slate-700 transition-all group active:scale-[0.98]">
+    <article className="bg-slate-900 border border-slate-800 rounded-lg p-5 flex flex-col justify-between hover:border-slate-700 transition-all group">
       <div>
         <div className="flex justify-between items-start mb-3">
           <h4 className="font-bold text-slate-200">{skill.name}</h4>
@@ -159,12 +155,8 @@ const SkillBadge = ({ skill }) => {
         <p className="text-sm text-slate-500 group-hover:text-slate-300 transition-colors leading-snug">{skill.importance}</p>
       </div>
       <div className="w-full bg-slate-800 h-1.5 mt-5 rounded-full overflow-hidden" role="progressbar" aria-valuenow={skill.level === 'Expert' ? 100 : 75} aria-valuemin="0" aria-valuemax="100">
-        <m.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: skill.level === 'Expert' ? 1 : 0.75 }}
-          style={{ originX: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className={cn("h-full w-full rounded-full", skill.level === 'Expert' ? 'bg-rose-500' : 'bg-amber-500')}
+        <div
+          className={cn("h-full rounded-full animate-grow-bar origin-left", widthClass, barColor)}
         />
       </div>
     </article>
@@ -181,36 +173,26 @@ const OverviewDescription = ({ description }) => {
 
   return (
     <div className="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
-      <p className="m-0">{firstSentence}.</p>
+      <p className="m-0 inline">{firstSentence}.</p>
 
-      <AnimatePresence initial={false}>
-        {expanded && (
-          <m.p
-            key="expanded-text"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="overflow-hidden m-0"
-          >
-            {restText}
-          </m.p>
-        )}
-      </AnimatePresence>
+      <div className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${expanded ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'}`}>
+        <div className="overflow-hidden">
+          <p className="m-0">{restText}</p>
+        </div>
+      </div>
 
       {isExpandable && (
-        <m.button
+        <button
           onClick={() => setExpanded(!expanded)}
-          whileTap={{ scale: 0.98 }}
           className={cn(
-            "mt-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-300 border",
+            "mt-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full text-sm font-bold transition-all duration-300 border focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500",
             expanded
-              ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)] hover:bg-teal-500/20 hover:shadow-[0_0_25px_rgba(20,184,166,0.25)]"
+              ? "bg-teal-500/10 border-teal-500 text-teal-400 shadow-[0_0_15px_rgba(20,184,166,0.2)]"
               : "bg-slate-800 border-slate-700 text-slate-300 hover:border-slate-600 hover:text-slate-200"
           )}
         >
           {expanded ? 'Show Less' : 'Read More'}
-        </m.button>
+        </button>
       )}
     </div>
   );
@@ -316,11 +298,27 @@ function RoadmapDetail() {
         <meta property="og:title" content={`${data.title} Roadmap`} />
         <meta property="og:description" content={data.description} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <style type="text/css">{`
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes growBar {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+          }
+          .animate-fade-in-up {
+            animation: fadeInUp 0.4s ease-out forwards;
+          }
+          .animate-grow-bar {
+            animation: growBar 0.8s ease-out forwards;
+          }
+        `}</style>
       </Helmet>
 
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-40 transition-all">
         <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center gap-3 md:gap-4">
-          <Link to="/roadmaps" className="text-sm font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1" aria-label="Back to Roadmaps">
+          <Link to="/roadmaps" className="text-sm font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-1 p-1 -ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded" aria-label="Back to Roadmaps">
             <span className="text-lg leading-none" aria-hidden="true">←</span>
             <span className="hidden xs:inline">Back</span>
           </Link>
@@ -334,7 +332,7 @@ function RoadmapDetail() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 relative">
         <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-teal-500/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" aria-hidden="true"></div>
 
-        <section className="mb-8 md:mb-12 relative z-10">
+        <section className="mb-8 md:mb-12 relative z-10 animate-fade-in-up">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight leading-tight">{data.title}</h2>
 
           <OverviewDescription description={data.description} />
@@ -378,18 +376,14 @@ function RoadmapDetail() {
           />
         </nav>
 
-        <AnimatePresence mode='wait'>
-
+        <div className="min-h-[400px]">
           {activeTab === 'overview' && (
-            <m.section
+            <section
               key="overview"
               role="tabpanel"
               id="panel-overview"
               aria-labelledby="tab-overview"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="animate-fade-in-up"
             >
               <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Career Paths</h3>
               <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-12 md:mb-16">
@@ -401,7 +395,7 @@ function RoadmapDetail() {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Checklist</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 {data.roadmap?.map((item, idx) => (
-                  <article key={idx} className="bg-slate-900/30 p-5 md:p-6 rounded-xl border border-slate-800/50 hover:border-slate-700 transition-all active:scale-[0.98]">
+                  <article key={idx} className="bg-slate-900/30 p-5 md:p-6 rounded-xl border border-slate-800/50 hover:border-slate-700 transition-all">
                     <div className="flex items-center gap-3 mb-2 md:mb-3 text-teal-400">
                       <span className="font-bold text-lg" aria-hidden="true">✓</span>
                       <h4 className="font-bold text-slate-200 text-sm md:text-base">{item.title}</h4>
@@ -410,20 +404,16 @@ function RoadmapDetail() {
                   </article>
                 ))}
               </div>
-            </m.section>
+            </section>
           )}
 
           {activeTab === 'roadmap' && (
-            <m.section
+            <section
               key="roadmap"
               role="tabpanel"
               id="panel-roadmap"
               aria-labelledby="tab-roadmap"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="max-w-3xl"
+              className="max-w-3xl animate-fade-in-up"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Step by Step</h3>
               <p className="text-slate-500 mb-8 md:mb-10 text-base md:text-lg">Follow this order to learn effectively.</p>
@@ -438,19 +428,16 @@ function RoadmapDetail() {
                   />
                 ))}
               </ul>
-            </m.section>
+            </section>
           )}
 
           {activeTab === 'skills' && (
-            <m.section
+            <section
               key="skills"
               role="tabpanel"
               id="panel-skills"
               aria-labelledby="tab-skills"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="animate-fade-in-up"
             >
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8">What You Need to Know</h3>
 
@@ -459,19 +446,16 @@ function RoadmapDetail() {
                   <SkillBadge key={idx} skill={skill} />
                 ))}
               </div>
-            </m.section>
+            </section>
           )}
 
           {activeTab === 'knowledge' && (
-            <m.section
+            <section
               key="knowledge"
               role="tabpanel"
               id="panel-knowledge"
               aria-labelledby="tab-knowledge"
-              initial={{ opacity: 0, y: 5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -5 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="animate-fade-in-up"
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 md:mb-10 gap-6">
                 <div>
@@ -486,7 +470,7 @@ function RoadmapDetail() {
                     placeholder="Search resources..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-lg py-3 px-4 text-base md:text-sm focus:border-teal-500 focus:outline-none placeholder-slate-600"
+                    className="w-full bg-slate-900 border border-slate-700 rounded-lg py-3 px-4 text-base md:text-sm focus:border-teal-500 focus:outline-none placeholder-slate-600 transition-colors"
                   />
                 </div>
               </div>
@@ -497,7 +481,7 @@ function RoadmapDetail() {
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   {filteredResources.map((res, idx) => (
-                    <article key={idx} className="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-slate-800 flex flex-col hover:border-slate-700 transition-all active:scale-[0.99]">
+                    <article key={idx} className="bg-slate-900/50 p-5 md:p-6 rounded-xl border border-slate-800 flex flex-col hover:border-slate-700 transition-all">
                       <div className="flex justify-between items-start mb-3">
                         <h5 className="font-bold text-slate-200 text-base md:text-lg">{res.title}</h5>
                         <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-1 rounded border border-slate-700 uppercase font-bold tracking-wider whitespace-nowrap ml-2">{res.type}</span>
@@ -516,7 +500,7 @@ function RoadmapDetail() {
                             href={res.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-sm font-bold text-teal-400 hover:text-teal-300 transition-colors group/link ml-auto p-1"
+                            className="inline-flex items-center gap-1 text-sm font-bold text-teal-400 hover:text-teal-300 transition-colors group/link ml-auto p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded"
                             aria-label={`View resource: ${res.title}`}
                           >
                             View Resource
@@ -535,7 +519,7 @@ function RoadmapDetail() {
                 </h4>
                 <div className="space-y-4">
                   {filteredSchools.map((school, idx) => (
-                    <article key={idx} className="flex flex-col md:flex-row md:items-center justify-between p-5 rounded-xl border border-slate-800/50 hover:bg-slate-900 transition-colors bg-slate-900/20 active:scale-[0.99]">
+                    <article key={idx} className="flex flex-col md:flex-row md:items-center justify-between p-5 rounded-xl border border-slate-800/50 hover:bg-slate-900 transition-colors bg-slate-900/20">
                       <div className="mb-3 md:mb-0">
                         <h5 className="font-bold text-slate-200">{school.name}</h5>
                         <p className="text-sm text-indigo-400 mt-1">{school.program}</p>
@@ -550,10 +534,9 @@ function RoadmapDetail() {
                 </div>
               </div>
 
-            </m.section>
+            </section>
           )}
-
-        </AnimatePresence>
+        </div>
       </div>
     </div>
   );
