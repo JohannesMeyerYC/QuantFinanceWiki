@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+
 
 const API_URL = import.meta.env.VITE_API_URL;
 const SITE_URL = "https://QuantFinanceWiki.com";
@@ -69,7 +71,7 @@ const HighlightedText = ({ text, highlight }) => {
 };
 
 // Opportunity Card Component
-const OpportunityCard = React.memo(({ item, searchTerm = '' }) => {
+const OpportunityCard = React.memo(({ item, searchTerm = '', type = 'firm' }) => {
   if (!item) return null;
 
   const highlightSearch = (text) => {
@@ -78,24 +80,32 @@ const OpportunityCard = React.memo(({ item, searchTerm = '' }) => {
   };
 
   const getUniqueKey = item.id ?? `${item.name}-${item.location ?? 'global'}`;
+  const detailUrl = `/${type === 'firm' ? 'firms' : 'early-career'}/${item.slug || item.id}`;
 
   return (
     <article
-      className="group bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all hover:shadow-lg hover:shadow-black/20 active:scale-[0.99] animate-in"
+      className="group bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all hover:shadow-lg hover:shadow-black/20 animate-in cursor-pointer"
       itemScope
       itemType="https://schema.org/JobPosting"
       aria-labelledby={`opportunity-${getUniqueKey}`}
+      onClick={() => window.location.href = detailUrl}
     >
       <div className="p-5 md:p-8">
         <header className="flex flex-col md:flex-row justify-between items-start gap-3 md:gap-4 mb-4 md:mb-6">
-          <div>
+          <div className="w-full">
             <div className="flex flex-wrap items-center gap-3 mb-2">
               <h2
                 id={`opportunity-${getUniqueKey}`}
-                className="text-xl md:text-2xl font-bold text-white tracking-tight"
+                className="text-xl md:text-2xl font-bold text-white tracking-tight hover:text-teal-400 transition-colors"
                 itemProp="title"
               >
-                {highlightSearch(item.name)}
+                <Link
+                  to={detailUrl}
+                  className="hover:no-underline"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {highlightSearch(item.name)}
+                </Link>
               </h2>
               {item.category && (
                 <span
@@ -117,6 +127,20 @@ const OpportunityCard = React.memo(({ item, searchTerm = '' }) => {
                 </span>
               </div>
             )}
+          </div>
+
+          {/* View Details Button */}
+          <div className="md:ml-4">
+            <Link
+              to={detailUrl}
+              className="inline-flex items-center text-sm text-teal-400 hover:text-teal-300 font-medium px-3 py-1 border border-teal-500/30 rounded-lg hover:bg-teal-500/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+              onClick={(e) => e.stopPropagation()}
+            >
+              View Details
+              <svg className="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
           </div>
         </header>
 
@@ -175,6 +199,7 @@ const OpportunityCard = React.memo(({ item, searchTerm = '' }) => {
                     className="w-full md:w-auto text-center px-5 py-3 md:py-2.5 bg-teal-500 text-slate-950 rounded-lg text-sm font-bold hover:bg-teal-400 transition-colors flex items-center justify-center shadow-lg shadow-teal-900/20 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
                     aria-label={`Apply or view details for ${item.name}`}
                     itemProp="url"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     Apply / View <span className="ml-2" aria-hidden="true">→</span>
                   </a>
@@ -515,6 +540,7 @@ function Firms() {
                   key={`firm-${firm.id || firm.name}`}
                   item={firm}
                   searchTerm={debouncedSearchQuery}
+                  type="firm"
                 />
               ))}
             </div>
@@ -547,6 +573,7 @@ function Firms() {
                   key={`career-${opp.id || opp.name}`}
                   item={opp}
                   searchTerm={debouncedSearchQuery}
+                  type="early-career"
                 />
               ))}
             </div>

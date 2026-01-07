@@ -2,15 +2,10 @@ import React, { useState, useEffect, useMemo, useCallback, useRef, memo } from '
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import { Link } from 'react-router-dom';
 
 const API_URL = import.meta.env.VITE_API_URL;
 const ITEMS_PER_PAGE = 9;
-const RESIZE_DEBOUNCE_DELAY = 150;
 const SEARCH_DEBOUNCE_DELAY = 300;
 
 function cn(...inputs) { return twMerge(clsx(inputs)); }
@@ -60,10 +55,11 @@ const ICON_MAP = {
   default: DefaultIcon
 };
 
-const ResourceItem = memo(({ item, onPreview }) => {
+const ResourceItem = memo(({ item }) => {
   const typeLower = item.type?.toLowerCase() || 'default';
   const IconComponent = ICON_MAP[typeLower] || ICON_MAP.default;
   const isPdf = typeLower === 'pdf' || typeLower === 'cheatsheet';
+  const isExternalLink = item.link && !isPdf;
   
   return (
     <article className="flex flex-col bg-[#0f1623] border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/30 transition-all animate-fade-in opacity-0 fill-mode-forwards">
@@ -80,36 +76,35 @@ const ResourceItem = memo(({ item, onPreview }) => {
         
         <div className="mt-auto">
           {isPdf ? (
-            <div className="flex gap-3">
-              <button 
-                onClick={() => onPreview(item)}
-                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-bold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-                aria-label={`Preview ${item.title}`}
-              >
-                Preview
-              </button>
-              <a 
-                href={`/pdfs/${item.filename}`} 
-                download={item.filename}
-                className="flex-1 flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-                aria-label={`Download ${item.title}`}
-              >
-                Download
-              </a>
-            </div>
-          ) : (
             <a 
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-              aria-label={`Open ${item.type}: ${item.title}`}
+              href={`/pdfs/${item.filename}`} 
+              download={item.filename}
+              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+              aria-label={`Download ${item.title}`}
             >
-              <span>Open {item.type}</span>
+              Download PDF
+            </a>
+          ) : isExternalLink ? (
+            <Link 
+              to={`/resources/${item.slug || item.id}`}
+              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+              aria-label={`View details for ${item.type}: ${item.title}`}
+            >
+              <span>View Details</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </a>
+            </Link>
+          ) : (
+            <Link 
+              to={`/resources/${item.slug || item.id}`}
+              className="w-full flex items-center justify-center py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-teal-500/50 text-teal-400 font-bold transition-all gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+            >
+              <span>View Details</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
           )}
         </div>
       </div>
@@ -123,17 +118,6 @@ function normalizeString(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
-function throttle(func, limit) {
-  let inThrottle;
-  return function(...args) {
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-}
-
 function Resources() {
   const [resources, setResources] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -142,13 +126,8 @@ function Resources() {
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
-  const [previewResource, setPreviewResource] = useState(null);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [pdfWidth, setPdfWidth] = useState(600);
   
   const abortControllerRef = useRef(null);
-  const modalRef = useRef(null);
 
   // Fetch resources
   useEffect(() => {
@@ -207,57 +186,6 @@ function Resources() {
     };
   }, [searchQuery]);
 
-  // Modal focus trap & effects
-  useEffect(() => {
-    if (previewResource) {
-      document.body.style.overflow = 'hidden';
-      setPageNumber(1);
-      
-      const handleKeyDown = (e) => {
-        if (e.key === 'Escape') {
-          setPreviewResource(null);
-        }
-        if (e.key === 'Tab' && modalRef.current) {
-          const focusableElements = modalRef.current.querySelectorAll(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-          );
-          const firstElement = focusableElements[0];
-          const lastElement = focusableElements[focusableElements.length - 1];
-          
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-      };
-      
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [previewResource]);
-
-  // Resize handler
-  useEffect(() => {
-    const handleResize = throttle(() => {
-      const newWidth = Math.min(window.innerWidth - 48, 1000);
-      setPdfWidth(newWidth);
-    }, RESIZE_DEBOUNCE_DELAY);
-    
-    window.addEventListener('resize', handleResize);
-    handleResize(); 
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const onDocumentLoadSuccess = useCallback(({ numPages }) => {
-    setNumPages(numPages);
-  }, []);
-
   const categories = useMemo(() => {
     return ['all', ...new Set(resources.map(r => r.category).filter(Boolean))];
   }, [resources]);
@@ -296,18 +224,6 @@ function Resources() {
   const handleSearchChange = useCallback((e) => {
     setSearchQuery(e.target.value);
   }, []);
-
-  const handleCloseModal = useCallback(() => {
-    setPreviewResource(null);
-  }, []);
-
-  const handlePageNavigation = useCallback((direction) => {
-    setPageNumber(prev => {
-      if (direction === 'prev' && prev > 1) return prev - 1;
-      if (direction === 'next' && prev < numPages) return prev + 1;
-      return prev;
-    });
-  }, [numPages]);
 
   if (loading) {
     return (
@@ -423,7 +339,6 @@ function Resources() {
                 <ResourceItem
                   key={item.id}
                   item={item}
-                  onPreview={setPreviewResource}
                 />
               ))}
             </div>
@@ -442,110 +357,6 @@ function Resources() {
           </>
         )}
       </main>
-
-      {/* Modal - Rendered conditionally without AnimatePresence */}
-      {previewResource && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in fill-mode-forwards"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-          ref={modalRef}
-        >
-          <div 
-            className="absolute inset-0 bg-black/90 backdrop-blur-md"
-            onClick={handleCloseModal}
-            aria-label="Close modal"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && handleCloseModal()}
-          />
-
-          <div 
-            className="relative w-full max-w-5xl h-auto max-h-[90vh] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in fill-mode-forwards opacity-0"
-          >
-            <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950 shrink-0">
-              <h3 
-                id="modal-title"
-                className="text-slate-200 font-semibold truncate max-w-[50%] text-sm sm:text-base"
-              >
-                {previewResource.title}
-              </h3>
-              
-              <div className="flex items-center gap-2 sm:gap-4">
-                {numPages && (
-                  <div className="flex items-center gap-1 sm:gap-2 bg-slate-900 rounded-lg p-1 border border-slate-800">
-                    <button 
-                      disabled={pageNumber <= 1}
-                      onClick={() => handlePageNavigation('prev')}
-                      className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-                      aria-label="Previous page"
-                    >
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    <span className="text-[10px] sm:text-xs font-mono text-slate-300 min-w-[40px] sm:min-w-[60px] text-center">
-                      {pageNumber} / {numPages}
-                    </span>
-                    <button 
-                      disabled={pageNumber >= numPages}
-                      onClick={() => handlePageNavigation('next')}
-                      className="p-1 hover:bg-slate-800 rounded disabled:opacity-30 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-                      aria-label="Next page"
-                    >
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                )}
-
-                <button 
-                  onClick={handleCloseModal}
-                  className="p-2 text-slate-300 hover:text-red-400 hover:bg-slate-900 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
-                  aria-label="Close preview"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="overflow-auto bg-slate-800/50 flex justify-center p-4 min-h-[200px]">
-              <Document
-                file={`/pdfs/${previewResource.filename}`}
-                onLoadSuccess={onDocumentLoadSuccess}
-                loading={
-                  <div className="flex flex-col items-center mt-10 gap-4">
-                    <div className="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin" />
-                    <p className="text-teal-500 text-xs animate-pulse">Rendering...</p>
-                  </div>
-                }
-                error={
-                  <div className="flex flex-col items-center mt-10 text-red-400">
-                    <svg className="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <p className="font-semibold">Failed to load PDF</p>
-                    <p className="text-sm">The file may be corrupted or unavailable</p>
-                  </div>
-                }
-                className="shadow-2xl"
-              >
-                <Page 
-                  pageNumber={pageNumber} 
-                  width={pdfWidth}
-                  renderTextLayer={true}
-                  renderAnnotationLayer={true}
-                  className="bg-white" 
-                />
-              </Document>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

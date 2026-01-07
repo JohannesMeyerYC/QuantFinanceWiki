@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
@@ -39,7 +39,7 @@ const socials = [
   color: 'hover:text-[#0070BA]',
   icon: (
     <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
-      <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.723C5.137 2.503 6.187 1.587 7.41 1.587h8.676c3.153 0 5.257 1.487 5.03 4.88-.223 3.327-2.31 5.253-5.32 5.253h-2.147l-.927 5.856c-.083.523-.533.911-1.063.911h-3.41l-.813 4.01c-.06.305-.327.523-.637.523h-.024zm12.067-12.86c.97-1.894.146-4.01-1.64-4.845-1.137-.53-2.62-.633-4.39-.633h-5.91c-.636 0-1.192.427-1.332 1.045L3.25 18.903c-.1.46.253.908.723.908h3.337l.634 3.09c.06.305.33.523.64.523h3.55c.422 0 .73-.396.643-.807l-.607-2.956.126-.486c.125-.486.562-.820 1.062-.820h1.34c4.084 0 6.64-2.204 7.505-6.43.344-1.675.143-3.17-.184-4.32z" />
+<path d="M20.43705,7.10449a3.82273,3.82273,0,0,0-.57281-.5238,4.72529,4.72529,0,0,0-1.15766-3.73987C17.6226,1.61914,15.77494,1,13.2144,1H7.00053A1.89234,1.89234,0,0,0,5.13725,2.5918L2.5474,18.99805A1.53317,1.53317,0,0,0,4.063,20.7832H6.72709l-.082.52051A1.46684,1.46684,0,0,0,8.0933,23h3.23438a1.76121,1.76121,0,0,0,1.751-1.46973l.64063-4.03125.01074-.05468h.29883c4.03223,0,6.55078-1.99317,7.28516-5.7627A5.149,5.149,0,0,0,20.43705,7.10449ZM7.84233,13.7041l-.71448,4.53528-.08631.54382H4.606L7.09721,3H13.2144c1.93554,0,3.31738.4043,3.99218,1.16406a2.96675,2.96675,0,0,1,.60791,2.73334l-.01861.11224c-.01215.07648-.0232.15119-.0434.24622a5.84606,5.84606,0,0,1-2.00512,3.67053,6.67728,6.67728,0,0,1-4.21753,1.183H9.70658A1.87969,1.87969,0,0,0,7.84233,13.7041Zm11.50878-2.40527c-.55078,2.82812-2.24218,4.14551-5.32226,4.14551h-.4834a1.76109,1.76109,0,0,0-1.751,1.47265l-.64941,4.07422L8.71733,21l.47815-3.03387.61114-3.85285h1.7193c.1568,0,.29541-.02356.44812-.02893.35883-.01239.71661-.02618,1.05267-.06787.20526-.02557.39362-.07221.59034-.1087.27252-.05036.54522-.10016.80108-.17127.19037-.053.368-.12121.54907-.18561.23926-.0849.4748-.174.69757-.27868.168-.0791.32807-.16706.48658-.25727a6.77125,6.77125,0,0,0,.61236-.39172c.14228-.1026.28192-.20789.415-.321a6.56392,6.56392,0,0,0,.53693-.51892c.113-.12055.2287-.23755.33331-.36725a7.09,7.09,0,0,0,.48-.69263c.07648-.12219.16126-.23523.23163-.36383a8.33175,8.33175,0,0,0,.52075-1.15326c.00867-.02386.02106-.044.02954-.068.004-.01123.00989-.02057.01386-.03186A4.29855,4.29855,0,0,1,19.35111,11.29883Z"/>
     </svg>
   )
 }
@@ -78,8 +78,27 @@ const jsonLd = [
 ];
 
 function Home() {
+  
+  // Lazy load images
+  useEffect(() => {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+    
+    return () => imageObserver.disconnect();
+  }, []);
   return (
-    <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+  <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
       <Helmet>
         <title>QuantFinanceWiki.com | Ultimate Quantitative Finance Career Roadmaps & Resources</title>
         <meta name="description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
@@ -107,33 +126,18 @@ function Home() {
             .hero-container { padding-top: 6rem; padding-bottom: 6rem; } 
             .hero-desc { max-width: 56rem; }
           }
-          
-          /* Custom Keyframes for lightweight entrance animation */
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .animate-in {
-            animation: fadeInUp 0.5s ease-out forwards;
-            opacity: 0; /* Start hidden */
-          }
         `}</style>
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-950 py-12 md:py-24 overflow-hidden hero-container">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
-           <div className="absolute top-10 left-10 w-32 h-32 md:w-72 md:h-72 bg-emerald-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform"></div>
-           <div className="absolute bottom-10 right-10 w-40 h-40 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 animate-in">
-          <div className="text-center">
-            <h1 className="hero-title">
-              Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">QFW.com</span>
-            </h1>
-            <p className="hero-desc">
-              The best place to learn about quantitative finance. Read detailed roadmaps, check out the blog, download free resources, and practice interview questions.
-            </p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center">
+          <h1 className="hero-title opacity-100 font-bold">
+            Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">QFW.com</span>
+          </h1>
+          <p className="hero-desc opacity-100 font-normal">
+            The best place to learn about quantitative finance. Read detailed roadmaps, check out the blog, download free resources, and practice interview questions.
+          </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-2">
               <Link to="/roadmaps" className="bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-95 w-full sm:w-auto text-sm sm:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">
                 Explore Roadmaps
@@ -147,7 +151,7 @@ function Home() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-16">
-        <div className="mb-8 md:mb-16 animate-in" style={{ animationDelay: '0.1s' }}>
+        <div className="mb-8 md:mb-16" style={{ animationDelay: '0.1s' }}>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center">What You Can Do Here</h2>
           <p className="text-slate-300 text-center max-w-2xl mx-auto mb-8">
             Everything you need for a quant finance career in one place.
@@ -161,7 +165,7 @@ function Home() {
           {/* Column 1 */}
           <div className="space-y-4 md:space-y-6">
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-emerald-900/20 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-emerald-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-emerald-900/20 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.15s' }}
             >
@@ -176,7 +180,7 @@ function Home() {
             </article>
 
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-teal-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-teal-900/20 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-teal-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-teal-900/20 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.2s' }}
             >
@@ -191,7 +195,7 @@ function Home() {
             </article>
 
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-purple-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-purple-900/20 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-purple-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-purple-900/20 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.25s' }}
             >
@@ -209,7 +213,7 @@ function Home() {
           {/* Column 2 */}
           <div className="space-y-4 md:space-y-6">
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-slate-900/50 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-slate-900/50 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.3s' }}
             >
@@ -224,7 +228,7 @@ function Home() {
             </article>
 
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-blue-900/20 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-blue-900/20 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.35s' }}
             >
@@ -239,7 +243,7 @@ function Home() {
             </article>
 
             <article 
-              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-amber-900/20 active:scale-[0.98] animate-in" 
+              className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-slate-800 hover:border-amber-500/50 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-lg hover:shadow-amber-900/20 active:scale-[0.98]" 
               role="listitem"
               style={{ animationDelay: '0.4s' }}
             >
@@ -257,7 +261,7 @@ function Home() {
 
         {/* Newsletter Section */}
 <div 
-  className="mb-12 md:mb-24 animate-in"
+  className="mb-12 md:mb-24"
   style={{ animationDelay: '0.5s' }}
 >
   <div className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-8 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-xl hover:shadow-emerald-900/10">

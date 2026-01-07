@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { Helmet } from 'react-helmet-async';
@@ -50,7 +50,8 @@ const CategoryBadge = ({ category }) => {
 const QuestionCard = React.memo(({ question, index, onExpand }) => {
   const [expanded, setExpanded] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  
+  const navigate = useNavigate();
+
   const toggleExpanded = useCallback(() => {
     const newExpanded = !expanded;
     setExpanded(newExpanded);
@@ -58,22 +59,40 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
       onExpand?.(question.id);
     }
   }, [expanded, question.id, onExpand]);
-  
+
   const handleShowAnswer = useCallback((e) => {
     e.stopPropagation();
     setShowAnswer(!showAnswer);
   }, [showAnswer]);
 
+  const handleViewDetails = useCallback((e) => {
+    e.stopPropagation();
+    if (question.slug) {
+      navigate(`/interview-questions/${question.slug}`);
+    } else {
+      // Fallback to ID if no slug
+      navigate(`/interview-questions/${question.id}`);
+    }
+  }, [navigate, question.slug, question.id]);
+
+  // Also update the card to show the slug in development if needed:
+  {
+    process.env.NODE_ENV === 'development' && question.slug && (
+      <div className="text-xs text-slate-600 mt-2 font-mono">
+        Slug: {question.slug}
+      </div>
+    )
+  }
+
   return (
     <article
-      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all duration-300 animate-in"
+      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all duration-300 animate-in group cursor-pointer"
       style={{ animationDelay: `${index * 50}ms` }}
       id={`question-${question.id}`}
+      onClick={toggleExpanded}
     >
       <div className="w-full text-left p-6 md:p-8">
-        <div 
-          onClick={toggleExpanded}
-          className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 rounded-lg"
+        <div className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 rounded-lg"
           role="button"
           aria-expanded={expanded}
           aria-controls={`answer-${question.id}`}
@@ -86,16 +105,21 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
           }}
         >
           <div className="flex-1">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
               <span className="text-sm font-bold text-slate-500">Q{question.id}</span>
               <DifficultyBadge level={question.difficulty} />
               <CategoryBadge category={question.category} />
+              {question.firm && (
+                <span className="text-xs font-bold text-slate-400 bg-slate-800/50 px-2 py-1 rounded border border-slate-700">
+                  {question.firm}
+                </span>
+              )}
             </div>
-            
-            <h3 className="text-lg md:text-xl font-bold text-slate-100 mb-3 leading-relaxed">
+
+            <h3 className="text-lg md:text-xl font-bold text-slate-100 mb-3 leading-relaxed group-hover:text-teal-300 transition-colors">
               {question.question}
             </h3>
-            
+
             {question.tags && question.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {question.tags.map((tag, idx) => (
@@ -106,19 +130,21 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
               </div>
             )}
           </div>
-          
-          <div className="flex items-center justify-between md:justify-end md:w-32 gap-3">
-            {question.firm && (
-              <span className="text-xs text-slate-500 font-bold bg-slate-800/50 px-2 py-1 rounded border border-slate-700">
-                {question.firm}
-              </span>
-            )}
+
+          <div className="flex items-center justify-between md:justify-end md:w-40 gap-3">
+            <button
+              onClick={handleViewDetails}
+              className="hidden md:inline-flex items-center px-3 py-1.5 text-xs font-medium text-teal-400 hover:text-teal-300 hover:bg-teal-500/10 border border-teal-500/30 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+              aria-label={`View full details for question ${question.id}`}
+            >
+              Full Solution
+            </button>
             <span className={`transition-transform duration-200 text-slate-500 ${expanded ? 'rotate-90' : ''}`} aria-hidden="true">
               ›
             </span>
           </div>
         </div>
-      
+
         {/* CSS Grid Accordion Animation */}
         <div
           id={`answer-${question.id}`}
@@ -135,32 +161,40 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
                 >
                   {showAnswer ? 'Hide Solution' : 'Show Solution'}
                 </button>
-                
-                
+
+                <button
+                  onClick={handleViewDetails}
+                  className="px-4 py-2 text-sm font-bold bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:bg-slate-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+                >
+                  View Full Page
+                </button>
               </div>
-              
+
               {/* Answer Content Accordion */}
-              <div 
+              <div
                 className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${showAnswer ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
               >
                 <div className="overflow-hidden">
-                   <div className="text-slate-300 leading-relaxed space-y-4 prose prose-invert max-w-none">
+                  <div className="text-slate-300 leading-relaxed space-y-4 prose prose-invert max-w-none">
                     {question.approach && (
                       <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700/50">
-                        <strong className="text-teal-400 block mb-1">Approach</strong> 
-                        {question.approach}
+                        <strong className="text-teal-400 block mb-1">Approach</strong>
+                        <p className="line-clamp-3">{question.approach}</p>
                       </div>
                     )}
-                    
+
                     <div className="p-4 bg-slate-900/50 rounded-lg border border-slate-700">
                       <strong className="text-white block mb-2">Answer</strong>
                       {typeof question.answer === 'string' ? (
-                        <p className="whitespace-pre-wrap m-0">{question.answer}</p>
+                        <p className="whitespace-pre-wrap m-0 line-clamp-4">{question.answer}</p>
                       ) : (
                         <ul className="list-disc pl-5 space-y-2 m-0">
-                          {question.answer?.map((point, idx) => (
-                            <li key={idx}>{point}</li>
+                          {question.answer?.slice(0, 3).map((point, idx) => (
+                            <li key={idx} className="line-clamp-2">{point}</li>
                           ))}
+                          {question.answer?.length > 3 && (
+                            <li className="text-slate-500">... and {question.answer.length - 3} more points</li>
+                          )}
                         </ul>
                       )}
                     </div>
@@ -179,17 +213,17 @@ QuestionCard.displayName = 'QuestionCard';
 
 function useDebouncedValue(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
-  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedValue(value);
     }, delay);
-    
+
     return () => {
       clearTimeout(timer);
     };
   }, [value, delay]);
-  
+
   return debouncedValue;
 }
 
@@ -202,7 +236,7 @@ function InterviewQuestions() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [visibleCount, setVisibleCount] = useState(QUESTIONS_PER_PAGE);
   const [expandedQuestionId, setExpandedQuestionId] = useState(null);
-  
+
   const debouncedSearchQuery = useDebouncedValue(searchQuery, SEARCH_DEBOUNCE_DELAY);
   const searchInputRef = useRef(null);
 
@@ -211,19 +245,19 @@ function InterviewQuestions() {
       try {
         setLoading(true);
         setError(null);
-        
+
         const response = await fetch(`${API_URL}/api/interview-questions`);
-        
+
         if (!response.ok) {
           throw new Error(`Failed to fetch questions: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        
+
         if (!Array.isArray(data)) {
           throw new Error('Invalid data format received');
         }
-        
+
         setQuestions(data);
       } catch (err) {
         console.error('Error fetching questions:', err);
@@ -232,7 +266,7 @@ function InterviewQuestions() {
         setLoading(false);
       }
     };
-    
+
     fetchQuestions();
   }, []);
 
@@ -240,7 +274,7 @@ function InterviewQuestions() {
     const allCategories = questions
       .map(q => q.category)
       .filter(Boolean);
-    
+
     return ['all', ...new Set(allCategories)].sort();
   }, [questions]);
 
@@ -251,13 +285,13 @@ function InterviewQuestions() {
       if (selectedDifficulty !== 'all') {
         if (question.difficulty?.toLowerCase() !== selectedDifficulty) return false;
       }
-      
+
       if (selectedCategory !== 'all') {
         if (question.category?.toLowerCase() !== selectedCategory.toLowerCase()) return false;
       }
-      
+
       if (!debouncedSearchQuery.trim()) return true;
-      
+
       const query = debouncedSearchQuery.toLowerCase();
       return (
         question.question?.toLowerCase().includes(query) ||
@@ -269,8 +303,8 @@ function InterviewQuestions() {
     });
   }, [questions, selectedDifficulty, selectedCategory, debouncedSearchQuery]);
 
-  const visibleQuestions = useMemo(() => 
-    filteredQuestions.slice(0, visibleCount), 
+  const visibleQuestions = useMemo(() =>
+    filteredQuestions.slice(0, visibleCount),
     [filteredQuestions, visibleCount]
   );
 
@@ -375,8 +409,8 @@ function InterviewQuestions() {
             </span>
           </h1>
           <p className="text-slate-300 text-xl max-w-3xl leading-relaxed mb-8">
-            Practice with questions from actual quantitative finance interviews. 
-            Includes probability, brainteasers, finance, programming, and statistics problems 
+            Practice with questions from actual quantitative finance interviews.
+            Includes probability, brainteasers, finance, programming, and statistics problems
             from top firms like Jane Street, Two Sigma, Citadel, and more.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -430,7 +464,7 @@ function InterviewQuestions() {
               )}
             </div>
           </div>
-          
+
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1">
               <span className="text-sm text-slate-400 font-medium mb-2 block">Difficulty</span>
@@ -453,7 +487,7 @@ function InterviewQuestions() {
                 ))}
               </div>
             </div>
-            
+
             <div className="flex-1">
               <span className="text-sm text-slate-400 font-medium mb-2 block">Category</span>
               <div className="flex flex-wrap gap-2">
@@ -521,12 +555,12 @@ function InterviewQuestions() {
               </div>
               <p className="text-slate-500 mb-2">No questions found</p>
               <p className="text-slate-400 text-sm mb-4">Try adjusting your search or filter criteria</p>
-              <button 
+              <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedDifficulty('all');
                   setSelectedCategory('all');
-                }} 
+                }}
                 className="text-teal-400 hover:text-teal-300 font-medium focus:outline-none focus:ring-2 focus:ring-teal-500/50 px-3 py-1 rounded"
               >
                 Clear Search

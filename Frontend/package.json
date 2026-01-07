@@ -10,8 +10,8 @@
     "start": "serve -s dist -l 3000 --config serve.json"
   },
   "dependencies": {
+    "@giscus/react": "^3.1.0",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
     "katex": "^0.16.27",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -19,10 +19,7 @@
     "react-helmet-async": "^2.0.5",
     "react-katex": "^3.1.0",
     "react-markdown": "^10.1.0",
-    "react-pdf": "^10.2.0",
     "react-router-dom": "^6.20.0",
-    "react-syntax-highlighter": "^16.1.0",
-    "recharts": "^3.6.0",
     "rehype-katex": "^7.0.1",
     "rehype-raw": "^7.0.0",
     "remark-breaks": "^4.0.0",

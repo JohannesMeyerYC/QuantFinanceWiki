@@ -184,111 +184,156 @@
     "type": "Cheatsheet"
   },
   {
-    "id": "24",
+    "id": "option-volatility-and-pricing-natenberg",
     "title": "Option Volatility and Pricing (Natenberg)",
-    "description": "The main book for derivatives trading. Covers risk management coverage clearly.",
+    "Content": [ { "type": "heading", "level": 1, "text": "Option Volatility & Pricing" }, { "type": "paragraph", "text": "The bestselling Option Volatility & Pricing has made Sheldon Natenberg a widely recognized authority in the option industry. At firms around the world, the text is often the first book that new professional traders are given to learn the trading strategies and risk management techniques required for success in option markets." }, { "type": "paragraph", "text": "Now, in this revised, updated, and expanded second edition, this thirty-year trading professional presents a guide to advanced trading strategies and techniques. Covering a wide range of topics, this text enables both new and experienced traders to study the many aspects of option markets, including:" }, { "type": "paragraph", "text": "* The foundations of option theory\n* Dynamic hedging\n* Volatility and directional trading strategies\n* Risk analysis\n* Position management\n* Stock index futures and options\n* Volatility contracts" }, { "type": "paragraph", "text": "The second edition of Option Volatility & Pricing is an addition to an option trader's library (as are Natenberg's seminars at derivatives exchanges and trading firms). You will learn how professional option traders approach the market, including the trading strategies and risk management techniques necessary for success. You will gain an understanding of how theoretical pricing models work. You will learn how to apply the principles of option evaluation to create strategies that, given a trader's assessment of market conditions and trends, have a chance of success. Option trading involves both technical science and practical application. This book shows how to apply both." } ],
+    "description": "The definitive guide to option trading strategies, volatility, and pricing models.",
     "link": "https://amzn.to/3MmU6tI",
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "25",
+    "id": "options-futures-and-other-derivatives-hull",
     "title": "Options, Futures, and Other Derivatives (Hull)",
     "description": "A standard school text that adds deep math to derivatives trading logic.",
     "link": "https://amzn.to/4pUO5Tw",
+    "Content": [ { "type": "heading", "level": 1, "text": "Options, Futures, and Other Derivatives" }, { "type": "paragraph", "text": "This text is for courses in business, economics, financial engineering, and mathematics. It serves as a guide to the derivatives market and includes contemporary examples and discussions. It is frequently used by business and economics professionals." }, { "type": "paragraph", "text": "Options, Futures, and Other Derivatives provides a look at the derivatives market. Author John C. Hull addresses the gap between theory and practice by incorporating industry topics such as securitisation and the credit crisis." }, { "type": "paragraph", "text": "The 11th Edition covers regulations and trends. Specific topics include the Black-Scholes-Merton formulas, overnight indexed swaps, and the valuation of commodity derivatives." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "26",
+    "id": "trading-and-exchanges-harris",
     "title": "Trading and Exchanges (Harris)",
     "description": "Best book on how markets work from bids to spreads. Essential for execution.",
     "link": "https://amzn.to/4aCh2PD",
+    "Content": [ { "type": "heading", "level": 1, "text": "Trading and Exchanges" }, { "type": "paragraph", "text": "This book covers trading, the participants who trade securities and contracts, the marketplaces where they operate, and the governing rules. It describes the roles of investors, brokers, dealers, arbitrageurs, retail traders, day traders, rogue traders, and gamblers." }, { "type": "paragraph", "text": "The text examines various trading venues, including exchanges, boards of trade, dealer networks, electronic communications networks (ECNs), crossing markets, and pink sheets. It also explains market structures such as single price auctions, open outcry auctions, and brokered markets." }, { "type": "paragraph", "text": "Readers will find information on order types, including limit orders, market orders, and stop orders. The author also discusses specific trading practices: program trades, block trades, short trades, price priority, time precedence, public order precedence, and display precedence." }, { "type": "paragraph", "text": "The final sections address market conduct and strategies, covering insider trading, scalping, bluffing, investing, speculating, and gambling." }],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "27",
+    "id": "quantitative-trading-chan",
     "title": "Quantitative Trading (Chan)",
     "description": "Guide on building strategies like momentum. Teaches proper backtesting methods.",
     "link": "https://amzn.to/4a4vKPm",
+    "Content": [ { "type": "heading", "level": 1, "text": "Quantitative Trading by Dr. Ernest Chan" }, { "type": "paragraph", "text": "Institutional traders use quantitative and algorithmic trading to execute market strategies. Dr. Ernest Chan, an independent trader and consultant, provides a guide for individuals to implement similar methods. The text is intended for independent retail traders starting a trading business or individuals seeking employment as quantitative traders at financial institutions." }, { "type": "paragraph", "text": "This guide contains practical information regarding the requirements for quantitative trading. It addresses how independent traders can operate in markets populated by industry professionals. The content focuses on the technical and business aspects of establishing a quantitative framework." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "28",
+    "id": "heard-on-the-street",
     "title": "Heard on the Street",
     "description": "A survival guide to brain teasers used in trading interviews.",
     "link": "https://amzn.to/4iGJnpX",
+    "Content": [ { "type": "heading", "level": 1, "text": "Heard on The Street" }, { "type": "paragraph", "text": "Heard on The Street is a collection of quantitative questions from finance job interviews. Now in its 15th edition, the text has been updated over 19 years based on reader feedback. It contains over 185 quantitative questions gathered from interviews in investment banking, investment management, and options trading." }, { "type": "paragraph", "text": "The book includes detailed solutions for each question. It also features 140 non-quantitative interview questions, totaling more than 325 actual finance interview questions. A section on interview technique provides guidance based on global interviewer feedback and the author's experience interviewing candidates." }, { "type": "paragraph", "text": "The quantitative topics include:" }, { "type": "paragraph", "text": "* Pure quantitative logic\n* Financial economics\n* Derivatives\n* Statistics" }, { "type": "paragraph", "text": "The material applies to various interview types (corporate finance, sales and trading, quantitative research) and academic levels (Undergraduate, MS, MBA, PhD). Dr. Timothy Crack, the author, holds a PhD from MIT and has experience as a university professor and a practitioner. He previously served as the head of a quantitative active equity research team for an institutional money manager and as a consultant to the New York Stock Exchange." } ],
     "category": "Careers",
     "type": "Book"
   },
   {
-    "id": "29",
+    "id": "thinking-fast-and-slow-kahneman",
     "title": "Thinking, Fast and Slow (Kahneman)",
     "description": "Vital for learning about cognitive bias and human choices in finance.",
     "link": "https://amzn.to/48s1bli",
+    "Content": [ { "type": "heading", "level": 1, "text": "Thinking, Fast and Slow" }, { "type": "paragraph", "text": "Daniel Kahneman, a psychologist and winner of the Nobel Prize in Economics, examines the two systems that drive human thought and decision-making. This text explains the interaction between intuitive responses and logical deliberation." }, { "type": "paragraph", "text": "The book defines two primary mental processes:" }, { "type": "paragraph", "text": "* System 1: Fast, intuitive, and emotional.\n* System 2: Slower, more deliberative, and logical." }, { "type": "paragraph", "text": "Kahneman analyzes how these systems shape judgments in various contexts, including corporate strategy, financial markets, and personal planning. The text identifies cognitive biases and the impact of overconfidence on professional and personal choices." }, { "type": "paragraph", "text": "The author provides insights into where intuition is unreliable and how to utilize analytical thinking. The book includes techniques designed to mitigate mental errors (cognitive glitches) that affect decision-making processes. It is a New York Times bestseller and has been recognized as a significant nonfiction work by The Wall Street Journal and The New York Times Book Review." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "30",
+    "id": "zetamac-arithmetic",
     "title": "Zetamac Arithmetic",
     "description": "A fast web tool to practice math speed needed for interviews.",
     "link": "https://arithmetic.zetamac.com/",
+    "Content": [ { "type": "heading", "level": 1, "text": "Arithmetic Game" }, { "type": "paragraph", "text": "The Arithmetic Game is a speed drill designed to test mental calculation. Users are given a set time limit to solve as many arithmetic problems as possible. Questions regarding the game can be directed to arithmetic@zetamac.com." }, { "type": "heading", "level": 2, "text": "Problem Types and Settings" }, { "type": "paragraph", "text": "The game includes four primary mathematical operations:" }, { "type": "paragraph", "text": "* Addition: Problems based on a customizable range for both addends.\n* Subtraction: Addition problems presented in reverse.\n* Multiplication: Problems based on a customizable range for both factors.\n* Division: Multiplication problems presented in reverse." }, { "type": "heading", "level": 2, "text": "Duration Options" }, { "type": "paragraph", "text": "Users can select from several time intervals for the drill:\n* 30 seconds\n* 60 seconds\n* 120 seconds\n* 300 seconds\n* 600 seconds" } ],
     "category": "Tools",
     "type": "Tool"
   },
   {
-    "id": "31",
+    "id": "interactive-brokers-paper-trading",
     "title": "Interactive Brokers (Paper Trading)",
     "description": "Watch how bid and ask prices move on a live order book without using real money.",
     "link": "https://www.interactivebrokers.com/",
+    "Content": [ { "type": "heading", "level": 1, "text": "IBKR ForecastTrader" }, { "type": "paragraph", "text": "IBKR ForecastTrader allows the use of exchange-listed Forecast Contracts to trade on binary outcomes (yes-or-no questions) related to economic and climate events. Participants earn a 3.14% APY incentive coupon on their investment. New accounts receive 3.00 USD for trading Forecast contracts. Outcomes and prices reflect real-time market sentiment from ForecastEx LLC." }, { "type": "heading", "level": 2, "text": "Account Features and Global Access" }, { "type": "paragraph", "text": "Interactive Brokers provides access to stocks, options, futures, currencies, bonds, and funds through a unified platform. Professional pricing includes commissions starting at $0, margin rates, and interest paid on credit balances. The platform also offers a Stock Yield Enhancement program." }, { "type": "heading", "level": 2, "text": "Technology and Financial Security" }, { "type": "paragraph", "text": "The trading technology suite is designed for portfolio analysis and execution efficiency. Financial stability is maintained through automated risk controls and daily mark-to-market of assets. The firm holds 19.5 billion USD in equity capital and maintains an 'A- Outlook Stable' rating from Standard & Poor's." } ],
     "category": "Tools",
     "type": "Platform"
   },
   {
-    "id": "32",
+    "id": "the-elements-of-statistical-learning",
     "title": "The Elements of Statistical Learning",
     "description": "The bible for the statistical foundations of learning algorithms. Required reading to move beyond black-box model fitting.",
     "link": "https://amzn.to/4rEnImB",
+    "Content": [ { "type": "heading", "level": 1, "text": "The Elements of Statistical Learning" }, { "type": "paragraph", "text": "This text presents statistical ideas across fields including medicine, biology, finance, and marketing within a unified conceptual framework. The approach focuses on concepts rather than mathematical theory, utilizing examples and color graphics. It serves as a resource for statisticians and professionals involved in data mining." }, { "type": "heading", "level": 2, "text": "Core Concepts and Methodology" }, { "type": "paragraph", "text": "The book covers a broad range of topics from supervised learning (prediction) to unsupervised learning. Key subjects include:" }, { "type": "paragraph", "text": "* Neural networks\n* Support vector machines\n* Classification trees\n* Boosting" }, { "type": "heading", "level": 2, "text": "New Edition Features" }, { "type": "paragraph", "text": "The updated edition includes several topics not present in the original text. These include graphical models, random forests, ensemble methods, and least angle regression. It also describes path algorithms for the lasso, non-negative matrix factorization, and spectral clustering." }, { "type": "paragraph", "text": "A specific chapter is dedicated to methods for high-dimensional data (where the number of variables p exceeds the number of observations n). This section covers multiple testing and false discovery rates." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "33",
+    "id": "analysis-of-financial-time-series-tsay",
     "title": "Analysis of Financial Time Series (Tsay)",
     "description": "Essential for understanding and modeling the time-dependent nature of financial data, crucial for forecasting volatility.",
     "link": "https://amzn.to/44aZtT0",
+    "Content": [ { "type": "heading", "level": 1, "text": "Analysis of Financial Time Series" }, { "type": "paragraph", "text": "This book provides a systematic introduction to financial econometric models and their applications for modeling and predicting financial time series data. The text uses real-world examples and financial data to demonstrate various methods." }, { "type": "heading", "level": 2, "text": "Core Topics" }, { "type": "paragraph", "text": "The author starts with the basic characteristics of financial time series data and focuses on three primary areas:" }, { "type": "paragraph", "text": "* Analysis and application of univariate financial time series\n* The return series of multiple assets\n* Bayesian inference methods in finance" }, { "type": "heading", "level": 2, "text": "New Edition Features" }, { "type": "paragraph", "text": "The latest edition includes coverage of modern topics: arbitrage, pair trading, realized volatility, and credit risk modeling. It transitions technical examples from S-Plus to the R programming language and includes expanded empirical datasets." }, { "type": "paragraph", "text": "The objective of the text is to provide knowledge of financial time series, introduce statistical tools for analysis, and offer experience in the application of econometric methods." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "34",
+    "id": "statistical-consequences-of-fat-tails-taleb",
     "title": "Statistical Consequences of Fat Tails (Taleb)",
     "description": "Fundamental reading for understanding the limitations of standard models and the severe impact of extreme, rare events.",
     "link": "https://amzn.to/3KMKGao",
+    "Content": [
+{
+"type": "heading",
+"level": 1,
+"text": "Statistical Consequences of Fat Tails"
+},
+{
+"type": "paragraph",
+"text": "This monograph investigates the misapplication of conventional statistical techniques to fat-tailed distributions and proposes remedies. This third expanded edition includes three additional chapters and an appendix. The text serves as the first volume of the Technical Incerto, structured around published journal articles."
+},
+{
+"type": "heading",
+"level": 2,
+"text": "The Problem of Convergence"
+},
+{
+"type": "paragraph",
+"text": "Traditional asymptotics typically focus on $n=1$ or $n=\\infty$. In practice, the world operates under the laws of medium numbers, which vary across specific distributions. The law of large numbers and generalized central limit mechanisms function differently outside of standard Gaussian or Levy-Stable basins of convergence."
+},
+{
+"type": "heading",
+"level": 2,
+"text": "Key Findings and Failures"
+},
+{
+"type": "paragraph",
+"text": "The research identifies several areas where standard statistical methods provide inaccurate results when applied to fat tails:"
+},
+{
+"type": "paragraph",
+"text": "* Sample Means: The sample mean rarely aligns with the population mean, impacting the validity of naive empiricism. (Parametric methods may provide better estimations.)\n* Empirical Distributions: The empirical distribution often fails to represent the true underlying distribution.\n* Metric Distortion: Parameter uncertainty compounds effects on statistical metrics, while dimension reduction techniques like principal component analysis fail.\n* Inequality Estimation: Estimators such as GINI or quantile contributions are not additive and produce incorrect results.\n* Disciplinary Failures: The author attributes many failures in financial economics, econometrics, and behavioral economics to the use of inappropriate distributions. Additionally, some identified psychological biases are found to be rational when viewed through sophisticated probability distributions."
+}
+],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "35",
+    "id": "active-portfolio-management-grinold-kahn",
     "title": "Active Portfolio Management (Grinold & Kahn)",
     "description": "The bible of quantitative portfolio management. Introduces the fundamental law of active management and alpha frameworks.",
     "link": "https://amzn.to/4aDlNIF",
+    "Content": [ { "type": "heading", "level": 1, "text": "Advances in Active Portfolio Management" }, { "type": "paragraph", "text": "This text provides tools for active portfolio management, intended for portfolio managers, financial advisers, and individual investors. It serves as a follow-up to the authors' previous work on active management and details how to apply the Grinold and Kahn framework to current market challenges." }, { "type": "heading", "level": 2, "text": "Core Research and Insights" }, { "type": "paragraph", "text": "The book is a collection of articles from management publications, including award-winning research from the Journal of Portfolio Management. It provides data and analysis on the following technical areas:" }, { "type": "paragraph", "text": "* Dynamic Portfolio Management and Signal Weighting\n* Implementation Efficiency and Fees\n* Holdings-based attribution\n* Expected returns and Portfolio construction\n* Risk management" }, { "type": "heading", "level": 2, "text": "Organizational Structure" }, { "type": "paragraph", "text": "The material is divided into three primary sections. The first section covers the fundamentals of active management. The second section details advancements made to the authors' original theoretical framework. The third section focuses on the application of this framework within the current investing environment. The text aims to simplify complex research for practical implementation in investment portfolios." } ],
     "category": "Books",
     "type": "Book"
   },
   {
-    "id": "36",
+    "id": "python-for-data-analysis-mckinney",
     "title": "Python for Data Analysis (McKinney)",
     "description": "The definitive guide to using Pandas for data cleaning, transformation, and analysis tasks.",
     "link": "https://amzn.to/48Ezm83",
+    "Content": [ { "type": "heading", "level": 1, "text": "Python for Data Analysis" }, { "type": "paragraph", "text": "This text is a handbook for manipulating, processing, cleaning, and crunching datasets in Python. Updated for Python 3.10 and pandas 1.4, the third edition focuses on solving data analysis problems using pandas, NumPy, and Jupyter. The author, Wes McKinney, is the creator of the pandas project." }, { "type": "heading", "level": 2, "text": "Technical Skills and Tools" }, { "type": "paragraph", "text": "The book provides a modern introduction to data science tools. It is intended for analysts new to Python or programmers transitioning into scientific computing. Key technical topics include:" }, { "type": "paragraph", "text": "* Exploratory Computing: Utilizing Jupyter notebooks and the IPython shell.\n* NumPy: Mastery of basic and advanced array-based features.\n* pandas: Data loading, cleaning, transformation, and reshaping. The text details the groupby facility for dataset summarization.\n* Visualization: Using matplotlib to generate informative plots.\n* Time Series: Methods for manipulating regular and irregular time series data." }, { "type": "heading", "level": 2, "text": "Practical Application" }, { "type": "paragraph", "text": "The guide uses practical case studies to demonstrate how to solve real-world data problems. Data files and supplemental materials for these examples are hosted on GitHub for user access." }, { "type": "code", "language": "python", "text": "import pandas as pd\nimport numpy as np\n\n# Standard pandas grouping operation\ndf.groupby('category').mean()" } ],
     "category": "Programming",
     "type": "Book"
   },
   {
-    "id": "37",
+    "id": "learning-sql-beaulieu",
     "title": "Learning SQL (Beaulieu)",
     "description": "A practical resource for mastering the database querying skills needed to extract and prepare trading data.",
     "link": "https://amzn.to/4iIkQRr",
@@ -296,7 +341,7 @@
     "type": "Book"
   },
   {
-    "id": "38",
+    "id": "convex-optimization-boyd",
     "title": "Convex Optimization (Boyd)",
     "description": "The authoritative text on optimization theory. Essential for understanding solvers used in complex portfolio construction.",
     "link": "https://amzn.to/3YiGWjW",
@@ -304,7 +349,7 @@
     "type": "Book"
   },
   {
-    "id": "39",
+    "id": "advances-in-financial-machine-learning-lopez-de-prado",
     "title": "Advances in Financial Machine Learning (López de Prado)",
     "description": "Crucial for understanding modern, non-linear approaches to return forecasting and strategy combination.",
     "link": "https://amzn.to/4pW0RBk",
@@ -312,7 +357,7 @@
     "type": "Book"
   },
   {
-    "id": "40",
+    "id": "machine-learning-for-asset-managers-lopez-de-prado",
     "title": "Machine Learning for Asset Managers (López de Prado)",
     "description": "Focuses on specific applications like portfolio construction and feature analysis using ML.",
     "link": "https://amzn.to/3MgqNcm",
@@ -320,7 +365,7 @@
     "type": "Book"
   },
   {
-    "id": "41",
+    "id": "deep-learning-goodfellow-et-al",
     "title": "Deep Learning (Goodfellow et al.)",
     "description": "The canonical reference for deep learning theory and architectures. Essential for expertise in the field.",
     "link": "https://amzn.to/3XJmQ2L",
@@ -328,7 +373,7 @@
     "type": "Book"
   },
   {
-    "id": "42",
+    "id": "quantconnect",
     "title": "QuantConnect",
     "description": "Platform to practice end-to-end portfolio strategy development, backtesting, and execution simulation.",
     "link": "https://www.quantconnect.com/",
@@ -336,7 +381,7 @@
     "type": "Platform"
   },
   {
-    "id": "43",
+    "id": "kaggle",
     "title": "Kaggle",
     "description": "The premier platform for practical ML competitions. Achieving Master status is a highly respected credential.",
     "link": "https://www.kaggle.com/",
@@ -344,7 +389,7 @@
     "type": "Platform"
   },
   {
-    "id": "44",
+    "id": "algorithmic-trading-certificate-quanthub",
     "title": "Algorithmic Trading Certificate (QuantHub)",
     "description": "Practitioner's guide and self-paced quant insider certificate.",
     "link": "https://quantshub.com/",
@@ -352,7 +397,7 @@
     "type": "Course"
   },
   {
-    "id": "45",
+    "id": "financial-engineering-in-interest-rates-fx",
     "title": "Financial Engineering in Interest Rates & FX",
     "description": "Short course by City St George's, University of London focusing on C++ applications.",
     "link": "https://www.citystgeorges.ac.uk/",
@@ -360,7 +405,7 @@
     "type": "Course"
   },
   {
-    "id": "46",
+    "id": "mathematical-methods-for-quant-finance-mitx",
     "title": "Mathematical Methods for Quant Finance (MITx)",
     "description": "Advanced mathematical methods for quantitative finance provided by MIT via edX.",
     "link": "https://www.edx.org/learn/finance/massachusetts-institute-of-technology-mathematical-methods-for-quantitative-finance",
@@ -368,7 +413,7 @@
     "type": "Course"
   },
   {
-    "id": "47",
+    "id": "deeplearning-ai-coursera",
     "title": "DeepLearning.AI (Coursera)",
     "description": "Leading courses on Deep Learning foundations and applications.",
     "link": "https://www.coursera.org/partners/deeplearning-ai",
@@ -376,7 +421,7 @@
     "type": "Course"
   },
   {
-    "id": "48",
+    "id": "machine-learning-for-trading-coursera",
     "title": "Machine Learning for Trading (Coursera)",
     "description": "Specialization focusing on applying ML algorithms to trading strategies.",
     "link": "https://www.coursera.org/specializations/machine-learning-trading",
@@ -384,7 +429,7 @@
     "type": "Course"
   },
   {
-    "id": "49",
+    "id": "financial-engineering-risk-management",
     "title": "Financial Engineering & Risk Management",
     "description": "Comprehensive specialization covering the core of financial engineering.",
     "link": "https://www.coursera.org/specializations/financialengineering",
@@ -392,7 +437,7 @@
     "type": "Course"
   },
   {
-    "id": "50",
+    "id": "credit-risk-modeling-in-python-udemy",
     "title": "Credit Risk Modeling in Python (Udemy)",
     "description": "Practical course on building credit risk models using Python.",
     "link": "https://www.udemy.com/course/credit-risk-modeling-in-python/",
@@ -400,7 +445,7 @@
     "type": "Course"
   },
   {
-    "id": "51",
+    "id": "certificate-in-quantitative-finance-cqf",
     "title": "Certificate in Quantitative Finance (CQF)",
     "description": "One of the most recognized professional qualifications in the quant industry.",
     "link": "https://www.cqf.com/",
@@ -408,7 +453,7 @@
     "type": "Certificate"
   },
   {
-    "id": "52",
+    "id": "quantitative-developer-certificate-qdc",
     "title": "Quantitative Developer Certificate (QDC)",
     "description": "Specialized certification for those focusing on the engineering and implementation side of quant finance.",
     "link": "https://qdc.org.uk/",
@@ -416,7 +461,7 @@
     "type": "Certificate"
   },
   {
-    "id": "53",
+    "id": "frm-garp",
     "title": "FRM (GARP)",
     "description": "The Financial Risk Manager designation, the global standard for risk management professionals.",
     "link": "https://www.garp.org/",
@@ -424,7 +469,7 @@
     "type": "Certificate"
   },
   {
-    "id": "54",
+    "id": "cfa-institute",
     "title": "CFA Institute",
     "description": "The Chartered Financial Analyst designation, covering broad investment management skills.",
     "link": "https://www.cfainstitute.org/",
@@ -432,7 +477,7 @@
     "type": "Certificate"
   },
   {
-    "id": "55",
+    "id": "arpm",
     "title": "ARPM",
     "description": "Advanced Risk and Portfolio Management bootcamp and certification.",
     "link": "https://www.arpm.co/",
@@ -440,7 +485,7 @@
     "type": "Certificate"
   },
   {
-    "id": "56",
+    "id": "quantlib",
     "title": "QuantLib",
     "description": "Comprehensive open-source software framework for quantitative finance, written in C++ with Python bindings.",
     "link": "https://www.quantlib.org/",
@@ -448,7 +493,7 @@
     "type": "Library"
   },
   {
-    "id": "57",
+    "id": "ta-lib",
     "title": "TA-Lib",
     "description": "Technical Analysis Library with 150+ indicators including RSI, MACD, Bollinger Bands, etc.",
     "link": "https://ta-lib.org/",
@@ -456,7 +501,7 @@
     "type": "Library"
   },
   {
-    "id": "58",
+    "id": "zipline",
     "title": "Zipline",
     "description": "Pythonic algorithmic trading library used by Quantopian for backtesting strategies.",
     "link": "https://github.com/quantopian/zipline",
@@ -464,7 +509,7 @@
     "type": "Library"
   },
   {
-    "id": "59",
+    "id": "backtrader",
     "title": "Backtrader",
     "description": "Python backtesting library for trading strategies with live trading support.",
     "link": "https://www.backtrader.com/",
@@ -472,7 +517,7 @@
     "type": "Library"
   },
   {
-    "id": "60",
+    "id": "pyportfolioopt",
     "title": "PyPortfolioOpt",
     "description": "Financial portfolio optimization in Python, including classical efficient frontier and advanced methods.",
     "link": "https://github.com/robertmartin8/PyPortfolioOpt",
@@ -480,7 +525,7 @@
     "type": "Library"
   },
   {
-    "id": "61",
+    "id": "mlfinlab",
     "title": "MLFinLab",
     "description": "Implementation of methods from 'Advances in Financial Machine Learning' by Marcos López de Prado.",
     "link": "https://github.com/hudson-and-thames/mlfinlab",
@@ -488,7 +533,7 @@
     "type": "Library"
   },
   {
-    "id": "62",
+    "id": "ccxt",
     "title": "CCXT",
     "description": "JavaScript/Python/PHP library for cryptocurrency trading with support for 100+ exchanges.",
     "link": "https://github.com/ccxt/ccxt",
@@ -496,7 +541,7 @@
     "type": "Library"
   },
   {
-    "id": "63",
+    "id": "qlib",
     "title": "Qlib",
     "description": "AI-oriented quantitative investment platform by Microsoft with full ML pipeline for investment.",
     "link": "https://github.com/microsoft/qlib",
@@ -504,7 +549,7 @@
     "type": "Platform"
   },
   {
-    "id": "64",
+    "id": "finrl",
     "title": "FinRL",
     "description": "Deep Reinforcement Learning library for automated trading in quantitative finance.",
     "link": "https://github.com/AI4Finance-Foundation/FinRL",
@@ -512,7 +557,7 @@
     "type": "Library"
   },
   {
-    "id": "65",
+    "id": "vectorbt",
     "title": "VectorBT",
     "description": "Python library for backtesting, algorithmic trading, and research with vectorized operations.",
     "link": "https://github.com/polakowo/vectorbt",
@@ -520,7 +565,7 @@
     "type": "Library"
   },
   {
-    "id": "66",
+    "id": "yfinance",
     "title": "YFinance",
     "description": "Yahoo Finance market data downloader, faster alternative to pandas-datareader.",
     "link": "https://github.com/ranaroussi/yfinance",
@@ -528,7 +573,7 @@
     "type": "Library"
   },
   {
-    "id": "67",
+    "id": "alpha-vantage",
     "title": "Alpha Vantage",
     "description": "Free APIs for real-time and historical data on stocks, forex, and cryptocurrencies.",
     "link": "https://www.alphavantage.co/",
@@ -536,7 +581,7 @@
     "type": "API"
   },
   {
-    "id": "68",
+    "id": "polygon-io",
     "title": "Polygon.io",
     "description": "Financial data APIs for stocks, options, forex, and crypto with real-time and historical data.",
     "link": "https://polygon.io/",
@@ -544,7 +589,7 @@
     "type": "API"
   },
   {
-    "id": "69",
+    "id": "akshare",
     "title": "Akshare",
     "description": "Elegant financial data interface library for Python with comprehensive Chinese market data.",
     "link": "https://github.com/akfamily/akshare",
@@ -552,7 +597,7 @@
     "type": "Library"
   },
   {
-    "id": "70",
+    "id": "pyalgotrade",
     "title": "PyAlgoTrade",
     "description": "Python algorithmic trading library with support for backtesting and live trading.",
     "link": "https://github.com/gbeced/pyalgotrade",
@@ -560,7 +605,7 @@
     "type": "Library"
   },
   {
-    "id": "71",
+    "id": "catalyst",
     "title": "Catalyst",
     "description": "Algorithmic trading library for crypto-assets built on Zipline.",
     "link": "https://github.com/enigmampc/catalyst",
@@ -568,7 +613,7 @@
     "type": "Library"
   },
   {
-    "id": "72",
+    "id": "riskfolio-lib",
     "title": "Riskfolio-Lib",
     "description": "Portfolio optimization and quantitative strategic asset allocation in Python.",
     "link": "https://github.com/dcajasn/Riskfolio-Lib",
@@ -576,7 +621,7 @@
     "type": "Library"
   },
   {
-    "id": "73",
+    "id": "finta",
     "title": "FinTA",
     "description": "Common financial technical analysis indicators implemented in Pandas.",
     "link": "https://github.com/peerchemist/finta",
@@ -584,7 +629,7 @@
     "type": "Library"
   },
   {
-    "id": "74",
+    "id": "pandas-ta",
     "title": "Pandas TA",
     "description": "Easy-to-use Pandas extension with 115+ technical analysis indicators.",
     "link": "https://github.com/twopirllc/pandas-ta",
@@ -592,7 +637,7 @@
     "type": "Library"
   },
   {
-    "id": "75",
+    "id": "arch",
     "title": "Arch",
     "description": "ARCH models in Python for volatility modeling and financial time series analysis.",
     "link": "https://github.com/bashtage/arch",
@@ -600,7 +645,7 @@
     "type": "Library"
   },
   {
-    "id": "76",
+    "id": "statsmodels",
     "title": "Statsmodels",
     "description": "Python module for statistical modeling, testing, and exploration of data.",
     "link": "https://www.statsmodels.org/",
@@ -608,7 +653,7 @@
     "type": "Library"
   },
   {
-    "id": "77",
+    "id": "prophet",
     "title": "Prophet",
     "description": "Facebook's tool for forecasting time series data with multiple seasonality.",
     "link": "https://facebook.github.io/prophet/",
@@ -616,7 +661,7 @@
     "type": "Library"
   },
   {
-    "id": "78",
+    "id": "gluonts",
     "title": "GluonTS",
     "description": "Probabilistic time series modeling in Python with deep learning models.",
     "link": "https://github.com/awslabs/gluon-ts",
@@ -624,7 +669,7 @@
     "type": "Library"
   },
   {
-    "id": "79",
+    "id": "tradingview-pine-script",
     "title": "TradingView Pine Script",
     "description": "TradingView's scripting language for creating custom indicators and strategies.",
     "link": "https://www.tradingview.com/pine-script-docs/en/v5/",
@@ -632,7 +677,7 @@
     "type": "Language"
   },
   {
-    "id": "80",
+    "id": "metatrader-5-python-api",
     "title": "MetaTrader 5 Python API",
     "description": "Python connector to MetaTrader 5 terminal for algorithmic trading.",
     "link": "https://www.mql5.com/en/docs/integration/python_metatrader5",
@@ -640,7 +685,7 @@
     "type": "API"
   },
   {
-    "id": "81",
+    "id": "pyfolio",
     "title": "PyFolio",
     "description": "Portfolio and risk analytics in Python, integrates with Zipline.",
     "link": "https://github.com/quantopian/pyfolio",
@@ -648,7 +693,7 @@
     "type": "Library"
   },
   {
-    "id": "82",
+    "id": "empyrical",
     "title": "Empyrical",
     "description": "Common financial risk and performance metrics library.",
     "link": "https://github.com/quantopian/empyrical",
@@ -656,7 +701,7 @@
     "type": "Library"
   },
   {
-    "id": "83",
+    "id": "alphalens",
     "title": "Alphalens",
     "description": "Performance analysis of predictive alpha factors in Python.",
     "link": "https://github.com/quantopian/alphalens",
@@ -664,7 +709,7 @@
     "type": "Library"
   },
   {
-    "id": "84",
+    "id": "interactive-brokers-api",
     "title": "Interactive Brokers API",
     "description": "Official API for Interactive Brokers trading platform.",
     "link": "https://interactivebrokers.github.io/",
@@ -672,7 +717,7 @@
     "type": "API"
   },
   {
-    "id": "85",
+    "id": "oanda-api",
     "title": "OANDA API",
     "description": "REST API for OANDA forex and CFD trading platform.",
     "link": "https://developer.oanda.com/",
@@ -680,7 +725,7 @@
     "type": "API"
   },
   {
-    "id": "86",
+    "id": "alpaca-api",
     "title": "Alpaca API",
     "description": "Commission-free trading API for stocks and crypto.",
     "link": "https://alpaca.markets/",
@@ -688,7 +733,7 @@
     "type": "API"
   },
   {
-    "id": "87",
+    "id": "tensorflow-finance",
     "title": "TensorFlow Finance",
     "description": "High-performance TensorFlow library for quantitative finance.",
     "link": "https://github.com/google/tf-quant-finance",
@@ -696,7 +741,7 @@
     "type": "Library"
   },
   {
-    "id": "88",
+    "id": "octobot",
     "title": "OctoBot",
     "description": "Open source cryptocurrency trading bot with advanced web interface.",
     "link": "https://github.com/Drakkar-Software/OctoBot",
@@ -704,7 +749,7 @@
     "type": "Platform"
   },
   {
-    "id": "89",
+    "id": "freqtrade",
     "title": "Freqtrade",
     "description": "Free, open source crypto trading bot written in Python.",
     "link": "https://github.com/freqtrade/freqtrade",
@@ -712,7 +757,7 @@
     "type": "Platform"
   },
   {
-    "id": "90",
+    "id": "jesse",
     "title": "Jesse",
     "description": "Advanced crypto trading bot with backtesting and optimization features.",
     "link": "https://github.com/jesse-ai/jesse",
@@ -720,7 +765,7 @@
     "type": "Platform"
   },
   {
-    "id": "91",
+    "id": "gekko",
     "title": "Gekko",
     "description": "Bitcoin TA trading and backtesting platform with exchange support.",
     "link": "https://github.com/askmike/gekko",
@@ -728,7 +773,7 @@
     "type": "Platform"
   },
   {
-    "id": "92",
+    "id": "hummingbot",
     "title": "Hummingbot",
     "description": "Open source framework for building high-frequency trading bots.",
     "link": "https://github.com/hummingbot/hummingbot",
@@ -736,7 +781,7 @@
     "type": "Platform"
   },
   {
-    "id": "93",
+    "id": "nautilus-trader",
     "title": "Nautilus Trader",
     "description": "High-performance algorithmic trading platform and event-driven backtester.",
     "link": "https://github.com/nautechsystems/nautilus_trader",
@@ -744,7 +789,7 @@
     "type": "Platform"
   },
   {
-    "id": "94",
+    "id": "lean-cli",
     "title": "Lean CLI",
     "description": "Local development environment for QuantConnect's Lean engine.",
     "link": "https://github.com/QuantConnect/lean-cli",
@@ -752,7 +797,7 @@
     "type": "CLI"
   },
   {
-    "id": "95",
+    "id": "quantstats",
     "title": "QuantStats",
     "description": "Portfolio analytics for quants, written in Python.",
     "link": "https://github.com/ranaroussi/quantstats",
@@ -760,7 +805,7 @@
     "type": "Library"
   },
   {
-    "id": "96",
+    "id": "quantdom",
     "title": "Quantdom",
     "description": "Python-based framework for backtesting trading strategies with GUI.",
     "link": "https://github.com/constverum/Quantdom",
@@ -768,7 +813,7 @@
     "type": "Platform"
   },
   {
-    "id": "97",
+    "id": "trality",
     "title": "Trality",
     "description": "Python-based platform for creating, backtesting, and deploying crypto trading bots.",
     "link": "https://www.trality.com/",
@@ -776,7 +821,7 @@
     "type": "Platform"
   },
   {
-    "id": "98",
+    "id": "3commas",
     "title": "3Commas",
     "description": "Trading bot platform with DCA, Grid, and Options bots for crypto.",
     "link": "https://3commas.io/",
@@ -784,7 +829,7 @@
     "type": "Platform"
   },
   {
-    "id": "99",
+    "id": "trading-strategy",
     "title": "Trading Strategy",
     "description": "Framework for backtesting and live trading in decentralized finance.",
     "link": "https://github.com/tradingstrategy-ai/trading-strategy",
@@ -792,15 +837,15 @@
     "type": "Platform"
   },
   {
-    "id": "100",
+    "id": "defillama",
     "title": "DefiLlama",
     "description": "Largest TVL aggregator for DeFi with comprehensive API.",
     "link": "https://defillama.com/",
     "category": "DeFi",
     "type": "Data Source"
   },
-   {
-    "id": "101",
+  {
+    "id": "quantconnect-platform",
     "title": "QuantConnect",
     "description": "A comprehensive, cloud-based algorithmic trading platform supporting backtesting and live trading. Its core engine, Lean, is open-source and written in C#.",
     "link": "https://www.quantconnect.com/",
@@ -808,7 +853,7 @@
     "type": "Platform"
   },
   {
-    "id": "102",
+    "id": "numerai",
     "title": "Numerai",
     "description": "A unique crowdsourced hedge fund that hosts weekly machine learning tournaments. Participants build predictive models on encrypted financial data to compete for cryptocurrency rewards.",
     "link": "https://numer.ai/",
@@ -816,7 +861,7 @@
     "type": "Platform"
   },
   {
-    "id": "103",
+    "id": "quantpedia",
     "title": "Quantpedia",
     "description": "An encyclopedia of quantitative trading strategies derived from academic research papers. Offers a curated database with strategy rules, performance metrics, and links to source papers.",
     "link": "https://quantpedia.com/",
@@ -824,7 +869,7 @@
     "type": "Website"
   },
   {
-    "id": "104",
+    "id": "algoseek",
     "title": "Algoseek",
     "description": "A provider of high-quality, institutional-grade intraday and historical market data for equities, options, futures, and cryptocurrencies, known for data accuracy and customization.",
     "link": "https://www.algoseek.com/",
@@ -832,7 +877,7 @@
     "type": "Data Provider"
   },
   {
-    "id": "105",
+    "id": "eodhd-historical-data",
     "title": "EODHD (EOD Historical Data)",
     "description": "A financial data provider offering extensive historical end-of-day, fundamental, and macroeconomic data via API. Known for being a cost-effective solution with broad global coverage.",
     "link": "https://eodhd.com/",
@@ -840,7 +885,7 @@
     "type": "API"
   },
   {
-    "id": "106",
+    "id": "orats",
     "title": "ORATS",
     "description": "A specialized platform providing options data, analytics, and tools like scanners and backtesters, designed for both retail and professional options traders.",
     "link": "https://orats.com/",
@@ -848,7 +893,7 @@
     "type": "Platform"
   },
   {
-    "id": "107",
+    "id": "defillama-crypto",
     "title": "DefiLlama",
     "description": "The leading data analytics platform for Decentralized Finance (DeFi), tracking Total Value Locked (TVL), revenue, fees, and other key metrics across hundreds of protocols and blockchains.",
     "link": "https://defillama.com/",
@@ -856,7 +901,7 @@
     "type": "Data Source"
   },
   {
-    "id": "108",
+    "id": "backtrader-trading-system",
     "title": "Backtrader",
     "description": "A popular Python framework for backtesting trading strategies. It supports live trading, extensive analytics, and is designed to be flexible and easy to use.",
     "link": "https://www.backtrader.com/",
@@ -864,7 +909,7 @@
     "type": "Library"
   },
   {
-    "id": "109",
+    "id": "vnpy",
     "title": "vnpy",
     "description": "An open-source quantitative trading system framework developed in Python, offering a wide array of components for data feeding, strategy development, risk management, and trading gateway integration.",
     "link": "https://www.vnpy.com/",
@@ -872,7 +917,7 @@
     "type": "Framework"
   },
   {
-    "id": "110",
+    "id": "interactive-brokers-api-official",
     "title": "Interactive Brokers API",
     "description": "The official API for the Interactive Brokers trading platform, enabling automated trading, market data access, and account management for professional and algorithmic traders.",
     "link": "https://www.interactivebrokers.com/api/",
@@ -880,7 +925,7 @@
     "type": "API"
   },
   {
-    "id": "111",
+    "id": "tradestation",
     "title": "TradeStation",
     "description": "A brokerage and trading platform renowned for its advanced charting, analytics, and proprietary EasyLanguage scripting for developing, backtesting, and automating trading strategies.",
     "link": "https://www.tradestation.com/",
@@ -888,7 +933,7 @@
     "type": "Platform"
   },
   {
-    "id": "112",
+    "id": "seeking-alpha",
     "title": "Seeking Alpha",
     "description": "A crowd-sourced investment research platform featuring news, analysis, and opinions on stocks, ETFs, and investment strategies from a large community of contributors.",
     "link": "https://seekingalpha.com/",
@@ -896,7 +941,7 @@
     "type": "Website"
   },
   {
-    "id": "113",
+    "id": "tradermath",
     "title": "Tradermath",
     "description": "An educational platform designed to help aspiring traders prepare for quantitative and mental math assessments used by top-tier proprietary trading firms and hedge funds.",
     "link": "https://www.tradermath.org/?ref=johannes",
@@ -904,7 +949,7 @@
     "type": "Platform"
   },
   {
-    "id": "114",
+    "id": "the-wall-street-quants",
     "title": "The Wall Street Quants",
     "description": "An intensive 12-week Quant Research & Trading bootcamp taught by industry professionals from firms like Point72 and AQR. Focuses on practical skills, portfolio building, and placement at top-tier hedge funds and HFTs.",
     "link": "https://thewallstreetquants.com/survey?ori=jmey",

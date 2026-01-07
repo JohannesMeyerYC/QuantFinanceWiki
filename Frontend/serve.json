@@ -17,6 +17,19 @@
           "value": "max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/fonts/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable, public"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
