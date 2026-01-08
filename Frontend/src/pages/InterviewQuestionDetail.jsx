@@ -160,33 +160,29 @@ export default function InterviewQuestionDetail() {
   }, [relatedQuestions]);
   // --------------------------------------------------------------------
 
-  const fetchRelatedQuestions = async (currentQuestion) => {
+  const fetchRandomQuestions = async () => {
     try {
+      // Get random questions excluding current
       const response = await fetch(
-        `${API_URL}/api/interview-questions/search?` + 
-        new URLSearchParams({
-          category: currentQuestion.category,
-          difficulty: currentQuestion.difficulty,
-          limit: '8'
-        })
+        `${API_URL}/api/interview-questions/random/${slug}?count=4`
       );
       if (response.ok) {
         const data = await response.json();
-        const filtered = data.results.filter(q => q.slug !== slug && q.id !== currentQuestion.id && q.question !== currentQuestion.question);
-        const sorted = filtered.sort((a, b) => {
-          let scoreA = 0, scoreB = 0;
-          if (currentQuestion.tags && a.tags) scoreA += a.tags.filter(tag => currentQuestion.tags.includes(tag)).length * 2;
-          if (currentQuestion.tags && b.tags) scoreB += b.tags.filter(tag => currentQuestion.tags.includes(tag)).length * 2;
-          if (currentQuestion.key_concepts && a.key_concepts) scoreA += a.key_concepts.filter(k => currentQuestion.key_concepts.includes(k)).length;
-          if (currentQuestion.key_concepts && b.key_concepts) scoreB += b.key_concepts.filter(k => currentQuestion.key_concepts.includes(k)).length;
-          if (currentQuestion.firm && a.firm === currentQuestion.firm) scoreA += 1;
-          if (currentQuestion.firm && b.firm === currentQuestion.firm) scoreB += 1;
-          return scoreB - scoreA;
-        });
-        setRelatedQuestions(sorted.slice(0, 4));
+        setRelatedQuestions(data);
       }
     } catch (err) {
-      console.error('Error fetching related questions:', err);
+      console.error('Error fetching random questions:', err);
+      // Fallback: use all questions and shuffle
+      const response = await fetch(`${API_URL}/api/interview-questions`);
+      if (response.ok) {
+        const allQuestions = await response.json();
+        const filtered = allQuestions.filter(q =>
+          q.slug !== slug && q.id !== question.id
+        );
+        // Shuffle manually
+        const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+        setRelatedQuestions(shuffled.slice(0, 4));
+      }
     }
   };
 
@@ -200,7 +196,9 @@ export default function InterviewQuestionDetail() {
         }
         const data = await response.json();
         setQuestion(data);
-        if (data.category) fetchRelatedQuestions(data);
+
+        // Fetch RANDOM questions instead of related by topic
+        fetchRandomQuestions();
       } catch (err) {
         setError(err.message);
       } finally {
@@ -292,17 +290,17 @@ export default function InterviewQuestionDetail() {
       </Helmet>
 
       {/* Progress Bar */}
-      <div 
+      <div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-600 to-emerald-400 origin-left z-50 transition-transform duration-100 ease-out"
         style={{ transform: `scaleX(${scrollProgressRef.current})` }}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-16">
-        <Link 
-          to="/interview-questions" 
+        <Link
+          to="/interview-questions"
           className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-teal-400 mb-8 transition-colors group focus:outline-none focus:text-teal-400"
         >
-          <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> 
+          <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span>
           <span>Back to All Questions</span>
         </Link>
 
@@ -353,7 +351,7 @@ export default function InterviewQuestionDetail() {
                     <RenderBlock key={`approach-${index}`} block={block} />
                   ))}
                 </div>
-                
+
                 {question.key_concepts && question.key_concepts.length > 0 && (
                   <div className="mt-8 pt-8 border-t border-slate-800">
                     <h4 className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-4">Key Concepts</h4>
@@ -372,14 +370,14 @@ export default function InterviewQuestionDetail() {
             {/* Main Answer Section */}
             <div className="bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-700 rounded-2xl p-8 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-32 bg-teal-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-teal-500/10 transition-all duration-700"></div>
-              
+
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 relative z-10">
                 <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 Solution
               </h3>
-              
+
               <div className="relative z-10 space-y-6">
                 {answerBlocks.length > 0 ? (
                   answerBlocks.map((block, index) => (
@@ -415,7 +413,7 @@ export default function InterviewQuestionDetail() {
                     <p className="text-slate-300 font-medium">{question.follow_up}</p>
                   </div>
                 )}
-                
+
                 {question.reference && (
                   <div className="bg-slate-900/30 border border-slate-800 rounded-xl p-6">
                     <h4 className="text-slate-500 font-bold mb-2 text-sm uppercase tracking-wide flex items-center gap-2">
@@ -432,7 +430,7 @@ export default function InterviewQuestionDetail() {
 
             {shuffledRelatedQuestions.length > 0 && (
               <div className="bg-slate-900/20 border border-slate-800 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-white mb-6">Related Questions</h3>
+                <h3 className="text-xl font-bold text-white mb-6">More Random Questions</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {shuffledRelatedQuestions.map((relatedQ) => (
                     <Link
@@ -447,6 +445,9 @@ export default function InterviewQuestionDetail() {
                       <p className="text-slate-300 group-hover:text-teal-300 transition-colors line-clamp-2">
                         {relatedQ.question}
                       </p>
+                      {relatedQ.firm && (
+                        <p className="text-xs text-slate-500 mt-2">{relatedQ.firm}</p>
+                      )}
                     </Link>
                   ))}
                 </div>
@@ -457,10 +458,10 @@ export default function InterviewQuestionDetail() {
             <div className="bg-slate-900/20 border border-slate-800 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-white mb-6">Community Discussion</h3>
               <p className="text-slate-300 mb-8">
-                Discuss this question, share alternative solutions, or ask for clarification. 
+                Discuss this question, share alternative solutions, or ask for clarification.
                 The comment section is moderated to maintain high-quality discussions.
               </p>
-              
+
               <Giscus
                 id="comments"
                 repo="JohannesMeyerYC/comments"
@@ -481,7 +482,7 @@ export default function InterviewQuestionDetail() {
             {/* Navigation */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <Link 
+                <Link
                   to="/interview-questions"
                   className="group inline-flex items-center gap-2 text-slate-400 hover:text-teal-400 transition-colors px-4 py-2 bg-slate-800/50 hover:bg-slate-800 rounded-lg border border-slate-700"
                 >
@@ -491,7 +492,7 @@ export default function InterviewQuestionDetail() {
                   Back to All Questions
                 </Link>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Link
                   to={`/interview-questions?category=${encodeURIComponent(question.category)}`}
@@ -508,9 +509,9 @@ export default function InterviewQuestionDetail() {
         <div className="mt-12 p-6 bg-slate-900/30 border border-slate-800 rounded-lg">
           <h2 className="text-lg font-semibold text-white mb-4">Quantitative Interview Preparation</h2>
           <p className="text-slate-300 text-sm leading-relaxed">
-            This {question.difficulty?.toLowerCase()} {question.category?.toLowerCase()} question is part of the QuantFinanceWiki interview question database. 
-            The database contains {question.firm ? `questions from ${question.firm} and ` : ''}other top quantitative finance firms. 
-            Practice with questions categorized by difficulty, topic, and firm to prepare for interviews in quantitative trading, 
+            This {question.difficulty?.toLowerCase()} {question.category?.toLowerCase()} question is part of the QuantFinanceWiki interview question database.
+            The database contains {question.firm ? `questions from ${question.firm} and ` : ''}other top quantitative finance firms.
+            Practice with questions categorized by difficulty, topic, and firm to prepare for interviews in quantitative trading,
             research, risk management, and software engineering roles.
           </p>
         </div>

@@ -98,7 +98,7 @@ function Home() {
     return () => imageObserver.disconnect();
   }, []);
   return (
-  <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-950 font-sans text-slate-200 selection:bg-emerald-500/30 selection:text-emerald-200 overflow-x-hidden">
       <Helmet>
         <title>QuantFinanceWiki.com | Ultimate Quantitative Finance Career Roadmaps & Resources</title>
         <meta name="description" content="Master quantitative finance with expert roadmaps, top firm insights, and interview prep resources. Built by Johannes Meyer for aspiring quants." />
@@ -130,14 +130,19 @@ function Home() {
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-950 py-12 md:py-24 overflow-hidden hero-container">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center">
-          <h1 className="hero-title opacity-100 font-bold">
-            Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">QFW.com</span>
-          </h1>
-          <p className="hero-desc opacity-100 font-normal">
-            The best place to learn about quantitative finance. Read detailed roadmaps, check out the blog, download free resources, and practice interview questions.
-          </p>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
+  <div className="absolute top-10 left-10 w-32 h-32 md:w-72 md:h-72 bg-emerald-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform" style={{contain: 'paint'}}></div>
+  <div className="absolute bottom-10 right-10 w-40 h-40 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform" style={{contain: 'paint'}}></div>
+    </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center">
+            <h1 className="hero-title opacity-100">
+              Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">QFW.com</span>
+            </h1>
+            <p className="hero-desc opacity-100">
+              The best place to learn about quantitative finance. Read detailed roadmaps, check out the blog, download free resources, and practice interview questions.
+            </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-2">
               <Link to="/roadmaps" className="bg-emerald-700 hover:bg-emerald-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold transition-all shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 active:scale-95 w-full sm:w-auto text-sm sm:text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900">
                 Explore Roadmaps

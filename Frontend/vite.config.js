@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { compression } from 'vite-plugin-compression2';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   plugins: [
     react(),
-    compression({ 
-      algorithm: 'brotliCompress', 
-      exclude: [/\.(br)$/, /\.(gz)$/],
-      threshold: 1024 
-    }),
+    compression({ algorithm: 'gzip', exclude: [/\.(br)$/, /\.(gz)$/] }),
+    compression({ algorithm: 'brotliCompress', exclude: [/\.(br)$/, /\.(gz)$/] }),
+    visualizer({ filename: 'stats.html', gzipSize: true, brotliSize: true }),
   ],
   build: {
     target: 'es2020',
@@ -19,9 +19,6 @@ export default defineConfig({
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info'],
         passes: 2,
-        // Optimize more
-        dead_code: true,
-        unused: true,
       },
     },
     cssCodeSplit: true,
@@ -32,30 +29,21 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor-react';
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'react-core';
             }
-            if (id.includes('react-router-dom')) {
-              return 'vendor-router';
+            if (id.includes('pdf-lib') || id.includes('pdfjs-dist')) {
+              return 'pdf-lib';
             }
-            if (id.includes('pdf-lib') || id.includes('pdfjs-dist') || id.includes('react-pdf')) {
-              return 'vendor-pdf';
+            if (id.includes('katex')) {
+              return 'math-lib';
             }
-            if (id.includes('katex') || id.includes('react-katex')) {
-              return 'vendor-math';
+            if (id.includes('lodash') || id.includes('date-fns') || id.includes('clsx')) {
+              return 'utils';
             }
-            if (id.includes('recharts')) {
-              return 'vendor-charts';
-            }
-            return 'vendor-utils';
           }
         },
       },
     },
-  },
-
-  optimizeDeps: {
-    exclude: ['pdf-lib', 'react-pdf'], 
-    include: ['react', 'react-dom'], 
   },
 });

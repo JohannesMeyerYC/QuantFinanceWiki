@@ -61,36 +61,6 @@ def make_slug(text, max_words=10):
     slug = slug.strip('-')
     return slug
 
-def update_questions_with_slugs():
-    # SKIP IN PRODUCTION to prevent Read-Only File System Errors
-    if not IS_DEV:
-        logger.info("Skipping slug update in production (Read-Only FS)")
-        return
-
-    data_dir = 'data'
-    questions_file = os.path.join(data_dir, 'interview_questions.json')
-    
-    try:
-        with open(questions_file, 'r', encoding='utf-8') as f:
-            questions = json.load(f)
-        
-        updated = False
-        for i, question in enumerate(questions):
-            if 'slug' not in question or not question['slug']:
-                question_text = question.get('question', '')
-                if question_text:
-                    base_slug = make_slug(question_text[:80])
-                    if base_slug:
-                        question['slug'] = f"{base_slug}-q{question.get('id', i+1)}"
-                        updated = True
-        
-        if updated:
-            with open(questions_file, 'w', encoding='utf-8') as f:
-                json.dump(questions, f, indent=2)
-            print(f"Updated {len(questions)} questions.")
-    except Exception as e:
-        logger.error(f"Error updating questions slugs: {e}")
-
 def update_resources_with_slugs():
     # SKIP IN PRODUCTION to prevent Read-Only File System Errors
     if not IS_DEV:
@@ -201,8 +171,34 @@ def update_early_career_with_slugs():
     except Exception as e:
         logger.error(f"Error updating early career slugs: {e}")
 
+def generate_question_slug(question):
+    """Generate slug from first 5 words of question and firm name."""
+    question_text = question.get('question', '')
+    firm = question.get('firm', '').strip()
+    
+    # Extract first 5 words
+    words = question_text.split()[:5]
+    first_five = ' '.join(words)
+    
+    # Generate base slug from first 5 words
+    base_slug = make_slug(first_five)
+    
+    # Add firm slug
+    if firm:
+        firm_slug = make_slug(firm[:30])  # Limit firm slug length
+        slug = f"{base_slug}-{firm_slug}"
+    else:
+        slug = base_slug
+    
+    # Ensure slug isn't too long
+    if len(slug) > 100:
+        slug = slug[:100]
+    
+    return slug
+
+# Update the existing update_questions_with_improved_slugs function:
 def update_questions_with_improved_slugs():
-    """Generate slugs from first 10 words of question"""
+    """Generate slugs from first 5 words of question and firm."""
     if not IS_DEV:
         logger.info("Skipping question slug update in production (Read-Only FS)")
         return
@@ -218,28 +214,22 @@ def update_questions_with_improved_slugs():
         seen_slugs = set()
         
         for question in questions:
-            question_text = question.get('question', '')
-            if question_text:
-                # Extract first 10 words
-                words = question_text.split()[:10]
-                first_10_words = ' '.join(words)
-                
-                # Generate slug from first 10 words
-                base_slug = make_slug(first_10_words)
-                
-                # Ensure uniqueness
-                slug = base_slug
-                counter = 1
-                while slug in seen_slugs:
-                    slug = f"{base_slug}-{counter}"
-                    counter += 1
-                
-                # Only update if slug has changed
-                if question.get('slug') != slug:
-                    question['slug'] = slug
-                    seen_slugs.add(slug)
-                    updated = True
-                    logger.info(f"Generated slug: {slug} for question {question.get('id')}")
+            old_slug = question.get('slug')
+            new_slug = generate_question_slug(question)
+            
+            # Ensure uniqueness
+            slug = new_slug
+            counter = 1
+            while slug in seen_slugs:
+                slug = f"{new_slug}-{counter}"
+                counter += 1
+            
+            # Only update if slug has changed
+            if slug != old_slug:
+                question['slug'] = slug
+                seen_slugs.add(slug)
+                updated = True
+                logger.info(f"Generated slug: {slug} for question {question.get('id')}")
         
         if updated:
             with open(questions_file, 'w', encoding='utf-8') as f:
@@ -420,7 +410,7 @@ def sitemap_xml():
                 add_entry(
                     f"/blog/{post['id']}", 
                     lastmod=post.get('date'), 
-                    priority='0.8', 
+                    priority='0.5', 
                     changefreq='monthly'
                 )
 
@@ -433,7 +423,7 @@ def sitemap_xml():
                 add_entry(
                     f"/roadmaps/{r['id']}", 
                     lastmod=r.get('updated_at') or r.get('date') or SERVER_START_TIME,
-                    priority='0.9', 
+                    priority='0.7', 
                     changefreq='weekly'
                 )
 
@@ -446,21 +436,42 @@ def sitemap_xml():
                 add_entry(
                     f"/firms/{f['id']}", 
                     lastmod=f.get('updated_at') or SERVER_START_TIME,
-                    priority='0.7', 
+                    priority='0.5', 
                     changefreq='monthly'
                 )
     
     # Interview Questions - individual questions with slugs
     questions = load_json_safe('interview_questions.json')
     if isinstance(questions, list):
+        # Add ALL questions to sitemap
         for question in questions:
             if question.get('slug'):
+                # Generate full URL
+                slug = question.get('slug')
+                if not slug:
+                    # Generate slug if missing
+                    slug = generate_question_slug(question)
+                    question['slug'] = slug
+                
                 add_entry(
-                    f"/interview-questions/{question['slug']}", 
+                    f"/interview-questions/{slug}", 
                     lastmod=SERVER_START_TIME,
-                    priority='0.8', 
+                    priority='0.6', 
                     changefreq='monthly'
                 )
+        
+    # Also add paginated views for better crawling
+    total_questions = len(questions)
+    questions_per_page = 15
+    total_pages = (total_questions + questions_per_page - 1) // questions_per_page
+    
+    for page in range(1, total_pages + 1):
+        add_entry(
+            f"/interview-questions?page={page}",
+            lastmod=SERVER_START_TIME,
+            priority='0.7',
+            changefreq='weekly'
+        )
     
     # Resources - ALL resources including PDFs
     resources = load_json_safe('resources.json')
@@ -881,6 +892,51 @@ def search_interview_questions():
     except Exception as e:
         logger.error(f"Error searching questions: {e}")
         return jsonify({'error': 'Search failed', 'details': str(e)}), 500
+    
+@app.route('/api/interview-questions/random', methods=['GET'])
+@handle_errors
+def get_random_questions():
+    """Get fully random questions (not just same topic)."""
+    count = request.args.get('count', default=4, type=int)
+    data = load_json_safe('interview_questions.json')
+    
+    # Shuffle all questions
+    import random
+    random.shuffle(data)
+    
+    # Return requested number
+    random_questions = data[:count]
+    
+    # Format response to match what frontend expects
+    for q in random_questions:
+        # Ensure slug exists
+        if 'slug' not in q or not q['slug']:
+            q['slug'] = generate_question_slug(q)
+    
+    resp = make_response(jsonify(random_questions))
+    resp.headers['Cache-Control'] = 'public, max-age=300'  # Cache for 5 minutes
+    return resp
+
+@app.route('/api/interview-questions/random/<current_slug>', methods=['GET'])
+@handle_errors
+def get_random_questions_excluding_current(current_slug):
+    """Get random questions excluding the current one."""
+    count = request.args.get('count', default=4, type=int)
+    data = load_json_safe('interview_questions.json')
+    
+    # Filter out current question
+    filtered = [q for q in data if q.get('slug') != current_slug]
+    
+    # Shuffle remaining questions
+    import random
+    random.shuffle(filtered)
+    
+    # Return requested number
+    random_questions = filtered[:count]
+    
+    resp = make_response(jsonify(random_questions))
+    resp.headers['Cache-Control'] = 'public, max-age=300'
+    return resp
 
 if __name__ == '__main__':
     # Only try to write updates in DEV mode
@@ -895,6 +951,7 @@ if __name__ == '__main__':
             update_resources_with_slugs()
             update_firms_with_slugs()
             update_early_career_with_slugs()
+            generate_question_slug()
 
     port = int(os.environ.get("PORT", 5000))
     

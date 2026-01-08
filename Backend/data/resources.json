@@ -337,6 +337,7 @@
     "title": "Learning SQL (Beaulieu)",
     "description": "A practical resource for mastering the database querying skills needed to extract and prepare trading data.",
     "link": "https://amzn.to/4iIkQRr",
+    "Content": [ { "type": "heading", "level": 1, "text": "Learning SQL by Alan Beaulieu" }, { "type": "paragraph", "text": "SQL is a standard tool for managing data and writing database applications. This introductory guide by Alan Beaulieu covers the fundamentals required for administrative tasks, application development, and report generation. The latest edition includes new content on big data, analytic functions, and very large databases (VLDBs)." }, { "type": "heading", "level": 2, "text": "Core Concepts and Technical Skills" }, { "type": "paragraph", "text": "The text is organized into self-contained lessons that use annotated examples and exercises. Key technical areas include:" }, { "type": "paragraph", "text": "* Data Statements: Generating, manipulating, and retrieving information from databases.\n* Schema Statements: Creating and managing database objects such as tables, indexes, and constraints.\n* Query Logic: Understanding how datasets interact with queries and the application of subqueries.\n* Built-in Functions: Converting and manipulating data using SQL functions and conditional logic." }, { "type": "heading", "level": 2, "text": "Relational Database Structure" }, { "type": "paragraph", "text": "The book explains how relational databases organize data into structured formats. It details the interaction between different data sets and the importance of maintaining data integrity through constraints." }, { "type": "paragraph", "text": "" }, { "type": "code", "language": "sql", "text": "SELECT department_name, COUNT(employee_id) AS staff_count\nFROM departments\nJOIN employees ON departments.id = employees.dept_id\nGROUP BY department_name\nHAVING COUNT(employee_id) > 5;" } ],
     "category": "Programming",
     "type": "Book"
   },
@@ -345,6 +346,7 @@
     "title": "Convex Optimization (Boyd)",
     "description": "The authoritative text on optimization theory. Essential for understanding solvers used in complex portfolio construction.",
     "link": "https://amzn.to/3YiGWjW",
+    "Content": [ { "type": "heading", "level": 1, "text": "Convex Optimization" }, { "type": "paragraph", "text": "Convex optimization problems are present in various disciplines, including engineering, computer science, mathematics, statistics, finance, and economics. This text provides an introduction to the subject, focusing on the identification and numerical solution of these problems." }, { "type": "heading", "level": 2, "text": "Problem Recognition and Numerical Solutions" }, { "type": "paragraph", "text": "The primary objective of the book is to enable readers to recognize convex constraints and objective functions within diverse applications. It details how to select and apply the most efficient techniques for finding numerical solutions." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Applications and Methodology" }, { "type": "paragraph", "text": "The content is structured around worked examples and exercises designed for students, researchers, and practitioners. It covers the mathematical theory required to understand convexity and the practical algorithms used to solve large-scale optimization problems with high efficiency." } ],
     "category": "Mathematics",
     "type": "Book"
   },
@@ -353,6 +355,7 @@
     "title": "Advances in Financial Machine Learning (López de Prado)",
     "description": "Crucial for understanding modern, non-linear approaches to return forecasting and strategy combination.",
     "link": "https://amzn.to/4pW0RBk",
+    "Content": [ { "type": "heading", "level": 1, "text": "Advances in Financial Machine Learning" }, { "type": "paragraph", "text": "Machine learning (ML) algorithms are being applied to financial tasks previously performed by human experts. This text addresses how these innovations affect investment performance and financial research. It provides scientific solutions for practitioners using mathematical frameworks and programming code." }, { "type": "heading", "level": 2, "text": "Data Structure and Research Methodology" }, { "type": "paragraph", "text": "The book provides instructions on several technical processes for modern finance:" }, { "type": "paragraph", "text": "* Big Data Structuring: Formatting large datasets for compatibility with ML algorithms.\n* Algorithm Research: Conducting quantitative research using ML on big data.\n* Supercomputing and Backtesting: Implementing high-performance computing methods to validate discoveries while minimizing false positives (multiple testing bias)." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Practical Application for Investment Professionals" }, { "type": "paragraph", "text": "Written by a portfolio manager, the text focuses on real-world problems. It enables readers to test proposed solutions within their own investment settings. The material covers the tools necessary for operating in a market driven by algorithmic execution and quantitative analysis." }, { "type": "paragraph", "text": "" } ],
     "category": "Machine Learning",
     "type": "Book"
   },
@@ -361,6 +364,7 @@
     "title": "Machine Learning for Asset Managers (López de Prado)",
     "description": "Focuses on specific applications like portfolio construction and feature analysis using ML.",
     "link": "https://amzn.to/3MgqNcm",
+    "Content": [ { "type": "heading", "level": 1, "text": "Machine Learning for Asset Management" }, { "type": "paragraph", "text": "Investment strategies are implementations of general theories. Strategies without theoretical justification are often statistically invalid. This text describes how machine learning (ML) tools assist asset managers in discovering economic and financial theories. ML functions as a complement to classical statistical methods rather than a replacement." }, { "type": "heading", "level": 2, "text": "Core Strengths of Machine Learning" }, { "type": "paragraph", "text": "The research identifies four primary advantages of using ML in finance:" }, { "type": "paragraph", "text": "* Out-of-Sample Predictability: A focus on predictive accuracy on new data rather than explaining variance in historical data.\n* Computational Methods: Reducing reliance on unrealistic mathematical assumptions through computational power.\n* Complex Specifications: The capacity to identify nonlinear, hierarchical, and noncontinuous interaction effects within high-dimensional datasets.\n* Variable Search: The ability to separate the search for variables from the search for model specifications, maintaining robustness against multicollinearity." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Theoretical Framework" }, { "type": "paragraph", "text": "Asset managers are encouraged to prioritize theory development over the backtesting of arbitrary trading rules. By using ML to explore complex data relationships, managers can build models that are less prone to overfitting and more aligned with underlying financial mechanisms. ML is presented as a transparent tool for scientific discovery in asset management." }, { "type": "paragraph", "text": "" } ],
     "category": "Machine Learning",
     "type": "Book"
   },
@@ -368,7 +372,8 @@
     "id": "deep-learning-goodfellow-et-al",
     "title": "Deep Learning (Goodfellow et al.)",
     "description": "The canonical reference for deep learning theory and architectures. Essential for expertise in the field.",
-    "link": "https://amzn.to/3XJmQ2L",
+    "link": "https://amzn.to/4jOl2PT",
+    "Content": [ { "type": "heading", "level": 1, "text": "Deep Learning" }, { "type": "paragraph", "text": "Deep learning is a subset of machine learning that allows computers to understand the world through a hierarchy of concepts. By gathering knowledge from experience, the system avoids the need for human operators to formally specify every piece of required information. Complicated concepts are built using simpler ones, forming a multi-layered graph of hierarchies." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Mathematical Foundations and Industry Techniques" }, { "type": "paragraph", "text": "The text provides the mathematical and conceptual background necessary for the field. This includes linear algebra, probability theory, information theory, and numerical computation. For practitioners in industry, the book describes several techniques:" }, { "type": "paragraph", "text": "* Deep feedforward networks and regularization\n* Optimization algorithms\n* Convolutional networks and sequence modeling\n* Practical methodology for system deployment" }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Applications and Research Perspectives" }, { "type": "paragraph", "text": "Deep learning is applied across various domains such as natural language processing, speech recognition, computer vision, and recommendation systems. The book also covers research topics including linear factor models, autoencoders, structured probabilistic models, and deep generative models." }, { "type": "paragraph", "text": "" }, { "type": "paragraph", "text": "This resource is intended for students and software engineers. It serves as a comprehensive guide for those entering industry or research roles. Supplemental materials for readers and instructors are available through the book's official website." } ],
     "category": "Machine Learning",
     "type": "Book"
   },
@@ -377,6 +382,7 @@
     "title": "QuantConnect",
     "description": "Platform to practice end-to-end portfolio strategy development, backtesting, and execution simulation.",
     "link": "https://www.quantconnect.com/",
+    "Content": [ { "type": "heading", "level": 1, "text": "QuantConnect: Algorithmic Trading Platform" }, { "type": "paragraph", "text": "QuantConnect provides a unified API for quantitative research, backtesting, and live trading. The platform is designed for a range of users, from beginners to experts, providing tools to navigate expanding datasets and technological developments in the financial markets." }, { "type": "heading", "level": 2, "text": "Research and Strategy Development" }, { "type": "paragraph", "text": "The platform offers a suite of cloud-based tools to facilitate the discovery of alpha. Users can research investment approaches and assess strategy performance through backtesting. For organizations with bespoke requirements or proprietary datasets, a Local Platform is available to replicate the cloud experience on-premise." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Deployment and Execution" }, { "type": "paragraph", "text": "After validation, strategies can be deployed for live trading. The infrastructure supports rapid deployment to minimize the time between research and market execution. The platform handles the underlying data integration and execution logic across multiple asset classes." }, { "type": "paragraph", "text": "" } ],
     "category": "Tools",
     "type": "Platform"
   },
@@ -385,6 +391,7 @@
     "title": "Kaggle",
     "description": "The premier platform for practical ML competitions. Achieving Master status is a highly respected credential.",
     "link": "https://www.kaggle.com/",
+    "Content": [ { "type": "heading", "level": 1, "text": "Kaggle: Machine Learning and Data Science Community" }, { "type": "paragraph", "text": "Kaggle is a platform for the machine learning and data science community, currently consisting of over 28 million members. It provides a centralized repository for community-published models, datasets, and code. Members use the platform to share, test, and maintain technical knowledge on machine learning techniques." }, { "type": "heading", "level": 2, "text": "Competitions and Educational Resources" }, { "type": "paragraph", "text": "The platform hosts machine learning competitions where participants apply quantitative methods to real-world datasets. These competitions serve as a setting for practitioners to refine their skills and connect with other professionals in the field. Kaggle also offers structured courses covering data science and machine learning topics." }, { "type": "paragraph", "text": "" }, { "type": "heading", "level": 2, "text": "Professional Development and Collaboration" }, { "type": "paragraph", "text": "The community includes data scientists, machine learning engineers, and researchers. Users can collaborate on projects, review peer-contributed code, and access various technical tools for model development and data analysis. The environment is structured to support skill building through practical application and peer feedback." }, { "type": "paragraph", "text": "" } ],
     "category": "Machine Learning",
     "type": "Platform"
   },
@@ -393,6 +400,7 @@
     "title": "Algorithmic Trading Certificate (QuantHub)",
     "description": "Practitioner's guide and self-paced quant insider certificate.",
     "link": "https://quantshub.com/",
+    "Content": [ { "type": "heading", "level": 1, "text": "The Quants Hub" }, { "type": "paragraph", "text": "The Quants Hub is an online resource designed for quantitative analysts, risk managers, data scientists, and machine learning specialists. It also provides material for model validation professionals, traders, developers, and financial engineers. The platform integrates training from expert instructors with a library of content for self-paced learning." }, { "type": "heading", "level": 2, "text": "Educational Structure" }, { "type": "paragraph", "text": "The platform allows individuals and institutions to organize bespoke educational resources. It covers a range of technical disciplines within finance, focusing on the application of quantitative methods and programming to market challenges. New courses are added to the curriculum periodically to address evolving industry requirements." }, { "type": "paragraph", "text": "" } ],
     "category": "Courses",
     "type": "Course"
   },
@@ -409,6 +417,43 @@
     "title": "Mathematical Methods for Quant Finance (MITx)",
     "description": "Advanced mathematical methods for quantitative finance provided by MIT via edX.",
     "link": "https://www.edx.org/learn/finance/massachusetts-institute-of-technology-mathematical-methods-for-quantitative-finance",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "MITx: Mathematical Methods for Quantitative Finance"
+    },
+    {
+      "type": "paragraph",
+      "text": "This course covers the mathematical foundations for financial engineering and quantitative finance. Topics include linear algebra, optimization, probability, stochastic processes, statistics, and computational techniques in R."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Prerequisites"
+    },
+    {
+      "type": "paragraph",
+      "text": "You need knowledge of multivariable calculus, probability and statistics, linear algebra, and basic programming. Review the 15.455x Prerequisites and Resources site. It includes a readiness assessment and guidance for areas to review before starting the course."
+    },
+    {
+      "type": "paragraph",
+      "text": "Enrollment is required to access the Prerequisites and Resources site. Click the course link, then click 'Enroll'."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "About this course"
+    },
+    {
+      "type": "paragraph",
+      "text": "Modern finance uses mathematics to make decisions under uncertainty. This course provides the tools to describe financial markets, make predictions, and find optimal solutions for business and investment decisions."
+    },
+    {
+      "type": "paragraph",
+      "text": "The course is relevant for quants, traders, risk managers, investment managers, advisors, developers, and engineers. It teaches methods to model risky or uncertain outcomes and apply modern finance techniques in practice."
+    }
+  ],
     "category": "Courses",
     "type": "Course"
   },
@@ -416,7 +461,79 @@
     "id": "deeplearning-ai-coursera",
     "title": "DeepLearning.AI (Coursera)",
     "description": "Leading courses on Deep Learning foundations and applications.",
-    "link": "https://www.coursera.org/partners/deeplearning-ai",
+    "link": "https://imp.i384100.net/e13DNr",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "DeepLearning.AI"
+    },
+    {
+      "type": "paragraph",
+      "text": "DeepLearning.AI is an education technology company that provides educational programs for AI practitioners and non-technical professionals. Courses range from foundational concepts to advanced applications."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Certificates and Specializations"
+    },
+    {
+      "type": "paragraph",
+      "text": "AI for Good Specialization\nAvailable now\nLearn AI's role in addressing complex challenges."
+    },
+    {
+      "type": "paragraph",
+      "text": "AI for Medicine Specialization\nAvailable now\nLearn AI applications in healthcare and medicine."
+    },
+    {
+      "type": "paragraph",
+      "text": "Deep Learning Specialization\nAvailable now\nLearn core deep learning techniques and become a machine learning expert."
+    },
+    {
+      "type": "paragraph",
+      "text": "Data Analytics Professional Certificate\nAvailable now\nBuild a foundation in data analytics. Use tools to extract insights, make decisions, and solve business problems."
+    },
+    {
+      "type": "paragraph",
+      "text": "Data Engineering Professional Certificate\nAvailable now\nLearn principles of data engineering. Develop skills to design and manage data systems for business value."
+    },
+    {
+      "type": "paragraph",
+      "text": "TensorFlow Developer Professional Certificate\nAvailable now\nLearn to build AI applications using TensorFlow. Work with neural networks, computer vision, NLP, and time series analysis."
+    },
+    {
+      "type": "paragraph",
+      "text": "Generative AI for Software Development Professional Certificate\nAvailable now\nUse AI in software development. Learn prompt engineering and pair programming with large language models."
+    },
+    {
+      "type": "paragraph",
+      "text": "Generative Adversarial Networks (GANs) Specialization\nAvailable now\nLearn to design and train GANs."
+    },
+    {
+      "type": "paragraph",
+      "text": "Machine Learning Specialization\nAvailable now\nLearn core machine learning techniques."
+    },
+    {
+      "type": "paragraph",
+      "text": "Mathematics for Machine Learning and Data Science Specialization\nAvailable now\nLearn the mathematical foundations for AI and machine learning."
+    },
+    {
+      "type": "paragraph",
+      "text": "Natural Language Processing Specialization\nAvailable now\nLearn techniques for NLP applications."
+    },
+    {
+      "type": "paragraph",
+      "text": "PyTorch for Deep Learning Professional Certificate\nAvailable now\nLearn PyTorch and build deep learning models."
+    },
+    {
+      "type": "paragraph",
+      "text": "TensorFlow: Advanced Techniques Specialization\nAvailable now\nExpand your skills in TensorFlow."
+    },
+    {
+      "type": "paragraph",
+      "text": "TensorFlow: Data and Deployment Specialization\nAvailable now\nLearn to deploy TensorFlow models and manage data workflows."
+    }
+  ],
     "category": "Courses",
     "type": "Course"
   },
@@ -424,15 +541,119 @@
     "id": "machine-learning-for-trading-coursera",
     "title": "Machine Learning for Trading (Coursera)",
     "description": "Specialization focusing on applying ML algorithms to trading strategies.",
-    "link": "https://www.coursera.org/specializations/machine-learning-trading",
+    "link": "https://imp.i384100.net/19X67R",
     "category": "Courses",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Machine Learning for Trading Specialization"
+    },
+    {
+      "type": "paragraph",
+      "text": "Learn the machine learning techniques used in quantitative trading."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What you'll learn"
+    },
+    {
+      "type": "paragraph",
+      "text": "Understand the structure and techniques of machine learning, deep learning, and reinforcement learning strategies."
+    },
+    {
+      "type": "paragraph",
+      "text": "Describe the steps to develop and test a machine learning-driven trading strategy."
+    },
+    {
+      "type": "paragraph",
+      "text": "Describe methods to optimize a machine learning-driven trading strategy."
+    },
+    {
+      "type": "paragraph",
+      "text": "Use Keras and TensorFlow to build machine learning models."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Specialization Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This 3-course specialization is offered by Google Cloud and the New York Institute of Finance (NYIF). It is intended for finance professionals, including hedge fund traders, analysts, day traders, investment managers, and those interested in machine learning applications in trading. It is also suitable for machine learning professionals who want to apply their skills to quantitative trading."
+    },
+    {
+      "type": "paragraph",
+      "text": "By the end of the specialization, you will be able to develop and deploy scalable machine learning and reinforcement learning models on Google Cloud. You will learn to create trading strategies that can update and train themselves. The program assumes intermediate knowledge of machine learning, advanced Python skills, and familiarity with libraries such as Scikit-Learn, StatsModels, and Pandas. Knowledge of ML, statistics (regression, classification), and financial markets (equities, bonds, derivatives, market structure, hedging) is required. SQL experience is recommended."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Applied Learning Project"
+    },
+    {
+      "type": "paragraph",
+      "text": "The three courses show how to create quantitative and algorithmic trading strategies using Python. You will learn to create, train, test, and implement trading strategies. You will also learn to apply deep learning and reinforcement learning strategies to create algorithms that can update and train themselves."
+    }
+  ],
     "type": "Course"
   },
   {
     "id": "financial-engineering-risk-management",
     "title": "Financial Engineering & Risk Management",
     "description": "Comprehensive specialization covering the core of financial engineering.",
-    "link": "https://www.coursera.org/specializations/financialengineering",
+    "link": "https://imp.i384100.net/Xmg6No",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Financial Engineering and Risk Management Specialization"
+    },
+    {
+      "type": "paragraph",
+      "text": "Build the fundamentals and technical skills in financial engineering."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What you'll learn"
+    },
+    {
+      "type": "paragraph",
+      "text": "Value options, swaps, forwards, futures, and other financial derivatives using stochastic models."
+    },
+    {
+      "type": "paragraph",
+      "text": "Develop a systematic, data-driven approach to model returns and risks for major asset classes and optimize portfolios."
+    },
+    {
+      "type": "paragraph",
+      "text": "Back test and implement trading models and signals in an active trading environment."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Specialization Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This 5-course specialization is intended for learners and professionals seeking skills in quantitative finance. Topics include derivative pricing, asset allocation, portfolio optimization, real options, commodity and energy derivatives, and algorithmic trading."
+    },
+    {
+      "type": "paragraph",
+      "text": "The program prepares learners to solve problems in both academic and industry settings."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Applied Learning Project"
+    },
+    {
+      "type": "paragraph",
+      "text": "Learners will apply knowledge to problems in financial engineering. This includes pricing derivatives on futures, equities, interest rates, and credit, conducting delta hedging, constructing mean-variance portfolios, and fitting and optimizing models."
+    }
+  ],
     "category": "Courses",
     "type": "Course"
   },
@@ -442,6 +663,115 @@
     "description": "Practical course on building credit risk models using Python.",
     "link": "https://www.udemy.com/course/credit-risk-modeling-in-python/",
     "category": "Courses",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Credit Risk Modeling in Python"
+    },
+    {
+      "type": "paragraph",
+      "text": "A complete data science case study covering preprocessing, modeling, model validation, and maintenance in Python."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What you'll learn"
+    },
+    {
+      "type": "paragraph",
+      "text": "Improve your Python modeling skills."
+    },
+    {
+      "type": "paragraph",
+      "text": "Build a complete credit risk model in Python."
+    },
+    {
+      "type": "paragraph",
+      "text": "Preprocess real-world data in Python."
+    },
+    {
+      "type": "paragraph",
+      "text": "Learn credit risk modeling theory."
+    },
+    {
+      "type": "paragraph",
+      "text": "Apply data science techniques including linear and logistic regression."
+    },
+    {
+      "type": "paragraph",
+      "text": "Evaluate the effectiveness of your models."
+    },
+    {
+      "type": "paragraph",
+      "text": "Solve a real-life credit risk data science task."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Requirements"
+    },
+    {
+      "type": "paragraph",
+      "text": "No prior experience is required. The course starts from the basics."
+    },
+    {
+      "type": "paragraph",
+      "text": "You will need to install Anaconda and Python. Instructions are provided step by step."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Course Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "This course teaches how banks use data science in Python to improve performance and comply with regulations. It is suitable for beginners and gradually builds up to a complete credit risk model."
+    },
+    {
+      "type": "paragraph",
+      "text": "The course covers modeling all three components of expected loss (PD, LGD, EAD) and creating a scorecard from scratch. Models are compliant with Basel II and Basel III regulations."
+    },
+    {
+      "type": "paragraph",
+      "text": "The dataset used in the course is from a real-world example. Students will see how a data science task is solved in practice."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Techniques Covered"
+    },
+    {
+      "type": "paragraph",
+      "text": "Weight of evidence, information value, fine classing, coarse classing, linear regression, logistic regression, area under the curve, ROC curve, Gini coefficient, Kolmogorov-Smirnov, population stability assessment, and model maintenance."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Resources"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lectures, notebook files, homework, quiz questions, slides, downloads, and access to Q&A with the course tutor."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Who this course is for"
+    },
+    {
+      "type": "paragraph",
+      "text": "Data science students seeking to improve their skills."
+    },
+    {
+      "type": "paragraph",
+      "text": "Anyone interested in specializing in credit risk modeling."
+    },
+    {
+      "type": "paragraph",
+      "text": "Beginners who want to start from the fundamentals and gradually build their skills."
+    }
+  ],
     "type": "Course"
   },
   {
@@ -449,6 +779,71 @@
     "title": "Certificate in Quantitative Finance (CQF)",
     "description": "One of the most recognized professional qualifications in the quant industry.",
     "link": "https://www.cqf.com/",
+    "Content": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Certificate in Quantitative Finance (CQF)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The CQF is a master's-level professional qualification in quantitative finance. It provides practical skills in quant finance and machine learning used in industry."
+    },
+    {
+      "type": "paragraph",
+      "text": "The program has shaped over 11,500 alumni and delegates from more than 90 countries over 22 years. It is studied online, part-time, over six months."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Program Features"
+    },
+    {
+      "type": "paragraph",
+      "text": "Taught by world-renowned practitioners."
+    },
+    {
+      "type": "paragraph",
+      "text": "Master’s-level curriculum with practical focus."
+    },
+    {
+      "type": "paragraph",
+      "text": "Access to lifelong learning resources and a careers service."
+    },
+    {
+      "type": "paragraph",
+      "text": "Learn the latest techniques in quant finance and machine learning."
+    },
+    {
+      "type": "paragraph",
+      "text": "Two cohorts per year: January and June."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Program Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "The CQF is divided into three phases: preparation, qualification, and lifelong learning."
+    },
+    {
+      "type": "paragraph",
+      "text": "Preparation: Online primers to refresh skills before the program starts."
+    },
+    {
+      "type": "paragraph",
+      "text": "Qualification: Six core modules and two advanced electives studied over six months."
+    },
+    {
+      "type": "paragraph",
+      "text": "Lifelong Learning: Access to an expanding library to stay updated in quantitative finance."
+    },
+    {
+      "type": "paragraph",
+      "text": "The next CQF program starts on 27th January 2026."
+    }
+  ],
     "category": "Certificates",
     "type": "Certificate"
   },

@@ -47,63 +47,26 @@ const CategoryBadge = ({ category }) => {
   );
 };
 
-const QuestionCard = React.memo(({ question, index, onExpand }) => {
-  const [expanded, setExpanded] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(false);
+const QuestionCard = React.memo(({ question, index }) => {
   const navigate = useNavigate();
 
-  const toggleExpanded = useCallback(() => {
-    const newExpanded = !expanded;
-    setExpanded(newExpanded);
-    if (newExpanded) {
-      onExpand?.(question.id);
-    }
-  }, [expanded, question.id, onExpand]);
-
-  const handleShowAnswer = useCallback((e) => {
-    e.stopPropagation();
-    setShowAnswer(!showAnswer);
-  }, [showAnswer]);
-
-  const handleViewDetails = useCallback((e) => {
-    e.stopPropagation();
+  const handleClick = useCallback(() => {
     if (question.slug) {
       navigate(`/interview-questions/${question.slug}`);
     } else {
-      // Fallback to ID if no slug
       navigate(`/interview-questions/${question.id}`);
     }
   }, [navigate, question.slug, question.id]);
 
-  // Also update the card to show the slug in development if needed:
-  {
-    process.env.NODE_ENV === 'development' && question.slug && (
-      <div className="text-xs text-slate-600 mt-2 font-mono">
-        Slug: {question.slug}
-      </div>
-    )
-  }
-
   return (
     <article
-      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all duration-300 animate-in group cursor-pointer"
+      className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition-all duration-300 animate-in group cursor-pointer"
       style={{ animationDelay: `${index * 50}ms` }}
       id={`question-${question.id}`}
-      onClick={toggleExpanded}
+      onClick={handleClick}
     >
       <div className="w-full text-left p-6 md:p-8">
-        <div className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50 rounded-lg"
-          role="button"
-          aria-expanded={expanded}
-          aria-controls={`answer-${question.id}`}
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              toggleExpanded();
-            }
-          }}
-        >
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-3 mb-3">
               <span className="text-sm font-bold text-slate-500">Q{question.id}</span>
@@ -131,77 +94,20 @@ const QuestionCard = React.memo(({ question, index, onExpand }) => {
             )}
           </div>
 
-          <div className="flex items-center justify-between md:justify-end md:w-40 gap-3">
+          <div className="flex items-center justify-end">
             <button
-              onClick={handleViewDetails}
-              className="hidden md:inline-flex items-center px-3 py-1.5 text-xs font-medium text-teal-400 hover:text-teal-300 hover:bg-teal-500/10 border border-teal-500/30 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
-              aria-label={`View full details for question ${question.id}`}
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-teal-400 hover:text-teal-300 hover:bg-teal-500/10 border border-teal-500/30 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+              aria-label={`View full solution for question ${question.id}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClick();
+              }}
             >
-              Full Solution
+              View Full Solution
+              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </button>
-            <span className={`transition-transform duration-200 text-slate-500 ${expanded ? 'rotate-90' : ''}`} aria-hidden="true">
-              ›
-            </span>
-          </div>
-        </div>
-
-        {/* CSS Grid Accordion Animation */}
-        <div
-          id={`answer-${question.id}`}
-          className={`grid transition-[grid-template-rows] duration-200 ease-out ${expanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
-          role="region"
-          aria-labelledby={`question-${question.id}`}
-        >
-          <div className="overflow-hidden">
-            <div className="pt-6 border-t border-slate-800 mt-6">
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <button
-                  onClick={handleShowAnswer}
-                  className="px-4 py-2 text-sm font-bold bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-lg hover:bg-teal-500/20 transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
-                >
-                  {showAnswer ? 'Hide Solution' : 'Show Solution'}
-                </button>
-
-                <button
-                  onClick={handleViewDetails}
-                  className="px-4 py-2 text-sm font-bold bg-slate-800 text-slate-300 border border-slate-700 rounded-lg hover:bg-slate-700 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-teal-500/50"
-                >
-                  View Full Page
-                </button>
-              </div>
-
-              {/* Answer Content Accordion */}
-              <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${showAnswer ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-              >
-                <div className="overflow-hidden">
-                  <div className="text-slate-300 leading-relaxed space-y-4 prose prose-invert max-w-none">
-                    {question.approach && (
-                      <div className="p-4 bg-slate-800/30 rounded-lg border border-slate-700/50">
-                        <strong className="text-teal-400 block mb-1">Approach</strong>
-                        <p className="line-clamp-3">{question.approach}</p>
-                      </div>
-                    )}
-
-                    <div className="p-4 bg-slate-900/50 rounded-lg border border-slate-700">
-                      <strong className="text-white block mb-2">Answer</strong>
-                      {typeof question.answer === 'string' ? (
-                        <p className="whitespace-pre-wrap m-0 line-clamp-4">{question.answer}</p>
-                      ) : (
-                        <ul className="list-disc pl-5 space-y-2 m-0">
-                          {question.answer?.slice(0, 3).map((point, idx) => (
-                            <li key={idx} className="line-clamp-2">{point}</li>
-                          ))}
-                          {question.answer?.length > 3 && (
-                            <li className="text-slate-500">... and {question.answer.length - 3} more points</li>
-                          )}
-                        </ul>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

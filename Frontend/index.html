@@ -2,63 +2,11 @@
 <html lang="en">
   <head>
   <meta charset="UTF-8" />
-    
-  <!-- Critical Resource Hints -->
+  
   <link rel="preconnect" href="https://quantfinancewiki.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   
-  <!-- Critical CSS (Extract from index.css - ~1KB) -->
-  <style>
-    /* Critical above-the-fold styles only */
-    body { margin: 0; padding: 0; background-color: #020617; color: #e2e8f0; -webkit-font-smoothing: antialiased; }
-    #root { min-height: 100vh; }
-    .hero-title { font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.1; font-weight: 700; }
-    .hero-desc { font-size: clamp(0.875rem, 3vw, 1rem); line-height: 1.5; }
-    
-    /* Fallback font system */
-    @font-face {
-      font-family: 'Inter-fallback';
-      size-adjust: 107%;
-      ascent-override: 90%;
-      src: local("Arial");
-    }
-    
-    /* Only define critical font weights */
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url('/fonts/inter-v20-latin-regular.woff2') format('woff2');
-    }
-    
-    @font-face {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('/fonts/inter-v20-latin-700.woff2') format('woff2');
-    }
-    
-    /* Use font with fallback */
-    :root { --font-inter: 'Inter', 'Inter-fallback', system-ui, sans-serif; }
-    body { font-family: var(--font-inter); font-weight: 400; }
-  </style>
-  
-  <!-- Preload only the most critical fonts -->
-  <link rel="preload" href="/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="high">
+  <link rel="preload" href="/fonts/inter-v20-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/inter-v20-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  <!-- Preload LCP image if you have one (hero image) -->
-  <!-- <link rel="preload" href="/path-to-hero-image.jpg" as="image" type="image/jpeg"> -->
-  
-  <!-- Defer non-critical CSS -->
-  <link rel="preload" href="/assets/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/index.css"></noscript>
-  
-  <!-- Preload main JS -->
-  <link rel="preload" href="/src/main.jsx" as="script" crossorigin="anonymous">
   
     <link rel="icon" type="image/png" href="/Logo.png?v=2" />    
     <link rel="apple-touch-icon" href="/Logo.png?v=2">
@@ -84,14 +32,38 @@
   <body class="bg-slate-950 text-slate-200 antialiased selection:bg-teal-500/30 selection:text-teal-200">
     <div id="root"></div>
     
-    <!-- Scripts - REMOVED FONT LOADING JS COMPLETELY -->
+    <!-- Scripts -->
+  <script>
+    // Load fonts after initial render
+    function loadFonts() {
+      const regular = new FontFace('Inter', 'url(/fonts/inter-v20-latin-regular.woff2)', {
+        weight: '400',
+        display: 'swap'
+      });
+      const bold = new FontFace('Inter', 'url(/fonts/inter-v20-latin-700.woff2)', {
+        weight: '700',
+        display: 'swap'
+      });
+      
+      Promise.all([regular.load(), bold.load()])
+        .then(fonts => fonts.forEach(font => document.fonts.add(font)))
+        .catch(console.error);
+    }
+    
+    // Defer font loading until after LCP
+    if (document.readyState === 'complete') {
+      setTimeout(loadFonts, 1000);
+    } else {
+      window.addEventListener('load', () => setTimeout(loadFonts, 1000));
+    }
+  </script>
   
-  <!-- Deferred Google Analytics - Keep as is but maybe delay more -->
+  <!-- Deferred Google Analytics -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     
-    // Load after 6 seconds (increased from 4s)
+    // Load after 4 seconds (increased from 3.5s)
     setTimeout(() => {
       const s = document.createElement('script');
       s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QC7626JBDJ';
@@ -101,23 +73,9 @@
         gtag('config', 'G-QC7626JBDJ', { anonymize_ip: true });
       };
       document.head.appendChild(s);
-    }, 6000);
+    }, 4000);
   </script>
   
-  <!-- Load main JS as deferred module -->
-  <script type="module" src="/src/main.jsx" defer></script>
-  
-  <!-- Load non-critical CSS if JS fails -->
-  <script>
-    // Load CSS if JS failed to load it
-    setTimeout(function() {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = '/assets/index.css';
-      link.media = 'print';
-      link.onload = function() { this.media = 'all'; };
-      document.head.appendChild(link);
-    }, 3000);
-  </script>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
