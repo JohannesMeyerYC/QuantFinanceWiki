@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+
 import remarkMath from 'remark-math';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
+
+
 import rehypeKatex from 'rehype-katex';
-import rehypeRaw from 'rehype-raw'; 
+import rehypeRaw from 'rehype-raw';
+
 import { BlockMath, InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 

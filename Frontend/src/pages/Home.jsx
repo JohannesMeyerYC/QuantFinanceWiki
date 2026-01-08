@@ -38,7 +38,7 @@ const socials = [
   url: 'https://paypal.me/youngandcalculated',
   color: 'hover:text-[#0070BA]',
   icon: (
-    <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
+    <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
 <path d="M20.43705,7.10449a3.82273,3.82273,0,0,0-.57281-.5238,4.72529,4.72529,0,0,0-1.15766-3.73987C17.6226,1.61914,15.77494,1,13.2144,1H7.00053A1.89234,1.89234,0,0,0,5.13725,2.5918L2.5474,18.99805A1.53317,1.53317,0,0,0,4.063,20.7832H6.72709l-.082.52051A1.46684,1.46684,0,0,0,8.0933,23h3.23438a1.76121,1.76121,0,0,0,1.751-1.46973l.64063-4.03125.01074-.05468h.29883c4.03223,0,6.55078-1.99317,7.28516-5.7627A5.149,5.149,0,0,0,20.43705,7.10449ZM7.84233,13.7041l-.71448,4.53528-.08631.54382H4.606L7.09721,3H13.2144c1.93554,0,3.31738.4043,3.99218,1.16406a2.96675,2.96675,0,0,1,.60791,2.73334l-.01861.11224c-.01215.07648-.0232.15119-.0434.24622a5.84606,5.84606,0,0,1-2.00512,3.67053,6.67728,6.67728,0,0,1-4.21753,1.183H9.70658A1.87969,1.87969,0,0,0,7.84233,13.7041Zm11.50878-2.40527c-.55078,2.82812-2.24218,4.14551-5.32226,4.14551h-.4834a1.76109,1.76109,0,0,0-1.751,1.47265l-.64941,4.07422L8.71733,21l.47815-3.03387.61114-3.85285h1.7193c.1568,0,.29541-.02356.44812-.02893.35883-.01239.71661-.02618,1.05267-.06787.20526-.02557.39362-.07221.59034-.1087.27252-.05036.54522-.10016.80108-.17127.19037-.053.368-.12121.54907-.18561.23926-.0849.4748-.174.69757-.27868.168-.0791.32807-.16706.48658-.25727a6.77125,6.77125,0,0,0,.61236-.39172c.14228-.1026.28192-.20789.415-.321a6.56392,6.56392,0,0,0,.53693-.51892c.113-.12055.2287-.23755.33331-.36725a7.09,7.09,0,0,0,.48-.69263c.07648-.12219.16126-.23523.23163-.36383a8.33175,8.33175,0,0,0,.52075-1.15326c.00867-.02386.02106-.044.02954-.068.004-.01123.00989-.02057.01386-.03186A4.29855,4.29855,0,0,1,19.35111,11.29883Z"/>
     </svg>
   )
@@ -109,7 +109,7 @@ function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://QuantFinanceWiki.com" />
         <meta property="og:site_name" content="QuantFinanceWiki.com" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@JohannesMeyer" />
@@ -130,7 +130,7 @@ function Home() {
       </Helmet>
 
       <header className="relative border-b border-slate-800 bg-slate-950 py-12 md:py-24 overflow-hidden hero-container">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none" aria-hidden="true">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
   <div className="absolute top-10 left-10 w-32 h-32 md:w-72 md:h-72 bg-emerald-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform" style={{contain: 'paint'}}></div>
   <div className="absolute bottom-10 right-10 w-40 h-40 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-[40px] md:blur-[100px] will-change-transform" style={{contain: 'paint'}}></div>
     </div>
@@ -174,13 +174,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.15s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-emerald-600 to-emerald-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-emerald-600 to-emerald-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500"></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">Career Roadmaps</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Step-by-step guides for different quant roles. See what skills you need and how to build them over time. Covers trading, research, development, and risk management.
               </p>
-              <Link to="/roadmaps" className="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="Explore Career Roadmaps">
-                Explore Roadmaps <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/roadmaps" className="text-emerald-400 hover:text-emerald-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                Explore Roadmaps <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
 
@@ -189,13 +189,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-teal-600 to-teal-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-teal-600 to-teal-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500"></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">Top Firms</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Detailed information on leading quantitative finance companies. Learn about their hiring process, culture, and what they look for in candidates. Updated regularly.
               </p>
-              <Link to="/firms" className="text-teal-400 hover:text-teal-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="View Top Firms">
-                View Firms <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/firms" className="text-teal-400 hover:text-teal-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                View Firms <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
 
@@ -204,13 +204,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.25s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-purple-600 to-purple-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-purple-600 to-purple-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500"></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">Resource Library</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Download PDFs, cheatsheets, and carousel slides. Curated collection of learning materials, technical guides, and reference documents for quant finance topics.
               </p>
-              <Link to="/resources" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="View Resource Library">
-                View Resources <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/resources" className="text-purple-400 hover:text-purple-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                View Resources <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
           </div>
@@ -222,13 +222,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.3s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-slate-600 to-slate-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-slate-600 to-slate-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500"></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">FAQ</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Read answers to common questions about quantitative finance careers, mathematics requirements, interview preparation, and industry insights. Updated weekly.
               </p>
-              <Link to="/faq" className="text-slate-300 hover:text-white font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="Browse Frequently Asked Questions">
-                Browse FAQ <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/faq" className="text-slate-300 hover:text-white font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                Browse FAQ <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
 
@@ -237,13 +237,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.35s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-blue-600 to-blue-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-blue-600 to-blue-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500"></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">Insights Blog</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Read latest articles on careers, mathematics, and market trends. Technical deep dives, career advice, and industry analysis from experienced practitioners.
               </p>
-              <Link to="/blog" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="Read Insights Blog">
-                Read Blog <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/blog" className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                Read Blog <span className="ml-2 group-hover/link:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
 
@@ -252,13 +252,13 @@ function Home() {
               role="listitem"
               style={{ animationDelay: '0.4s' }}
             >
-              <div className="w-10 h-1.5 bg-gradient-to-r from-amber-600 to-amber-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+              <div className="w-10 h-1.5 bg-gradient-to-r from-amber-600 to-amber-400 mb-4 md:mb-6 rounded-full group-hover:w-16 transition-all duration-500" ></div>
               <h2 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-white">Interview Questions</h2>
               <p className="text-slate-300 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Practice with 1000+ quantitative finance interview questions. Detailed solutions included. Probability, brainteasers, finance, programming, and statistics problems from top firms.
               </p>
-              <Link to="/interview-questions" className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline" aria-label="Practice Interview Questions">
-                Practice Now <span className="ml-2 group-hover/link:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              <Link to="/interview-questions" className="text-amber-400 hover:text-amber-300 font-medium inline-flex items-center group/link text-sm md:text-base focus:outline-none focus-visible:underline">
+                Practice Now <span className="ml-2 group-hover/link:translate-x-1 transition-transform" >→</span>
               </Link>
             </article>
           </div>
@@ -269,9 +269,9 @@ function Home() {
   className="mb-12 md:mb-24"
   style={{ animationDelay: '0.5s' }}
 >
-  <div className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-8 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-xl hover:shadow-emerald-900/10">
+  <div className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-8 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 group hover:bg-slate-900/50 shadow-sm hover:shadow-xl hover:shadow-emerald-900/10">
     <div className="flex items-center gap-3 mb-4 md:mb-6">
-      <div className="w-10 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full group-hover:w-16 transition-all duration-500" aria-hidden="true"></div>
+      <div className="w-10 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full group-hover:w-16 transition-all duration-500" ></div>
       <h2 className="text-xl md:text-2xl font-bold text-white">Daily Quant Insights</h2>
     </div>
 
@@ -298,7 +298,7 @@ function Home() {
           Subscribe to Quant Enthusiasts
         </a>
         
-        <p className="mt-4 text-slate-500 text-xs">
+        <p className="mt-4 text-slate-200 text-xs">
           Join over 5,000+ readers.
         </p>
       </div>
@@ -317,7 +317,7 @@ function Home() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
-        <span className="text-slate-500 text-xs">Free to subscribe</span>
+        <span className="text-slate-200 text-xs">Free to subscribe</span>
       </div>
     </div>
   </div>
@@ -329,7 +329,7 @@ function Home() {
               <p className="text-slate-300 text-sm md:text-base">Join the community for updates and discussions.</p>
             </div>
             
-            <nav className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8" aria-label="Social media links">
+            <nav className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8">
                 {socials.map((social) => (
                     <a
                         key={social.name}
@@ -337,14 +337,13 @@ function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`group p-3 md:p-4 bg-slate-900 rounded-lg md:rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 ${social.color} hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400`}
-                        aria-label={`Follow us on ${social.name}`}
                     >
                         {social.icon}
                     </a>
                 ))}
             </nav>
             
-            <div className="text-center text-slate-500 text-xs md:text-sm space-y-2">
+            <div className="text-center text-slate-200 text-xs md:text-sm space-y-2">
                 <p>© {new Date().getFullYear()} QuantFinanceWiki.com. All content created by Johannes Meyer.</p>
                 <p className="text-slate-600">Built for aspiring quantitative finance professionals.</p>
             </div>
