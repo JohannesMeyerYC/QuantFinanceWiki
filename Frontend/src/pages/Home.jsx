@@ -269,7 +269,7 @@ function Home() {
   className="mb-12 md:mb-24"
   style={{ animationDelay: '0.5s' }}
 >
-  <div className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-8 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 group hover:bg-slate-900/50 shadow-sm hover:shadow-xl hover:shadow-emerald-900/10">
+  <div className="bg-slate-900/50 backdrop-blur-sm p-5 md:p-8 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 group hover:bg-slate-900 shadow-sm hover:shadow-xl hover:shadow-emerald-900/10">
     <div className="flex items-center gap-3 mb-4 md:mb-6">
       <div className="w-10 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full group-hover:w-16 transition-all duration-500" ></div>
       <h2 className="text-xl md:text-2xl font-bold text-white">Daily Quant Insights</h2>
@@ -337,6 +337,7 @@ function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`group p-3 md:p-4 bg-slate-900 rounded-lg md:rounded-xl border border-slate-800 hover:border-slate-600 transition-all duration-300 hover:-translate-y-1 active:scale-95 ${social.color} hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400`}
+                        aria-label={`Follow us on ${social.name}`}
                     >
                         {social.icon}
                     </a>
